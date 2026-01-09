@@ -1,65 +1,50 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Gestão de Estágios - Registo</title>
-    <link rel="stylesheet" href="../scripts/modelos.css">
+    <title>Identity Fraud - Register</title>
+    <link rel="stylesheet" href="Register.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Oxygen:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="../scripts/functions.js"></script>
 </head>
 <body>
 
 <header>
-    <div>
-        <div>
-            <img src="../imgs/LogoTipo.png">
-        </div>
-        <h1>Gestão de Estágios Curriculares</h1>
-    </div>
 </header>
 
 <main>
     <div>
-        <h2>Registo</h2>
+        <fieldset>
+        <form action="register.php" method="POST">
+            <h2>Registo</h2>  
 
-        <form enctype="multipart/form-data" action="register.php" method="POST">
             <div>
-                <input type="text" id="user" name="user" maxlength="30" placeholder="Nome do Utilizador *" required>
+                <input type="text" class="loginInput" id="nome" name="nome" maxlength="30" placeholder="Nome" required>
             </div>
 
             <div>
-                <input type="email" id="email" name="email" maxlength="80" placeholder="exemplo@gmail.com *" required>
+                <input type="text" class="loginInput" id="email" name="email" maxlength="30" placeholder="Email" required>
             </div>
 
             <div>
-                <input type="password" id="pass" name="pass" maxlength="20" placeholder="Palavra-passe *" required>
+                <input type="password" class="loginInput" id="pass" name="pass" maxlength="20" placeholder="Palavra-passe" required>
             </div>
 
             <div>
-                <input type="password" id="pass_rep" name="pass_rep" maxlength="20" placeholder="Repita a sua Palavra-passe *" required>
+                <input type="password" class="loginInput" id="pass_rep" name="pass_rep" maxlength="20" placeholder="Confirme Palavra-passe" required>
             </div>
 
-            <div>
-                  <label>Foto de Perfil:</label>
-                  <button type="button" class="btn-submit" onclick="document.getElementById('nome_imagem').click();">
-                        📁 Escolher Imagem
-                  </button>
-                  <small>Deixe em branco para manter a imagem atual</small>
-                  <input type="file" id="nome_imagem" name="nome_imagem" style="display:none;" accept="image/*">
+            <span id="erro"></span>
+
+            <div >
+                <button class="loginButton">Entrar</button>
             </div>
 
-
-            <p style="text-align:left;">* Campos obrigatórios</p>
-            <span id="erro"></span><br>
-
-            <button type="submit" onclick="erro_pass(event)">Registar</button>
-
-            <p style="margin-top:15px;">Já possuí uma conta? <a href="../login/login.html">Login</a></p>
+            <p style="text-align:center; margin-top:15px;">
+                Ja tem conta? <a href="../login/login.html"><b>Entrar</b></a>
+            </p>
         </form>
+        </fieldset>
     </div>
 </main>
-
-<footer>
-    <p>Developed by Francisco Yang (MonsterTH) & Guilherme Rodrigues (JoãozinhoGameplays16)</p>
-</footer>
-
 </body>
 </html>
