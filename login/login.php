@@ -20,7 +20,6 @@
             {
                   $_SESSION['Username'] = $dados['Username'];
                   $_SESSION['Email'] = $dados['Email'];
-                  $_SESSION['Img_user'] = $dados['Img_user'];
 
                   header("Location: ../../html/home.php");
                   exit();
@@ -28,8 +27,10 @@
 
             else 
             {
-                  header("Location: ../../html/utilizador/falha.html");
-                  exit();
+                  echo("<script>
+                        alert('As senhas não coincidem.');
+                        window.history.back();
+                  </script>");
             }
       }
 
