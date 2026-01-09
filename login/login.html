@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Estágios - Login</title>
+    <link rel="stylesheet" href="../scripts/moderno.css">
+    <script src="../scripts/functions.js"></script>
+</head>
+<body>
+
+<header>
+    <div>
+        <div>
+            <img src="../../imagens/escola.png" alt="Logo Escola">
+        </div>
+        <h1>Gestão de Estágios Curriculares</h1>
+    </div>
+</header>
+
+<main>
+    <div>
+        <form action="../../scripts/utilizadores/login.php" method="POST">
+            <h2>Login</h2>  
+
+            <div >
+                <input type="text" id="user" name="user" maxlength="30" placeholder="Nome do Utilizador ou Email" required>
+            </div>
+
+            <div >
+                <input type="password" id="pass" name="pass" maxlength="20" placeholder="Palavra-passe" required>
+            </div>
+
+            <span id="erro"></span>
+
+            <div >
+                <button class="btn-submit">Entrar</button>
+            </div>
+
+            <p style="text-align:center; margin-top:15px;">
+                Não tem uma conta? <a href="../register/register.html">Registe-se</a>
+            </p>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>Developed by Francisco Yang</p>
+</footer>
+
+</body>
+</html>

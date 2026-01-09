@@ -1,0 +1,65 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Estágios - Registo</title>
+    <link rel="stylesheet" href="../scripts/modelos.css">
+    <script src="../scripts/functions.js"></script>
+</head>
+<body>
+
+<header>
+    <div>
+        <div>
+            <img src="../imgs/LogoTipo.png">
+        </div>
+        <h1>Gestão de Estágios Curriculares</h1>
+    </div>
+</header>
+
+<main>
+    <div>
+        <h2>Registo</h2>
+
+        <form enctype="multipart/form-data" action="register.php" method="POST">
+            <div>
+                <input type="text" id="user" name="user" maxlength="30" placeholder="Nome do Utilizador *" required>
+            </div>
+
+            <div>
+                <input type="email" id="email" name="email" maxlength="80" placeholder="exemplo@gmail.com *" required>
+            </div>
+
+            <div>
+                <input type="password" id="pass" name="pass" maxlength="20" placeholder="Palavra-passe *" required>
+            </div>
+
+            <div>
+                <input type="password" id="pass_rep" name="pass_rep" maxlength="20" placeholder="Repita a sua Palavra-passe *" required>
+            </div>
+
+            <div>
+                  <label>Foto de Perfil:</label>
+                  <button type="button" class="btn-submit" onclick="document.getElementById('nome_imagem').click();">
+                        📁 Escolher Imagem
+                  </button>
+                  <small>Deixe em branco para manter a imagem atual</small>
+                  <input type="file" id="nome_imagem" name="nome_imagem" style="display:none;" accept="image/*">
+            </div>
+
+
+            <p style="text-align:left;">* Campos obrigatórios</p>
+            <span id="erro"></span><br>
+
+            <button type="submit" onclick="erro_pass(event)">Registar</button>
+
+            <p style="margin-top:15px;">Já possuí uma conta? <a href="../login/login.html">Login</a></p>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>Developed by Francisco Yang (MonsterTH) & Guilherme Rodrigues (JoãozinhoGameplays16)</p>
+</footer>
+
+</body>
+</html>
