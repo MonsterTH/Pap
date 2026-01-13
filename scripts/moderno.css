@@ -6,11 +6,11 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .logo {
     align-content: center;
-    background-color: #b486a0;
     padding: 20px;
 }
 
@@ -19,21 +19,24 @@ body {
 }
 
 .fundo {
-    background-color: #995f6e;
+    background: linear-gradient(180deg,rgba(29, 29, 29) 80%, rgba(153, 95, 110, 1) 100%);
     padding: 20px;
+    width: auto;
+    height: 200px;
 }
 
 .bar {
-    display: flex;
-    justify-content: center;
     margin-bottom: 20px;
-    background-color: #d9a3b1;
+    background-color: #995f6e;
 }
 
 .bar ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+}
+
+.bar ul li:last-child {
+    margin-left: auto;
 }
 
 .bar ul li {
@@ -41,7 +44,7 @@ body {
     margin: -10px 10px -10px 10px;
     padding: 20px;
     background-color: #995f6e;
-    transition: 0.3s;
+    transition: 0.3s; 
 }
 
 .bar a {
@@ -50,7 +53,7 @@ body {
 }
 
 .bar ul li:hover{
-    background-color: #724752;
+    background-color: #72475285;
     color: #000000;
 }
 
@@ -66,7 +69,6 @@ body {
     float: left;
     padding-left: 100px;
     margin-right: 40px;
-    border-radius: 10px;
 }
 
 .texto_noti {
