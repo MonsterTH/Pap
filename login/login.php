@@ -2,11 +2,11 @@
       session_start();
       include("../scripts/logindb.php");
 
-      $user = $_POST['user'];
+      $email = $_POST['email'];
       $pass = $_POST['pass'];
 
       // Verificar se o utilizador existe
-      $comando = "SELECT * FROM users WHERE Username = '$user' or Email = '$user'";
+      $comando = "SELECT * FROM users WHERE Email = '$email'";
       $query = mysqli_query($sql, $comando);
       $num_rows = mysqli_num_rows($query);
 
@@ -21,7 +21,7 @@
                   $_SESSION['Username'] = $dados['Username'];
                   $_SESSION['Email'] = $dados['Email'];
 
-                  header("Location: ../../html/home.php");
+                  header("Location: ../index.html");
                   exit();
             } 
 
