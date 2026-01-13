@@ -1,6 +1,6 @@
 body {
     font-family: "Oxygen", sans-serif;
-    background-color: #000000;
+    background-color: rgb(20, 20, 20);
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -19,10 +19,10 @@ body {
 }
 
 .fundo {
-    background: linear-gradient(180deg,rgba(29, 29, 29) 80%, rgba(153, 95, 110, 1) 100%);
+    background: linear-gradient(180deg,rgb(20, 20, 20) 80%, rgba(153, 95, 110, 1) 100%);
     padding: 20px;
     width: auto;
-    height: 200px;
+    height: 220px;
 }
 
 .bar {
@@ -59,9 +59,15 @@ body {
 
 .noti {
     background-color: #504d68;
+    background-image: url("../imgs/Texture.png");
+    background-size: cover;
+    background-blend-mode: multiply;
     margin: 0px 0px 20px 0px;
     padding: 20px;
-    min-height: 400px;
+    height: 250px;
+    width: 92%;
+    align-self: center;
+    z-index: 1;
 }
 
 .img_noti {
@@ -69,6 +75,7 @@ body {
     float: left;
     padding-left: 100px;
     margin-right: 40px;
+    z-index: 1;
 }
 
 .texto_noti {
@@ -77,10 +84,16 @@ body {
 
 .intro {
     background-color: #b486a0;
+    background-image: url("../imgs/Texture.png");
+    background-size: cover;
+    background-blend-mode: multiply;
     font-size: 1.2rem;
     color: #ffffff;
-    margin-bottom: 20px;
-    min-height: 300px;
+    height: 250px;
+    width: 46%;
+    align-self: center;
+    float: right;
+    margin-right: 35px;
 }
 
 h1 {
@@ -96,10 +109,17 @@ p {
 
 .pesso {
     background-color: #a6b0e1;
+    background-image: url("../imgs/Texture.png");
+    background-size: cover;
+    background-blend-mode: multiply;
     font-size: 1.2rem;
     color: #ffffff;
     margin-bottom: 20px;
-    min-height: 300px;
+    height: 250px;
+    width: 46%;
+    align-self: center;
+    float: left;
+    margin-left: 35px;
 }
 
 footer {
