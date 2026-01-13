@@ -36,7 +36,7 @@
 
       else 
       {
-            header("Location: ../../html/utilizador/falha.html");
+            header("Location: login.html");
       }
 
       mysqli_close($sql);

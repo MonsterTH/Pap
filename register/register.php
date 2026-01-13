@@ -8,7 +8,7 @@
       $rep_pass = $_POST['pass_rep'];
 
       //Tratamento do resto
-      if($pass != $rep_pass)
+      /*if($pass != $rep_pass)
       {
             echo(
                   "<script>
@@ -17,7 +17,7 @@
                   </script>"
             );
             exit();
-      }
+      }*/
 
 
       $pass_hashed = password_hash($pass, PASSWORD_BCRYPT); 
@@ -40,7 +40,6 @@
                   "<script>
                         alert('Utilizador registado com sucesso!');
                         window.location.href = '../login/login.html';
-                        
                   </script>"
             );
             exit();
@@ -51,7 +50,6 @@
                   "<script>
                         alert('Email já registrado. Escolha outro.'); 
                         window.history.back();
-                        
                   </script>"
             );
       }
