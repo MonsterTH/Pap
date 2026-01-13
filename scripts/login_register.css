@@ -1,7 +1,20 @@
 body
 {
-    background-image: url("Img/BgImage.png");
+    background-image: url("../imgs/BgImage.png");
     background-size:cover;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .loginInput, textarea
@@ -17,7 +30,7 @@ body
 	border-bottom: 4px solid #b486a0;
 	background: rgba(#995f6e, .2);
 	border-radius: .2em .2em 0 0;
-	padding: .4em;
+	padding: 0.4em;
 	color: #ffffff;
     background-color: rgba(71, 44, 66, 0.438);
     font-family: 'Oxygen';
