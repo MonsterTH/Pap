@@ -21,14 +21,14 @@
                   $_SESSION['Username'] = $dados['Username'];
                   $_SESSION['Email'] = $dados['Email'];
 
-                  header("Location: ../index.html");
+                  header("Location: ../home.php");
                   exit();
             } 
 
             else 
             {
                   echo("<script>
-                        alert('As senhas não coincidem.');
+                        alert('Senha errada!');
                         window.history.back();
                   </script>");
             }
