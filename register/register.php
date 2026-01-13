@@ -55,12 +55,6 @@
                   </script>"
             );
       }
-
+   
       mysqli_close($sql);
-?>
-
-
-
-
-
 ?>
