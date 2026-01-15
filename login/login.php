@@ -20,6 +20,7 @@
             {
                   $_SESSION['Username'] = $dados['Username'];
                   $_SESSION['Email'] = $dados['Email'];
+                  $_SESSION['Password'] = $dados['Password'];
 
                   header("Location: ../home.php");
                   exit();

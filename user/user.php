@@ -46,7 +46,7 @@
                 </div>
 
                 <div>
-                    <input class="loginInput" type="password" id="pass_old" name="pass" maxlength="20" placeholder="Digite a sua password atual">
+                    <input class="loginInput" type="password" id="pass_old" name="pass_old" maxlength="20" placeholder="Digite a sua password atual">
                 </div>
 
                 <div>
@@ -59,10 +59,6 @@
 
                 <div>
                     <button type="submit" class="loginButton">Atualizar Perfil</button>
-                </div>
-
-                <div>
-                    <button type="button" class="loginButton" onclick="window.location='confirmacao.php'">Apagar Conta</button>
                 </div>
             </form>
         </fieldset>

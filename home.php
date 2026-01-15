@@ -35,17 +35,20 @@
             </ul>
       </nav>
 
-       <div class="noti">
+      <div class="noti">
+            <img class="img_noti" src="imgs/ns2.jpg">
+            <h1> Notícia em Destaque </h1>
+            <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti nobis pariatur magnam itaque aliquam neque at iusto tenetur commodi nostrum dolore fugiat quidem odio maxime, debitis praesentium consectetur vel velit. </p>
       </div>
 
       <div>
+            <div class="pesso">
 
-      <div class="pesso">
-      </div>
+            </div>
 
-      <div class="intro">
-      </div>
+            <div class="intro">
 
+            </div>
       </div>
 
       <footer>

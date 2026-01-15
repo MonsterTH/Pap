@@ -66,14 +66,15 @@ body {
     background-blend-mode: multiply;
     margin: 0px 0px 20px 0px;
     padding: 20px;
-    height: 250px;
+    height: 310px;
     width: 92%;
     align-self: center;
     z-index: 1;
 }
 
 .img_noti {
-    width: 30%;
+    width: 20%;
+    height: auto;
     float: left;
     padding-left: 100px;
     margin-right: 40px;
@@ -95,7 +96,7 @@ body {
     width: 46%;
     align-self: center;
     float: right;
-    margin-right: 35px;
+    margin-right: 34px;
 }
 
 h1 {
@@ -121,7 +122,7 @@ p {
     width: 46%;
     align-self: center;
     float: left;
-    margin-left: 35px;
+    margin-left: 34px;
 }
 
 footer {
