@@ -36,6 +36,14 @@
       </nav>
 
       <div class="noti">
+            <img class="img_noti" src="imgs/ns2.jpg">
+            <h1> Notícia em Destaque </h1>
+            <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti nobis pariatur magnam itaque aliquam neque at iusto tenetur commodi nostrum dolore fugiat quidem odio maxime, debitis praesentium consectetur vel velit. </p>
+      </div>
+
+      <div>
+            <div class="pesso">
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur iure omnis excepturi exercitationem corrupti quisquam vel voluptatibus a quam vitae. Ea, atque aliquam! Tempora qui dolorem exercitationem nemo. Laborum, deserunt.</p>
             <div>
                   <img class="img_noti" src="imgs/ns4.jpg" >
             </div>
