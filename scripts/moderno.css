@@ -66,7 +66,7 @@ body {
     background-blend-mode: multiply;
     margin: 0px 0px 20px 0px;
     padding: 20px;
-    height: 310px;
+    height: auto;  /* Talvez mude */
     width: 92%;
     align-self: center;
     z-index: 1;
@@ -191,7 +191,6 @@ form {
 	border: none;
 	outline: none;
 	border-bottom: 4px solid #b486a0;
-	background: rgba(#995f6e, .2);
 	border-radius: .2em .2em 0 0;
 	padding: 0.4em;
 	color: #ffffff;
@@ -202,6 +201,11 @@ form {
 .loginInput::placeholder {
     font-family: "Oxygen", sans-serif;
     color: rgb(223, 200, 214);
+}
+
+.loginInput:hover, textarea:hover {
+    background-color: rgba(151, 118, 127, 0.438);
+    transition: 1.2s;
 }
 
 .loginButton
@@ -230,6 +234,11 @@ form {
     color: white;
     background-color: #b486a0; 
     transition: 1s;
+}
+
+button:hover
+{
+    cursor: pointer;
 }
 
 fieldset
