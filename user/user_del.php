@@ -3,40 +3,41 @@
       include("../scripts/logindb.php");
 
 
-      $username_form = $_POST["user"];
-      $password_form = $_POST["pass"];
+      $email = $_POST["email"];
+      $pass = $_POST["pass"];
 
-      $username_session = $_SESSION['Username'];
+      $pass_session = $_SESSION['Password'];
+      $email_session = $_SESSION['Email'];
 
 
-      if ($username_form !== $username_session) 
-            {
-      echo "
-            <script>
-                  alert('O username não corresponde ao da sessão!');
-                  window.history.back();
-            </script>";
+      if ($email !== $email_session) 
+      {
+            echo "
+                  <script>
+                        alert('O email não corresponde ao da sessão!');
+                        window.history.back();
+                  </script>";
             exit();
       }
 
 
-      $query = "SELECT Password FROM users WHERE Username = '$username_session'";
+      $query = "SELECT Password FROM users WHERE Email = '$email_session'";
       $result = mysqli_query($sql, $query);
       $user = mysqli_fetch_assoc($result);
 
 
-      if (!$user) 
+      if (!$email) 
       {
             echo "
                   <script>
-                        alert('Utilizador não encontrado.');
+                        alert('Email não encontrado.');
                         window.history.back();
                   </script>";
             exit();
       }
 
  
-      if (!password_verify($password_form, $user["Password"])) 
+      if (!password_verify($pass, $pass_session)) 
       {
             echo "
                         <script>
@@ -48,7 +49,7 @@
       }
 
 
-      $delete = "DELETE FROM users WHERE Username = '$username_session'";
+      $delete = "DELETE FROM users WHERE Email = '$email_session'";
       $result_delete = mysqli_query($sql, $delete);
 
       if ($result_delete)
@@ -59,7 +60,7 @@
             echo "
                   <script>
                         alert('Utilizador apagado com sucesso!');
-                        window.location.href = '../../html/utilizador/login.html';
+                        window.location.href = '../index.html';
                   </script>";
       }
       else
