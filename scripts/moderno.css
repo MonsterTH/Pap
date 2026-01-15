@@ -165,6 +165,7 @@ label {
 
 /* login_register*/
 main {
+    font-family: "Oxygen", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,6 +173,7 @@ main {
 }
 
 form {
+    font-family: "Oxygen", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -193,11 +195,11 @@ form {
 	padding: 0.4em;
 	color: #ffffff;
     background-color: rgba(71, 44, 66, 0.438);
-    font-family: 'Oxygen';
+    font-family: "Oxygen", sans-serif;
 }
 
 .loginInput::placeholder {
-    font-family: "Oxygen";
+    font-family: "Oxygen", sans-serif;
     color: rgb(223, 200, 214);
 }
 
@@ -209,7 +211,7 @@ form {
     height: 50px;
     border-radius: 10px;
     border-width: 0px;
-    font-family: 'Oxygen';
+    font-family: "Oxygen", sans-serif;
     color: white;
     background-color: #995f6e; 
     transition: 2s;
@@ -223,7 +225,7 @@ form {
     width: 400px;
     height: 50px;
     border-radius: 10px;
-    font-family: 'Oxygen';
+    font-family: "Oxygen", sans-serif;
     color: white;
     background-color: #b486a0; 
     transition: 1s;
@@ -244,26 +246,26 @@ h1
     align-self: center;
     align-items: center;
     align-content: center;
-    font-family: 'Oxygen';
+    font-family: "Oxygen", sans-serif;
     color: #b486a0;
 }
 
 h2
 {
     text-align: center;
-    font-family: 'Oxygen';
+    font-family: "Oxygen", sans-serif;
     color: #b486a0;
 }
 
 p
 {
-    font-family: 'Oxygen';
+    font-family: "Oxygen", sans-serif;
     color: white;
 }
 
 a
 {
-    font-family: 'Oxygen';
+    font-family: "Oxygen", sans-serif;
     color: #b486a0;
     text-decoration: none;
 }

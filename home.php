@@ -26,33 +26,26 @@
       
       <nav class="bar">
             <ul>
-                  <li><a href="#"><b>Início</b></a></li>
-                  <li><a href="#"><b>Personagens</b></a></li>
-                  <li><a href="#"><b>Notícias</b></a></li>
-                  <li><a href="#"><b>Votos</b></a></li>
-                  <li><a href="#"><b>Sobre</b></a></li>
+                  <li><a href="index.html"><b>Início</b></a></li>
+                  <li><a href="person.html"><b>Personagens</b></a></li>
+                  <li><a href="noticias.html"><b>Notícias</b></a></li>
+                  <li><a href="votos.html"><b>Votos</b></a></li>
+                  <li><a href="about.html"><b>Sobre</b></a></li>
                   <li><a href="user/user.php"><b>Bem-vindo, <?php echo $username; ?></b></a></li>
             </ul>
       </nav>
 
-      <div class="noti">
-            <div>
-                  <img class="img_noti" src="imgs/ns4.jpg" >
-            </div>
-            <div class="texto_noti">
-                  <center><h1>Notícias</h1></center>
-                  <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo labore, quasi autem, dolores consequuntur quisquam repellendus maxime totam eveniet praesentium dolorum. Ratione placeat quisquam molestias ea impedit a id minima? </p>
-            </div>
+       <div class="noti">
+      </div>
+
+      <div>
+
+      <div class="pesso">
       </div>
 
       <div class="intro">
-            <h1>Bem-vindo ao Identity Fraud</h1>
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum iure earum exercitationem expedita delectus ipsa velit praesentium esse aperiam molestiae explicabo modi incidunt, eaque porro voluptatibus maiores libero fugit illo. </p>
       </div>
 
-      <div class="pesso">
-            <h1>Personagens</h1>
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum iure earum exercitationem expedita delectus ipsa velit praesentium esse aperiam molestiae explicabo modi incidunt, eaque porro voluptatibus maiores libero fugit illo. </p>
       </div>
 
       <footer>
