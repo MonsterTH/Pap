@@ -125,7 +125,7 @@ p {
 }
 
 footer {
-    background-color: #b486a0;
+    background-color: #995f6ec5;
     text-align: center;
     padding: 10px;
     margin-top: auto;
@@ -266,4 +266,71 @@ a
     font-family: 'Oxygen';
     color: #b486a0;
     text-decoration: none;
+}
+
+.about {
+    background-color: #504d68;
+    background-image: url("../imgs/Texture.png");
+    background-size: cover;
+    background-blend-mode: multiply;
+    height: 350px;
+    width: 650px;
+    align-self: center;
+    float: left;
+    box-shadow: 0px 0px 50px #504d68;
+}
+
+.aboutimg
+{
+    align-self: center;
+    float: left;
+    margin-left: 200px;
+    margin-bottom:50px;
+    height: 350px;
+    width: 300px;
+    box-shadow: 0px 0px 50px #504d68;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.footer-links
+{
+    float: left;
+    padding: 2px;
+    width: 33%;
+}
+
+.footer-links p
+{
+    font-family: 'Oxygen';
+    color: #ffffff;
+    
+    text-decoration:solid
+}
+
+.footer-links a
+{
+    font-family: 'Oxygen';
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 75px; 
+}
+
+.footer-links img
+{
+    width: 35px;
+    height: 35px;
+}
+
+footer hr
+{
+    width: 75%;
+    color: #ff0000;
+    border: 1px solid #b486a0;
+}
+
+footer img
+{
+    width: 35px;
+    height: 35px;
 }
