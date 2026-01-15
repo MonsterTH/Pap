@@ -43,7 +43,7 @@
 
       <div>
             <div class="pesso">
-
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur iure omnis excepturi exercitationem corrupti quisquam vel voluptatibus a quam vitae. Ea, atque aliquam! Tempora qui dolorem exercitationem nemo. Laborum, deserunt.</p>
             </div>
 
             <div class="intro">
