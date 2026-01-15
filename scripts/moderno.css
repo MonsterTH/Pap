@@ -208,6 +208,10 @@ form {
     transition: 1.2s;
 }
 
+.loginInput:focus, textarea:focus {
+    border-bottom: 4px solid #af0063;
+}
+
 .loginButton
 {
     padding: 5px;
