@@ -40,7 +40,6 @@
             <h2>Bem-vindo, <?php echo $username; ?></h2>  
 
             <form action="user_update.php" method="POST">
-
                 <div>
                     <input class="loginInput" type="text" id="user" name="user" maxlength="30" value="<?php echo $username ?>">
                 </div>
