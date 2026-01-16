@@ -337,3 +337,39 @@ footer img
     width: 35px;
     height: 35px;
 }
+
+hr
+{
+    width: 15%;
+    color: #ff0000;
+    border: 1px solid #b486a0;
+}
+
+.DelButton
+{
+    padding: 5px;
+    margin: 5px;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border-width: 0px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    background-color: #ff0044; 
+    transition: 2s;
+    font-size: 15px;
+}
+
+.DelButton:hover
+{
+    cursor: pointer; 
+    padding: 5px;
+    margin: 5px;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    background-color: #ff0000; 
+    transition: 1s;
+}

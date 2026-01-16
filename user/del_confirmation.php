@@ -36,34 +36,24 @@
     </nav>
             
     <main>
-        <fieldset>
-            <h2>Bem-vindo, <?php echo $username; ?></h2>  
+        <fieldset style="box-shadow: 0px 0px 50px #ff004446; background-color: #ff00441e;">
+            <h2>Adeus... <?php echo $username; ?></h2>  
 
-            <form action="user_update.php" method="POST">
+            <form action="user_del.php" method="POST">
 
                 <div>
-                    <input class="loginInput" type="text" id="user" name="user" maxlength="30" value="<?php echo $username ?>">
+                    <input class="loginInput" type="email" id="email" name="email" maxlength="20" placeholder="Confirme o seu Email">
                 </div>
 
                 <div>
-                    <input class="loginInput" type="password" id="pass_old" name="pass_old" maxlength="20" placeholder="Digite a sua password atual">
-                </div>
+                    <input class="loginInput" type="password" id="pass" name="pass" maxlength="20" placeholder="Confirme a sua password">
+                </div>  
 
                 <div>
-                    <input class="loginInput" type="password" id="pass_new" name="pass_new" maxlength="20" placeholder="Digite uma nova password">
-                </div>
-
-                <div>
-                    <input class="loginInput" type="password" id="pass_rep" name="pass_rep" maxlength="20" placeholder="Confirme a sua password">
-                </div>
-
-                <div>
-                    <button type="submit" class="loginButton">Atualizar Perfil</button>
+                    <button type="submit" class="DelButton">Apagar Perfil</button>
                 </div>
 
             </form>
-            <hr>
-            <a href="del_confirmation.php"><button type="" style="margin-left: 62px" class="DelButton">Apagar Perfil</button></a>
         </fieldset>
     </main>
 

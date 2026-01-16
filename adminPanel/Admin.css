@@ -1,0 +1,52 @@
+body
+{
+   background-color: #0f0f0f; 
+}
+
+
+.navbar
+{
+    width: 200px;
+    height: 100%;
+    background-color: #252525;
+    box-shadow: 0px 0px 50px #141414;
+}
+
+.navbar img
+{
+    margin-top: 5px;
+    margin-left: 10px;
+    height: 50px;
+}
+
+.navbar a
+{
+    font-family: "Oxygen", sans-serif;
+    color: #b486a0;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 1s;
+}
+
+.navbar a:hover
+{
+    font-family: "Oxygen", sans-serif;
+    color: #eb99c6;
+    text-decoration: none;
+    margin-left: 13px;
+}
+
+.navbar h3
+{
+    justify-self: center;
+    font-family: "Oxygen", sans-serif;
+    color: #b486a0;
+    text-decoration: none;
+}
+
+.navbar hr
+{
+    width: 75%;
+    color: #ff0000;
+    border: 1px solid #b486a0;
+}
