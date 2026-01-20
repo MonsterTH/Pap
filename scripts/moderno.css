@@ -17,19 +17,28 @@ body {
 }
 
 .img_logo {
-    width: 50%;
+    margin-top: -25px;
+    height: 150px;
+    width: 40%;
 }
 
 .fundo {
-    background: linear-gradient(180deg,rgb(20, 20, 20) 80%, rgba(153, 95, 110, 1) 100%);
+    background-color: #4b4b4b;
+    background-image: url("../imgs/BgImage.png");
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-blend-mode: multiply;
     padding: 20px;
     width: auto;
-    height: 220px;
+    height: 150px;
 }
 
 .bar {
     margin-bottom: 20px;
-    background-color: #995f6e;
+    background-color: #161616;
+    box-shadow: 0px -10px 20px #504d68;
+    border-bottom: 4px solid #504d68;
 }
 
 .bar ul {
@@ -45,28 +54,40 @@ body {
     font-size: 1.1rem;
     margin: -10px 10px -10px 10px;
     padding: 20px;
-    background-color: #995f6e;
+    background-color: #16161600;
     transition: 0.3s; 
 }
 
 .bar a {
     text-decoration: none;
-    color: #d9a3b1;
+    color: #605c7c;
+    transition: 0.3s;
 }
 
 .bar ul li:hover{
-    background-color: #72475285;
-    color: #000000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 50px #504d68;
+    background-color: #504d688e;
+    color: #ffffff;
 }
 
+.bar a:hover {
+    text-decoration: none;
+    color: #8680ac;
+}
+
+
 .noti {
-    background-color: #504d68;
+    background-color: #201f20;
     background-image: url("../imgs/Texture.png");
     background-size: cover;
     background-blend-mode: multiply;
+    border: 4px solid #504d6836;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px #504d68;
     margin: 0px 0px 20px 0px;
     padding: 20px;
-    height: auto;  /* Talvez mude */
+    height: 275px;  /* Talvez mude */
     width: 92%;
     align-self: center;
     z-index: 1;
@@ -75,23 +96,59 @@ body {
 .img_noti {
     width: 20%;
     height: auto;
-    float: left;
+    float: right;
     padding-left: 100px;
     margin-right: 40px;
     z-index: 1;
 }
 
+.noti button
+{
+    padding: 5px;
+    margin: 5px;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid #be79b3;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    background-color: #ffffff00; 
+    transition: 2s;
+    font-size: 15px;
+    margin-left: 200px;
+}
+
+.noti h1
+{
+    color: #be79b3;
+}
+
+.noti p
+{
+    margin-top: -15px;
+    color: #caa7c4;
+}
+
+.noti button:hover
+{
+    border: 2px solid #ca93c1;
+    box-shadow: 0px 0px 30px #d696cb;
+
+}
+
 .texto_noti {
-    color: #d9a3b1;
+    color: #807ba5;
 }
 
 .intro {
-    background-color: #b486a0;
+    background-color: #201f20;
     background-image: url("../imgs/Texture.png");
     background-size: cover;
     background-blend-mode: multiply;
-    font-size: 1.2rem;
-    color: #ffffff;
+    border: 4px solid #504d6836;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px #504d68;
+    margin: 0px 0px 20px 0px;
     height: 250px;
     width: 46%;
     align-self: center;
@@ -111,12 +168,14 @@ p {
 }
 
 .pesso {
-    background-color: #a6b0e1;
+    background-color: #201f20;
     background-image: url("../imgs/Texture.png");
     background-size: cover;
     background-blend-mode: multiply;
-    font-size: 1.2rem;
-    color: #ffffff;
+    border: 4px solid #504d6836;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px #504d68;
+    margin: 0px 0px 20px 0px;
     margin-bottom: 20px;
     height: 250px;
     width: 46%;
@@ -126,7 +185,7 @@ p {
 }
 
 footer {
-    background-color: #995f6ec5;
+    background-color: #504d68b7;
     text-align: center;
     padding: 10px;
     margin-top: auto;
@@ -262,20 +321,20 @@ h1
     align-items: center;
     align-content: center;
     font-family: "Oxygen", sans-serif;
-    color: #b486a0;
+    color: #ffffff;
 }
 
 h2
 {
     text-align: center;
     font-family: "Oxygen", sans-serif;
-    color: #b486a0;
+    color: #b8b2e2;
 }
 
 p
 {
     font-family: "Oxygen", sans-serif;
-    color: white;
+    color: b8b2e2;
 }
 
 a
@@ -343,7 +402,7 @@ footer hr
 {
     width: 75%;
     color: #ff0000;
-    border: 1px solid #b486a0;
+    border: 1px solid #adaabd;
 }
 
 footer img

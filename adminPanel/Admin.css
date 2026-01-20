@@ -6,16 +6,17 @@ body
 
 .navbar
 {
-    width: 200px;
+    width: 15%;
     height: 100%;
     background-color: #252525;
     box-shadow: 0px 0px 50px #141414;
+    float: left;
 }
 
 .navbar img
 {
     margin-top: 5px;
-    margin-left: 10px;
+    margin-left: 22px;
     height: 50px;
 }
 
@@ -49,4 +50,44 @@ body
     width: 75%;
     color: #ff0000;
     border: 1px solid #b486a0;
+}
+
+.admininfo
+{
+    background-color: #252525;
+    border-radius: 10px;
+    width: 84%;
+    height: 100%;
+    float: right;
+}
+
+.admininfo details
+{
+    margin-top: 10px;
+    margin-left: 15px;
+    color: #b486a0;
+    font-size: 30px;
+    font-family: "Oxygen", sans-serif;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    width: 84%;
+    height: 40px;
+}
+
+.detailBox
+{
+    background-color: #1b1b1b;
+    border-radius: 10px;
+    margin-top: -5px;
+    width: 100%;
+    height: 500px;
+    float: right;
+}
+
+.admininfo p
+{
+    font-family: "Oxygen", sans-serif;
+    color: #b486a0;
+    text-decoration: none;
+    margin-left: 10px;
 }

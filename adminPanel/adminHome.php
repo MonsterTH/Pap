@@ -10,26 +10,27 @@
 <div class="navbar">
     <img src="../imgs/LogoTipo.png">
     <hr>
-    <h3>Faggot</h3>
+    <h3>Jogadores</h3>
     <hr style="width:50%">
-    <a href="#">- Gay</a><br>
-    <a href="#">- Gay</a><br>
-    <a href="#">- Gay</a><br>
-    <a href="#">- Gay</a>
+    <a href="Players/PlayersPanel.php">- Gerenciar</a><br>
+    <a href="Players/PlayersPanel.php">- Adicionar</a><br>
+    <a href="Players/PlayersPanel.php">- Remover</a><br>
+    <a href="Players/PlayersPanel.php">- Consulta</a>
     <hr>
-    <h3>Faggot</h3>
+    <h3>Eventos</h3>
     <hr style="width:50%">
-    <a href="#">- Gay</a><br>
-    <a href="#">- Gay</a><br>
-    <a href="#">- Gay</a><br>
-    <a href="#">- Gay</a>
+    <a href="#">- Votaçoes</a><br>
+    <a href="#">- Atividades</a><br>
+    <a href="#">- Bounty's</a><br>
+    <a href="#">- Seasons</a>
     <hr>
-    <h3>Faggot</h3>
+    <h3>Misc</h3>
     <hr style="width:50%">
-    <a href="#">- Gay</a><br>
-    <a href="#">- Gay</a><br>
-    <a href="#">- Gay</a><br>
-    <a href="#">- Gay</a>
+    <a href="#">- Historico de Seasons</a><br>
+    <a href="#">- Noticias</a><br>
+    <a href="#">- Create Admin Account</a><br>
+    <a href="#">- Go To Main Page</a>
+    <hr>
 </div>
 
 </html>
