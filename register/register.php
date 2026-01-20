@@ -38,7 +38,6 @@
 
             echo(
                   "<script>
-                        alert('Utilizador registado com sucesso!');
                         window.location.href = '../login/login.html';
                   </script>"
             );
