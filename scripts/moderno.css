@@ -378,7 +378,7 @@ a
 
 .footer-links p
 {
-    font-family: 'Oxygen';
+    font-family: 'Oxygen', sans-serif;
     color: #ffffff;
     
     text-decoration:solid
@@ -386,7 +386,7 @@ a
 
 .footer-links a
 {
-    font-family: 'Oxygen';
+    font-family: 'Oxygen', sans-serif;
     color: #ffffff;
     text-decoration: none;
     margin-left: 75px; 

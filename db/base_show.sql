@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 15-Jan-2026 às 10:58
+-- Tempo de geração: 16-Jan-2026 às 09:18
 -- Versão do servidor: 8.0.44
 -- versão do PHP: 8.2.29
 
@@ -69,7 +69,7 @@ CREATE TABLE `bounty` (
 
 CREATE TABLE `eviction` (
   `id_player` int NOT NULL,
-  `votes` int NOT NULL
+  `Email_user` varchar(120) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -128,7 +128,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`Email`, `Username`, `Password`) VALUES
 ('qingyunyang8888@gmail.com', 'Francisco', '$2y$10$x0mnBYG0EI2735ufoREAd.odY1PW.UZ.VXq28BsN1dcOx2q9zTnwG'),
-('qingyunyang@gmail.com', 'Francisco', '$2y$10$bwiak7ZG9BYkppp2DoRoD.5ObqhoL935sJa2Nvcp0oYE5qnA/LpKO');
+('qingyunyang@gmail.com', 'Yang', '$2y$10$IES//Sj6szD6wYKmpX1r.e1QKmWq53kZudJ6WTzBrliwTVIERQb3e');
 
 --
 -- Índices para tabelas despejadas
@@ -159,7 +159,8 @@ ALTER TABLE `bounty`
 -- Índices para tabela `eviction`
 --
 ALTER TABLE `eviction`
-  ADD KEY `id_player` (`id_player`);
+  ADD KEY `id_player` (`id_player`),
+  ADD KEY `Email_user` (`Email_user`);
 
 --
 -- Índices para tabela `player-seasons`
@@ -236,7 +237,8 @@ ALTER TABLE `bounty`
 -- Limitadores para a tabela `eviction`
 --
 ALTER TABLE `eviction`
-  ADD CONSTRAINT `eviction_ibfk_1` FOREIGN KEY (`id_player`) REFERENCES `players` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `eviction_ibfk_1` FOREIGN KEY (`id_player`) REFERENCES `players` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `eviction_ibfk_2` FOREIGN KEY (`Email_user`) REFERENCES `users` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `player-seasons`
