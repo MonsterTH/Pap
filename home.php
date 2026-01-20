@@ -26,7 +26,7 @@
       
       <nav class="bar">
             <ul>
-                  <li><a href="index.html"><b>Início</b></a></li>
+                  <li><a href="home.php"><b>Início</b></a></li>
                   <li><a href="person.html"><b>Jogadores</b></a></li>
                   <li><a href="noticias.html"><b>Notícias</b></a></li>
                   <li><a href="votos.html"><b>Votos</b></a></li>
@@ -38,19 +38,23 @@
       <div class="noti">
             <img class="img_noti" src="imgs/ns2.jpg">
             <div style="margin-top: -5px">
-                  <h1> Oque é o Identity Fraud </h1>
-                  <p> Identity Fraud Torna Todos Competidores em investigadores, 16 Pessoas, todas com identidades falsas competem para descobrir a identidade dos outros enquanto protegem a sua. <br>Ajuda o teu Investigador Favorito a vencer ao votar na competição enquanto juntas-te a investigação.<br> 
+                  <h1> Oque é o Identity Fraud? </h1>
+                  <p> Identity Fraud torna todos os competidores em investigadores, 16 Pessoas, todas com identidades falsas competem para descobrir a identidade dos outros enquanto protegem a sua. <br>Ajuda o teu investigador favorito a vencer ao votar na competição enquanto juntas-te a investigação.<br> 
                   <a href="#"><button>Descubrir Mais ></button></a> </p>
             </div>
       </div>
 
       <div>
             <div class="pesso">
-      
+                  <h1> Competidores </h1>
+                  <p> Conhece os competidores da nova temporada de Identity Fraud! </p>
+                  <center><i style="color: grey">(carrosel de imagens aqui)</i></center>
             </div>
 
             <div class="intro">
-                  
+                  <h1> Notícias </h1>
+                  <p> Fica a par das últimas notícias sobre o Identity Fraud! </p>
+                  <center><i style="color: grey">(carrosel de notícias aqui)</i></center>
             </div>
       </div>
 

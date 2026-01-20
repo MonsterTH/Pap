@@ -1,24 +1,44 @@
 // Validação de Senhas no Registo
-function erro_pass(event) 
+function erro_register(event) 
 {
-      var erro = document.getElementById("erro");
-      var pass = document.getElementById("pass").value.trim();
-      var pass_rep = document.getElementById("pass_rep").value.trim();
+    event.preventDefault(); // Previne o envio padrão do formulário
 
-      if (pass !== pass_rep) 
-      {
-            erro.textContent = "As senhas não coincidem";
-            erro.style.color = "red";
+    var erro = document.getElementById("erro");
+    var nome = document.getElementById("nome").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var pass = document.getElementById("pass").value.trim();
+    var pass_rep = document.getElementById("pass_rep").value.trim();
 
-            // Impede o envio do formulário
-            event.preventDefault();
-            return false;
-      } 
-      else 
-      {
-            erro.textContent = "";
-            return true;
-      }
+    if (pass !== pass_rep) 
+    {
+        erro.textContent = "As senhas não coincidem";
+        erro.style.color = "red";
+        return;
+    } 
+
+    const form = document.getElementById("registo");
+    const formdata = new FormData(form);
+
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "register.php", true);
+
+    xmlhttp.onload = function () 
+    {
+        if (xmlhttp.status === 200) 
+        {
+            if (xmlhttp.responseText.trim() === "ok") 
+            {
+                window.location.href = "../login/login.html";
+            } 
+            else 
+            {
+                erro.textContent = xmlhttp.responseText;
+                erro.style.color = "red";
+            }
+        }
+    };
+
+    xmlhttp.send(formdata);
 }
 
 function confirmar() 
