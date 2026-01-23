@@ -69,3 +69,35 @@ function erro_login(event)
 
     xmlhttp.send(formdata);
 }
+
+// Validação user
+function del_user(event)
+{
+    event.preventDefault(); // Previne o envio padrão do formulário
+
+    var erro = document.getElementById("erro");
+
+    const form = document.getElementById("delete");
+    const formdata = new FormData(form);
+
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "user_del.php", true); 
+    xmlhttp.onload = function ()
+    {
+        if (xmlhttp.status === 200)
+        {
+            if (xmlhttp.responseText.trim() === "ok")
+            {
+                window.location.href = "../index.html";
+            }
+            
+            else
+            {
+                erro.textContent = xmlhttp.responseText;
+                erro.style.color = "red";
+            }
+        }
+    };
+
+    xmlhttp.send(formdata);
+}

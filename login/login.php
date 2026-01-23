@@ -29,12 +29,14 @@
             else 
             {
                   echo("Senha errada. Tente novamente.");
+                  exit();
             }
       }
 
       else 
       {
             echo("Utilizador não encontrado. Verifique o email.");
+            exit();
       }
 
       mysqli_close($sql);

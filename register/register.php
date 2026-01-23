@@ -35,6 +35,7 @@
       else
       {
             echo $msg = "Já existe um utilizador com este email.";
+            exit();
       }
    
       mysqli_close($sql);

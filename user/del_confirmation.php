@@ -1,7 +1,8 @@
 <html>
 <head>
       <title>Perfil do Utilizador</title>
-      <meta charset="UTF-8">
+      <meta charset="UTF-8">    
+      <script src="../scripts/functions.js"></script>
       <link rel="stylesheet" type="text/css" href="../scripts/moderno.css">
       <?php
             session_start();
@@ -11,7 +12,6 @@
                   exit();
             }
       ?>    
-      <script src="../../scripts/js/functions.js"></script>
 </head>
 <body>
     <?php
@@ -39,21 +39,23 @@
         <fieldset style="box-shadow: 0px 0px 50px #ff004446; background-color: #ff00441e;">
             <h2>Adeus... <?php echo $username; ?></h2>  
 
-            <form action="user_del.php" method="POST">
+            <form method="POST" id="delete" onsubmit="del_user(event)">
 
                 <div>
-                    <input class="loginInput" type="email" id="email" name="email" maxlength="20" placeholder="Confirme o seu Email">
+                    <input class="loginInput" type="email" id="email" name="email" maxlength="120" placeholder="Confirme o seu Email">
                 </div>
 
                 <div>
                     <input class="loginInput" type="password" id="pass" name="pass" maxlength="20" placeholder="Confirme a sua password">
                 </div>  
 
+                <span id="erro"></span><br>
+
                 <div>
                     <button type="submit" class="DelButton">Apagar Perfil</button>
                 </div>
-
             </form>
+
         </fieldset>
     </main>
 
