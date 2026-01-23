@@ -256,6 +256,12 @@ table td
     height: 97%;
 }
 
+.admininfo h2
+{
+    font-family: "Oxygen", sans-serif;
+    color: #b486a0;
+}
+
 .actionbutton2
 {
     padding: 5px;

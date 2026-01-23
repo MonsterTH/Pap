@@ -27,7 +27,7 @@
       <nav class="bar">
             <ul>
                   <li><a href="home.php"><b>Início</b></a></li>
-                  <li><a href="person.html"><b>Jogadores</b></a></li>
+                  <li><a href="Players/players.php"><b>Jogadores</b></a></li>
                   <li><a href="noticias.html"><b>Notícias</b></a></li>
                   <li><a href="votos.html"><b>Votos</b></a></li>
                   <li><a href="about/about.php"><b>Sobre</b></a></li>

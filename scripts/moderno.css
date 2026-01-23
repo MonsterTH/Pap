@@ -84,7 +84,7 @@ body {
     background-blend-mode: multiply;
     border: 4px solid #693653;
     border-radius: 20px;
-    box-shadow: 0px 0px 30px #b85b8f;
+    box-shadow: 0px 0px 30px #b85b9093;
     margin: 0px 0px 20px 0px;
     padding: 20px;
     height: 275px;  /* Talvez mude */
@@ -147,7 +147,7 @@ body {
     background-blend-mode: multiply;
     border: 4px solid #7b6bbb;
     border-radius: 20px;
-    box-shadow: 0px 0px 30px #ddd7f9;
+    box-shadow: 0px 0px 30px #ddd7f977;
     margin: 0px 0px 20px 0px;
     margin-bottom: 20px;
     height: auto;
@@ -175,7 +175,7 @@ p {
     background-blend-mode: multiply;
     border: 4px solid #7b6bbb;
     border-radius: 20px;
-    box-shadow: 0px 0px 30px #ddd7f9;
+    box-shadow: 0px 0px 30px #ddd7f980;
     margin: 0px 0px 20px 0px;
     margin-bottom: 20px;
     height: auto;
@@ -460,5 +460,140 @@ hr
     font-family: "Oxygen", sans-serif;
     color: white;
     background-color: #ff0000; 
+    transition: 1s;
+}
+
+.navbar
+{
+    margin-left: 35px;
+    margin-bottom: 25px;
+    width: 175px;
+    height: 550px;
+    background-color: #995f6e;
+    box-shadow: 0px 0px 50px #5e3a44;
+    float: left;
+    text-align: center;
+}
+
+.navbar a
+{
+    font-family: "Oxygen", sans-serif;
+    color: #ffffff;
+    font-size: 19px;
+    text-decoration: none;
+    transition: 1s;
+    display: inline-block; 
+    width:100%; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis
+}
+
+.navbar a:hover
+{
+    font-family: "Oxygen", sans-serif;
+    color: #ffdaee;
+    text-decoration: none;
+    margin-left: 13px;
+}
+
+.navbar hr
+{
+    width: 75%;
+    margin-top: -1px;
+    color: #ff0000;
+    border: 1px solid #ffffff;
+}
+.playercard
+{
+    margin-left: 50px;
+    margin-bottom: 25px;
+    width: 1050px;
+    height: 550px;
+    background-color: #995f6e;
+    box-shadow: 0px 0px 50px #834556;
+    float: left;
+}
+
+.playercard p
+{
+    color: white;
+    font-size: 25px;
+}
+
+.playercard hr
+{
+    color: #ff0000;
+    border: 1px solid #ffffff;
+}
+
+.nameandage
+{
+    width: 594px;
+    height: 125px;
+    background-color: #4e2b3500;
+    float: left;
+    margin-left: 6px;
+}
+
+.nameandage p
+{
+    margin: -7px;
+    color: white;
+    float: left;
+    border-bottom: 4px solid #ffffff;
+    height: 25px;
+}
+
+.description
+{
+    width: 600px;
+    height: 300px;
+    background-color: #ff004800;
+    float: left;
+}
+
+.description p
+{
+    margin: -7px;
+    color: white;
+    float: left;
+    height: 25px;
+    font-size: 20px;
+}
+
+.buttonplace
+{
+    width: 600px;
+    height: 125px;
+    background-color: #ff0048;
+    float: left;
+}
+
+.actionbutton
+{
+    padding: 5px;
+    margin: 5px;
+    width: 600px;
+    height: 50px;
+    border-radius: 10px;
+    border-width: 0px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    background-color: #693653; 
+    transition: 2s;
+    font-size: 15px;
+}
+
+.actionbutton:hover
+{
+    padding: 5px;
+    margin: 5px;
+    width: 600px;
+    height: 50px;
+    border-radius: 10px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    background-color: #833762; 
     transition: 1s;
 }
