@@ -11,7 +11,7 @@
             session_start();
             if (!isset($_SESSION['Username'])) 
             {
-                  header('Location: loginInput.html');
+                  header('Location: ../index.html'); 
                   exit();
             }
 
@@ -28,7 +28,7 @@
                 $isadmin = true;
             }
       ?>    
-      <script src="../../scripts/js/functions.js"></script>
+      <script src="../scripts/functions.js"></script>
 </head>
 <body>
     <?php
@@ -56,7 +56,7 @@
         <fieldset>
             <h2>Bem-vindo, <?php echo $username; ?></h2>  
 
-            <form action="user_update.php" method="POST">
+            <form id="user_form" onsubmit="erro_user(event)" method="POST">
                 <div>
                     <input class="loginInput" type="text" id="user" name="user" maxlength="30" value="<?php echo $username ?>">
                 </div>
@@ -72,6 +72,8 @@
                 <div>
                     <input class="loginInput" type="password" id="pass_rep" name="pass_rep" maxlength="20" placeholder="Confirme a sua password">
                 </div>
+
+                <span id="erro"></span><br>
 
                 <div>
                     <button type="submit" class="loginButton">Atualizar Perfil</button>

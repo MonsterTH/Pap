@@ -14,11 +14,7 @@
 
       if ($pass_new !== $pass_rep) 
       {
-            echo "
-                  <script>
-                        alert('As passwords não coincidem.');
-                        window.history.back();
-                  </script>";
+            echo "As senhas novas não coincidem";
             exit();
       }
 
@@ -34,31 +30,20 @@
             if ($result) 
             {
                   $_SESSION['Username'] = $nome;
-                  echo "
-                        <script>
-                              alert('Perfil atualizado com sucesso!');
-                              window.location.href='../home.php';
-                        </script>";
+                  echo "ok";
+                  exit();
             } 
 
             else 
             {
-                  echo "
-                        <script>
-                              alert('Erro ao atualizar o perfil. Tente novamente.');
-                              window.history.back();
-                        </script>";
+                  echo "Erro ao atualizar o perfil. Tente novamente.";
                   exit();
             }
       }
 
       else
       {
-            echo "
-                  <script>
-                        alert('Password atual incorreta.');
-                        window.history.back();
-                  </script>";
+            echo "Password atual incorreta.";
             exit();
       }
 
