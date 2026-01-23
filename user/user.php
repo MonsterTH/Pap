@@ -4,11 +4,28 @@
       <meta charset="UTF-8">
       <link rel="stylesheet" type="text/css" href="../scripts/moderno.css">
       <?php
+
+      $isadmin = false;
+
+      include("../scripts/logindb.php");
             session_start();
             if (!isset($_SESSION['Username'])) 
             {
                   header('Location: loginInput.html');
                   exit();
+            }
+
+            // CheckIfAdmin
+
+        $email = htmlspecialchars($_SESSION['Email']);
+
+            $comando = "SELECT * FROM administrador WHERE Email = '$email'";
+            $query = mysqli_query($sql, $comando);
+            $num_rows = mysqli_num_rows($query);
+
+            if ($num_rows == 1) 
+            {
+                $isadmin = true;
             }
       ?>    
       <script src="../../scripts/js/functions.js"></script>
@@ -63,8 +80,15 @@
             </form>
             <hr>
             <a href="del_confirmation.php"><button type="" style="margin-left: 62px" class="DelButton">Apagar Perfil</button></a>
+           <hr> 
         </fieldset>
     </main>
+    
+   <?php if ($isadmin): ?>
+    <a href="../adminPanel/adminHome.php" style="margin-left:35%; margin-top:-75px; margin-bottom:15px">
+        <button class="loginButton">Painel De Gestao</button>
+    </a>
+<?php endif; ?>
 
     <footer>
          <div class="footer-links">

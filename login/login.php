@@ -6,7 +6,9 @@
       $pass = $_POST['pass'];
 
       // Verificar se o utilizador existe
-      $comando = "SELECT * FROM users WHERE Email = '$email'";
+      $comando = "SELECT * FROM users WHERE Email = '$email' 
+      UNION ALL
+      SELECT * FROM administrador WHERE Email = '$email'";
       $query = mysqli_query($sql, $comando);
       $num_rows = mysqli_num_rows($query);
 

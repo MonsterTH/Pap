@@ -1,5 +1,5 @@
 <?php
-      include("../scripts/logindb.php");
+      include("../../scripts/logindb.php");
 
 
       $nome = $_POST['nome'];
@@ -33,14 +33,14 @@
       //se não existir, insere na base de dados
       if ($num_rows == 0)
       {
-            $comando = "INSERT INTO users (Username, Email, Password)
+            $comando = "INSERT INTO administrador (Username, Email, Password)
                   VALUES ('$nome', '$email', '$pass_hashed')";
                   
             $query = mysqli_query($sql, $comando);
 
             echo(
                   "<script>
-                        window.location.href = '../login/login.html';
+                        window.history.back();
                   </script>"
             );
             exit();

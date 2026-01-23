@@ -20,6 +20,14 @@ body
     height: 50px;
 }
 
+.navbar p
+{
+    font-family: "Oxygen", sans-serif;
+    color: #b486a0;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
 .navbar a
 {
     font-family: "Oxygen", sans-serif;
@@ -59,6 +67,7 @@ body
     width: 84%;
     height: 100%;
     float: right;
+    box-shadow: 0px 0px 50px #141414;
 }
 
 .admininfo details
@@ -76,11 +85,11 @@ body
 
 .detailBox
 {
-    background-color: #1b1b1b;
+    background-color: #1b1b1b79;
     border-radius: 10px;
     margin-top: -5px;
-    width: 100%;
-    height: 500px;
+    width: 45%;
+    height: 275px;
     float: right;
 }
 
@@ -90,4 +99,176 @@ body
     color: #b486a0;
     text-decoration: none;
     margin-left: 10px;
+}
+
+.admininfo h1
+{
+    font-family: "Oxygen", sans-serif;
+    color: #b486a0;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.admininfo hr
+{
+    width: 90%;
+    color: #ff0000;
+    border: 1px solid #b486a0;
+}
+.actionbutton
+{
+    padding: 5px;
+    margin: 5px;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border-width: 0px;
+    margin-left: 100px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    background-color: #995f6e; 
+    font-size: 15px;
+    transition: 1s;
+    cursor: pointer;
+}
+.actionbutton:hover
+{
+    padding: 5px;
+    margin: 5px;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border-width: 0px;
+    margin-left: 100px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    background-color: #be6e84; 
+    font-size: 15px;
+}
+
+.inputtext
+{
+    padding: 5px;
+    margin: 5px;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: 4px solid #b486a0;
+	border-radius: .2em .2em 0 0;
+	padding: 0.4em;
+	color: #ffffff;
+    background-color: rgba(71, 44, 66, 0.438);
+    font-family: "Oxygen", sans-serif;
+}
+
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    padding: 5px;
+    margin: 5px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border-width: 0px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    background-color: rgba(71, 44, 66, 0.438);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.headtext
+{
+    margin-top: 10px;
+    margin-left: 15px;
+    color: #b486a0;
+    font-size: 30px;
+    font-family: "Oxygen", sans-serif;
+    background-color: #2b2b2b;
+    border-radius: 10px;
+    width: 84%;
+    height: 40px;
+}
+
+table{
+    font-family: "Oxygen", sans-serif;
+    background-color: #c797e70c;
+    width: 95%;
+    height: 300px;
+    justify-self: center;
+    border-radius: 5px;
+    justify-content: center;
+    justify-items: center;
+    color: #b486a0;
+}
+
+table td
+{
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+}
+
+.editarcontent
+{
+    width: 75px;
+    height: 25px;
+    border-radius: 10px;
+    border-width: 0px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    background-color: #995f6e; 
+    font-size: 15px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.apagarcontent
+{
+    width: 75px;
+    height: 25px;
+    border-radius: 10px;
+    border-width: 0px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    background-color: #6e4550; 
+    font-size: 15px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.admininfo fieldset
+{
+    font-family: "Oxygen", sans-serif;
+    display: flex;
+    border-width: 0px;
+    justify-content: center;
+    align-items: center;
+    height: 97%;
+}
+
+.actionbutton2
+{
+    padding: 5px;
+    margin: 5px;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border-width: 0px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    background-color: #995f6e; 
+    font-size: 15px;
+    transition: 1s;
+    cursor: pointer;
 }

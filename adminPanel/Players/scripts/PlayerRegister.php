@@ -1,11 +1,11 @@
 <?php
-      include("../scripts/logindb.php");
+      include("../../../scripts/logindb.php");
 
 
-      $nome = $_POST['nome'];
-      $email = $_POST['email'];
-      $pass = $_POST['pass'];    
-      $rep_pass = $_POST['pass_rep'];
+      $nome = $_POST['Name'];
+      $about = $_POST['About'];
+      $birthdate = $_POST['birthDate'];    
+      $facecard = $_POST['FaceCard'];
 
       //Tratamento do resto
       /*if($pass != $rep_pass)
@@ -23,24 +23,16 @@
       $pass_hashed = password_hash($pass, PASSWORD_BCRYPT); 
 
       
-      //verifica se já existe o utilizador
-      $comando = "SELECT * FROM users WHERE Email = '$email' 
-      UNION ALL
-      SELECT * FROM administrador WHERE Email = '$email'";
-      $query = mysqli_query($sql, $comando);
-      $num_rows = mysqli_num_rows($query);
-
-      //se não existir, insere na base de dados
       if ($num_rows == 0)
       {
-            $comando = "INSERT INTO users (Username, Email, Password)
-                  VALUES ('$nome', '$email', '$pass_hashed')";
+            $comando = "INSERT INTO players (Name, Birth_date, About, Photo)
+                  VALUES ('$nome', '$birthdate', '$about', 'Imagem.png')";
                   
             $query = mysqli_query($sql, $comando);
 
             echo(
                   "<script>
-                        window.location.href = '../login/login.html';
+                        window.history.back();
                   </script>"
             );
             exit();
@@ -49,7 +41,7 @@
       {
             echo(
                   "<script>
-                        alert('Email já registrado. Escolha outro.'); 
+                        alert('Erro'); 
                         window.history.back();
                   </script>"
             );
