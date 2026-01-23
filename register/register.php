@@ -7,18 +7,10 @@
       $pass = $_POST['pass'];    
       $rep_pass = $_POST['pass_rep'];
 
-      //Tratamento do resto
-      /*if($pass != $rep_pass)
-      {
-            echo(
-                  "<script>
-                        alert('As senhas não coincidem.');
-                        window.history.back();
-                  </script>"
-            );
+      if ($pass !== $rep_pass) {
+            echo "As senhas não coincidem";
             exit();
-      }*/
-
+      }
 
       $pass_hashed = password_hash($pass, PASSWORD_BCRYPT); 
 
@@ -38,21 +30,14 @@
                   
             $query = mysqli_query($sql, $comando);
 
-            echo(
-                  "<script>
-                        window.location.href = '../login/login.html';
-                  </script>"
-            );
+            echo "ok";
+
             exit();
       }
       else
       {
-            echo(
-                  "<script>
-                        alert('Email já registrado. Escolha outro.'); 
-                        window.history.back();
-                  </script>"
-            );
+            echo $msg = "Já existe um utilizador com este email.";
+            exit();
       }
    
       mysqli_close($sql);

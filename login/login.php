@@ -24,22 +24,21 @@
                   $_SESSION['Email'] = $dados['Email'];
                   $_SESSION['Password'] = $dados['Password'];
 
-                  header("Location: ../home.php");
+                  echo("ok");
                   exit();
             } 
 
             else 
             {
-                  echo("<script>
-                        alert('Senha errada!');
-                        window.history.back();
-                  </script>");
+                  echo("Senha errada. Tente novamente.");
+                  exit();
             }
       }
 
       else 
       {
-            header("Location: login.html");
+            echo("Utilizador não encontrado. Verifique o email.");
+            exit();
       }
 
       mysqli_close($sql);

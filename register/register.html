@@ -22,7 +22,7 @@
 <main>
     <div>
         <fieldset>
-            <form action="register.php" method="POST">
+            <form id="registo" onsubmit="erro_register(event)">
                 <h2>Registo</h2>  
 
                 <div>
@@ -44,7 +44,7 @@
                 <span id="erro"></span><br>
 
                 <div>
-                    <button class="loginButton" onclick="erro_pass(event)">Registar</button>
+                    <button type="submit" class="loginButton">Registar</button>
                 </div>
 
                 <p style="text-align:center; margin-top:15px;">
