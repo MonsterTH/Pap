@@ -187,6 +187,7 @@ p {
 }
 
 .pesso ul {
+    list-style-type: none; 
     width: 70%;
     height: auto;
     display: flex;
