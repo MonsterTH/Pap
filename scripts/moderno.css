@@ -365,7 +365,7 @@ a
     background-image: url("../imgs/Texture.png");
     background-size: cover;
     background-blend-mode: multiply;
-    height: 350px;
+    height: 450px;
     width: 650px;
     align-self: center;
     float: left;
@@ -378,7 +378,7 @@ a
     float: left;
     margin-left: 200px;
     margin-bottom:50px;
-    height: 350px;
+    height: 450px;
     width: 300px;
     box-shadow: 0px 0px 50px #504d68;
     border-bottom-left-radius: 10px;
@@ -465,12 +465,15 @@ hr
 
 .navbar
 {
+
     margin-left: 35px;
     margin-bottom: 25px;
     width: 175px;
     height: 550px;
-    background-color: #995f6e;
-    box-shadow: 0px 0px 50px #5e3a44;
+    background-color: #161616;
+    border-bottom: 4px solid #995f6e;
+    border-top: 4px solid #995f6e;
+    box-shadow: 0px 0px 50px #834556;
     float: left;
     text-align: center;
 }
@@ -483,7 +486,7 @@ hr
     text-decoration: none;
     transition: 1s;
     display: inline-block; 
-    width:100%; 
+    width:99%; 
     white-space: nowrap; 
     overflow: hidden; 
     text-overflow: ellipsis
@@ -492,9 +495,10 @@ hr
 .navbar a:hover
 {
     font-family: "Oxygen", sans-serif;
-    color: #ffdaee;
+    color: #995f6e;
+    background-color: #2e2528;
+    font-size: 20px;
     text-decoration: none;
-    margin-left: 13px;
 }
 
 .navbar hr
@@ -510,7 +514,9 @@ hr
     margin-bottom: 25px;
     width: 1050px;
     height: 550px;
-    background-color: #995f6e;
+    background-color: #161616;
+    border-bottom: 4px solid #995f6e;
+    border-top: 4px solid #995f6e;
     box-shadow: 0px 0px 50px #834556;
     float: left;
 }
@@ -541,7 +547,7 @@ hr
     margin: -7px;
     color: white;
     float: left;
-    border-bottom: 4px solid #ffffff;
+    border-bottom: 4px solid #995f6e;
     height: 25px;
 }
 
@@ -566,34 +572,92 @@ hr
 {
     width: 600px;
     height: 125px;
-    background-color: #ff0048;
+    background-color: #ff004800;
     float: left;
 }
 
 .actionbutton
 {
     padding: 5px;
-    margin: 5px;
-    width: 600px;
+    margin: 30px;
+    width: 500px;
     height: 50px;
     border-radius: 10px;
-    border-width: 0px;
+    border: 2px solid #be79b3;
+    box-shadow: 0px 0px 5px #3b2a38;
     font-family: "Oxygen", sans-serif;
     color: white;
-    background-color: #693653; 
+    background-color: #ffffff00; 
     transition: 2s;
-    font-size: 15px;
+    font-size: 20px;
+    margin-left: 50px;
+    transition: 1s;
 }
 
 .actionbutton:hover
 {
-    padding: 5px;
-    margin: 5px;
-    width: 600px;
-    height: 50px;
-    border-radius: 10px;
+    border: 2px solid #ca93c1;
+    box-shadow: 0px 0px 30px #d696cb;
+}
+
+.playervoting
+{
+    border-top: 4px solid #995f6e;
+    width: 250px;
+    height: 255px;
+    background-color: #161616;
+    margin-left: 70px;
+    margin-bottom: 125px;
+    float: left;
+    transition: 1s;
+}
+
+.playervoting button
+{
+    width: 250px;
+    height: 75px;
+    background-color: #995f6e;
+    margin-top: 255px;
+    float: left;
+    border: 0px;
+    transition: 1s;
+}
+
+.playervoting:hover
+{
+    border-top: 4px solid #d696cb;
+    width: 265px;
+    height: 275px;
+    box-shadow: 0px 0px 30px #926c8b;
+    margin-bottom: 105px;
+}
+
+.playervoting:hover button
+{
+    background-color: #d696cb;
+    margin-top: 275px;
+    width: 265px;
+}
+
+.playervoting:hover p
+{
+    margin-left: 70px;
+    color: #d696cb
+}
+
+
+.playervoting button h1
+{
     font-family: "Oxygen", sans-serif;
     color: white;
-    background-color: #833762; 
+    margin-top: -1px;
+}
+
+.playervoting p
+{
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    margin-top: -1px;
+    margin-left: -15px;
     transition: 1s;
 }

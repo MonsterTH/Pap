@@ -47,7 +47,7 @@
         <form action="scripts/PlayerRegister.php" method="POST" enctype="multipart/form-data" style="height: auto;">
       <h5>
         <p>
-          <input type="text" name="Name" class="inputtext" size="50" max="200" placeholder="Name" required> | <input type="date" name="birthDate" class="inputtext" style="width: 150px" required><br>
+          <input type="text" name="Name" class="inputtext" size="50" max="20" placeholder="Name" required> | <input type="date" name="birthDate" class="inputtext" style="width: 150px" required><br>
         </p>
         <p>
         <input type="text" name="About" size="50" class="inputtext" max="500" placeholder="About" required> |  <label for="file-upload" class="custom-file-upload"> <i class="fa fa-cloud-upload"></i> Add FaceCard</label><input id="file-upload" type="file" name="FaceCard"/>

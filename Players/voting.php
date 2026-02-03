@@ -1,6 +1,6 @@
 <html>
 <head>
-      <title>Participantes - Identity Fraud</title>
+      <title>Votaçao - Identity Fraud</title>
       <meta charset="UTF-8">
       <link rel="stylesheet" type="text/css" href="../scripts/moderno.css">
       <?php
@@ -45,40 +45,23 @@
                 <li><a href="../home.php"><b>Início</b></a></li>
                 <li><a href="#"><b>Personagens</b></a></li>
                 <li><a href="#"><b>Notícias</b></a></li>
-                <li><a href="voting.php"><b>Votos</b></a></li>
+                <li><a href="#"><b>Votos</b></a></li>
                 <li><a href="#"><b>Sobre</b></a></li>
                 <li><a href="user.php"><b>Bem-vindo, <?php echo $username; ?></b></a></li>
         </ul>
     </nav>
 
 <section>
-    <div class="navbar">
-    <?php
-    include("../scripts/logindb.php");
-    $Query="select * from players";
-            $List=mysqli_query($sql,$Query);
-            $NumReg=mysqli_num_rows($List);
-            echo'<br>';
-            For($i=0;$i<$NumReg;$i++) //Passar registo linha a linha
-            {
-            $Registo=mysqli_fetch_array($List);
-            echo'<a href="#">'.$Registo['Name'].'<br><hr></a>';}
-        ?>
-    </div>
-    <div class="playercard">
-        <div class="nameandage">
-            <p>Nome : Nomeaaaaaaaaa
-            <P>Data De Nascimento : AAAAAAAA
-        </div>
-        <div class="description">
-            <p>Num mundo que corre depressa, parar é um ato de coragem. Entre notificações, prazos e ruído constante, esquecemo-nos de ouvir o que sentimos. Às vezes, basta um minuto de silêncio, um olhar pela janela ou uma respiração funda para lembrar que estamos vivos. A vida não é só chegar, é também sentir o caminho, tropeçar, aprender e continuar, mesmo quando não temos todas as respostas.
-        </div>
-        <div class="buttonplace">
-            <button class="actionbutton">Votar No Participante
-        </div>
-</section>
-    
+    <div class="playervoting"><button><h1>Votar</h1></button><p>Joao Pedro</p></div>
+    <div class="playervoting"><button><h1>Votar</h1></button><p>Joao Pedro</p></div>
+    <div class="playervoting"><button><h1>Votar</h1></button><p>Joao Pedro</p></div>
+    <div class="playervoting"><button><h1>Votar</h1></button><p>Joao Pedro</p></div>
 
+</section>
+
+<hr>
+
+<button class="actionbutton" style="margin-left: 31%;">Ver Participantes</button>
 
     <footer>
          <div class="footer-links">
