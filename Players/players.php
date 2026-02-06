@@ -22,10 +22,10 @@
     </div>
 
     <nav class="bar">
-        <ul>
-                  <li><a href="../home.php"><b>Início</b></a></li>
+         <ul>
+                  <li><a href="home.php"><b>Início</b></a></li>
                   <li><a href="../Players/players.php"><b>Jogadores</b></a></li>
-                  <li><a href="../noticias.html"><b>Notícias</b></a></li>
+                  <li><a href="../news/newspage.php"><b>Notícias</b></a></li>
                   <li><a href="../Players/voting.php"><b>Votos</b></a></li>
                   <li><a href="../about/about.php"><b>Sobre</b></a></li>
                   <li><a href="../user/user.php"><b>Bem-vindo, <?php echo $username; ?></b></a></li>

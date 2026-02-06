@@ -2,10 +2,10 @@
       include("../../../scripts/logindb.php");
 
 
-      $nome = $_POST['Name'];
-      $about = $_POST['About'];
-      $birthdate = $_POST['birthDate'];    
-      $facecard = $_POST['FaceCard'];
+      $Title = $_POST['Title'];
+      $Description = $_POST['Description'];
+      $DateOfCreation = $_POST['DateOfCreation'];    
+      $Image = $_POST['Image'];
 
       //Tratamento do resto
       /*if($pass != $rep_pass)
@@ -26,7 +26,7 @@
       if ($num_rows == 0)
       {
             $comando = "INSERT INTO players (Name, Birth_date, About, Photo)
-                  VALUES ('$nome', '$birthdate', '$about', 'Imagem.png')";
+                  VALUES ('$Title', '$Description', '$DateOfCreation', 'Imagem.png')";
                   
             $query = mysqli_query($sql, $comando);
 
