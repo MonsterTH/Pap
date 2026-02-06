@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 06-Fev-2026 às 09:01
+-- Tempo de geração: 06-Fev-2026 às 15:39
 -- Versão do servidor: 8.0.44
 -- versão do PHP: 8.2.29
 
@@ -66,8 +66,8 @@ INSERT INTO `administrador` (`Email`, `Username`, `Password`) VALUES
 CREATE TABLE `bounty` (
   `Id` int NOT NULL,
   `Id_player` int NOT NULL,
-  `id_target` int NOT NULL,
-  `completed` tinyint(1) NOT NULL
+  `Id_target` int NOT NULL,
+  `Completed` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -77,8 +77,21 @@ CREATE TABLE `bounty` (
 --
 
 CREATE TABLE `eviction` (
-  `id_player` int NOT NULL,
+  `Id_player` int NOT NULL,
   `Email_user` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `news`
+--
+
+CREATE TABLE `news` (
+  `Id` int NOT NULL,
+  `Title` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `Description` text COLLATE utf8mb4_general_ci NOT NULL,
+  `Image` varchar(60) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -178,15 +191,21 @@ ALTER TABLE `administrador`
 --
 ALTER TABLE `bounty`
   ADD PRIMARY KEY (`Id`),
-  ADD KEY `Id_player` (`Id_player`,`id_target`),
-  ADD KEY `id_target` (`id_target`);
+  ADD KEY `Id_player` (`Id_player`,`Id_target`),
+  ADD KEY `id_target` (`Id_target`);
 
 --
 -- Índices para tabela `eviction`
 --
 ALTER TABLE `eviction`
-  ADD KEY `id_player` (`id_player`),
+  ADD KEY `id_player` (`Id_player`),
   ADD KEY `Email_user` (`Email_user`);
+
+--
+-- Índices para tabela `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Índices para tabela `player-seasons`
@@ -231,6 +250,12 @@ ALTER TABLE `bounty`
   MODIFY `Id` int NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `news`
+--
+ALTER TABLE `news`
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `players`
 --
 ALTER TABLE `players`
@@ -257,13 +282,13 @@ ALTER TABLE `activities`
 --
 ALTER TABLE `bounty`
   ADD CONSTRAINT `bounty_ibfk_1` FOREIGN KEY (`Id_player`) REFERENCES `players` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `bounty_ibfk_2` FOREIGN KEY (`id_target`) REFERENCES `players` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `bounty_ibfk_2` FOREIGN KEY (`Id_target`) REFERENCES `players` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `eviction`
 --
 ALTER TABLE `eviction`
-  ADD CONSTRAINT `eviction_ibfk_1` FOREIGN KEY (`id_player`) REFERENCES `players` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `eviction_ibfk_1` FOREIGN KEY (`Id_player`) REFERENCES `players` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `eviction_ibfk_2` FOREIGN KEY (`Email_user`) REFERENCES `users` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
