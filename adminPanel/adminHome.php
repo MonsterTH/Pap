@@ -27,7 +27,7 @@
     <hr>
     <h3>Eventos</h3>
     <hr style="width:50%">
-    <a href="#">- Votaçoes</a><br>
+    <a href="#">- Votações</a><br>
     <a href="#">- Atividades</a><br>
     <a href="#">- Bounty's</a><br>
     <a href="#">- Seasons</a>
