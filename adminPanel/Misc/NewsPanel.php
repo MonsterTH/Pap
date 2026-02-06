@@ -43,34 +43,19 @@
     <p>Bem-vindo, <?php echo $username; ?></p>
 </div>
     <div class="admininfo">
-        <fieldset>
-        <form action="AdminRegister.php" method="POST">
-                <h2>Registo</h2>  
-
-                <div>
-                    <input type="text" class="inputtext" id="nome" name="nome" maxlength="30" placeholder="Nome" required>
-                </div>
-
-                <div>
-                    <input type="email" class="inputtext" id="email" name="email" maxlength="30" placeholder="Email" required>
-                </div>
-
-                <div>
-                    <input type="password" class="inputtext" id="pass" name="pass" minlength="5" maxlength="20" placeholder="Palavra-passe" required>
-                </div>
-
-                <div>
-                    <input type="password" class="inputtext" id="pass_rep" name="pass_rep" minlength="5" maxlength="20" placeholder="Confirme Palavra-passe" required><br>
-                </div>
-
-                <span id="erro"></span><br>
-
-                <div>
-                    <button class="actionbutton2" onclick="erro_pass(event)">Registar</button>
-                </div>
-</form>
-            </fieldset>
-    </div>
+        <h1>Add New</h1>
+        <form action="scripts/NewsAppend.php" method="POST" enctype="multipart/form-data" style="height: auto;">
+      <h5>
+        <p>
+          <input type="text" name="Title" class="inputtext" size="50" max="20" placeholder="Title" required> | <input type="date" name="DateOfCreation" class="inputtext" style="width: 150px" required><br>
+        </p>
+        <p>
+        <input type="text" name="Description" size="50" class="inputtext" max="500" placeholder="Description" required> |  <label for="file-upload" class="custom-file-upload"> <i class="fa fa-cloud-upload"></i> Add Image</label><input id="file-upload" type="file" name="Image"/>
+        </p>
+       <input class="actionbutton" type="submit" value="Add">
+      </h5>
+    </form>
+    <hr>
 </div>
 </body>
 

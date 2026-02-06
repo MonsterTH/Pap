@@ -71,7 +71,7 @@ body {
     color: #ffffff;
 }
 
-.bar a:hover {
+.bar ul li:hover a{
     text-decoration: none;
     color: #8680ac;
 }
@@ -221,22 +221,23 @@ label {
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
+  height: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #995f6e80;
+  background: #16161600;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #686868;
+  background: #995f6e;
   border-radius: 20px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #929292;
+  background: #c57c8f;
   transition: 1s;
 }
 
@@ -654,11 +655,227 @@ hr
     margin-top: -1px;
 }
 
-.playervoting p
-{
+.playervoting p{
     font-family: "Oxygen", sans-serif;
     color: white;
     margin-top: -1px;
     margin-left: -15px;
     transition: 1s;
 }
+
+.newsh1{
+    color: #c77a8e;
+    font-size: 25px;
+     font-family: "Oxygen", sans-serif;
+    text-align: left;
+    margin-left: 45px;
+    transition: 1s;
+}
+
+.newsh1:hover{
+    color: #faa8be;
+    font-size: 25px;
+     font-family: "Oxygen", sans-serif;
+    text-align: left;
+    margin-left: 45px;
+}
+
+.newsrow{
+   overflow: auto;
+    white-space:nowrap;
+    width: 100%;
+    height: 190px;
+    overflow-y: hidden;
+}
+
+.newscard{
+    border-top: 4px solid #995f6e;
+    border-bottom: 4px solid #995f6e;
+    width: 375px;
+    height: 150px;
+    background-color: #161616;
+    margin-left: 70px;
+    margin-bottom: 15px;
+    transition: 1s;
+    display: inline-block;
+    vertical-align:top;
+    margin-right:20px;
+    white-space:normal;
+}
+
+.newscard img{
+    width: 175px;
+    height: 120px;
+    background-color: #ff65cc88;
+    border: 0px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    float: left;
+    transition: 1s;
+}
+
+.newscard .textslot {
+    width: 150px;
+    height: 120px;
+    background-color: #6d2b5700;
+    float: left;
+    margin: 15px 0 15px 5px;
+    transition: 1s;
+}
+
+.newscard .textslot p {
+    font-size: 15px;
+    overflow: hidden;
+    line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    margin-top: -10px;
+    transition: 1s;
+}
+
+.newscard .continuebutton{
+    width: 0px;
+    height: 150px;
+    background-color: #c57a8e;
+    margin-top: 0px;
+    transition: 1s;
+    float: right;
+    font-size: 0px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.newscard .continuebutton p{
+    transition: 1s;
+    font-size: 0px;
+    text-align: center;
+    color: #ffffff;
+    margin-left: -20px;
+    margin-top: 50px;
+}
+
+.newscard:hover{
+    border-top: 4px solid #c57a8e;
+    border-bottom: 4px solid #c77b8f;
+    width: 450px;
+    height: 150px;
+    background-color: #1b1b1b;
+    margin-left: 70px;
+    margin-bottom: 15px;
+    transition: 1s;
+    display: inline-block;
+    vertical-align:top;
+    margin-right:20px;
+    white-space:normal;
+    box-shadow: 0px 0px 20px #995f6e;
+}  
+
+.newscard:hover img{
+    width: 185px;
+}  
+
+.newscard:hover .textslot{
+    width: 200px;
+}  
+
+.newscard:hover .textslot p{
+    color: #995f6e;
+}  
+
+.newscard:hover .continuebutton{
+    transition-delay:0.5s;
+    width: 25px;
+    font-size: 20px;
+}
+
+.newscard:hover .continuebutton p{
+    transition-delay:0.5s;
+    margin-left: -15px;
+    margin-top: 40px;
+    font-size: 20px;
+}  
+
+.newscard:hover .textslot p {
+    font-size: 15px;
+    margin: 0;
+    overflow: hidden;
+    line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    margin-top: -10px;
+}
+
+.BigNew{
+    margin-left: 35px;
+    width: 95%;
+    height: 275px;
+    background-color: #161616;
+}
+
+.BigNew h1{
+    color: #db728e;
+    text-align: left;
+    margin-left: 10px;
+    transition: 1s;
+}
+
+.BigNew h1:hover{
+    color: #eb9fb3;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.BigNew img{
+    width: 350px;
+    height: 175px;
+    background-color: #ff65cc88;
+    border: 0px;
+    margin-top: -5px;
+    margin-left: 45px;
+    float: left;
+    transition: 1s;
+}
+
+.BigNew .textarea{
+    width: 825px;
+    height: 175px;
+    background-color: #ff65cc00;
+    border: 0px;
+    margin-top: -5px;
+    margin-left: 35px;
+    float: left;
+    transition: 1s;
+}
+
+.BigNew .textarea h1{
+    font-size: 15px;
+    overflow: hidden;
+    line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    margin-top: -20px;
+    font-size: 25px;
+    transition: 1s;
+}
+
+.BigNew .textarea p{
+    font-size: 15px;
+    overflow: hidden;
+    line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    margin-top: -20px;
+    transition: 1s;
+}
+
+.newshr{
+    width: 75%;
+    color: #ff0000;
+    border: 2.5px solid #c47a8e;
+}
+

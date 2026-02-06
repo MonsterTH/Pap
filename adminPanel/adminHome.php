@@ -35,7 +35,7 @@
     <h3>Misc</h3>
     <hr style="width:50%">
     <a href="#">- Historico de Seasons</a><br>
-    <a href="#">- Noticias</a><br>
+    <a href="Misc/NewsPanel.php">- Noticias</a><br>
     <a href="Misc/AdminCreate.php">- Create Admin Account</a><br>
     <a href="../home.php">- Go To Main Page</a>
     <hr>
