@@ -82,11 +82,15 @@
             </form>
             <hr>
             <a href="del_confirmation.php"><button type="" style="margin-left: 62px" class="DelButton">Apagar Perfil</button></a>
-           <hr> 
+        <hr> 
+        <hr>
+            <a href="logout.php"><button type="" style="margin-left: 62px" class="DelButton">Deslogar</button></a>
+        <hr> 
         </fieldset>
     </main>
     
    <?php if ($isadmin): ?>
+    <br>
     <a href="../adminPanel/adminHome.php" style="margin-left:35%; margin-top:-75px; margin-bottom:15px">
         <button class="loginButton">Painel De Gestao</button>
     </a>

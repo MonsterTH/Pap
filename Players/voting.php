@@ -52,16 +52,17 @@
     </nav>
 
 <section>
+
     <div class="playervoting"><button><h1>Votar</h1></button><p>Joao Pedro</p></div>
-    <div class="playervoting"><button><h1>Votar</h1></button><p>Joao Pedro</p></div>
-    <div class="playervoting"><button><h1>Votar</h1></button><p>Joao Pedro</p></div>
-    <div class="playervoting"><button><h1>Votar</h1></button><p>Joao Pedro</p></div>
+    <div class="playervoting"><button><h1>Votar</h1></button><p>Olá! eu sou o Pedro</p></div>
+    <div class="playervoting"><button><h1>Votar</h1></button><p>Quer vender o seu carro?</p></div>
+    <div class="playervoting"><button><h1>Votar</h1></button><p>Em compramososeucarro.pt</p></div>
 
 </section>
 
 <hr>
 
-<button class="actionbutton" style="margin-left: 31%;">Ver Participantes</button>
+<button class="actionbutton" style="margin-left: 31%;"><a href="players.php">Ver Participantes</a></button>
 
     <footer>
          <div class="footer-links">

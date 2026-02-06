@@ -5,17 +5,15 @@
       <link rel="stylesheet" href="../scripts/moderno.css">    
       <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Oxygen:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
       <?php
+            include("../scripts/logindb.php");
             session_start();
-            if (!isset($_SESSION['Username'])) {
-            header('Location: ../login/login.html');
-            exit();
-            }
-      ?>
+            $isLogged = isset($_SESSION['Username']);
+      ?> 
 </head>
 <body>
 
       <?php
-            $username = htmlspecialchars($_SESSION['Username']);
+            $username = $isLogged ? htmlspecialchars($_SESSION['Username']) : '';
       ?>
 
       <div class="fundo">
@@ -28,7 +26,7 @@
             <ul>
                   <li><a href="../home.php"><b>Início</b></a></li>
                   <li><a href="../Players/players.php"><b>Jogadores</b></a></li>
-                  <li><a href="../news/newspage.php"><b>Notícias</b></a></li>
+                  <li><a href="../noticias.html"><b>Notícias</b></a></li>
                   <li><a href="../Players/voting.php"><b>Votos</b></a></li>
                   <li><a href="../about/about.php"><b>Sobre</b></a></li>
                   <li><a href="../user/user.php"><b>Bem-vindo, <?php echo $username; ?></b></a></li>
