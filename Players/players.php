@@ -1,38 +1,18 @@
 <html>
 <head>
-      <title>Participantes - Identity Fraud</title>
-      <meta charset="UTF-8">
-      <link rel="stylesheet" type="text/css" href="../scripts/moderno.css">
-      <?php
-
-      $isadmin = false;
-
-      include("../scripts/logindb.php");
-            session_start();
-            if (!isset($_SESSION['Username'])) 
-            {
-                  header('Location: loginInput.html');
-                  exit();
-            }
-
-            // CheckIfAdmin
-
-        $email = htmlspecialchars($_SESSION['Email']);
-
-            $comando = "SELECT * FROM administrador WHERE Email = '$email'";
-            $query = mysqli_query($sql, $comando);
-            $num_rows = mysqli_num_rows($query);
-
-            if ($num_rows == 1) 
-            {
-                $isadmin = true;
-            }
-      ?>    
-      <script src="../../scripts/js/functions.js"></script>
+    <title>Participantes - Identity Fraud</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../scripts/moderno.css">
+    <?php
+        include("../scripts/logindb.php");
+        session_start();
+        $isLogged = isset($_SESSION['Username']);
+    ?>    
+    <script src="../scripts/functions.js"></script>
 </head>
 <body>
     <?php
-        $username = htmlspecialchars($_SESSION['Username']);
+        $username = $isLogged ? htmlspecialchars($_SESSION['Username']) : '';
     ?>
 
     <div class="fundo">
@@ -40,43 +20,70 @@
                 <center><img class="img_logo" src="../imgs/LogoTipo.png"></center>
         </div>
     </div>
+
     <nav class="bar">
         <ul>
-                  <li><a href="../home.php"><b>Início</b></a></li>
-                  <li><a href="../Players/players.php"><b>Jogadores</b></a></li>
-                  <li><a href="../noticias.html"><b>Notícias</b></a></li>
-                  <li><a href="../Players/voting.php"><b>Votos</b></a></li>
-                  <li><a href="../about/about.php"><b>Sobre</b></a></li>
-                  <li><a href="../user/user.php"><b>Bem-vindo, <?php echo $username; ?></b></a></li>
-            </ul>
+            <?php if ($isLogged): ?>
+                <li><a href="../home.php"><b>Início</b></a></li>
+                <li><a href="../Players/players.php"><b>Jogadores</b></a></li>
+                <li><a href="../noticias.html"><b>Notícias</b></a></li>
+                <li><a href="../Players/voting.php"><b>Votos</b></a></li>
+                <li><a href="../about/about.php"><b>Sobre</b></a></li>
+                <li><a href="../user/user.php"><b>Bem-vindo, <?php echo htmlspecialchars($_SESSION['Username']); ?></b></a></li>
+            <?php else: ?>
+                <li><a href="../index.html"><b>Início</b></a></li>
+                <li><a href="players.php"><b>Jogadores</b></a></li>
+                <li><a href="../noticias.html"><b>Notícias</b></a></li>
+                <li><a href="../login/login.html"><b>Votos</b></a></li>
+                <li><a href="../about/about.php"><b>Sobre</b></a></li>
+                <li><a href="../login/login.html"><b>Login/Registar</b></a></li>
+            <?php endif; ?>
+        </ul>
     </nav>
 
-<section>
-    <div class="navbar">
-    <?php
-    include("../scripts/logindb.php");
-    $Query="select * from players";
-            $List=mysqli_query($sql,$Query);
-            $NumReg=mysqli_num_rows($List);
-            echo'<br>';
-            For($i=0;$i<$NumReg;$i++) //Passar registo linha a linha
-            {
-            $Registo=mysqli_fetch_array($List);
-            echo'<a href="#">'.$Registo['Name'].'<br><hr></a>';}
+    <section>
+        <div class="navbar">
+        <?php
+                include("../scripts/logindb.php");
+                $Query="select * from players";
+                $List=mysqli_query($sql,$Query);
+                $NumReg=mysqli_num_rows($List);
+                echo'<br>';
+                $firstPlayerId = null;
+                For($i=0;$i<$NumReg;$i++) //Passar registo linha a linha
+                {
+                    $Registo = mysqli_fetch_array($List);
+
+                    // Guarda o ID do primeiro jogador
+                    if ($i == 0) {
+                        $firstPlayerId = $Registo['Id'];
+                    }
+
+                    echo '<a href="#" onclick="loadPlayer(' . $Registo['Id'] . '); return false;">'
+                    .htmlspecialchars($Registo['Name']) . '<br><hr></a>';
+                }
         ?>
-    </div>
-    <div class="playercard">
-        <div class="nameandage">
-            <p>Nome : Nomeaaaaaaaaa
-            <P>Data De Nascimento : AAAAAAAA
         </div>
-        <div class="description">
-            <p>Num mundo que corre depressa, parar é um ato de coragem. Entre notificações, prazos e ruído constante, esquecemo-nos de ouvir o que sentimos. Às vezes, basta um minuto de silêncio, um olhar pela janela ou uma respiração funda para lembrar que estamos vivos. A vida não é só chegar, é também sentir o caminho, tropeçar, aprender e continuar, mesmo quando não temos todas as respostas.
+        <div class="playercard">
+            <div class="nameandage">
+                <p>Nome : <span id="playerName"></span>
+
+                <P>Data De Nascimento : <span id="playerBirth"></span></p>
+            </div>
+
+            <div class="description">
+                <p><span id="playerDesc"></span></p>
+            </div>
+
+            <div class="image">
+                <img id="playerImage" src="../imgs/ns2.jpg" alt="Player Image">
+            </div>
+
+            <div class="buttonplace">
+                <button class="actionbutton">Votar No Participante</button>
+            </div>
         </div>
-        <div class="buttonplace">
-            <button class="actionbutton">Votar No Participante
-        </div>
-</section>
+    </section>
     
 
 
@@ -103,5 +110,12 @@
             <p style="float: left; margin-left: 150px;">Ⓒ Copyright 2026. Todos os direitos reservados.</p>
             <div style="float: right;margin-top: 20px; margin-right: 165px;"><a href="#"><img src="../imgs/facebook.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/youtube.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/insta.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/tiktok.png" style="float: left; margin-left: 5px;"></a></div>
     </footer>
+    <?php if ($firstPlayerId !== null): ?>
+        <script>
+            window.onload = function () {
+                loadPlayer(<?= $firstPlayerId ?>);
+                };
+        </script>
+    <?php endif; ?>
 </body>
 </html>

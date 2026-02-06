@@ -142,3 +142,15 @@ function erro_user(event)
 
     xmlhttp.send(formdata);
 }
+
+function loadPlayer(id) 
+{
+    fetch("getplayers.php?id=" + id)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("playerName").innerText = data.Name;
+            document.getElementById("playerBirth").innerText = data.Birth_date;
+            document.getElementById("playerDesc").innerText = data.About;
+        })
+        .catch(err => console.error("Erro ao carregar jogador", err));
+}
