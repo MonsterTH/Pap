@@ -1,17 +1,34 @@
 <html>
 <head>
-      <title>Perfil do Utilizador</title>
-      <meta charset="UTF-8">    
-      <script src="../scripts/functions.js"></script>
+      <title>Alterar Perfil - IdentityFraud</title>
+      <meta charset="UTF-8">
       <link rel="stylesheet" type="text/css" href="../scripts/moderno.css">
       <?php
+
+      $isadmin = false;
+
+      include("../scripts/logindb.php");
             session_start();
             if (!isset($_SESSION['Username'])) 
             {
-                  header('Location: loginInput.html');
+                  header('Location: ../index.html'); 
                   exit();
             }
+
+            // CheckIfAdmin
+
+        $email = htmlspecialchars($_SESSION['Email']);
+
+            $comando = "SELECT * FROM administrador WHERE Email = '$email'";
+            $query = mysqli_query($sql, $comando);
+            $num_rows = mysqli_num_rows($query);
+
+            if ($num_rows == 1) 
+            {
+                $isadmin = true;
+            }
       ?>    
+      <script src="../scripts/functions.js"></script>
 </head>
 <body>
     <?php
@@ -36,26 +53,22 @@
     </nav>
             
     <main>
-        <div class="UserEditBox" style="height: 280px;">
-
-        <h2 style="color: d64169;">Adeus... <?php echo $username; ?></h2>  
-            <form method="POST" id="delete" onsubmit="del_user(event)">
-
-                <div>
-                    <input class="loginInput" type="email" id="email" name="email" maxlength="120" placeholder="Confirme o seu Email">
-                </div>
-
-                <div>
-                    <input class="loginInput" type="password" id="pass" name="pass" maxlength="20" placeholder="Confirme a sua password">
-                </div>  
-
+        <div class="UserEditBox">
+            <form id="user_form" onsubmit="erro_user(event)" method="POST">
+                <img></img>
                 <span id="erro"></span><br>
-
                 <div>
-                    <button type="submit" class="DelButton">Apagar Perfil</button>
+                    <input class="loginInput" type="text" id="user" name="user" maxlength="30" placeholder="New Name" value="<?php echo $username ?>">
                 </div>
+                <input class="loginInput" type="text" id="pass_old" name="pass_old" maxlength="120" placeholder="Old Password">
+                <input class="loginInput" type="text" id="pass_new" name="pass_new" maxlength="120" placeholder="New Password">
+                <input class="loginInput" type="text" id="pass_rep" name="pass_rep" maxlength="120" placeholder="Confirm New Password">
+                <input class="loginbutton" type="submit" value="Update">
             </form>
+            <a href="del_confirmation.php"><button class="evilButton" type="submit">Erase Account</button></a>
         </div>
+        
+    </div>
     </main>
 
     <footer>

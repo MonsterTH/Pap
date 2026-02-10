@@ -1,6 +1,6 @@
 <html>
 <head>
-      <title>Perfil do Utilizador</title>
+      <title>Your Profile - IdentityFraud</title>
       <meta charset="UTF-8">
       <link rel="stylesheet" type="text/css" href="../scripts/moderno.css">
       <?php
@@ -33,6 +33,7 @@
 <body>
     <?php
         $username = htmlspecialchars($_SESSION['Username']);
+        $creation = htmlspecialchars($_SESSION['Creation']);
     ?>
 
     <div class="fundo">
@@ -53,48 +54,25 @@
     </nav>
             
     <main>
-        <fieldset>
-            <h2>Bem-vindo, <?php echo $username; ?></h2>  
+        <div class="userinforow">
+            <img></img>
+            <h1><?php echo $username; ?></h1>
+            <h2>Date Of Creation</h2>
+            <h3><?php echo $creation; ?></h3>
 
-            <form id="user_form" onsubmit="erro_user(event)" method="POST">
-                <div>
-                    <input class="loginInput" type="text" id="user" name="user" maxlength="30" value="<?php echo $username ?>">
-                </div>
+            <div class="dropdown">
+                <button class="dropdownbutton">≡</button>
+                <div class="dropdown-content">
+                <a href="userupdate.php">Editar Perfil</a>
+                <a href="logout.php">Sair</a>
 
-                <div>
-                    <input class="loginInput" type="password" id="pass_old" name="pass_old" maxlength="20" placeholder="Digite a sua password atual">
-                </div>
+                <?php if ($isadmin): ?>
+                    <a href="../adminPanel/adminHome.php">Admin</a>
+                <?php endif; ?>
 
-                <div>
-                    <input class="loginInput" type="password" id="pass_new" name="pass_new" maxlength="20" placeholder="Digite uma nova password">
-                </div>
-
-                <div>
-                    <input class="loginInput" type="password" id="pass_rep" name="pass_rep" maxlength="20" placeholder="Confirme a sua password">
-                </div>
-
-                <span id="erro"></span><br>
-
-                <div>
-                    <button type="submit" class="loginButton">Atualizar Perfil</button>
-                </div>
-
-            </form>
-            <hr>
-            <a href="del_confirmation.php"><button type="" style="margin-left: 62px" class="DelButton">Apagar Perfil</button></a>
-        <hr> 
-        <hr>
-            <a href="logout.php"><button type="" style="margin-left: 62px" class="DelButton">Deslogar</button></a>
-        <hr> 
-        </fieldset>
+            </div>
+        </div>
     </main>
-    
-   <?php if ($isadmin): ?>
-    <br>
-    <a href="../adminPanel/adminHome.php" style="margin-left:35%; margin-top:-75px; margin-bottom:15px">
-        <button class="loginButton">Painel De Gestao</button>
-    </a>
-<?php endif; ?>
 
     <footer>
          <div class="footer-links">

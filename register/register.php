@@ -25,8 +25,9 @@
       //se não existir, insere na base de dados
       if ($num_rows == 0)
       {
-            $comando = "INSERT INTO users (Username, Email, Password)
-                  VALUES ('$nome', '$email', '$pass_hashed')";
+            $Date = date("Y-m-d");
+            $comando = "INSERT INTO users (Username, Email, Password, Creation, Photo)
+                  VALUES ('$nome', '$email', '$pass_hashed', '$Date', 'Image.png')";
                   
             $query = mysqli_query($sql, $comando);
 

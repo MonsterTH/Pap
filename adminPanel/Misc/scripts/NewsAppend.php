@@ -4,8 +4,9 @@
 
       $Title = $_POST['Title'];
       $Description = $_POST['Description'];
-      $DateOfCreation = $_POST['DateOfCreation'];    
-      $Image = $_POST['Image'];
+      $DateOfCreation = $_POST['DateOfCreation'];
+      $Genre = $_POST['Cat'];
+      //$Image = $_POST['Image'];
 
       //Tratamento do resto
       /*if($pass != $rep_pass)
@@ -19,14 +20,9 @@
             exit();
       }*/
 
-
-      $pass_hashed = password_hash($pass, PASSWORD_BCRYPT); 
-
       
-      if ($num_rows == 0)
-      {
-            $comando = "INSERT INTO players (Name, Birth_date, About, Photo)
-                  VALUES ('$Title', '$Description', '$DateOfCreation', 'Imagem.png')";
+            $comando = "INSERT INTO news (Title, Description, Date, Image, Genre)
+                  VALUES ('$Title', '$Description', '$DateOfCreation', 'Image.png', '$Genre')";
                   
             $query = mysqli_query($sql, $comando);
 
@@ -35,17 +31,5 @@
                         window.history.back();
                   </script>"
             );
-            exit();
-      }
-      else
-      {
-            echo(
-                  "<script>
-                        alert('Erro'); 
-                        window.history.back();
-                  </script>"
-            );
-      }
-   
       mysqli_close($sql);
 ?>

@@ -43,7 +43,7 @@
     <p>Bem-vindo, <?php echo $username; ?></p>
 </div>
     <div class="admininfo">
-        <h1>Add New</h1>
+        <h1>Add News Article</h1>
         <form action="scripts/NewsAppend.php" method="POST" enctype="multipart/form-data" style="height: auto;">
       <h5>
         <p>
@@ -51,6 +51,12 @@
         </p>
         <p>
         <input type="text" name="Description" size="50" class="inputtext" max="500" placeholder="Description" required> |  <label for="file-upload" class="custom-file-upload"> <i class="fa fa-cloud-upload"></i> Add Image</label><input id="file-upload" type="file" name="Image"/>
+        </p>
+        <p>Categoria:       
+            <input type="radio" id="Op1" name="Cat" value="MV">Mais Vistas
+            <input type="radio" id="Op2" name="Cat" value="DE">Destaque
+            <input type="radio" id="Op3" name="Cat" value="DR">Drama
+            <input type="radio" id="Op3" name="Cat" value="NC">NoticiasDaCasa
         </p>
        <input class="actionbutton" type="submit" value="Add">
       </h5>

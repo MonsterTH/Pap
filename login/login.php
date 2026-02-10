@@ -23,6 +23,8 @@
                   $_SESSION['Username'] = $dados['Username'];
                   $_SESSION['Email'] = $dados['Email'];
                   $_SESSION['Password'] = $dados['Password'];
+                  $_SESSION['Creation'] = $dados['Creation'];
+                  $_SESSION['Photo'] = $dados['Photo'];
 
                   echo("ok");
                   exit();

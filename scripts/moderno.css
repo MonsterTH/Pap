@@ -446,7 +446,7 @@ hr
     border-width: 0px;
     font-family: "Oxygen", sans-serif;
     color: white;
-    background-color: #ff0044; 
+    background-color: #d64169; 
     transition: 2s;
     font-size: 15px;
 }
@@ -461,7 +461,7 @@ hr
     border-radius: 10px;
     font-family: "Oxygen", sans-serif;
     color: white;
-    background-color: #ff0000; 
+    background-color: #f0255b; 
     transition: 1s;
 }
 
@@ -731,7 +731,21 @@ hr
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+    margin-top: -15px;
+    transition: 1s;
+}
+
+.newscard .textslot h1 {
+    font-size: 17px;
+    color: #c57a8e;
+    overflow: hidden;
+    line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: 20px;
     transition: 1s;
 }
 
@@ -780,10 +794,6 @@ hr
     width: 200px;
 }  
 
-.newscard:hover .textslot p{
-    color: #995f6e;
-}  
-
 .newscard:hover .continuebutton{
     transition-delay:0.5s;
     width: 25px;
@@ -805,14 +815,21 @@ hr
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
-    margin-top: -10px;
+    margin-top: -15px;
+    color: #995f6e;
+}
+
+.newscard:hover .textslot h1 {
+    color: #995f6e;
 }
 
 .BigNew{
+    border-top: 4px solid #995f6e;
+    border-bottom: 4px solid #995f6e;
     margin-left: 35px;
     width: 95%;
     height: 275px;
-    background-color: #161616;
+    background-color: #140a0d;
 }
 
 .BigNew h1{
@@ -820,7 +837,8 @@ hr
     text-align: left;
     margin-left: 10px;
     transition: 1s;
-}
+    margin-top: -5px;
+}   
 
 .BigNew h1:hover{
     color: #eb9fb3;
@@ -879,3 +897,173 @@ hr
     border: 2.5px solid #c47a8e;
 }
 
+.userinforow{
+    border-left: 4px solid #995f6e;
+    border-right: 4px solid #995f6e;
+    width: 85%;
+    height: 95px;
+    background-color: #161616;
+    margin-top: -350px;
+    box-shadow: 0px -10px 20px #5e3a43;
+}
+
+.userinforow img{
+    width: 195px;
+    height: 195px;
+    background-color: #ff65cc;
+    border: 0px;
+    margin-left: 55px;
+    margin-top: -105px;
+    transition: 1s;
+    clip-path: circle();
+}
+
+.userinforow h1{
+    font-size: 45px;
+    transition: 1s;
+    margin-top: -151px;
+    margin-left: -450px;
+    color: #c76b84;
+}
+
+.userinforow h2{
+    font-size: 17px;
+    margin-top: -20px;
+    transition: 1s;
+    color: white;
+    margin-left: -450px;
+}
+
+.userinforow h3{
+    font-size: 17px;
+    margin-top: -10px;
+    transition: 1s;
+    color: white;
+    margin-left: 305px;
+}
+
+.dropdown {
+    float: right;
+    position: relative;
+}
+
+.dropdownbutton {
+  background-color: #161616;
+  color: white;
+  padding: 16px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  margin-top: -60px;
+  transition: 0.4s;
+}
+
+.dropdown-content {
+    right: 1;
+  display: none;
+  position: absolute;
+  background-color: #161616;
+  border-right: 4px solid #995f6e;
+  text-align: right;
+  min-width: 200px;
+  margin-right: -5px;
+  transition: 0.4s;
+}
+
+.dropdown-content a {
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #1f1f1f;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropdownbutton {
+  background-color: #1f1f1f;
+}
+
+
+.UserEditBox{
+    border-top: 4px solid #995f6e;
+    border-bottom: 4px solid #995f6e;
+    margin-left: 35px;
+    width: 550px;
+    height: 425px;
+    background-color: #140a0d;
+    margin-top: -100px;
+    box-shadow: 0px -10px 20px #995f6e;
+}
+
+.UserEditBox h1{
+    color: #db728e;
+    text-align: left;
+    margin-left: 10px;
+    transition: 1s;
+    margin-top: -5px;
+}   
+
+.UserEditBox img{
+    width: 155px;
+    height: 155px;
+    background-color: #ff65cc;
+    border: 0px;
+    margin-top: -75px;
+    transition: 1s;
+    clip-path: circle();
+    cursor: pointer;
+}
+
+
+
+.UserEditBox img:hover{
+    width: 155px;
+    height: 155px;
+    background-color: #ffffff;
+    border: 0px;
+    margin-top: -75px;
+    transition: 1s;
+    clip-path: circle();
+}
+
+.evilButton
+{
+    padding: 5px;
+    margin: 5px;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border-width: 0px;
+    margin-top: 25px;
+    margin-left: 75px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    background-color: #bd5c76; 
+    transition: 2s;
+    font-size: 15px;
+}
+
+.evilButton:hover
+{
+   padding: 5px;
+    margin: 5px;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border-width: 0px;
+    margin-top: 25px;
+    margin-left: 75px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+    background-color: #e24670; 
+    transition: 2s;
+    font-size: 15px;
+}

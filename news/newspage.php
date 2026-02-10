@@ -52,85 +52,83 @@
     </nav>
 
 <section>
-    <h1 class="newsh1">Mais Vistos:</h1>
+    <h1 class="newsh1" style="margin-top:-5px;">Mais Vistos:</h1>
     <div class="newsrow">
+        <?php
+                include("../scripts/logindb.php");
+                $Query="select * from news where Genre='MV'";
+                $List=mysqli_query($sql,$Query);
+                $NumReg=mysqli_num_rows($List);
+                $firstPlayerId = null;
+                For($i=0;$i<$NumReg;$i++) //Passar registo linha a linha
+                {
+                    $Registo = mysqli_fetch_array($List);
 
-        <div class="newscard"> 
+                    echo'<div class="newscard"> 
+                            <img></img>
+                            <div class="textslot"> 
+                                <h1>',$Registo['Title'],'</h1>
+                                <p>',$Registo['Description'],'</p>
+                            </div> 
+                            <!-- <div class="continuebutton"><p>><p></div> -->
+                         </div>';
+                }
+        ?>
+        <!--<div class="newscard"> 
             <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
-
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
-
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
-
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
-
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
+            <div class="textslot"> 
+                <h1>Titolo</h1>
+                <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
+             
+        </div>-->
 
     </div>
     <hr class="newshr">
 
     <div class="bignew">
         <h1>Em Destaque:</h1>
-        <img></img>
-        <div class="textarea">
-            <h1>Titulo</h1>
-            <p>aspfidnswoidmewy7dfwetvb7yuiwqwerty7u8i9osdousndiwjsxn jwxwixnwijxnwijx wsixhnwhixwb
-        </div>
+        <?php
+                include("../scripts/logindb.php");
+                $Query="select * from news where Genre='DE'";
+                $List=mysqli_query($sql,$Query);
+                $NumReg=mysqli_num_rows($List);
+                $firstPlayerId = null;
+                For($i=0;$i<$NumReg;$i++) //Passar registo linha a linha
+                {
+                    $Registo = mysqli_fetch_array($List);
+
+                    echo'<img></img>
+                        <div class="textarea">
+                        <h1>',$Registo['Title'],'</h1>
+                        <p>',$Registo['Description'],'</p>
+                            </div>';
+                }
+        ?>
     </div>
 
     <hr class="newshr">
     <h1 class="newsh1">Drama:</h1>
     <div class="newsrow">
+        <?php
+                include("../scripts/logindb.php");
+                $Query="select * from news where Genre='DR'";
+                $List=mysqli_query($sql,$Query);
+                $NumReg=mysqli_num_rows($List);
+                $firstPlayerId = null;
+                For($i=0;$i<$NumReg;$i++) //Passar registo linha a linha
+                {
+                    $Registo = mysqli_fetch_array($List);
 
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
-
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
-
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
-
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
-
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
-
+                    echo'<div class="newscard"> 
+                            <img></img>
+                            <div class="textslot"> 
+                                <h1>',$Registo['Title'],'</h1>
+                                <p>',$Registo['Description'],'</p>
+                            </div> 
+                            <!-- <div class="continuebutton"><p>><p></div> -->
+                         </div>';
+                }
+        ?>
     </div>
 
     <hr class="newshr">
@@ -138,35 +136,26 @@
 
     <div class="newsrow">
 
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
+    <?php
+                include("../scripts/logindb.php");
+                $Query="select * from news where Genre='NC'";
+                $List=mysqli_query($sql,$Query);
+                $NumReg=mysqli_num_rows($List);
+                $firstPlayerId = null;
+                For($i=0;$i<$NumReg;$i++) //Passar registo linha a linha
+                {
+                    $Registo = mysqli_fetch_array($List);
 
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
-
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
-
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
-
-        <div class="newscard"> 
-            <img></img>
-            <div class="textslot"> <p>Texto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto</p> </div> 
-            <!-- <div class="continuebutton"><p>><p></div> -->
-        </div>
+                    echo'<div class="newscard"> 
+                            <img></img>
+                            <div class="textslot"> 
+                                <h1>',$Registo['Title'],'</h1>
+                                <p>',$Registo['Description'],'</p>
+                            </div> 
+                            <!-- <div class="continuebutton"><p>><p></div> -->
+                         </div>';
+                }
+        ?>
 
     </div>
 
