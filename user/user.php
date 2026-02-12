@@ -69,10 +69,18 @@
                 <?php if ($isadmin): ?>
                     <a href="../adminPanel/adminHome.php">Admin</a>
                 <?php endif; ?>
-
+                </div>
             </div>
         </div>
-    </main>
+    </main>  
+    <section class="sectionuser">  
+    <div class="usersection"></div>
+    <div class="userPostInput">
+        <img></img><p><?php echo $username; ?></p>
+        <textarea class="PostInput"  style='resize: none;' placeholder="Whats going on your mind?"></textarea>
+    </div>
+    </section>
+    
 
     <footer>
          <div class="footer-links">

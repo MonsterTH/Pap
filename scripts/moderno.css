@@ -250,6 +250,14 @@ main {
     height: 100vh;
 }
 
+.sectionuser {
+    font-family: "Oxygen", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
 form {
     font-family: "Oxygen", sans-serif;
     display: flex;
@@ -555,19 +563,26 @@ hr
 
 .description
 {
+    background-color: #c2547100;
+    color: white;
+    padding: 10px;
+    font-size: 22px;
+    overflow: hidden;
     width: 600px;
     height: 300px;
-    background-color: #ff004800;
-    float: left;
 }
 
 .description p
 {
-    margin: -7px;
+    margin: -25px;
     color: white;
     float: left;
     height: 25px;
     font-size: 20px;
+    line-clamp: 20;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 20;
 }
 
 .buttonplace
@@ -900,7 +915,7 @@ hr
 .userinforow{
     border-left: 4px solid #995f6e;
     border-right: 4px solid #995f6e;
-    width: 85%;
+    width: 1125px;
     height: 95px;
     background-color: #161616;
     margin-top: -350px;
@@ -991,7 +1006,6 @@ hr
   background-color: #1f1f1f;
 }
 
-
 .UserEditBox{
     border-top: 4px solid #995f6e;
     border-bottom: 4px solid #995f6e;
@@ -1022,8 +1036,6 @@ hr
     cursor: pointer;
 }
 
-
-
 .UserEditBox img:hover{
     width: 155px;
     height: 155px;
@@ -1034,8 +1046,7 @@ hr
     clip-path: circle();
 }
 
-.evilButton
-{
+.evilButton{
     padding: 5px;
     margin: 5px;
     width: 400px;
@@ -1051,8 +1062,7 @@ hr
     font-size: 15px;
 }
 
-.evilButton:hover
-{
+.evilButton:hover{
    padding: 5px;
     margin: 5px;
     width: 400px;
@@ -1066,4 +1076,60 @@ hr
     background-color: #e24670; 
     transition: 2s;
     font-size: 15px;
+}
+
+.usersection{
+    width: 350px;
+    height: 450px;
+    background-color: white;
+    margin-top: -475px;
+    border-left: 4px solid #995f6e;
+    background-color: #161616;
+}
+
+.userPostInput{
+    float: right;
+    width: 750px;
+    height: 150px;
+    background-color: white;
+    margin-top: -775px;
+    margin-left: 25px;
+    border-right: 4px solid #995f6e;
+    background-color: #161616;
+}
+
+.userPostInput img{
+    width: 55px;
+    height: 55px;
+    background-color: #ff65cc;
+    border: 0px;
+    margin-left: 35px;
+    margin-top: 15px;
+    transition: 1s;
+    clip-path: circle();
+    cursor: pointer;
+}
+
+.userPostInput p{
+    margin-left: 75px;
+    margin-top: -75px;
+}
+
+.PostInput{
+    padding: 5px;
+    margin: 5px;
+    width: 570px;
+    height: 75px;
+    border-radius: 10px;
+    appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: 4px solid #b486a0;
+	border-radius: .2em .2em 0 0;
+	padding: 0.4em;
+	color: #ffffff;
+    background-color: rgba(71, 44, 66, 0.438);
+    font-family: "Oxygen", sans-serif;
+    margin-top: -35px;
+    margin-left: 95px;
 }

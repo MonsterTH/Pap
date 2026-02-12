@@ -23,23 +23,27 @@
 
     <nav class="bar">
             <?php if ($isLogged): ?>
-                <li><a href="../home.php"><b>Início</b></a></li>
-                <li><a href="../Players/players.php"><b>Jogadores</b></a></li>
-                <li><a href="../noticias.html"><b>Notícias</b></a></li>
-                <li><a href="../Players/voting.php"><b>Votos</b></a></li>
-                <li><a href="../about/about.php"><b>Sobre</b></a></li>
-                <li><a href="../user/user.php"><b>Bem-vindo, <?php echo htmlspecialchars($_SESSION['Username']); ?></b></a></li>
-            <?php else: ?>
-                <li><a href="../index.html"><b>Início</b></a></li>
-                <li><a href="players.php"><b>Jogadores</b></a></li>
-                <li><a href="../noticias.html"><b>Notícias</b></a></li>
-                <li><a href="../login/login.html"><b>Votos</b></a></li>
-                <li><a href="../about/about.php"><b>Sobre</b></a></li>
-                <li><a href="../login/login.html"><b>Login/Registar</b></a></li>
+                <ul>
+                    <li><a href="../home.php"><b>Início</b></a></li>
+                    <li><a href="../Players/players.php"><b>Jogadores</b></a></li>
+                    <li><a href="../news/newspage.php"><b>Notícias</b></a></li>
+                    <li><a href="../Players/voting.php"><b>Votos</b></a></li>
+                    <li><a href="../about/about.php"><b>Sobre</b></a></li>
+                    <li><a href="../user/user.php"><b>Bem-vindo, <?php echo htmlspecialchars($_SESSION['Username']); ?></b></a></li>
+                </ul>
+                <?php else: ?>
+                <ul>
+                    <li><a href="../index.html"><b>Início</b></a></li>
+                    <li><a href="players.php"><b>Jogadores</b></a></li>
+                    <li><a href="../news/newspage.php"><b>Notícias</b></a></li>
+                    <li><a href="../login/login.html"><b>Votos</b></a></li>
+                    <li><a href="../about/about.php"><b>Sobre</b></a></li>
+                    <li><a href="../login/login.html"><b>Login/Registar</b></a></li>
+                </ul>
             <?php endif; ?>
     </nav>
 
-    <section>
+    <main>
         <div class="navbar">
         <?php
                 include("../scripts/logindb.php");
@@ -73,15 +77,11 @@
                 <p><span id="playerDesc"></span></p>
             </div>
 
-            <div class="image">
-                <img id="playerImage" src="../imgs/ns2.jpg" alt="Player Image">
-            </div>
-
             <div class="buttonplace">
                 <button class="actionbutton">Votar No Participante</button>
             </div>
         </div>
-    </section>
+        </main>
     
 
 

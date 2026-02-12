@@ -65,7 +65,7 @@
                 <input class="loginInput" type="text" id="pass_rep" name="pass_rep" maxlength="120" placeholder="Confirm New Password">
                 <input class="loginbutton" type="submit" value="Update">
             </form>
-            <a href="del_confirmation.php"><button class="evilButton" type="submit">Erase Account</button></a>
+            <a href="del_confirmation.php"><button class="evilButton">Erase Account</button></a>
         </div>
         
     </div>
