@@ -32,7 +32,7 @@
                     <li><a href="../about/about.php"><b>Sobre</b></a></li>
                     <li><a href="../user/user.php"><b>Bem-vindo, <?php echo htmlspecialchars($_SESSION['Username']); ?></b></a></li>
                 </ul>
-                <?php else: ?>
+            <?php else: ?>
                 <ul>
                     <li><a href="../index.html"><b>Início</b></a></li>
                     <li><a href="../Players/players.php"><b>Jogadores</b></a></li>
