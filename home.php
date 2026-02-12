@@ -35,12 +35,12 @@
             </ul>
       </nav>
 
-      <div class="noti">
+       <div class="noti">
             <img class="img_noti" src="imgs/ns2.jpg">
             <div style="margin-top: -5px">
-                  <h1> Oque é o Identity Fraud? </h1>
+                  <h1> O que é o Identity Fraud? </h1>
                   <p> Identity Fraud torna todos os competidores em investigadores, 16 Pessoas, todas com identidades falsas competem para descobrir a identidade dos outros enquanto protegem a sua. <br>Ajuda o teu investigador favorito a vencer ao votar na competição enquanto juntas-te a investigação.<br> 
-                  <a href="#"><button>Descubrir Mais ></button></a> </p>
+                  <a href="#"><button>Descubrir Mais</button></a> </p>
             </div>
       </div>
 
@@ -48,13 +48,44 @@
             <div class="pesso">
                   <h1> Competidores </h1>
                   <p> Conhece os competidores da nova temporada de Identity Fraud! </p>
-                  <center><i style="color: grey">(carrosel de imagens aqui)</i></center>
+                  <br>
+                  <div class="imgcarrosel" id="carroselComp">
+                        <ul>
+                              <li data-accName="Item 1">
+                                    <img>1</img>
+                              </li>
+                              <li data-accName="Item 2">
+                                    <img>2</img>
+                              </li>
+                              <li data-accName="Item 3">
+                                    <img>3</img>
+                              </li>
+                              <li data-accName="Item 4">
+                                    <img>4</img>
+                              </li>
+                        </ul>
+                  </div>
             </div>
-
-            <div class="intro">
-                  <h1> Notícias </h1>
-                  <p> Fica a par das últimas notícias sobre o Identity Fraud! </p>
-                  <center><i style="color: grey">(carrosel de notícias aqui)</i></center>
+            <div class="pesso">
+                  <h1> Noticias </h1>
+                  <p> Mantem-te Informado no que acontece em Identity Fraud </p>
+                  <br>
+                  <div class="imgcarrosel" id="carroselNew">
+                        <ul>
+                              <li data-accName="Item 1">
+                                    <img>1</img>
+                              </li>
+                              <li data-accName="Item 2">
+                                    <img>2</img>
+                              </li>
+                              <li data-accName="Item 3">
+                                    <img>3</img>
+                              </li>
+                              <li data-accName="Item 4">
+                                    <img>4</img>
+                              </li>
+                        </ul>
+                  </div>
             </div>
       </div>
 
@@ -81,5 +112,27 @@
             <p style="float: left; margin-left: 150px;">Ⓒ Copyright 2026. Todos os direitos reservados.</p>
             <div style="float: right;margin-top: 20px; margin-right: 165px;"><a href="#"><img src="imgs/facebook.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="imgs/youtube.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="imgs/insta.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="imgs/tiktok.png" style="float: left; margin-left: 5px;"></a></div>
       </footer>
+
+            <script>
+            function autoCarousel(selector, speed) {
+            const track = document.querySelector(selector + " ul");
+            const slides = track.children;
+
+            let index = 0;
+
+            setInterval(() => {
+            index = (index + 1) % slides.length;
+
+            track.scrollTo({
+                  left: slides[index].offsetLeft - track.offsetLeft,
+                  behavior: "smooth"
+            });
+
+            }, speed);
+            }
+
+            autoCarousel("#carroselComp", 3000);
+            autoCarousel("#carroselNew", 4500);
+            </script>
 </body>
 </html>
