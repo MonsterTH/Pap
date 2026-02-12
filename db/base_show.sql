@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 06-Fev-2026 às 15:39
+-- Tempo de geração: 10-Fev-2026 às 16:32
 -- Versão do servidor: 8.0.44
 -- versão do PHP: 8.2.29
 
@@ -45,17 +45,19 @@ CREATE TABLE `activities` (
 CREATE TABLE `administrador` (
   `Email` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Username` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Password` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+  `Password` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Creation` date DEFAULT NULL,
+  `Photo` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `administrador`
 --
 
-INSERT INTO `administrador` (`Email`, `Username`, `Password`) VALUES
-('123456789987654321@gmail.com', '123456789', '$2y$10$jAC9OfKXzMUgJLxwuPcL3.Q0.M6LknzpH2Yp6DwKmFIVp4dQxdDV2'),
-('98765432123456789@gmail.com', '12345678987654321', '$2y$10$/K4mctizMtnt5MOcyITnB.xzgGeYicz/bomvZ3pw7oZ5C7mOaPIpu'),
-('Admin@gmail.com', 'Admin1', '$2y$10$QTrCOS6phNfvMma1fugnOO2OSUmh5zpN6LTsrNZ.WOwBvuo952mpK');
+INSERT INTO `administrador` (`Email`, `Username`, `Password`, `Creation`, `Photo`) VALUES
+('123456789987654321@gmail.com', '123456789', '$2y$10$jAC9OfKXzMUgJLxwuPcL3.Q0.M6LknzpH2Yp6DwKmFIVp4dQxdDV2', '2026-02-01', 'Image.png'),
+('98765432123456789@gmail.com', '12345678987654321', '$2y$10$/K4mctizMtnt5MOcyITnB.xzgGeYicz/bomvZ3pw7oZ5C7mOaPIpu', '2026-02-01', 'Image.png'),
+('Admin@gmail.com', 'Admin1', '$2y$10$QTrCOS6phNfvMma1fugnOO2OSUmh5zpN6LTsrNZ.WOwBvuo952mpK', '2026-02-01', 'Image.png');
 
 -- --------------------------------------------------------
 
@@ -91,8 +93,27 @@ CREATE TABLE `news` (
   `Id` int NOT NULL,
   `Title` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `Description` text COLLATE utf8mb4_general_ci NOT NULL,
-  `Image` varchar(60) COLLATE utf8mb4_general_ci NOT NULL
+  `Date` date NOT NULL,
+  `Image` varchar(60) COLLATE utf8mb4_general_ci NOT NULL,
+  `Genre` varchar(12) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `news`
+--
+
+INSERT INTO `news` (`Id`, `Title`, `Description`, `Date`, `Image`, `Genre`) VALUES
+(4, 'Yang mata uma Criança Outra Vez?????', 'What the actual fuck yang', '2026-02-06', 'Image.png', 'DE'),
+(5, 'Yang Joga Genshin Impact?', 'Sigma...', '2026-02-06', 'Image.png', 'MV'),
+(6, 'Yang Joga Honkai Star Rail??', 'Sigma...', '2026-02-06', 'Image.png', 'DR'),
+(7, 'Yang Joga ZZZ??', 'Gooner...', '2026-02-06', 'Image.png', 'NC'),
+(8, 'Test De OverFlow Tuff', 'Sigma...', '2026-02-06', 'Image.png', 'NC'),
+(9, 'Test De OverFlow Tuff', 'Sigma...', '2026-02-06', 'Image.png', 'NC'),
+(10, 'Test De OverFlow Tuff', 'Sigma...', '2026-02-06', 'Image.png', 'NC'),
+(11, 'Test De OverFlow Tuff', 'Sigma...', '2026-02-06', 'Image.png', 'NC'),
+(12, 'Test De OverFlow Tuff', 'Sigma...', '2026-02-06', 'Image.png', 'NC'),
+(13, 'Test De OverFlow Tuff', 'Sigma...', '2026-02-06', 'Image.png', 'NC'),
+(14, 'Test De OverFlow Tuff', 'Sigma...', '2026-02-06', 'Image.png', 'NC');
 
 -- --------------------------------------------------------
 
@@ -155,19 +176,22 @@ CREATE TABLE `seasons` (
 CREATE TABLE `users` (
   `Email` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Username` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Password` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+  `Password` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Creation` date NOT NULL,
+  `Photo` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `users` (`Email`, `Username`, `Password`) VALUES
-('123456789@gmail.com', '1234567', '$2y$10$VYQP88XxhYDoMdUwHIbrGuOd9olwiVnCLTulwS/o2VxnREvnR6gTC'),
-('fs3$#$#Ds_wcom@gmail.com', 'Fella', '$2y$10$4GogSUHRz7.cQoKmGE7pk.wOKJStaA14X90JSrNHWADsnBNj5xKpO'),
-('qingyunyang8888@gmail.com', 'Francisco', '$2y$10$x0mnBYG0EI2735ufoREAd.odY1PW.UZ.VXq28BsN1dcOx2q9zTnwG'),
-('qingyunyang@gmail.com', 'Yang', '$2y$10$IES//Sj6szD6wYKmpX1r.e1QKmWq53kZudJ6WTzBrliwTVIERQb3e'),
-('TheGnorpApologue@gmail.com', 'Gnorp', '$2y$10$m/klZyOVOzWUn3lX.IOZs.xof663ervyJCLCvaWLPWuDwYtim5gb.');
+INSERT INTO `users` (`Email`, `Username`, `Password`, `Creation`, `Photo`) VALUES
+('123456789@gmail.com', '1234567', '$2y$10$VYQP88XxhYDoMdUwHIbrGuOd9olwiVnCLTulwS/o2VxnREvnR6gTC', '2026-02-11', 'Image.png'),
+('fs3$#$#Ds_wcom@gmail.com', 'Fella', '$2y$10$4GogSUHRz7.cQoKmGE7pk.wOKJStaA14X90JSrNHWADsnBNj5xKpO', '2026-02-02', 'Image.png'),
+('NovaContra@gmail.com', 'teste123', '$2y$10$AD6mYLh/2rAFnHszVIqWCev/O6y0MgfRQv2hQhiz0vBB9L8GK87VC', '2026-02-10', 'Image.png'),
+('qingyunyang8888@gmail.com', 'Francisco', '$2y$10$x0mnBYG0EI2735ufoREAd.odY1PW.UZ.VXq28BsN1dcOx2q9zTnwG', '2026-02-19', 'Image.png'),
+('qingyunyang@gmail.com', 'Yang', '$2y$10$IES//Sj6szD6wYKmpX1r.e1QKmWq53kZudJ6WTzBrliwTVIERQb3e', '2026-02-01', 'Image.png'),
+('TheGnorpApologue@gmail.com', 'Gnorp', '$2y$10$m/klZyOVOzWUn3lX.IOZs.xof663ervyJCLCvaWLPWuDwYtim5gb.', '2026-02-02', 'Image.png');
 
 --
 -- Índices para tabelas despejadas
@@ -253,7 +277,7 @@ ALTER TABLE `bounty`
 -- AUTO_INCREMENT de tabela `news`
 --
 ALTER TABLE `news`
-  MODIFY `Id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `players`
