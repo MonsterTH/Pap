@@ -78,6 +78,8 @@
     <div class="userPostInput">
         <img></img><p><?php echo $username; ?></p>
         <textarea class="PostInput"  style='resize: none;' placeholder="Whats going on your mind?"></textarea>
+        <hr>
+        <button class="PostButton"></button
     </div>
     </section>
     

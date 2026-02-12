@@ -102,8 +102,7 @@ body {
     z-index: 1;
 }
 
-.noti button
-{
+.noti button{
     padding: 5px;
     margin: 30px;
     width: 400px;
@@ -118,13 +117,11 @@ body {
     margin-left: 200px;
 }
 
-.noti h1
-{
+.noti h1{
     color: #be79b3;
 }
 
-.noti p
-{
+.noti p{
     margin-top: -15px;
     color: #caa7c4;
 }
@@ -530,6 +527,7 @@ hr
     color: #ff0000;
     border: 1px solid #ffffff;
 }
+
 .playercard
 {
     margin-left: 50px;
@@ -641,8 +639,7 @@ hr
     transition: 1s;
 }
 
-.playervoting button
-{
+.playervoting button{
     width: 250px;
     height: 75px;
     background-color: #995f6e;
@@ -652,8 +649,7 @@ hr
     transition: 1s;
 }
 
-.playervoting:hover
-{
+.playervoting:hover{
     border-top: 4px solid #d696cb;
     width: 265px;
     height: 275px;
@@ -661,22 +657,19 @@ hr
     margin-bottom: 105px;
 }
 
-.playervoting:hover button
-{
+.playervoting:hover button{
     background-color: #d696cb;
     margin-top: 275px;
     width: 265px;
 }
 
-.playervoting:hover p
-{
+.playervoting:hover p{
     margin-left: 70px;
     color: #d696cb
 }
 
 
-.playervoting button h1
-{
+.playervoting button h1{
     font-family: "Oxygen", sans-serif;
     color: white;
     margin-top: -1px;
@@ -1102,9 +1095,9 @@ hr
 .userPostInput{
     float: right;
     width: 750px;
-    height: 150px;
+    height: 170px;
     background-color: white;
-    margin-top: -775px;
+    margin-top: -755px;
     margin-left: 25px;
     border-right: 4px solid #995f6e;
     background-color: #161616;
@@ -1127,6 +1120,13 @@ hr
     margin-top: -75px;
 }
 
+.userPostInput hr{
+    width: 45%;
+    color: #ff0000;
+    border: 1px solid #b486a0;
+    margin-top: -7px;
+}
+
 .PostInput{
     padding: 5px;
     margin: 5px;
@@ -1136,12 +1136,159 @@ hr
     appearance: none;
 	border: none;
 	outline: none;
-	border-bottom: 4px solid #b486a0;
 	border-radius: .2em .2em 0 0;
 	padding: 0.4em;
 	color: #ffffff;
-    background-color: rgba(71, 44, 66, 0.438);
+    background-color: rgba(71, 44, 66, 0.082);
     font-family: "Oxygen", sans-serif;
     margin-top: -35px;
     margin-left: 95px;
+}
+
+.PostInput:hover{
+    padding: 5px;
+    margin: 5px;
+    width: 570px;
+    height: 75px;
+    border-radius: 10px;
+    appearance: none;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	padding: 0.4em;
+	color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.055);
+    font-family: "Oxygen", sans-serif;
+    margin-top: -35px;
+    margin-left: 95px;
+    transition: 1s;
+}
+
+.PostInput:focus{
+    padding: 5px;
+    margin: 5px;
+    width: 570px;
+    height: 75px;
+    border-radius: 10px;
+    appearance: none;
+	border: none;
+	outline: none;
+	border-radius: .2em .2em 0 0;
+	padding: 0.4em;
+	color: #ffffff;
+    background-color: rgba(255, 126, 231, 0.137);
+    font-family: "Oxygen", sans-serif;
+    margin-top: -35px;
+    margin-left: 95px;
+    transition: 1s;
+}
+
+.PostButton{
+    float: right;
+    margin-right: 25px;
+    width: 95px;
+    height: 30px;
+    background-color: #b486a0;
+    border: 0px;
+    border-radius: 15px;
+}
+
+.imgcarrosel ul {
+  width: 475px;
+  height: 250px;
+  padding: 20px;
+  display: flex;
+  margin-left: 53px;
+}
+.imgcarrosel li {
+  list-style-type: none;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+  padding: 20px;
+
+  flex: 0 0 100%;
+}
+
+.imgcarrosel li:nth-child(even) {
+  background-color: cyan;
+}
+.imgcarrosel ul {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+.imgcarrosel li {
+  scroll-snap-align: center;
+}
+.imgcarrosel ul::scroll-button(*) {
+  border: 0;
+  font-size: 2rem;
+  background: none;
+  margin-top: 100px;
+  color: rgb(255, 255, 255);
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.imgcarrosel ul::scroll-button(*):hover,
+.imgcarrosel ul::scroll-button(*):focus {
+  opacity: 1;
+}
+
+.imgcarrosel ul::scroll-button(*):active {
+  translate: 1px 1px;
+}
+
+.imgcarrosel ul::scroll-button(*):disabled {
+  opacity: 0.2;
+  cursor: unset;
+}
+.imgcarrosel ul::scroll-button(left) {
+  content: "◄" / "Previous";
+}
+
+.imgcarrosel ul::scroll-button(right) {
+  content: "►" / "Next";
+}
+.imgcarrosel ul {
+  anchor-name: --my-carousel;
+}
+
+.imgcarrosel ul::scroll-button(*) {
+  position: absolute;
+  position-anchor: --my-carousel;
+}
+.imgcarrosel ul::scroll-button(left) {
+  right: calc(anchor(left) - 70px);
+  bottom: calc(anchor(top) + 13px);
+}
+
+.imgcarrosel ul::scroll-button(right) {
+  left: calc(anchor(right) - 70px);
+  bottom: calc(anchor(top) + 13px);
+}
+.imgcarrosel ul {
+  scroll-marker-group: after;
+}
+.imgcarrosel ul::scroll-marker-group {
+  position: absolute;
+  position-anchor: --my-carousel;
+  top: calc(anchor(bottom) - 70px);
+  justify-self: anchor-center;
+
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.imgcarrosel li::scroll-marker {
+  content: attr(data-accName);
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: 16px;
+}
+.imgcarrosel li::scroll-marker:target-current {
+  background-color: black;
 }
