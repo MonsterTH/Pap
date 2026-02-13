@@ -1259,6 +1259,18 @@ hr
   background-color: palevioletred;
 }
 
+.PostBox{
+    width: 750px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.PostBox::-webkit-scrollbar {
+    display: none;
+}
+
 .PostInterface{
     width: 550px;
     height: 175px;
@@ -1267,6 +1279,8 @@ hr
     border-radius: 5px;
     border-bottom: 4px solid #995f6e;
     border-top: 4px solid #995f6e;
+    margin-top: 25px;
+    margin-left: 100px;
 }
 
 .PostInterface img{
@@ -1302,3 +1316,100 @@ hr
     border: 1px solid #2b2b2b;
     margin-top: -30px;
 }
+
+.PostInteraction{
+    background-color: rgba(255, 0, 0, 0);
+    margin-top: 55px;
+    height: 25px;
+    width: 75%;
+    margin-top: -0px;
+    margin-left: 70px;
+}
+
+.PostInteraction .box{
+    margin-left: 15px;
+    float: left;
+    height: 25px;
+    width: 75px;
+}
+
+.PostInteraction button{
+    height: 25px;
+    width: 25px;
+    background-color: #2c2c2c;
+    border: 0px;
+    transition: 1s;
+}
+
+.PostInteraction button p{
+    margin-top: -20px;
+    margin-left: -0px;
+    font-size: 15px;
+    color: #2c2c2c;
+    transition: 1s;
+}
+
+.PostInteraction button:hover{
+    background-color: #4b4b4b;
+}
+
+.PostInteraction button:hover p{
+    color: #646464;
+}
+
+.PostInterfaceWithImage{
+    width: 550px;
+    height: 325px;
+    background-color: #161616;
+    border: 0px;
+    border-radius: 5px;
+    border-bottom: 4px solid #995f6e;
+    border-top: 4px solid #995f6e;
+    margin-top: 25px;
+    margin-left: 100px;
+}
+
+.PostInterfaceWithImage img{
+    width: 55px;
+    height: 55px;
+    background-color: #ff65cc;
+    border: 0px;
+    margin-left: 20px;
+    margin-top: 10px;
+    transition: 1s;
+    clip-path: circle();
+    cursor: pointer;
+}
+
+.PostInterfaceWithImage p{
+    margin-left: 65px;
+    margin-top: -70px;
+}
+
+.PostInterfaceWithImage pre{
+    font-family: "Oxygen", sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    color: #575757;
+    margin-left: 85px;
+    margin-top: -40px;
+}
+
+.PostInterfaceWithImage .PostImage{
+    width: 350px;
+    height: 150px;
+    margin-top: -35px;
+    margin-left: 85px;
+    margin-bottom: 35px;
+    background-color: wheat;
+    clip-path: fill-box;
+}
+
+.PostInterfaceWithImage hr{
+    width: 90%;
+    color: #ff0000;
+    border: 1px solid #2b2b2b;
+    margin-top: -30px;
+}
+
+

@@ -55,13 +55,44 @@
     </nav>
             
     <main>
+    <div class="PostBox">
+
     <div class="PostInterface">
         <img></img><p>Nome</p><pre>Data</pre><br><br>
         <p>texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... </p>
         <hr>
-        
-
+        <div class="PostInteraction">
+            <div class="box"> <button><p>0</p></button></div>
+            <div class="box"> <button><p>0</p></button></div>
+            <div class="box"> <button><p>Share</p></button> </div>
+        </div>
     </div>
+
+    <div class="PostInterfaceWithImage">
+        <img></img><p>Nome</p><pre>Data</pre><br><br>
+        <p>texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... </p>
+        <img class="PostImage"></image>
+        <hr>
+        <div class="PostInteraction">
+            <div class="box"> <button><p>0</p></button></div>
+            <div class="box"> <button><p>0</p></button></div>
+            <div class="box"> <button><p>Share</p></button> </div>
+        </div>
+    </div>
+
+    <div class="PostInterface">
+        <img></img><p>Nome</p><pre>Data</pre><br><br>
+        <p>texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... </p>
+        <hr>
+        <div class="PostInteraction">
+            <div class="box"> <button><p>0</p></button></div>
+            <div class="box"> <button><p>0</p></button></div>
+            <div class="box"> <button><p>Share</p></button> </div>
+        </div>
+    </div>
+
+
+</div>
 </main>
     <footer>
          <div class="footer-links">
