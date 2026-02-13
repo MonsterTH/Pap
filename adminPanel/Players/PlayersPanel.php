@@ -5,23 +5,26 @@
       <meta charset="UTF-8">
       <link rel="stylesheet" href="../Admin.css">    
       <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Oxygen:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+      <script src="../../scripts/functions.js"></script>
     </head>
 
 <body>
     <?php include("../adminHome.php"); ?>
     <div class="admininfo">
         <h1>Add Player</h1>
-        <form action="scripts/PlayerRegister.php" method="POST" enctype="multipart/form-data" style="height: auto;">
-      <h5>
-        <p>
-          <input type="text" name="Name" class="inputtext" size="50" max="20" placeholder="Name" required> | <input type="date" name="birthDate" class="inputtext" style="width: 150px" required><br>
-        </p>
-        <p>
-        <input type="text" name="About" size="50" class="inputtext" max="500" placeholder="About" required> |  <label for="file-upload" class="custom-file-upload"> <i class="fa fa-cloud-upload"></i> Add FaceCard</label><input id="file-upload" type="file" name="FaceCard"/>
-        </p>
-       <input class="actionbutton" type="submit" value="Add">
-      </h5>
-    </form>
+        <form id="player_form" onsubmit="erro_birth(event)" enctype="multipart/form-data" style="height: auto;">
+          <h5>
+            <p>
+              <input id="name" type="text" name="Name" class="inputtext" size="50" max="20" placeholder="Name" required> | <input id="birth" type="date" name="birthDate" class="inputtext" style="width: 150px" required><br>
+              
+            </p>
+            <p>
+            <input type="text" name="About" size="50" class="inputtext" max="500" placeholder="About" required> |  <label for="file-upload" class="custom-file-upload"> <i class="fa fa-cloud-upload"></i> Add FaceCard</label><input id="file-upload" type="file" name="FaceCard"/><br><br>
+            <span id="erro" style="color: red; font-size: 15px;"></span>  
+            </p>
+          <input class="actionbutton" type="submit" value="Add">
+          </h5>
+        </form>
     <hr>
     <h1>Consulta</h1>
     <div style="overflow-y: scroll; height:200px;">

@@ -41,7 +41,7 @@
             <div style="margin-top: -5px">
                   <h1> O que é o Identity Fraud? </h1>
                   <p> Identity Fraud torna todos os competidores em investigadores, 16 Pessoas, todas com identidades falsas competem para descobrir a identidade dos outros enquanto protegem a sua. <br>Ajuda o teu investigador favorito a vencer ao votar na competição enquanto juntas-te a investigação.<br> 
-                  <a href="#"><button>Descubrir Mais</button></a> </p>
+                  <a href="about/about.php"><button>Descubrir Mais</button></a> </p>
             </div>
       </div>
 
@@ -53,16 +53,16 @@
                   <div class="imgcarrosel" id="carroselComp">
                         <ul>
                               <li data-accName="Item 1">
-                                    <img>1</img>
+                                    <img src="imgs/ns.jpg">1</img>
                               </li>
                               <li data-accName="Item 2">
-                                    <img>2</img>
+                                    <img src="imgs/ns2.jpg">2</img>
                               </li>
                               <li data-accName="Item 3">
-                                    <img>3</img>
+                                    <img src="imgs/ns3.jpg">3</img>
                               </li>
                               <li data-accName="Item 4">
-                                    <img>4</img>
+                                    <img src="imgs/ns4.jpg">4</img>
                               </li>
                         </ul>
                   </div>
@@ -115,25 +115,25 @@
       </footer>
 
             <script>
-            function autoCarousel(selector, speed) {
-            const track = document.querySelector(selector + " ul");
-            const slides = track.children;
+                  function autoCarousel(selector, speed) {
+                        const track = document.querySelector(selector + " ul");
+                        const slides = track.children;
 
-            let index = 0;
+                        let index = 0;
 
-            setInterval(() => {
-            index = (index + 1) % slides.length;
+                        setInterval(() => {
+                              index = (index + 1) % slides.length;
 
-            track.scrollTo({
-                  left: slides[index].offsetLeft - track.offsetLeft,
-                  behavior: "smooth"
-            });
+                              track.scrollTo({
+                                    left: slides[index].offsetLeft - track.offsetLeft,
+                                    behavior: "smooth"
+                              });
 
-            }, speed);
-            }
+                        }, speed);
+                  }
 
-            autoCarousel("#carroselComp", 3000);
-            autoCarousel("#carroselNew", 4500);
+                  autoCarousel("#carroselComp", 5000);
+                  autoCarousel("#carroselNew", 5000);
             </script>
 </body>
 </html>
