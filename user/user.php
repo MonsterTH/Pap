@@ -64,12 +64,12 @@
             <div class="dropdown">
                 <button class="dropdownbutton">≡</button>
                 <div class="dropdown-content">
-                <a href="userupdate.php">Editar Perfil</a>
-                <a href="logout.php">Sair</a>
+                    <a href="userupdate.php">Editar Perfil</a>
+                    <a href="logout.php">Sair</a>
 
-                <?php if ($isadmin): ?>
-                    <a href="../adminPanel/adminHome.php">Admin</a>
-                <?php endif; ?>
+                    <?php if ($isadmin): ?>
+                        <a href="/scripts/Pap/adminPanel/Players/PlayersPanel.php">Admin</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
         <img></img><p><?php echo $username; ?></p>
         <textarea class="PostInput"  style='resize: none;' placeholder="Whats going on your mind?"></textarea>
         <hr>
-        <button class="PostButton">Post</button>
+        <button class="PostButton"></button>
     </div>
     </section>
     
@@ -88,11 +88,11 @@
     <footer>
          <div class="footer-links">
                   <p><b>Useful Links</b></p>
-                  <a href="index.html" style="float:left;"><b>Início</b></a> <a href="register/register.html" style="float:right; margin-right: 75px;"><b>Login/Registar</b></a> <br>
-                  <a href="person.html" style="float:left;"><b>Jogadores</b></a><br>
-                  <a href="noticias.html" style="float:left;"><b>Notícias</b></a><br>
-                  <a href="votos.html"style="float:left;"><b>Votos</b></a><br>
-                  <a href="about/about.html" style="float:left;"><b>Sobre</b></a>
+                  <a href="../home.php" style="float:left;"><b>Início</b></a> <a href="../register/register.html" style="float:right; margin-right: 75px;"><b>Login/Registar</b></a> <br>
+                  <a href="../Players/players.php" style="float:left;"><b>Jogadores</b></a><br>
+                  <a href="../news/newspage.php" style="float:left;"><b>Notícias</b></a><br>
+                  <a href="../Players/voting.php"style="float:left;"><b>Votos</b></a><br>
+                  <a href="../about/about.php" style="float:left;"><b>Sobre</b></a>
             </div>
             <div class="footer-links">
                   <p><b>Contacts</b></p>

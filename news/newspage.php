@@ -161,11 +161,11 @@
     <footer>
          <div class="footer-links">
                   <p><b>Useful Links</b></p>
-                  <a href="index.html" style="float:left;"><b>Início</b></a> <a href="register/register.html" style="float:right; margin-right: 75px;"><b>Login/Registar</b></a> <br>
-                  <a href="person.html" style="float:left;"><b>Jogadores</b></a><br>
-                  <a href="noticias.html" style="float:left;"><b>Notícias</b></a><br>
-                  <a href="votos.html"style="float:left;"><b>Votos</b></a><br>
-                  <a href="about/about.html" style="float:left;"><b>Sobre</b></a>
+                  <a href="../home.php" style="float:left;"><b>Início</b></a> <a href="../register/register.html" style="float:right; margin-right: 75px;"><b>Login/Registar</b></a> <br>
+                  <a href="../Players/players.php" style="float:left;"><b>Jogadores</b></a><br>
+                  <a href="../news/newspage.php" style="float:left;"><b>Notícias</b></a><br>
+                  <a href="../Players/voting.php"style="float:left;"><b>Votos</b></a><br>
+                  <a href="../about/about.php" style="float:left;"><b>Sobre</b></a>
             </div>
             <div class="footer-links">
                   <p><b>Contacts</b></p>

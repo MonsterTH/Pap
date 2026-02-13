@@ -278,3 +278,26 @@ table td
     transition: 1s;
     cursor: pointer;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #16161600;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #995f6e;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c57c8f;
+  transition: 1s;
+}
