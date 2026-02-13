@@ -520,6 +520,15 @@ hr
     text-decoration: none;
 }
 
+.navbar a:focus
+{
+    font-family: "Oxygen", sans-serif;
+    color: #995f6e;
+    background-color: #2e2528;
+    font-size: 20px;
+    text-decoration: none;
+}
+
 .navbar hr
 {
     width: 75%;
@@ -613,7 +622,7 @@ hr
     border: 2px solid #be79b3;
     box-shadow: 0px 0px 5px #3b2a38;
     font-family: "Oxygen", sans-serif;
-    color: white;
+    color: #be79b3;
     background-color: #ffffff00; 
     transition: 2s;
     font-size: 20px;
@@ -664,8 +673,8 @@ hr
 }
 
 .playervoting:hover p{
-    margin-left: 70px;
-    color: #d696cb
+    transform: translateX(30%);
+    color: #d696cb;
 }
 
 
@@ -678,9 +687,9 @@ hr
 .playervoting p{
     font-family: "Oxygen", sans-serif;
     color: white;
-    margin-top: -1px;
+    margin-top: -1px;   
     margin-left: -15px;
-    transition: 1s;
+    transition: transform 3s ease;
 }
 
 .newsh1{
@@ -982,14 +991,14 @@ hr
 
 .dropdown-content {
     right: 1;
-  display: none;
-  position: absolute;
-  background-color: #161616;
-  border-right: 4px solid #995f6e;
-  text-align: right;
-  min-width: 200px;
-  margin-right: -5px;
-  transition: 0.4s;
+    display: none;
+    position: absolute;
+    background-color: #161616;
+    border-right: 4px solid #995f6e;
+    text-align: right;
+    min-width: 200px;
+    margin-right: -5px;
+    transition: 0.4s;
 }
 
 .dropdown-content a {
@@ -1184,6 +1193,7 @@ hr
 }
 
 .PostButton{
+    margin-top: 5px;
     float: right;
     margin-right: 25px;
     width: 95px;
@@ -1191,6 +1201,8 @@ hr
     background-color: #b486a0;
     border: 0px;
     border-radius: 15px;
+    color: white;
+    font-family: "Oxygen", sans-serif;
 }
 
 

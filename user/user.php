@@ -63,24 +63,24 @@
             <div class="dropdown">
                 <button class="dropdownbutton">≡</button>
                 <div class="dropdown-content">
-                <a href="userupdate.php">Editar Perfil</a>
-                <a href="logout.php">Sair</a>
+                    <a href="userupdate.php">Editar Perfil</a>
+                    <a href="logout.php">Sair</a>
 
-                <?php if ($isadmin): ?>
-                    <a href="../adminPanel/adminHome.php">Admin</a>
-                <?php endif; ?>
+                    <?php if ($isadmin): ?>
+                        <a href="/scripts/Pap/adminPanel/Players/PlayersPanel.php">Admin</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </main>  
     <section class="sectionuser">  
-    <div class="usersection"></div>
-    <div class="userPostInput">
-        <img></img><p><?php echo $username; ?></p>
-        <textarea class="PostInput"  style='resize: none;' placeholder="Whats going on your mind?"></textarea>
-        <hr>
-        <button class="PostButton"></button>
-    </div>
+        <div class="usersection"><h1>Trending</h1></div>
+        <div class="userPostInput">
+            <img></img><p><?php echo $username; ?></p>
+            <textarea class="PostInput"  style='resize: none;' placeholder="Whats going on your mind?"></textarea>
+            <hr>
+            <button class="PostButton">Send</button>
+        </div>
     </section>
     
 
