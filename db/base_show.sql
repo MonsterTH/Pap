@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 10-Fev-2026 às 16:32
+-- Tempo de geração: 13-Fev-2026 às 13:37
 -- Versão do servidor: 8.0.44
 -- versão do PHP: 8.2.29
 
@@ -113,7 +113,8 @@ INSERT INTO `news` (`Id`, `Title`, `Description`, `Date`, `Image`, `Genre`) VALU
 (11, 'Test De OverFlow Tuff', 'Sigma...', '2026-02-06', 'Image.png', 'NC'),
 (12, 'Test De OverFlow Tuff', 'Sigma...', '2026-02-06', 'Image.png', 'NC'),
 (13, 'Test De OverFlow Tuff', 'Sigma...', '2026-02-06', 'Image.png', 'NC'),
-(14, 'Test De OverFlow Tuff', 'Sigma...', '2026-02-06', 'Image.png', 'NC');
+(14, 'Test De OverFlow Tuff', 'Sigma...', '2026-02-06', 'Image.png', 'NC'),
+(15, 'Yang Gosta De Deepwoken', 'Block parry & Dodge', '2026-03-07', 'Image.png', 'MV');
 
 -- --------------------------------------------------------
 
@@ -152,7 +153,47 @@ INSERT INTO `players` (`Id`, `Name`, `Birth_date`, `About`, `Photo`) VALUES
 (11, '1232131231', '1006-06-30', '1345t678765432', 'Imagem.png'),
 (12, '1232131231', '1006-06-30', '1345t678765432', 'Imagem.png'),
 (13, '1232131231', '1006-06-30', '1345t678765432', 'Imagem.png'),
-(14, 'olha 3::', '7673-07-06', 'fgh_fd', 'Imagem.png');
+(14, 'olha 3::', '7673-07-06', 'fgh_fd', 'Imagem.png'),
+(15, 'Francisco Mora Yang', '2001-12-08', 'Jogador Semi-Profissional de Genshin Impact,', 'Imagem.png'),
+(16, 'Francisco Mora Yang', '2001-12-08', 'Jogador Semi-Profissional de Genshin Impact, Top 1 Global: Gooner, Treinador Amador de Cavalos e Incapaz de queimar ovo mexido', 'Imagem.png');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `posts`
+--
+
+CREATE TABLE `posts` (
+  `Id` int NOT NULL,
+  `Email_User` varchar(120) COLLATE utf8mb4_general_ci NOT NULL,
+  `Content` text COLLATE utf8mb4_general_ci NOT NULL,
+  `Image` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `Date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `post_coments`
+--
+
+CREATE TABLE `post_coments` (
+  `Id` int NOT NULL,
+  `Email_User` varchar(120) COLLATE utf8mb4_general_ci NOT NULL,
+  `Id_Post` int NOT NULL,
+  `Content` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `post_likes`
+--
+
+CREATE TABLE `post_likes` (
+  `Id_Post` int NOT NULL,
+  `Email_User` varchar(120) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -245,6 +286,30 @@ ALTER TABLE `players`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Índices para tabela `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`Id`),
+  ADD UNIQUE KEY `Id_User` (`Email_User`),
+  ADD UNIQUE KEY `Id_User_2` (`Email_User`),
+  ADD KEY `Id_User_3` (`Email_User`);
+
+--
+-- Índices para tabela `post_coments`
+--
+ALTER TABLE `post_coments`
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `Id_Post` (`Id_Post`),
+  ADD KEY `Id_User` (`Email_User`);
+
+--
+-- Índices para tabela `post_likes`
+--
+ALTER TABLE `post_likes`
+  ADD KEY `Id_Post` (`Id_Post`,`Email_User`),
+  ADD KEY `Email_User` (`Email_User`);
+
+--
 -- Índices para tabela `seasons`
 --
 ALTER TABLE `seasons`
@@ -277,13 +342,19 @@ ALTER TABLE `bounty`
 -- AUTO_INCREMENT de tabela `news`
 --
 ALTER TABLE `news`
-  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `players`
 --
 ALTER TABLE `players`
-  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT de tabela `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `seasons`
@@ -321,6 +392,26 @@ ALTER TABLE `eviction`
 ALTER TABLE `player-seasons`
   ADD CONSTRAINT `player-seasons_ibfk_1` FOREIGN KEY (`Id_season`) REFERENCES `seasons` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `player-seasons_ibfk_2` FOREIGN KEY (`Id_player`) REFERENCES `players` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limitadores para a tabela `posts`
+--
+ALTER TABLE `posts`
+  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `post_coments` (`Id_Post`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `posts_ibfk_2` FOREIGN KEY (`Email_User`) REFERENCES `users` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limitadores para a tabela `post_coments`
+--
+ALTER TABLE `post_coments`
+  ADD CONSTRAINT `post_coments_ibfk_1` FOREIGN KEY (`Email_User`) REFERENCES `users` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limitadores para a tabela `post_likes`
+--
+ALTER TABLE `post_likes`
+  ADD CONSTRAINT `post_likes_ibfk_1` FOREIGN KEY (`Id_Post`) REFERENCES `posts` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `post_likes_ibfk_2` FOREIGN KEY (`Email_User`) REFERENCES `users` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `seasons`
