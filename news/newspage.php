@@ -27,8 +27,9 @@
                     <li><a href="../Players/players.php"><b>Jogadores</b></a></li>
                     <li><a href="../news/newspage.php"><b>Notícias</b></a></li>
                     <li><a href="../Players/voting.php"><b>Votos</b></a></li>
+                    <li><a href="../Feed/feed.php"><b>Feed</b></a></li>
                     <li><a href="../about/about.php"><b>Sobre</b></a></li>
-                    <li><a href="../user/user.php"><b>Bem-vindo, <?php echo htmlspecialchars($_SESSION['Username']); ?></b></a></li>
+                    <li><a href="../user/user.php"><b>Bem-vindo, <?php echo $username; ?></b></a></li>
                 </ul>
             <?php else: ?>
                 <ul>
@@ -36,6 +37,7 @@
                     <li><a href="../Players/players.php"><b>Jogadores</b></a></li>
                     <li><a href="../news/newspage.php"><b>Notícias</b></a></li>
                     <li><a href="../login/login.html"><b>Votos</b></a></li>
+                    <li><a href="../login/login.html"><b>Feed</b></a></li>
                     <li><a href="../about/about.php"><b>Sobre</b></a></li>
                     <li><a href="../login/login.html"><b>Login/Registar</b></a></li>
                 </ul>

@@ -1,6 +1,6 @@
 <html>
 <head>
-      <title>Votaçao - Identity Fraud</title>
+      <title>Your Profile - IdentityFraud</title>
       <meta charset="UTF-8">
       <link rel="stylesheet" type="text/css" href="../scripts/moderno.css">
       <?php
@@ -11,7 +11,7 @@
             session_start();
             if (!isset($_SESSION['Username'])) 
             {
-                  header('Location: loginInput.html');
+                  header('Location: ../index.html'); 
                   exit();
             }
 
@@ -28,51 +28,49 @@
                 $isadmin = true;
             }
       ?>    
-      <script src="../../scripts/js/functions.js"></script>
+      <script src="../scripts/functions.js"></script>
 </head>
 <body>
     <?php
         $username = htmlspecialchars($_SESSION['Username']);
+        $creation = htmlspecialchars($_SESSION['Creation']);
     ?>
 
     <div class="fundo">
         <div class="logo"> 
                 <center><img class="img_logo" src="../imgs/LogoTipo.png"></center>
-        </div>  
+        </div>
     </div>
+    
     <nav class="bar">
-            <ul>
-                <li><a href="../home.php"><b>Início</b></a></li>
-                <li><a href="../Players/players.php"><b>Jogadores</b></a></li>
-                <li><a href="../news/newspage.php"><b>Notícias</b></a></li>
-                <li><a href="../Players/voting.php"><b>Votos</b></a></li>
-                <li><a href="../Feed/feed.php"><b>Feed</b></a></li>
-                <li><a href="../about/about.php"><b>Sobre</b></a></li>
-                <li><a href="../user/user.php"><b>Bem-vindo, <?php echo $username; ?></b></a></li>
-            </ul>
+        <ul>
+            <li><a href="../home.php"><b>Início</b></a></li>
+            <li><a href="../Players/players.php"><b>Jogadores</b></a></li>
+            <li><a href="../news/newspage.php"><b>Notícias</b></a></li>
+            <li><a href="../Players/voting.php"><b>Votos</b></a></li>
+            <li><a href="../Feed/feed.php"><b>Feed</b></a></li>
+            <li><a href="../about/about.php"><b>Sobre</b></a></li>
+            <li><a href="../user/user.php"><b>Bem-vindo, <?php echo $username; ?></b></a></li>
+        </ul>
     </nav>
+            
+    <main>
+    <div class="PostInterface">
+        <img></img><p>Nome</p><pre>Data</pre><br><br>
+        <p>texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... </p>
+        <hr>
+        
 
-<section>
-
-    <div class="playervoting"><button><h1>Votar</h1></button><p>Joao Pedro</p></div>
-    <div class="playervoting"><button><h1>Votar</h1></button><p>Olá! eu sou o Pedro</p></div>
-    <div class="playervoting"><button><h1>Votar</h1></button><p>Quer vender o seu carro?</p></div>
-    <div class="playervoting"><button><h1>Votar</h1></button><p>Em compramososeucarro.pt</p></div>
-
-</section>
-
-<hr>
-
-<button class="actionbutton" style="margin-left: 31%;"><a href="players.php">Ver Participantes</a></button>
-
+    </div>
+</main>
     <footer>
          <div class="footer-links">
                   <p><b>Useful Links</b></p>
-                  <a href="../home.php" style="float:left;"><b>Início</b></a> <a href="../register/register.html" style="float:right; margin-right: 75px;"><b>Login/Registar</b></a> <br>
-                  <a href="../Players/players.php" style="float:left;"><b>Jogadores</b></a><br>
-                  <a href="../news/newspage.php" style="float:left;"><b>Notícias</b></a><br>
-                  <a href="../Players/voting.php"style="float:left;"><b>Votos</b></a><br>
-                  <a href="../about/about.php" style="float:left;"><b>Sobre</b></a>
+                  <a href="index.html" style="float:left;"><b>Início</b></a> <a href="register/register.html" style="float:right; margin-right: 75px;"><b>Login/Registar</b></a> <br>
+                  <a href="person.html" style="float:left;"><b>Jogadores</b></a><br>
+                  <a href="noticias.html" style="float:left;"><b>Notícias</b></a><br>
+                  <a href="votos.html"style="float:left;"><b>Votos</b></a><br>
+                  <a href="about/about.html" style="float:left;"><b>Sobre</b></a>
             </div>
             <div class="footer-links">
                   <p><b>Contacts</b></p>

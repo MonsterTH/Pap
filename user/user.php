@@ -48,6 +48,7 @@
             <li><a href="../Players/players.php"><b>Jogadores</b></a></li>
             <li><a href="../news/newspage.php"><b>Notícias</b></a></li>
             <li><a href="../Players/voting.php"><b>Votos</b></a></li>
+            <li><a href="../Feed/feed.php"><b>Feed</b></a></li>
             <li><a href="../about/about.php"><b>Sobre</b></a></li>
             <li><a href="../user/user.php"><b>Bem-vindo, <?php echo $username; ?></b></a></li>
         </ul>
@@ -74,13 +75,13 @@
         </div>
     </main>  
     <section class="sectionuser">  
-        <div class="usersection"><h1>Trending</h1></div>
-        <div class="userPostInput">
-            <img></img><p><?php echo $username; ?></p>
-            <textarea class="PostInput"  style='resize: none;' placeholder="Whats going on your mind?"></textarea>
-            <hr>
-            <button class="PostButton">Send</button>
-        </div>
+    <div class="usersection"></div>
+    <div class="userPostInput">
+        <img></img><p><?php echo $username; ?></p>
+        <textarea class="PostInput"  style='resize: none;' placeholder="Whats going on your mind?"></textarea>
+        <hr>
+        <button class="PostButton"></button>
+    </div>
     </section>
     
 
