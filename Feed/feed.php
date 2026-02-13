@@ -55,36 +55,14 @@
     </nav>
             
     <main>
-        <div class="userinforow">
-            <img></img>
-            <h1><?php echo $username; ?></h1>
-            <h2>Date Of Creation</h2>
-            <h3><?php echo $creation; ?></h3>
-
-            <div class="dropdown">
-                <button class="dropdownbutton">≡</button>
-                <div class="dropdown-content">
-                <a href="userupdate.php">Editar Perfil</a>
-                <a href="logout.php">Sair</a>
-
-                <?php if ($isadmin): ?>
-                    <a href="../adminPanel/adminHome.php">Admin</a>
-                <?php endif; ?>
-                </div>
-            </div>
-        </div>
-    </main>  
-    <section class="sectionuser">  
-    <div class="usersection"></div>
-    <div class="userPostInput">
-        <img></img><p><?php echo $username; ?></p>
-        <textarea class="PostInput"  style='resize: none;' placeholder="Whats going on your mind?"></textarea>
+    <div class="PostInterface">
+        <img></img><p>Nome</p><pre>Data</pre><br><br>
+        <p>texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... </p>
         <hr>
-        <button class="PostButton">Post</button>
-    </div>
-    </section>
-    
+        
 
+    </div>
+</main>
     <footer>
          <div class="footer-links">
                   <p><b>Useful Links</b></p>
