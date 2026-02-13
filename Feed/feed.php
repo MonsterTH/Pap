@@ -55,14 +55,12 @@
     </nav>
             
     <main>
-    <div class="PostInterface">
-        <img></img><p>Nome</p><pre>Data</pre><br><br>
-        <p>texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... </p>
-        <hr>
-        
-
-    </div>
-</main>
+        <div class="PostInterface">
+            <img></img><p>Nome</p><pre>Data</pre><br><br>
+            <p>texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... </p>
+            <hr>
+        </div>
+    </main>
     <footer>
          <div class="footer-links">
                   <p><b>Useful Links</b></p>
