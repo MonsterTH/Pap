@@ -78,9 +78,14 @@
     <div class="usersection"></div>
     <div class="userPostInput">
         <img></img><p><?php echo $username; ?></p>
-        <textarea class="PostInput"  style='resize: none;' placeholder="Whats going on your mind?"></textarea>
+        <form enctype="multipart/form-data" method="post" action="Post.php">
+        <textarea class="PostInput"  style='resize: none;' max="500" placeholder="Whats going on your mind?"></textarea>
         <hr>
-        <button class="PostButton"></button>
+        <label for="file-upload" class="AddAttachment">
+            ^</label>
+        <input id="file-upload" type="file" />
+        <input class="PostButton" type="submit" value="Post">
+        </form>
     </div>
     </section>
     

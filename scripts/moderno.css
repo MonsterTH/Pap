@@ -1112,6 +1112,16 @@ hr
     background-color: #161616;
 }
 
+.userPostInput form {
+    background-color: rgba(255, 0, 0, 0);
+    height: 155px;
+    margin-left: -85px;
+    margin-top: -45px;
+    font-family: "Oxygen", sans-serif;
+    flex-direction: auto;
+    align-items: auto;
+}
+
 .userPostInput img{
     width: 55px;
     height: 55px;
@@ -1134,6 +1144,7 @@ hr
     color: #ff0000;
     border: 1px solid #b486a0;
     margin-top: -7px;
+    margin-left: 275px;
 }
 
 .PostInput{
@@ -1150,7 +1161,6 @@ hr
 	color: #ffffff;
     background-color: rgba(71, 44, 66, 0.082);
     font-family: "Oxygen", sans-serif;
-    margin-top: -35px;
     margin-left: 95px;
 }
 
@@ -1168,7 +1178,6 @@ hr
 	color: #ffffff;
     background-color: rgba(255, 255, 255, 0.055);
     font-family: "Oxygen", sans-serif;
-    margin-top: -35px;
     margin-left: 95px;
     transition: 1s;
 }
@@ -1187,15 +1196,36 @@ hr
 	color: #ffffff;
     background-color: rgba(255, 126, 231, 0.137);
     font-family: "Oxygen", sans-serif;
-    margin-top: -35px;
     margin-left: 95px;
     transition: 1s;
 }
 
+input[type="file"] {
+  display: none;
+}
+
+.AddAttachment{
+    margin-left: -425px;
+    border: 2.5px solid #2c2c2c;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: 2s;
+}
+
+.AddAttachment:hover{
+    margin-left: -425px;
+    border: 2.5px solid #888888;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+
 .PostButton{
-    margin-top: 5px;
+    margin-top: -25px;
     float: right;
-    margin-right: 25px;
+    margin-right: -675px;
     width: 95px;
     height: 30px;
     background-color: #995f6e;
@@ -1203,12 +1233,13 @@ hr
     color: white;
     border: 0px;
     border-radius: 15px;
+    cursor: pointer;
     transition: 1s;
 }
 
 .PostButton:hover{
     float: right;
-    margin-right: 25px;
+    margin-top: -25px;
     width: 95px;
     height: 30px;
     background-color: #c5667f;
