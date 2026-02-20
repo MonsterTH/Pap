@@ -46,7 +46,7 @@
             <?php endif; ?>
       </nav>
       <div>
-            <img class="aboutimg" src="../imgs/AboutImg.png">
+            <img class="aboutimg" src="../imgs/Aboutimg.png">
             <div class="about">
                   <h1> Sobre o Identity Fraud </h1>
                   <p> Identity Fraud é um reality show de competição onde 16 competidores com identidades falsas tentam descobrir as identidades uns dos outros enquanto protegem as suas. Cada competidor assume o papel de um investigador, tentando desvendar os segredos dos outros participantes para vencer a competição. <br><br>

@@ -1,35 +1,69 @@
 <?php
       include("../scripts/logindb.php");
-
+      session_start();
 
       $Email = htmlspecialchars($_SESSION['Email']);
-      $email = $_POST['email'];
-      $pass = $_POST['pass'];    
-      $rep_pass = $_POST['pass_rep'];
-      $Date = date("Y-m-d"); 
+      $Content = $_POST['Content'];  
+
+      //---------------------------------------------------
+
+      function GetImageExtension($imagetype)
+      {
+            if (empty($imagetype)) return false;
+            {
+            switch($imagetype)
+            {
+                  case 'image/bmp': 
+                        return '.bmp';
+
+                  case 'image/gif': 
+                        return '.gif';
+
+                  case 'image/jpeg': 
+                        return '.jpg';
+
+                  case 'image/png': 
+                        return '.png';
+                        
+                  default: 
+                        return false;
+            }
+            }
+      }
+
+      $default_image = "Null";
+      $target_path = $default_image;
+
+      if (!empty($_FILES["Image"]["name"]))
+      {
+            $file_name = $_FILES["Image"]["name"];
+            $temp_name = $_FILES["Image"]["tmp_name"];
+            $imgtype = $_FILES["Image"]["type"];    
+            $ext = GetImageExtension($imgtype);
+
+            $imagename = date("Y-m-d")."-".time().$ext;
+            $target_path = $imagename;
+
+            $upload_dir = "../imgs/imgs_saves/"; 
+
+            if(!move_uploaded_file($temp_name, $upload_dir.$imagename))
+            {
+                  echo("Erro ao mover o arquivo.");
+                  exit();
+            }
+      }
+
+      //---------------------------------------------------
       
       //verifica se já existe o utilizador
-      $query = mysqli_query($sql, $comando);
-      $num_rows = mysqli_num_rows($query);
 
-      //se não existir, insere na base de dados
-      if ($num_rows == 0)
-      {
-            $Date = date("Y-m-d");
+      $Date = date("Y-m-d");
             $comando = "INSERT INTO posts (Email_User, Content, Image, Date)
-                  VALUES ('$nome', '$email', '$pass_hashed', '$Date', 'Image.png')";
+                  VALUES ('$Email', '$Content', '$target_path', '$Date')";
                   
             $query = mysqli_query($sql, $comando);
 
             echo "ok";
 
-            exit();
-      }
-      else
-      {
-            echo $msg = "Já existe um utilizador com este email.";
-            exit();
-      }
-   
       mysqli_close($sql);
 ?>

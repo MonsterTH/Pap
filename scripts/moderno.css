@@ -55,25 +55,25 @@ body {
     margin: -10px 10px -10px 10px;
     padding: 20px;
     background-color: #16161600;
-    transition: 0.3s; 
+    transition: 1s; 
 }
 
 .bar a {
     text-decoration: none;
     color: #605c7c;
-    transition: 0.3s;
+    transition: 1s;
 }
 
 .bar ul li:hover{
     border-radius: 5px;
-    box-shadow: 0px 0px 50px #504d68;
-    background-color: #504d688e;
+    box-shadow: 0px 0px 50px #995f6e;
+    background-color: #995f6e79;
     color: #ffffff;
 }
 
 .bar ul li:hover a{
     text-decoration: none;
-    color: #8680ac;
+    color: #d693a5;
 }
 
 
@@ -82,8 +82,7 @@ body {
     background-image: url("../imgs/Texture.png");
     background-size: cover;
     background-blend-mode: multiply;
-    border: 4px solid #693653;
-    border-radius: 20px;
+    border-radius: 0px;
     box-shadow: 0px 0px 30px #b85b9093;
     margin: 0px 0px 20px 0px;
     padding: 20px;
@@ -91,6 +90,9 @@ body {
     width: 92%;
     align-self: center;
     z-index: 1;
+    border-bottom: 4px solid #995f6e;
+    border-top: 4px solid #995f6e;
+    box-shadow: 0px 0px 50px #834556;
 }
 
 .img_noti {
@@ -142,9 +144,9 @@ body {
     background-image: url("../imgs/Texture.png");
     background-size: cover;
     background-blend-mode: multiply;
-    border: 4px solid #7b6bbb;
     border-radius: 20px;
-    box-shadow: 0px 0px 30px #ddd7f977;
+    border-bottom: 4px solid #7b6bbb;
+    border-top: 4px solid #7b6bbb;
     margin: 0px 0px 20px 0px;
     margin-bottom: 20px;
     height: auto;
@@ -170,16 +172,16 @@ p {
     background-image: url("../imgs/Texture.png");
     background-size: cover;
     background-blend-mode: multiply;
-    border: 4px solid #7b6bbb;
-    border-radius: 20px;
     box-shadow: 0px 0px 30px #ddd7f980;
+    border-bottom: 4px solid #7b6bbb;
+    border-top: 4px solid #7b6bbb;
     margin: 0px 0px 20px 0px;
     margin-bottom: 20px;
     height: auto;
-    width: 46%;
+    width: 46.2%;
     align-self: center;
     float: left;
-    margin-left: 28px;
+    margin-left: 34px;
     align-items: center;
 }
 
@@ -368,7 +370,7 @@ a
 }
 
 .about {
-    background-color: #504d68;
+    background-color: #080808;
     background-image: url("../imgs/Texture.png");
     background-size: cover;
     background-blend-mode: multiply;
@@ -376,7 +378,8 @@ a
     width: 650px;
     align-self: center;
     float: left;
-    box-shadow: 0px 0px 50px #504d68;
+    border-bottom: 4px solid #7b6bbb;
+    border-top: 4px solid #7b6bbb;
     padding-right: 20px;;
 }
 
@@ -384,11 +387,13 @@ a
     text-align: justify;
     padding-right: 50px;
     line-height: 1.6;
+    color: #cc8195;
 }
 
 .about h1 {
     text-align: center;
     padding-right: 50px;
+    color: #cc6a84;
 }
 
 .aboutimg
@@ -399,9 +404,9 @@ a
     margin-bottom:50px;
     height: 450px;
     width: 300px;
-    box-shadow: 0px 0px 50px #504d68;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
+    box-shadow: 0px 0px 30px #00000080;
+    border-bottom: 4px solid #7b6bbb;
+    border-top: 4px solid #7b6bbb;
 }
 
 .footer-links
@@ -951,7 +956,8 @@ hr
     font-size: 45px;
     transition: 1s;
     margin-top: -151px;
-    margin-left: -450px;
+    margin-left: 255px;
+    text-align: left;
     color: #c76b84;
 }
 
@@ -960,7 +966,7 @@ hr
     margin-top: -20px;
     transition: 1s;
     color: white;
-    margin-left: -450px;
+    margin-left: -380px;
 }
 
 .userinforow h3{
@@ -968,7 +974,7 @@ hr
     margin-top: -10px;
     transition: 1s;
     color: white;
-    margin-left: 305px;
+    margin-left: 295px;
 }
 
 .dropdown {
@@ -1206,7 +1212,7 @@ input[type="file"] {
 
 .AddAttachment{
     margin-left: -425px;
-    border: 2.5px solid #2c2c2c;
+    border: 2.5px solid #2c2c2c00;
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
@@ -1214,11 +1220,16 @@ input[type="file"] {
 }
 
 .AddAttachment:hover{
-    margin-left: -425px;
-    border: 2.5px solid #888888;
-    display: inline-block;
-    padding: 6px 12px;
     cursor: pointer;
+}
+
+.AddAttachment img{
+    height: 25px;
+    width: 25px;
+    clip-path: fill-box;
+    background-color: #140a0d00;
+    margin-top: 0;
+    margin-left: 0;
 }
 
 
@@ -1290,12 +1301,65 @@ input[type="file"] {
   background-color: palevioletred;
 }
 
+.SideInfo1{
+    width: 390px;
+    height: 98%;
+     background-color: #161616;
+    border: 0px;
+    border-bottom: 4px solid #995f6e;
+    border-top: 4px solid #995f6e;
+    float: left;
+    margin-left: -335px;
+}
+
+.SideInfo1 img{
+    width: 155px;
+    height: 125px;
+    background-color: #ff65cc;
+    border: 0px;
+    margin-top: 15px;
+    margin-left: 5px;
+    transition: 1s;
+    clip-path: circle();
+    cursor: pointer;
+}
+
+.SideInfo1 h1{
+    color: #ff65cc;
+    margin-top: -125px;
+    margin-left: 150px;
+    max-width: 225px;
+    background-color: rgba(255, 0, 0, 0);
+    text-align: left;
+    overflow: hidden;
+}
+
+.SideInfo1 p{
+    color: #ffffff;
+    margin-top: -35px;
+    margin-left: 135px;
+    margin-bottom: -35px;
+    max-width: 225px;
+    background-color: rgba(255, 0, 0, 0);
+    text-align: left;
+    overflow: hidden;
+}
+
+.SideInfo1 hr{
+    width: 90%;
+    color: #ff0000;
+    border: 1px solid #2b2b2b;
+    margin-top: 60px;
+}
+
 .PostBox{
-    width: 750px;
+    float: left;
+    width: 550px;
     height: 100%;
     background-color: rgba(255, 255, 255, 0);
     justify-content: center;
     overflow-y: auto;
+    margin-left: 25px;
 }
 
 .PostBox::-webkit-scrollbar {
@@ -1304,14 +1368,13 @@ input[type="file"] {
 
 .PostInterface{
     width: 550px;
-    height: 175px;
+    max-height: 375px;
+    min-height: 115px;
     background-color: #161616;
     border: 0px;
-    border-radius: 5px;
     border-bottom: 4px solid #995f6e;
     border-top: 4px solid #995f6e;
     margin-top: 25px;
-    margin-left: 100px;
 }
 
 .PostInterface img{
@@ -1327,6 +1390,8 @@ input[type="file"] {
 }
 
 .PostInterface p{
+    /*color: white; */
+    overflow-x: hidden;
     margin-left: 65px;
     margin-top: -70px;
 }
@@ -1362,6 +1427,7 @@ input[type="file"] {
     float: left;
     height: 25px;
     width: 75px;
+    margin-top: -5px;
 }
 
 .PostInteraction button{
@@ -1372,8 +1438,18 @@ input[type="file"] {
     transition: 1s;
 }
 
+.PostInteraction button img{
+    height: 27px;
+    width: 27px;
+    clip-path: fill-box;
+    margin-left: -6px;
+    margin-top: -2px;
+    border: 0;
+    background-color: #00000000;
+}
+
 .PostInteraction button p{
-    margin-top: -20px;
+    margin-top: -45px;
     margin-left: -0px;
     font-size: 15px;
     color: #2c2c2c;
@@ -1388,16 +1464,24 @@ input[type="file"] {
     color: #646464;
 }
 
+.PostInteraction button:focus{
+    background-color: #f94cff;
+}
+
+.PostInteraction button:focus p{
+    color: #fa5bff;
+}
+
+
 .PostInterfaceWithImage{
     width: 550px;
-    height: 325px;
+    min-height: 200px;
+    max-height: 325px;
     background-color: #161616;
     border: 0px;
-    border-radius: 5px;
     border-bottom: 4px solid #995f6e;
     border-top: 4px solid #995f6e;
     margin-top: 25px;
-    margin-left: 100px;
 }
 
 .PostInterfaceWithImage img{

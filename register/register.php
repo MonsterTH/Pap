@@ -27,7 +27,7 @@
       {
             $Date = date("Y-m-d");
             $comando = "INSERT INTO users (Username, Email, Password, Creation, Photo)
-                  VALUES ('$nome', '$email', '$pass_hashed', '$Date', 'Image.png')";
+                  VALUES ('$nome', '$email', '$pass_hashed', '$Date', 'Imagem.png')";
                   
             $query = mysqli_query($sql, $comando);
 

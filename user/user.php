@@ -33,7 +33,11 @@
 <body>
     <?php
         $username = htmlspecialchars($_SESSION['Username']);
-        $creation = htmlspecialchars($_SESSION['Creation']);
+        $creation = htmlspecialchars($_SESSION['Creation']);    
+        $PostCountQuery = "SELECT count(*) FROM posts WHERE Email_User='". $email ."'";
+        $PostCount2 = mysqli_query($sql, $PostCountQuery);
+        $PostCount3 = mysqli_fetch_array($PostCount2);
+        $PostCount = $PostCount3["count(*)"];
     ?>
 
     <div class="fundo">
@@ -58,8 +62,8 @@
         <div class="userinforow">
             <img></img>
             <h1><?php echo $username; ?></h1>
-            <h2>Date Of Creation</h2>
-            <h3><?php echo $creation; ?></h3>
+            <h2>Join Date | Posts</h2>
+            <h3><?php echo $creation; ?> | <?php echo $PostCount; ?></h3>
 
             <div class="dropdown">
                 <button class="dropdownbutton">≡</button>
@@ -79,11 +83,11 @@
     <div class="userPostInput">
         <img></img><p><?php echo $username; ?></p>
         <form enctype="multipart/form-data" method="post" action="Post.php">
-        <textarea class="PostInput"  style='resize: none;' max="500" placeholder="Whats going on your mind?"></textarea>
+        <textarea name="Content" class="PostInput"  style='resize: none;' maxlength="500" placeholder="Whats going on your mind?"></textarea>
         <hr>
         <label for="file-upload" class="AddAttachment">
-            ^</label>
-        <input id="file-upload" type="file" />
+            <img src="../imgs/ImageAttach.png"></img></label>
+        <input id="file-upload" type="file" name="Image" value="Null"/>
         <input class="PostButton" type="submit" value="Post">
         </form>
     </div>

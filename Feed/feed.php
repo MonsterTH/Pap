@@ -27,12 +27,33 @@
             {
                 $isadmin = true;
             }
+
+        function GetLikeCount($PostId)
+        {
+            include("../scripts/logindb.php");
+                $LikeCountQuery = "SELECT count(*) FROM post_likes WHERE Id_Post='". $PostId ."'";
+                $LikeCount2 = mysqli_query($sql, $LikeCountQuery);
+                $LikeCount3 = mysqli_fetch_array($LikeCount2);
+                $LikeCount = $LikeCount3["count(*)"];
+                return $LikeCount;
+        }
+
+        function GetCommentCount($PostId)
+        {
+            include("../scripts/logindb.php");
+                $CommentCountQuery = "SELECT count(*) FROM post_coments WHERE Id_Post='". $PostId ."'";
+                $CommentCount2 = mysqli_query($sql, $CommentCountQuery);
+                $CommentCount3 = mysqli_fetch_array($CommentCount2);
+                $CommentCount = $CommentCount3["count(*)"];
+                return $CommentCount;
+        }
       ?>    
       <script src="../scripts/functions.js"></script>
 </head>
 <body>
     <?php
         $username = htmlspecialchars($_SESSION['Username']);
+        $Email = htmlspecialchars($_SESSION['Email']);
         $creation = htmlspecialchars($_SESSION['Creation']);
     ?>
 
@@ -55,42 +76,68 @@
     </nav>
             
     <main>
+    <div class="SideInfo1">
+        <?php 
+                $PostCountQuery = "SELECT count(*) FROM posts WHERE Email_User='". $Email ."'";
+                $PostCount2 = mysqli_query($sql, $PostCountQuery);
+                $PostCount3 = mysqli_fetch_array($PostCount2);
+                $PostCount = $PostCount3["count(*)"];
+        ?>
+        <img></img>
+        <h1><?php echo $username; ?></h1>
+        <p>Posts: <?php echo $PostCount; ?>| Likes: 0</p>
+        <hr>
+    </div>
+
     <div class="PostBox">
 
-    <div class="PostInterface">
-        <img></img><p>Nome</p><pre>Data</pre><br><br>
-        <p>texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... </p>
-        <hr>
-        <div class="PostInteraction">
-            <div class="box"> <button><p>0</p></button></div>
-            <div class="box"> <button><p>0</p></button></div>
-            <div class="box"> <button><p>Share</p></button> </div>
-        </div>
-    </div>
+    <?php
+            include("../scripts/logindb.php");
+            $Query="select * from posts Order by rand()";
+            $List=mysqli_query($sql,$Query);
+            $NumReg=mysqli_num_rows($List);
+            echo'<br>';
+            $firstPlayerId = null;
+            For($i=0;$i<$NumReg;$i++) //Passar registo linha a linha
+            {
+                $Registo = mysqli_fetch_array($List);
+                $NomeQuery = "SELECT username FROM users WHERE Email='" . $Registo["Email_User"] . "'";
+                $Nome2 = mysqli_query($sql, $NomeQuery);
+                $User = mysqli_fetch_array($Nome2);
+                $Nome = $User["username"];
 
-    <div class="PostInterfaceWithImage">
-        <img></img><p>Nome</p><pre>Data</pre><br><br>
-        <p>texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... </p>
-        <img class="PostImage"></image>
-        <hr>
-        <div class="PostInteraction">
-            <div class="box"> <button><p>0</p></button></div>
-            <div class="box"> <button><p>0</p></button></div>
-            <div class="box"> <button><p>Share</p></button> </div>
-        </div>
-    </div>
-
-    <div class="PostInterface">
-        <img></img><p>Nome</p><pre>Data</pre><br><br>
-        <p>texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... texto... </p>
-        <hr>
-        <div class="PostInteraction">
-            <div class="box"> <button><p>0</p></button></div>
-            <div class="box"> <button><p>0</p></button></div>
-            <div class="box"> <button><p>Share</p></button> </div>
-        </div>
-    </div>
-
+                if ($Registo["Image"] == "Null") {
+                    echo '<div class="PostInterface">
+                        <img></img>
+                        <p>'. $Nome .'</p>
+                        <pre>'. ($Registo["Date"]) .'</pre><br><br>
+                        <p>'. ($Registo["Content"]) .'</p>
+                        <hr>
+                        <div class="PostInteraction">
+                             <div class="box"> <button><img src="../imgs/Like.png"></img><p>'. GetLikeCount($Registo["Id"]) .'</p></button></div>
+                            <a href="#"><div class="box"> <button><img src="../imgs/Comment.png"></img><p>'. GetCommentCount($Registo["Id"]) .'</p></button></div></a>
+                            <div class="box"> <button><img src="../imgs/Share.png"></img><p>Share</p></button> </div>
+                        </div>
+                    </div>';  
+                }
+                else {
+                    
+                    echo '<div class="PostInterfaceWithImage">
+                        <img></img>
+                        <p>'. $Nome .'</p>
+                        <pre>'. ($Registo["Date"]) .'</pre><br><br>
+                        <p>'. ($Registo["Content"]) .'</p>
+                        <img class="PostImage" src="../imgs/imgs_saves/'. ($Registo["Image"]).'"></image>
+                        <hr>
+                        <div class="PostInteraction">
+                             <div class="box"> <button><img src="../imgs/Like.png"></img><p>0</p></button></div>
+                            <a href="#"><div class="box"> <button><img src="../imgs/Comment.png"></img><p>0</p></button></div></a>
+                            <div class="box"> <button><img src="../imgs/Share.png"></img><p>Share</p></button> </div>
+                        </div>
+                    </div>';
+                }
+            }
+        ?>
 
 </div>
 </main>
