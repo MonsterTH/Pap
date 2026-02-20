@@ -2,6 +2,7 @@
 <head>
       <title>Identity Fraud</title>
       <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="scripts/moderno.css">    
       <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Oxygen:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
@@ -26,15 +27,17 @@
       </nav>
 
       <div class="noti">
-            <img class="img_noti" src="imgs/ns2.jpg">
-            <div style="margin-top: -5px">
-                  <h1> O que é o Identity Fraud? </h1>
-                  <p> Identity Fraud torna todos os competidores em investigadores, 16 Pessoas, todas com identidades falsas competem para descobrir a identidade dos outros enquanto protegem a sua. <br>Ajuda o teu investigador favorito a vencer ao votar na competição enquanto juntas-te a investigação.<br> 
-                  <a href="about/about.php"><button>Descubrir Mais</button></a> </p>
+            <div class="conteudo">
+                  <div style="margin-top: -5px; flex: 1;">
+                        <h1> O que é o Identity Fraud? </h1>
+                        <p> Identity Fraud torna todos os competidores em investigadores, 16 Pessoas, todas com identidades falsas competem para descobrir a identidade dos outros enquanto protegem a sua. <br>Ajuda o teu investigador favorito a vencer ao votar na competição enquanto juntas-te a investigação.<br> 
+                        <a href="about/about.php"><button>Descubrir Mais</button></a> </p>
+                  </div>
+                  <img class="img_noti" src="imgs/ns2.jpg">
             </div>
       </div>
 
-      <div>
+      <div class="container_pesso">
             <div class="pesso">
                   <h1> Competidores </h1>
                   <p> Conhece os competidores da nova temporada de Identity Fraud! </p>
@@ -42,16 +45,16 @@
                   <div class="imgcarrosel" id="carroselComp">
                         <ul>
                               <li data-accName="Item 1">
-                                    <img>1</img>
+                                    <img></img>
                               </li>
                               <li data-accName="Item 2">
-                                    <img>2</img>
+                                    <img></img>
                               </li>
                               <li data-accName="Item 3">
-                                    <img>3</img>
+                                    <img></img>
                               </li>
                               <li data-accName="Item 4">
-                                    <img>4</img>
+                                    <img></img>
                               </li>
                         </ul>
                   </div>
@@ -63,16 +66,16 @@
                   <div class="imgcarrosel" id="carroselNew">
                         <ul>
                               <li data-accName="Item 1">
-                                    <img>1</img>
+                                    <img></img>
                               </li>
                               <li data-accName="Item 2">
-                                    <img>2</img>
+                                    <img></img>
                               </li>
                               <li data-accName="Item 3">
-                                    <img>3</img>
+                                    <img></img>
                               </li>
                               <li data-accName="Item 4">
-                                    <img>4</img>
+                                    <img></img>
                               </li>
                         </ul>
                   </div>
@@ -80,27 +83,37 @@
       </div>
 
       <footer>
-            <div class="footer-links">
-                  <p><b>Useful Links</b></p>
-                  <a href="index.html" style="float:left;"><b>Início</b></a> <a href="register/register.html" style="float:right; margin-right: 75px;"><b>Login/Registar</b></a> <br>
-                  <a href="person.html" style="float:left;"><b>Jogadores</b></a><br>
-                  <a href="noticias.html" style="float:left;"><b>Notícias</b></a><br>
-                  <a href="votos.html"style="float:left;"><b>Votos</b></a><br>
-                  <a href="about/about.html" style="float:left;"><b>Sobre</b></a>
+            <div class="footer-container">
+                  <div class="footer-links">
+                        <p><b>Useful Links</b></p>
+                        <a href="index.html"><b>Início</b></a>
+                        <a href="register/register.html"><b>Login/Registar</b></a>
+                        <a href="person.html"><b>Jogadores</b></a>
+                        <a href="noticias.html"><b>Notícias</b></a>
+                        <a href="votos.html"><b>Votos</b></a>
+                        <a href="about/about.html"><b>Sobre</b></a>
+                  </div>
+
+                  <div class="footer-links">
+                        <p><b>Contacts</b></p>
+                        <p><img src="imgs/telephone.png" alt="Telefone"> +351-933441581</p>
+                        <p><img src="imgs/envelope.png" alt="Email"> Support@IdentityFraud.com</p>
+                  </div>
+
+                  <div class="footer-links">
+                        <p><b>Identity Fraud</b></p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia veniam expedita quod odit quaerat maiores.</p>
+                        <div class="social-icons">
+                        <a href="#"><img src="imgs/facebook.png" alt="Facebook"></a>
+                        <a href="#"><img src="imgs/youtube.png" alt="YouTube"></a>
+                        <a href="#"><img src="imgs/insta.png" alt="Instagram"></a>
+                        <a href="#"><img src="imgs/tiktok.png" alt="TikTok"></a>
+                        </div>
+                  </div>
             </div>
-            <div class="footer-links">
-                  <p><b>Contacts</b></p>
-                  <div style="float: left;"><img style="float: left; margin-left: 125px;" src="imgs/telephone.png"><p style="float: left; margin-top: -13px;">+351-933441581</p></div>
-                  <div style="float: left;"><img src="imgs/envelope.png" style="float: left; margin-left: 85px;"><p style="float: left; margin-top: -13px;">Support@IdentityFraud.com </p></div>
-            </div>
-            <div class="footer-links">
-                  <p><b>Identity Fraud</b></p>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia veniam expedita quod odit quaerat maiores.</p>
-            </div><br><br><br>
-            <p>.</p>
+
             <hr>
-            <p style="float: left; margin-left: 150px;">Ⓒ Copyright 2026. Todos os direitos reservados.</p>
-            <div style="float: right;margin-top: 20px; margin-right: 165px;"><a href="#"><img src="imgs/facebook.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="imgs/youtube.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="imgs/insta.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="imgs/tiktok.png" style="float: left; margin-left: 5px;"></a></div>
+            <p class="copyright">Ⓒ Copyright 2026. Todos os direitos reservados.</p>
       </footer>
 
             <script>
