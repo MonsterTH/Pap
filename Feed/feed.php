@@ -53,7 +53,7 @@
             <li><a href="../user/user.php"><b>Bem-vindo, <?php echo $username; ?></b></a></li>
         </ul>
     </nav>
-            
+      
     <main>
     <div class="PostBox">
 
