@@ -9,6 +9,7 @@ body {
     width: 100%;
     background-image: url("../imgs/BgImage.png");
     background-size:cover;
+    overflow-x: hidden;
 }
 
 .logo {
@@ -369,7 +370,17 @@ a
     text-decoration: none;
 }
 
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin-bottom: 20px;
+}
+
 .about {
+    display: flex;
+    flex-flow: column;
     background-color: #080808;
     background-image: url("../imgs/Texture.png");
     background-size: cover;
@@ -377,22 +388,21 @@ a
     height: 450px;
     width: 650px;
     align-self: center;
-    float: left;
     border-bottom: 4px solid #7b6bbb;
     border-top: 4px solid #7b6bbb;
-    padding-right: 20px;;
+    padding-right: 20px;
 }
 
 .about p {
     text-align: justify;
-    padding-right: 50px;
+    padding-left: 2.3rem;
     line-height: 1.6;
     color: #cc8195;
 }
 
 .about h1 {
     text-align: center;
-    padding-right: 50px;
+    padding-left: 1rem;
     color: #cc6a84;
 }
 
@@ -400,8 +410,6 @@ a
 {
     align-self: center;
     float: left;
-    margin-left: 200px;
-    margin-bottom:50px;
     height: 450px;
     width: 300px;
     box-shadow: 0px 0px 30px #00000080;
@@ -486,6 +494,7 @@ footer img
 footer .copyright {
     font-size: 14px;
     margin-top: 10px;
+    text-align: center;
 }
 
 hr
@@ -1592,11 +1601,65 @@ input[type="file"] {
     .bar ul li:last-child {
         margin-left: 0;      /* remove auto margin para mobile */
     }
+
+    .about-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        margin: 40px 0px 60px 0px;
+    }
+
+    .about {
+        display: flex;
+        flex-flow: column;
+        background-color: #080808;
+        background-image: url("../imgs/Texture.png");
+        background-size: cover;
+        background-blend-mode: multiply;
+        height: 550px;
+        width: 650px;
+        align-self: center;
+        border-bottom: 4px solid #7b6bbb;
+        border-top: 4px solid #7b6bbb;
+        padding-right: 20px;
+    }
+
+    .aboutimg {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) { /*movel*/
     .bar ul li {
         font-size: 1rem;     /* ajusta a fonte para telas pequenas */
         padding: 0.6rem 0.8rem;
+    }
+
+    .about-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        margin: 40px 0px 60px 0px;
+    }
+
+    .about {
+        display: flex;
+        flex-flow: column;
+        background-color: #080808;
+        background-image: url("../imgs/Texture.png");
+        background-size: cover;
+        background-blend-mode: multiply;
+        height: 550px;
+        width: 650px;
+        align-self: center;
+        border-bottom: 4px solid #7b6bbb;
+        border-top: 4px solid #7b6bbb;
+        padding-right: 20px;
+    }
+
+    .aboutimg {
+        display: none;
     }
 }
