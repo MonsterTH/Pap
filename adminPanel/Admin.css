@@ -169,17 +169,21 @@ input[type="file"] {
 }
 
 .custom-file-upload {
-    padding: 5px;
-    margin: 5px;
+    display: flex;              /* importante */
+    align-items: center;        /* centraliza vertical */
+    justify-content: center;    /* centraliza horizontal */
+    padding: 0 10px;            /* remove padding vertical */
     width: 150px;
     height: 50px;
     border-radius: 10px;
-    border-width: 0px;
+    border: none;
     font-family: "Oxygen", sans-serif;
     color: white;
     background-color: rgba(71, 44, 66, 0.438);
     font-size: 15px;
     cursor: pointer;
+    position: relative;
+    top: -3px;
 }
 
 
@@ -299,4 +303,19 @@ table td
 ::-webkit-scrollbar-thumb:hover {
   background: #c57c8f;
   transition: 1s;
+}
+
+.upload-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#preview {
+    display: none;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ccc;
 }
