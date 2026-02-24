@@ -47,7 +47,6 @@
                 $CommentCount = $CommentCount3["count(*)"];
                 return $CommentCount;
         }
-        
       ?>    
       <script src="../scripts/functions.js"></script>
 </head>
@@ -76,72 +75,61 @@
         </ul>
     </nav>
             
-<main>
-    <div class="SideInfo1">
-        <?php 
-                $PostCountQuery = "SELECT count(*) FROM posts WHERE Email_User='". $Email ."'";
-                $PostCount2 = mysqli_query($sql, $PostCountQuery);
-                $PostCount3 = mysqli_fetch_array($PostCount2);
-                $PostCount = $PostCount3["count(*)"];
-        ?>
-        <img></img>
-        <h1><?php echo $username; ?></h1>
-        <p>Posts: <?php echo $PostCount; ?>| Likes: 0</p>
-        <hr>
+    <main>
+
+
+    <div class="onefourth" style="background-color: rgba(255, 255, 255, 0); width: 26%; margin-left:-22vw;">
+        <div class="SideInfo1" style="margin-left: 1vw;">
+            <?php 
+                    $PostCountQuery = "SELECT count(*) FROM posts WHERE Email_User='". $Email ."'";
+                    $PostCount2 = mysqli_query($sql, $PostCountQuery);
+                    $PostCount3 = mysqli_fetch_array($PostCount2);
+                    $PostCount = $PostCount3["count(*)"];
+            ?>
+            <img></img>
+            <h1><?php echo $username; ?></h1>
+            <p>Posts: <?php echo $PostCount; ?>| Likes: 0</p>
+            <hr>
+        </div>
+    </div>
+    <div class="onefourth" style="background-color: rgba(255, 255, 255, 0);; width: 50%;">
+         <div class="FocusedPostBar" style="margin-bottom:1vw;">
+                <img src="../imgs/back.png" style="background-color:rgb(255,255,255, 0); float: left;"></img>
+                <div class="FocusedPostBarContent">
+                    <img></img>
+                    <p>Nome</p>
+                    <pre>date</pre>
+                </div>
+         </div>
+         <div class="PostInterface" style="width: 100%; max-height: 475px; min-height: 215px;">
+                        <p style="margin-top:3vw;">ContDeepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken ent</p>
+                        <hr>
+                        <div class="PostInteraction" style="width:100%">
+                             <div class="box"> <button><img src="../imgs/Like.png"></img><p>0</p></button></div>
+                            <div class="box"> <button><img src="../imgs/Comment.png"></img><p>0</p></button></div>
+                            <div class="box"> <button><img src="../imgs/Share.png"></img><p>Share</p></button> </div>
+                        </div>
+                    </div>
+
+         <div class="PostBox">
+            <div class="PostInterface">
+                        <img></img>
+                        <p>Nome</p>
+                        <pre>Date</pre><br><br>
+                        <p>Content</p>
+                        <hr>
+                        <div class="PostInteraction">
+                             <div class="box"> <button><img src="../imgs/Like.png"></img><p>0</p></button></div>
+                            <a href="#"><div class="box"> <button><img src="../imgs/Comment.png"></img><p>0</p></button></div></a>
+                            <div class="box"> <button><img src="../imgs/Share.png"></img><p>Share</p></button> </div>
+                        </div>
+                    </div>
+         </div>
+
+    <div class="onefourth" style="background-color: rgba(255, 255, 255, 0);width: 26%;">
     </div>
 
-    <div class="PostBox">
-
-    <?php
-            include("../scripts/logindb.php");
-            $Query="select * from posts Order by rand()";
-            $List=mysqli_query($sql,$Query);
-            $NumReg=mysqli_num_rows($List);
-            echo'<br>';
-            $firstPlayerId = null;
-            For($i=0;$i<$NumReg;$i++) //Passar registo linha a linha
-            {
-                $Registo = mysqli_fetch_array($List);
-                $NomeQuery = "SELECT username FROM users WHERE Email='" . $Registo["Email_User"] . "'";
-                $Nome2 = mysqli_query($sql, $NomeQuery);
-                $User = mysqli_fetch_array($Nome2);
-                $Nome = $User["username"];
-
-                if ($Registo["Image"] == "Null") {
-                    echo '<div class="PostInterface">
-                        <img></img>
-                        <p>'. $Nome .'</p>
-                        <pre>'. ($Registo["Date"]) .'</pre><br><br>
-                        <p>'. ($Registo["Content"]) .'</p>
-                        <hr>
-                        <div class="PostInteraction">
-                             <div class="box"> <button onclick="SendLike('. ($Registo["Id"]).', this)"> <img src="../imgs/Like.png"><p>'. GetLikeCount($Registo["Id"]) .'</p></button> </div>
-                            <a href="#"><div class="box"> <button><img src="../imgs/Comment.png"></img><p>'. GetCommentCount($Registo["Id"]) .'</p></button></div></a>
-                            <div class="box"> <button><img src="../imgs/Share.png"></img><p>Share</p></button> </div>
-                        </div>
-                    </div>';  
-                }
-                else {
-                    
-                    echo '<div class="PostInterfaceWithImage">
-                        <img></img>
-                        <p>'. $Nome .'</p>
-                        <pre>'. ($Registo["Date"]) .'</pre><br><br>
-                        <p>'. ($Registo["Content"]) .'</p>
-                        <img class="PostImage" src="../imgs/imgs_saves/'. ($Registo["Image"]).'"></image>
-                        <hr>
-                        <div class="PostInteraction">
-                             <div class="box"> <button onclick="SendLike('. ($Registo["Id"]).', this)"> <img src="../imgs/Like.png"><p>'. GetLikeCount($Registo["Id"]) .'</p></button> </div>
-                            <a href="#"><div class="box"> <button><img src="../imgs/Comment.png"></img><p>'. GetCommentCount($Registo["Id"]) .'</p></button></div></a>
-                            <div class="box"> <button><img src="../imgs/Share.png"></img><p>Share</p></button> </div>
-                        </div>
-                    </div>';
-                }
-            }
-        ?>
-
-</div>
-</main>
+    </main>
     <footer>
          <div class="footer-links">
                   <p><b>Useful Links</b></p>
@@ -166,21 +154,4 @@
             <div style="float: right;margin-top: 20px; margin-right: 165px;"><a href="#"><img src="../imgs/facebook.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/youtube.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/insta.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/tiktok.png" style="float: left; margin-left: 5px;"></a></div>
     </footer>
 </body>
-
-<script>
-
-function SendLike(PostId, button) {
-    const PostInfo = new FormData();
-    PostInfo.append("PostId", PostId);
-
-    fetch("scripts/like.php", {
-        method: "POST",
-        body: PostInfo
-    })
-    .then(response => response.text())
-    .then(newCount => {
-        button.querySelector("p").innerText = newCount;
-    });
-}
-</script>
 </html>
