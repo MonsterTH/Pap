@@ -184,7 +184,6 @@ function erro_birth(event)
     var erro = document.getElementById("erro");
     var birth = document.getElementById("birth").value.trim();
 
-
     if (isNaN(Date.parse(birth)) || new Date(birth) >= new Date())
     {
         erro.textContent = "Data de nascimento inválida";
@@ -205,6 +204,45 @@ function erro_birth(event)
             if (xmlhttp.responseText.trim() === "ok") 
             {
                 erro.textContent = "Jogador adicionado com sucesso!";
+                erro.style.color = "green";
+            } 
+            else 
+            {
+                erro.textContent = xmlhttp.responseText;
+                erro.style.color = "red";
+            }
+        }
+    };
+
+    xmlhttp.send(formdata);
+}
+
+function erro_news(event)
+{
+    event.preventDefault(); // Previne o envio padrão do formulário
+
+    var erro = document.getElementById("erro");
+    var sel = document.querySelector('input[name="Cat"]:checked');
+
+    if (!sel) {
+        erro.textContent = "Selecione uma categoria.";
+        erro.style.color = "red";
+        return;
+    }
+
+    const form = document.getElementById("news_form");
+    const formdata = new FormData(form);
+
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "scripts/NewsAppend.php", true);
+
+    xmlhttp.onload = function () 
+    {
+        if (xmlhttp.status === 200) 
+        {
+            if (xmlhttp.responseText.trim() === "ok") 
+            {
+                erro.textContent = "Notícia adicionada com sucesso!";
                 erro.style.color = "green";
             } 
             else 

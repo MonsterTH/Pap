@@ -19,7 +19,17 @@
               
             </p>
             <p>
-            <input type="text" name="About" size="50" class="inputtext" max="500" placeholder="About" required> |  <label for="file-upload" class="custom-file-upload"> <i class="fa fa-cloud-upload"></i> Add FaceCard</label><input id="file-upload" type="file" name="FaceCard"/><br><br>
+            <input type="text" name="About" size="50" class="inputtext" max="500" placeholder="About" required> |              
+            
+            <span class="upload-container">
+              <label for="file-upload" class="custom-file-upload">
+                <i class="fa fa-cloud-upload"></i> Add FaceCard
+              </label>
+              <input id="file-upload" type="file" name="FaceCard"></input>
+              <img id="preview" src="#" alt="Preview"></img>
+            </span>
+
+            <br><br>
             <span id="erro" style="color: red; font-size: 15px;"></span>  
             </p>
           <input class="actionbutton" type="submit" value="Add">
@@ -65,5 +75,24 @@
     </div>
 </div>
 </body>
-
+<script> 
+  document.getElementById("file-upload").addEventListener("change", 
+    function(event) 
+    { 
+      const file = event.target.files[0]; 
+      const preview = document.getElementById("preview"); 
+      if (file) { 
+        const reader = new FileReader(); 
+        
+        reader.onload = function(e) { 
+          preview.src = e.target.result; 
+          preview.style.display = "block"; 
+          } 
+          
+        reader.readAsDataURL(file); 
+      } else { 
+        preview.style.display = "none"; 
+        } 
+      }); 
+</script>
 </html>

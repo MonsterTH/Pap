@@ -31,7 +31,7 @@
             }
       }
 
-      $default_image = "Null";
+      $default_image = "Imagem.png";
       $target_path = $default_image;
 
       if (!empty($_FILES["Image"]["name"]))

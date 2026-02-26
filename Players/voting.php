@@ -65,28 +65,38 @@
 
 <button class="actionbutton" style="margin-left: 31%;"><a href="players.php">Ver Participantes</a></button>
 
-    <footer>
-         <div class="footer-links">
-                  <p><b>Useful Links</b></p>
-                  <a href="../home.php" style="float:left;"><b>Início</b></a> <a href="../register/register.html" style="float:right; margin-right: 75px;"><b>Login/Registar</b></a> <br>
-                  <a href="../Players/players.php" style="float:left;"><b>Jogadores</b></a><br>
-                  <a href="../news/newspage.php" style="float:left;"><b>Notícias</b></a><br>
-                  <a href="../Players/voting.php"style="float:left;"><b>Votos</b></a><br>
-                  <a href="../about/about.php" style="float:left;"><b>Sobre</b></a>
+      <footer>
+            <div class="footer-container">
+                  <div class="footer-links">
+                        <p><b>Useful Links</b></p>
+                        <a href="../index.html"><b>Início</b></a>
+                        <a href="../register/register.html"><b>Login/Registar</b></a>
+                        <a href="../Players/players.php"><b>Jogadores</b></a>
+                        <a href="../news/newspage.php"><b>Notícias</b></a>
+                        <a href="../Players/voting.php"><b>Votos</b></a>
+                        <a href="../about/about.php"><b>Sobre</b></a>
+                  </div>
+
+                  <div class="footer-links">
+                        <p><b>Contacts</b></p>
+                        <p><img src="../imgs/telephone.png" alt="Telefone"> +351-933441581</p>
+                        <p><img src="../imgs/envelope.png" alt="Email"> Support@IdentityFraud.com</p>
+                  </div>
+
+                  <div class="footer-links">
+                        <p><b>Identity Fraud</b></p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia veniam expedita quod odit quaerat maiores.</p>
+                        <div class="social-icons">
+                        <a href="#"><img src="../imgs/facebook.png" alt="Facebook"></a>
+                        <a href="#"><img src="../imgs/youtube.png" alt="YouTube"></a>
+                        <a href="#"><img src="../imgs/insta.png" alt="Instagram"></a>
+                        <a href="#"><img src="../imgs/tiktok.png" alt="TikTok"></a>
+                        </div>
+                  </div>
             </div>
-            <div class="footer-links">
-                  <p><b>Contacts</b></p>
-                  <div style="float: left;"><img style="float: left; margin-left: 125px;" src="../imgs/telephone.png"><p style="float: left; margin-top: -13px;">+351-933441581</p></div>
-                  <div style="float: left;"><img src="../imgs/envelope.png" style="float: left; margin-left: 85px;"><p style="float: left; margin-top: -13px;">Support@IdentityFraud.com </p></div>
-            </div>
-            <div class="footer-links">
-                  <p><b>Identity Fraud</b></p>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia veniam expedita quod odit quaerat maiores.</p>
-            </div><br><br><br>
-            <p>.</p>
+
             <hr>
-            <p style="float: left; margin-left: 150px;">Ⓒ Copyright 2026. Todos os direitos reservados.</p>
-            <div style="float: right;margin-top: 20px; margin-right: 165px;"><a href="#"><img src="../imgs/facebook.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/youtube.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/insta.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/tiktok.png" style="float: left; margin-left: 5px;"></a></div>
-    </footer>
+            <p class="copyright">Ⓒ Copyright 2026. Todos os direitos reservados.</p>
+      </footer>
 </body>
 </html>

@@ -50,7 +50,7 @@
             $imagename = date("Y-m-d")."-".time().$ext;
             $target_path = $imagename;
 
-            $upload_dir = "../../imgs/imgs_saves/"; 
+            $upload_dir = "../../../imgs/imgs_saves/"; 
 
             if(!move_uploaded_file($temp_name, $upload_dir.$imagename))
             {
