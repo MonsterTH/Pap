@@ -110,6 +110,7 @@
             <p style="float: left; margin-left: 150px;">Ⓒ Copyright 2026. Todos os direitos reservados.</p>
             <div style="float: right;margin-top: 20px; margin-right: 165px;"><a href="#"><img src="../imgs/facebook.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/youtube.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/insta.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/tiktok.png" style="float: left; margin-left: 5px;"></a></div>
     </footer>
+
     <?php if ($firstPlayerId !== null): ?>
         <script>
             window.onload = function () {
@@ -117,5 +118,6 @@
                 };
         </script>
     <?php endif; ?>
+    
 </body>
 </html>

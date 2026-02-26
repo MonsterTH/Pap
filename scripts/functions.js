@@ -143,6 +143,27 @@ function erro_user(event)
     xmlhttp.send(formdata);
 }
 
+function loadPost(id) 
+{
+    fetch("../Feed/scripts/getpost.php?id=" + id)
+
+    
+        .then(response => response.json())
+        .then(data => {
+
+            if (data.error) {
+                alert("Post não encontrado");
+                return;
+            }
+
+            document.getElementById("PostName").innerText = data.Name;
+            document.getElementById("PostContent").innerText = data.Content;
+            document.getElementById("PostDate").innerText = data.Date;
+
+        })
+        .catch(err => console.error("Erro ao carregar post:", err));
+}
+
 function loadPlayer(id) 
 {
     fetch("getplayers.php?id=" + id)
@@ -154,6 +175,7 @@ function loadPlayer(id)
         })
         .catch(err => console.error("Erro ao carregar jogador", err));
 }
+
 
 function erro_birth(event)
 {
