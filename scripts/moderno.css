@@ -751,240 +751,6 @@ hr
     transition: transform 3s ease;
 }
 
-.newsh1{
-    color: #c77a8e;
-    font-size: 25px;
-     font-family: "Oxygen", sans-serif;
-    text-align: left;
-    margin-left: 45px;
-    transition: 1s;
-}
-
-.newsh1:hover{
-    color: #faa8be;
-    font-size: 25px;
-     font-family: "Oxygen", sans-serif;
-    text-align: left;
-    margin-left: 45px;
-}
-
-.newsrow{
-   overflow: auto;
-    white-space:nowrap;
-    width: 100%;
-    height: 190px;
-    overflow-y: hidden;
-}
-
-.newscard{
-    border-top: 4px solid #995f6e;
-    border-bottom: 4px solid #995f6e;
-    width: 375px;
-    height: 150px;
-    background-color: #161616;
-    margin-left: 70px;
-    margin-bottom: 15px;
-    transition: 1s;
-    display: inline-block;
-    vertical-align:top;
-    margin-right:20px;
-    white-space:normal;
-}
-
-.newscard img{
-    width: 175px;
-    height: 120px;
-    background-color: #ff65cc88;
-    border: 0px;
-    margin-left: 10px;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    float: left;
-    transition: 1s;
-}
-
-.newscard .textslot {
-    width: 150px;
-    height: 120px;
-    background-color: #6d2b5700;
-    float: left;
-    margin: 15px 0 15px 5px;
-    transition: 1s;
-}
-
-.newscard .textslot p {
-    font-size: 15px;
-    overflow: hidden;
-    line-clamp: 3;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    margin-top: -15px;
-    transition: 1s;
-}
-
-.newscard .textslot h1 {
-    font-size: 17px;
-    color: #c57a8e;
-    overflow: hidden;
-    line-clamp: 3;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    margin-top: -10px;
-    margin-bottom: -10px;
-    margin-left: 20px;
-    transition: 1s;
-}
-
-.newscard .continuebutton{
-    width: 0px;
-    height: 150px;
-    background-color: #c57a8e;
-    margin-top: 0px;
-    transition: 1s;
-    float: right;
-    font-size: 0px;
-    text-align: center;
-    color: #ffffff;
-}
-
-.newscard .continuebutton p{
-    transition: 1s;
-    font-size: 0px;
-    text-align: center;
-    color: #ffffff;
-    margin-left: -20px;
-    margin-top: 50px;
-}
-
-.newscard:hover{
-    border-top: 4px solid #c57a8e;
-    border-bottom: 4px solid #c77b8f;
-    width: 450px;
-    height: 150px;
-    background-color: #1b1b1b;
-    margin-left: 70px;
-    margin-bottom: 15px;
-    transition: 1s;
-    display: inline-block;
-    vertical-align:top;
-    margin-right:20px;
-    white-space:normal;
-    box-shadow: 0px 0px 20px #995f6e;
-}  
-
-.newscard:hover img{
-    width: 185px;
-}  
-
-.newscard:hover .textslot{
-    width: 200px;
-}  
-
-.newscard:hover .continuebutton{
-    transition-delay:0.5s;
-    width: 25px;
-    font-size: 20px;
-}
-
-.newscard:hover .continuebutton p{
-    transition-delay:0.5s;
-    margin-left: -15px;
-    margin-top: 40px;
-    font-size: 20px;
-}  
-
-.newscard:hover .textslot p {
-    font-size: 15px;
-    margin: 0;
-    overflow: hidden;
-    line-clamp: 3;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    margin-top: -15px;
-    color: #995f6e;
-}
-
-.newscard:hover .textslot h1 {
-    color: #995f6e;
-}
-
-.BigNew{
-    border-top: 4px solid #995f6e;
-    border-bottom: 4px solid #995f6e;
-    margin-left: 35px;
-    width: 95%;
-    height: 275px;
-    background-color: #140a0d;
-}
-
-.BigNew h1{
-    color: #db728e;
-    text-align: left;
-    margin-left: 10px;
-    transition: 1s;
-    margin-top: -5px;
-}   
-
-.BigNew h1:hover{
-    color: #eb9fb3;
-    text-align: left;
-    margin-left: 10px;
-}
-
-.BigNew img{
-    width: 350px;
-    height: 175px;
-    background-color: #ff65cc88;
-    border: 0px;
-    margin-top: -5px;
-    margin-left: 45px;
-    float: left;
-    transition: 1s;
-}
-
-.BigNew .textarea{
-    width: 825px;
-    height: 175px;
-    background-color: #ff65cc00;
-    border: 0px;
-    margin-top: -5px;
-    margin-left: 35px;
-    float: left;
-    transition: 1s;
-}
-
-.BigNew .textarea h1{
-    font-size: 15px;
-    overflow: hidden;
-    line-clamp: 3;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    margin-top: -20px;
-    font-size: 25px;
-    transition: 1s;
-}
-
-.BigNew .textarea p{
-    font-size: 15px;
-    overflow: hidden;
-    line-clamp: 3;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    margin-top: -20px;
-    transition: 1s;
-}
-
-.newshr{
-    width: 75%;
-    color: #ff0000;
-    border: 2.5px solid #c47a8e;
-}
-
 .userinforow{
     border-left: 4px solid #995f6e;
     border-right: 4px solid #995f6e;
@@ -1739,6 +1505,12 @@ input[type="file"] {
     transition: 1s;
 }
 
+.TrendingPost1{
+    height: 25vw;
+    width: 25vw;
+    background-color: #161616;
+}
+
 /* FormataçaoDePagina(Yang eu estou a dar-me em maluco) */
 
 .onefourth{
@@ -1748,10 +1520,14 @@ input[type="file"] {
     float: left;
 }
 
-
-
-
-
+.onefourthvertical{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 25%;
+    background-color: rgb(255, 255, 255);
+}
 
 /* Responsivo */
 @media (max-width: 768px) { /*tablet*/
