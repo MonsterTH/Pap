@@ -1,6 +1,5 @@
 <html>
 <head>
-      <title>Your Profile - IdentityFraud</title>
       <meta charset="UTF-8">
       <link rel="stylesheet" type="text/css" href="../scripts/moderno.css">
       <?php
@@ -128,4 +127,7 @@
             <p class="copyright">Ⓒ Copyright 2026. Todos os direitos reservados.</p>
       </footer>
 </body>
+<head>
+    <title><?php echo $username ?> - IdentityFraud</title>
+ </head>
 </html>
