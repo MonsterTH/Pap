@@ -37,7 +37,7 @@
 
     <div class="fundo">
         <div class="logo"> 
-                <center><img class="img_logo" src="../imgs/LogoTipo.png"></center>
+                <img class="img_logo" src="../imgs/LogoTipo.png">
         </div>  
     </div>
     <nav class="bar">
@@ -52,18 +52,20 @@
             </ul>
     </nav>
 
-<section>
+      <section class="voting-container">
 
-    <div class="playervoting"><button><h1>Votar</h1></button><p>Joao Pedro</p></div>
-    <div class="playervoting"><button><h1>Votar</h1></button><p>Olá! eu sou o Pedro</p></div>
-    <div class="playervoting"><button><h1>Votar</h1></button><p>Quer vender o seu carro?</p></div>
-    <div class="playervoting"><button><h1>Votar</h1></button><p>Em compramososeucarro.pt</p></div>
+            <div class="playervoting"><button><h1>Votar</h1></button><p>Joao Pedro</p></div>
+            <div class="playervoting"><button><h1>Votar</h1></button><p>Olá! eu sou o Pedro</p></div>
+            <div class="playervoting"><button><h1>Votar</h1></button><p>Quer vender o seu carro?</p></div>
+            <div class="playervoting"><button><h1>Votar</h1></button><p>Em compramososeucarro.pt</p></div>
 
-</section>
+      </section>
 
-<hr>
+      <hr>
 
-<button class="actionbutton" style="margin-left: 31%;"><a href="players.php">Ver Participantes</a></button>
+      <a href="players.php" class="actionbutton">
+            Ver Participantes
+      </a>
 
       <footer>
             <div class="footer-container">
