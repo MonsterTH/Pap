@@ -1520,9 +1520,17 @@ input[type="file"] {
 }
 
 .TrendingPost1{
-    height: 25vw;
-    width: 25vw;
-    background-color: #161616;
+    height: 21vw;
+    width: 21vw;
+    background-color: #37274b;
+}
+
+.TrendingPost2{
+    margin-left: 1vw;
+    float: left;
+    height: 11vw;
+    width: 21vw;
+    background-color: #55347d;
 }
 
 /* FormataçaoDePagina(Yang eu estou a dar-me em maluco) */
