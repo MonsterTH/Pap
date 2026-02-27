@@ -116,7 +116,7 @@
                         <hr>
                         <div class="PostInteraction">
                              <div class="box"> <button onclick="SendLike('. ($Registo["Id"]).', this)"> <img src="../imgs/Like.png"><p>'. GetLikeCount($Registo["Id"]) .'</p></button> </div>
-                            <a href="#"><div class="box"> <button><img src="../imgs/Comment.png"></img><p>'. GetCommentCount($Registo["Id"]) .'</p></button></div></a>
+                            <a href="focusedPost.php?id='. $Registo['Id'] .'"><div class="box"> <button><img src="../imgs/Comment.png"></img><p>'. GetCommentCount($Registo["Id"]) .'</p></button></div></a>
                             <div class="box"> <button><img src="../imgs/Share.png"></img><p>Share</p></button> </div>
                         </div>
                     </div>';  

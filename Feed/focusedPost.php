@@ -94,19 +94,19 @@
     </div>
     <div class="onefourth" style="background-color: rgba(255, 255, 255, 0);; width: 50%;">
          <div class="FocusedPostBar" style="margin-bottom:1vw;">
-                <img src="../imgs/back.png" style="background-color:rgb(255,255,255, 0); float: left;"></img>
+                <a href="feed.php"><img src="../imgs/back.png" style="background-color:rgb(255,255,255, 0); float: left;"></img></a>
                 <div class="FocusedPostBarContent">
                     <img></img>
-                    <p>Nome</p>
-                    <pre>date</pre>
+                    <p><span id="PostName"></span></p>
+                    <pre><span id="PostDate"></span></pre>
+                    <pre style="margin-top:-0.5vw">Comentarios</pre>
                 </div>
          </div>
          <div class="PostInterface" style="width: 100%; max-height: 475px; min-height: 215px;">
-                        <p style="margin-top:3vw;">ContDeepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken Deepwoken ent</p>
+                        <p style="margin-top:3vw;"><span id="PostContent"></span></p>
                         <hr>
                         <div class="PostInteraction" style="width:100%">
                              <div class="box"> <button><img src="../imgs/Like.png"></img><p>0</p></button></div>
-                            <div class="box"> <button><img src="../imgs/Comment.png"></img><p>0</p></button></div>
                             <div class="box"> <button><img src="../imgs/Share.png"></img><p>Share</p></button> </div>
                         </div>
                     </div>
@@ -114,13 +114,12 @@
          <div class="PostBox">
             <div class="PostInterface">
                         <img></img>
-                        <p>Nome</p>
+                        <p>Name</p>
                         <pre>Date</pre><br><br>
                         <p>Content</p>
                         <hr>
                         <div class="PostInteraction">
                              <div class="box"> <button><img src="../imgs/Like.png"></img><p>0</p></button></div>
-                            <a href="#"><div class="box"> <button><img src="../imgs/Comment.png"></img><p>0</p></button></div></a>
                             <div class="box"> <button><img src="../imgs/Share.png"></img><p>Share</p></button> </div>
                         </div>
                     </div>
@@ -153,5 +152,9 @@
             <p style="float: left; margin-left: 150px;">Ⓒ Copyright 2026. Todos os direitos reservados.</p>
             <div style="float: right;margin-top: 20px; margin-right: 165px;"><a href="#"><img src="../imgs/facebook.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/youtube.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/insta.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/tiktok.png" style="float: left; margin-left: 5px;"></a></div>
     </footer>
+
+<script>
+    loadPost(<?php echo isset($_GET['id']) ? (int)$_GET['id'] : 0; ?>);
+</script>
 </body>
 </html>
