@@ -1,6 +1,5 @@
 <html>
 <head>
-      <title>Your Profile - IdentityFraud</title>
       <meta charset="UTF-8">
       <link rel="stylesheet" type="text/css" href="../scripts/moderno.css">
       <?php
@@ -55,6 +54,7 @@
         $username = htmlspecialchars($_SESSION['Username']);
         $Email = htmlspecialchars($_SESSION['Email']);
         $creation = htmlspecialchars($_SESSION['Creation']);
+        $postId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
     ?>
 
     <div class="fundo">
@@ -77,7 +77,6 @@
             
     <main>
 
-
     <div class="onefourth" style="background-color: rgba(255, 255, 255, 0); width: 26%; margin-left:-22vw;">
         <div class="SideInfo1" style="margin-left: 1vw;">
             <?php 
@@ -92,39 +91,81 @@
             <hr>
         </div>
     </div>
-    <div class="onefourth" style="background-color: rgba(255, 255, 255, 0);; width: 50%;">
-         <div class="FocusedPostBar" style="margin-bottom:1vw;">
+<?php 
+    include("../scripts/logindb.php");
+    $Query="select * from posts Where Id= ". $postId ."";
+    $List=mysqli_query($sql,$Query);
+    $NumReg=mysqli_num_rows($List);
+    echo'<br>';
+
+    if ($NumReg > 0)
+    {
+        $Registo = mysqli_fetch_array($List);
+        $NomeQuery = "SELECT username FROM users WHERE Email='" . $Registo["Email_User"] . "'";
+        $Nome2 = mysqli_query($sql, $NomeQuery);
+        $User = mysqli_fetch_array($Nome2);
+        $Nome = $User["username"];
+        echo'
+        <div class="onefourth" style="background-color: rgba(255, 255, 255, 0);; width: 50%;">
+            <div class="FocusedPostBar" style="margin-bottom:1vw;">
                 <a href="feed.php"><img src="../imgs/back.png" style="background-color:rgb(255,255,255, 0); float: left;"></img></a>
                 <div class="FocusedPostBarContent">
                     <img></img>
-                    <p><span id="PostName"></span></p>
-                    <pre><span id="PostDate"></span></pre>
-                    <pre style="margin-top:-0.5vw">Comentarios</pre>
+                    <p>'. $Nome .'</p>
+                    <pre>'. ($Registo["Date"]) .'</pre>
+                    <pre style="margin-top:-0.5vw">'. GetCommentCount($Registo["Id"]).' Comentarios</pre>
                 </div>
          </div>
          <div class="PostInterface" style="width: 100%; max-height: 475px; min-height: 215px;">
-                        <p style="margin-top:3vw;"><span id="PostContent"></span></p>
-                        <hr>
-                        <div class="PostInteraction" style="width:100%">
-                             <div class="box"> <button><img src="../imgs/Like.png"></img><p>0</p></button></div>
+                        <p style="margin-top:-1w;"><p>'. $Registo["Content"].'</p></p>
+                        <hr style="margin-top:2vw;">
+                        <div class="PostInteraction" style="width:100%;">
+                             <div class="box"> <button onclick="SendLike('. ($Registo["Id"]).', this)"> <img src="../imgs/Like.png"><p>'. GetLikeCount($Registo["Id"]) .'</p></button> </div>
                             <div class="box"> <button><img src="../imgs/Share.png"></img><p>Share</p></button> </div>
                         </div>
-                    </div>
-
-         <div class="PostBox">
-            <div class="PostInterface">
-                        <img></img>
-                        <p>Name</p>
-                        <pre>Date</pre><br><br>
-                        <p>Content</p>
-                        <hr>
-                        <div class="PostInteraction">
-                             <div class="box"> <button><img src="../imgs/Like.png"></img><p>0</p></button></div>
-                            <div class="box"> <button><img src="../imgs/Share.png"></img><p>Share</p></button> </div>
-                        </div>
-                    </div>
+                    </div>';
+    }
+?>
+ <div class="FocusedPostBar" style="margin-bottom:1vw; border-top: 0px solid #995f6e;border-right: 0px solid #995f6e; background: rgb(22,22,22);">
+                <div class="FocusedPostBarContent">
+                    <img></img><p><?php echo $username; ?></p>
+                    <form enctype="multipart/form-data" method="post" action="scripts/coment.php">
+                        <div class="FocusedPostBarContent" style="width: 25vw;">
+                        <textarea name="Content" class="CommentBox"  style='resize: none;' maxlength="500" placeholder="Give Us Your Opinion"></textarea>
+                        <input type="number" class="hiddeninput" value="<?php echo $postId ?>" name="PostId"></input>
+                        <button type="submit" class="CommentPost"><img class="ImgInsideInput" src="../imgs/post.png"></img></button>
+                    </form>
+                </div>
          </div>
+         <div class="PostBox" style="height:55%; ">
+         <?php
+            $Query="select * from post_coments Where Id_Post= ". $postId ."";
+            $List=mysqli_query($sql,$Query);
+            $NumReg=mysqli_num_rows($List);
+            echo'<br>';
 
+            For($i=0;$i<$NumReg;$i++)
+            {
+                $Registo = mysqli_fetch_array($List);
+                $NomeQuery = "SELECT username FROM users WHERE Email='" . $Registo["Email_User"] . "'";
+                $Nome2 = mysqli_query($sql, $NomeQuery);
+                $User = mysqli_fetch_array($Nome2);
+                $Nome = $User["username"];
+                echo'
+                        <div class="PostInterface">
+                                     <img></img>
+                                       <p>'. $Nome .'</p>
+                                    <pre>'. ($Registo["Date"]) .'</pre><br><br>
+                                     <p>'. ($Registo["Content"]) .'</p>
+                                     <hr>
+                                        <div class="PostInteraction">
+                                        <div class="box"> <button><img src="../imgs/Like.png"></img><p>0</p></button></div>
+                                        <div class="box"> <button><img src="../imgs/Share.png"></img><p>Share</p></button> </div>
+                                    </div>
+                                    </div>';
+            }
+         ?>
+        </div>
     <div class="onefourth" style="background-color: rgba(255, 255, 255, 0);width: 26%;">
     </div>
 
@@ -153,8 +194,24 @@
             <div style="float: right;margin-top: 20px; margin-right: 165px;"><a href="#"><img src="../imgs/facebook.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/youtube.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/insta.png" style="float: left; margin-left: 5px;"></a><a href="#"><img src="../imgs/tiktok.png" style="float: left; margin-left: 5px;"></a></div>
     </footer>
 
-<script>
-    loadPost(<?php echo isset($_GET['id']) ? (int)$_GET['id'] : 0; ?>);
+    <script>
+
+function SendLike(PostId, button) {
+    const PostInfo = new FormData();
+    PostInfo.append("PostId", PostId);
+
+    fetch("scripts/like.php", {
+        method: "POST",
+        body: PostInfo
+    })
+    .then(response => response.text())
+    .then(newCount => {
+        button.querySelector("p").innerText = newCount;
+    });
+}
 </script>
 </body>
+<head>
+    <title>Post - IdentityFraud</title>
+</head>
 </html>
