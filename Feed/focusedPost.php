@@ -137,7 +137,7 @@
                     </form>
                 </div>
          </div>
-         <div class="PostBox" style="height:55%; ">
+         <div class="PostBox" style="height:40%;margin-top:-37vw ">
          <?php
             $Query="select * from post_coments Where Id_Post= ". $postId ."";
             $List=mysqli_query($sql,$Query);
@@ -166,7 +166,7 @@
             }
          ?>
         </div>
-    <div class="onefourth" style="background-color: rgba(255, 255, 255, 0);width: 26%;">
+    <div class="onefourth" style="background-color: rgba(255, 255, 255, 0);width: 26%; height:1%">
     </div>
 
     </main>
