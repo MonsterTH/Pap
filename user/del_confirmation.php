@@ -20,7 +20,7 @@
 
     <div class="fundo">
         <div class="logo"> 
-                <center><img class="img_logo" src="../imgs/LogoTipo.png"></center>
+                <img class="img_logo" src="../imgs/LogoTipo.png">
         </div>
     </div>
     
