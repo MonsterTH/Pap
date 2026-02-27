@@ -13,15 +13,17 @@ body {
 }
 
 .logo {
-    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 2rem;
-    align-self: center;
 }
 
 .img_logo {
-    margin-top: -2rem;
+    margin-top: -2.3rem;
     height: auto;
-    max-width: 40%;
+    width: 40%;
+    max-width: 600px;
 }
 
 .fundo {
@@ -1644,6 +1646,10 @@ input[type="file"] {
 
 /* Responsivo */
 @media (max-width: 768px) { /*tablet*/
+    .img_logo {
+        width: 70%;
+    }
+
     .bar ul {
         flex-direction: column; /* empilha os itens */
         align-items: flex-start;
@@ -1688,6 +1694,10 @@ input[type="file"] {
 }
 
 @media (max-width: 480px) { /*movel*/
+    .img_logo {
+        width: 85%;
+    }
+
     .bar ul li {
         font-size: 1rem;     /* ajusta a fonte para telas pequenas */
         padding: 0.6rem 0.8rem;
