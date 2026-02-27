@@ -9,7 +9,6 @@ body {
     width: 100%;
     background-image: url("../imgs/BgImage.png");
     background-size: cover;
-    overflow-x: hidden;
 }
 
 .logo {
@@ -1757,6 +1756,10 @@ input[type="file"] {
 /* Responsivo */
 @media (max-width: 768px) { /*tablet*/
 
+    .img_noti {
+        display: none;
+    }
+
     .noti {
         max-width: 90%;
     }
@@ -1809,6 +1812,10 @@ input[type="file"] {
 }
 
 @media (max-width: 480px) { /*movel*/
+
+    .img_noti {
+        display: none;
+    }
 
     .noti {
         max-width: 90%;
