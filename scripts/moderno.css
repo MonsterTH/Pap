@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     width: 100%;
     background-image: url("../imgs/BgImage.png");
-    background-size:cover;
+    background-size: cover;
     overflow-x: hidden;
 }
 
@@ -86,9 +86,15 @@ body {
 .conteudo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 2rem;
     flex-wrap: wrap; /* permite quebrar no mobile */
+    width: 100%;
+}
+
+.texto-noti {
+    flex: 1 1 300px;
+    min-width: 0; /* MUITO IMPORTANTE */
 }
 
 .noti {
@@ -1526,6 +1532,11 @@ input[type="file"] {
 
 /* Responsivo */
 @media (max-width: 768px) { /*tablet*/
+
+    .noti {
+        max-width: 90%;
+    }
+
     .img_logo {
         width: 70%;
     }
@@ -1574,6 +1585,11 @@ input[type="file"] {
 }
 
 @media (max-width: 480px) { /*movel*/
+
+    .noti {
+        max-width: 90%;
+    }
+
     .img_logo {
         width: 85%;
     }
