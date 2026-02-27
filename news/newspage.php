@@ -47,6 +47,8 @@
         <h1 style="color: #bf687f;">Trending: </h1>
         <div class="onefourthvertical" style="height:35vw">
             <div class="TrendingPost1"></div>
+            <div class="TrendingPost2"></div>
+            <div class="TrendingPost2"></div>
         </div>
       <footer>
             <div class="footer-container">
