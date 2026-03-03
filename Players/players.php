@@ -2,6 +2,7 @@
 <head>
     <title>Participantes - Identity Fraud</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../scripts/moderno.css">
     <?php
         include("../scripts/logindb.php");

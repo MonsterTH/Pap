@@ -255,3 +255,13 @@ function erro_news(event)
 
     xmlhttp.send(formdata);
 }
+
+// Votação
+
+function vote(playerId)
+{
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "scripts/vote.php", true);
+    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xmlhttp.send("playerId=" + playerId);
+}
