@@ -29,7 +29,7 @@
                 $isadmin = true;
             }
       ?>    
-      <script src="../../scripts/js/functions.js"></script>
+      <script src="../scripts/functions.js"></script>
 </head>
 <body>
     <?php
@@ -74,7 +74,7 @@
                         echo'
                               <div class="playervoting">
                                     <img src="../imgs/imgs_saves/'.$Registo['Photo'].'"></img>
-                                    <button>
+                                    <button onclick="vote('.$Registo['Id'].')">
                                           <h1>Votar</h1>
                                     </button>
                                     <p>'.htmlspecialchars($Registo['Name']).'</p>
@@ -85,6 +85,8 @@
             ?>
 
       </section>
+
+      <span style="text-align: center; color: red;" id="erro"></span>
 
       <hr>
 
