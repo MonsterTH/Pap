@@ -45,11 +45,22 @@
             <?php endif; ?>
     </nav>
         <h1 style="color: #bf687f;">Trending: </h1>
-        <div class="onefourthvertical" style="height:35vw">
-            <div class="TrendingPost1"></div>
-            <div class="TrendingPost2"></div>
-            <div class="TrendingPost2"></div>
+        <div class="onefourthvertical" style="height:21vw; align-self:center">
+            <div class="TrendingPost1">
+                <img src="../imgs/ns5.jpg"></img>
+                <div class="TrendingPostTextBox">
+                    <h1>Titulo</h1>
+                </div>
+            </div>
+            
+            <div class="TrendingPost1">
+                <img src="../imgs/ns2.jpg"></img>
+                <div class="TrendingPostTextBox">
+                    <h1>Titulo Longo Mas Tipo Muito Longo</h1>
+                </div>
+            </div>
         </div>
+        <hr>
       <footer>
             <div class="footer-container">
                   <div class="footer-links">
@@ -59,7 +70,7 @@
                         <a href="../Players/players.php"><b>Jogadores</b></a>
                         <a href="../news/newspage.php"><b>Notícias</b></a>
                         <a href="../Players/voting.php"><b>Votos</b></a>
-                        <a href="../about/about.php"><b>Sobre</b></a>
+                        <a href="../about/about.php"><b>Sobre</b></a>      
                   </div>
 
                   <div class="footer-links">
