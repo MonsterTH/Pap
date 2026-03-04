@@ -86,6 +86,7 @@
 
       </section>
 
+      <br>
       <span style="text-align: center; color: red;" id="erro"></span>
 
       <hr>

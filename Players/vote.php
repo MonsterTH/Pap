@@ -4,7 +4,7 @@
 
       //Verificar se o utilizador está autenticado (caso ele entra na página manualmente)
       if (!isset($_SESSION['Email'])) { 
-            echo("Precisa de estar autenticado.");
+            echo("Precisa de estar logado.");
             exit();
       }
 
@@ -24,7 +24,18 @@
             exit();
       }
 
-      $comando = "INSERT INTO evictions (Id_player, Email_user) 
+      $comando = "SELECT * FROM eviction WHERE Email_user = '".$_SESSION['Email']."'";
+      
+      $query = mysqli_query($sql, $comando);
+      $num_rows = mysqli_num_rows($query);
+
+      if ($num_rows > 0) 
+      {
+            echo("Seu voto já foi submetido.");
+            exit();
+      }
+
+      $comando = "INSERT INTO eviction (Id_player, Email_user) 
       VALUES ('".$_POST['playerId']."', '".$_SESSION['Email']."')";
       $query = mysqli_query($sql, $comando);
 
