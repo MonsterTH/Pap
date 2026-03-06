@@ -44,23 +44,80 @@
                 </ul>
             <?php endif; ?>
     </nav>
-        <h1 style="color: #bf687f;">Trending: </h1>
-        <div class="onefourthvertical" style="height:21vw; align-self:center">
-            <div class="TrendingPost1">
-                <img src="../imgs/ns5.jpg"></img>
-                <div class="TrendingPostTextBox">
-                    <h1>Titulo</h1>
-                </div>
-            </div>
-            
-            <div class="TrendingPost1">
-                <img src="../imgs/ns2.jpg"></img>
-                <div class="TrendingPostTextBox">
-                    <h1>Titulo Longo Mas Tipo Muito Longo</h1>
-                </div>
-            </div>
+        <h1 style="color: #bf687f; margin-top:-1vw;">Trending: </h1>
+        <div class="onefourthvertical" style="height:20vw; align-self:center;display: flex; justify-content: center; align-content: center;">
+             <?php
+                include("../scripts/logindb.php");
+                $Query="select * from news where Genre = 'TR'";
+                $List=mysqli_query($sql,$Query);
+                $NumReg=mysqli_num_rows($List);
+
+                For($i=0;$i<$NumReg;$i++)
+                {
+                    $Registo = mysqli_fetch_array($List);
+
+                    echo '<div class="TrendingPost1">
+                            <img src="../imgs/imgs_saves/'. $Registo["Image"] .'"></img>
+                            <div class="TrendingPostTextBox">
+                                <h1 style="">'. $Registo["Title"] .'</h1>
+                            </div>
+                        </div>';
+                }
+                if($NumReg == 0){
+                    echo '<h1>Nao Existem Noticias</h1>';
+                }
+        ?>
         </div>
         <hr>
+        <h1 style="color: #bf687f; margin-top:-1vw; text-align: left;">Novidades: </h1>
+        <div class="onefourthvertical" style="height:12vw; border-bottom: 4px solid #bc5e9b58;">
+        <?php
+                include("../scripts/logindb.php");
+                $Query="select * from news where Genre = 'NO'";
+                $List=mysqli_query($sql,$Query);
+                $NumReg=mysqli_num_rows($List);
+
+                For($i=0;$i<$NumReg;$i++)
+                {
+                    $Registo = mysqli_fetch_array($List);
+
+                    echo '<div class="NormalPost">
+                            <img src="../imgs/imgs_saves/'. $Registo["Image"] .'"></img>
+                            <div class="NormalPostBox" style="border-bottom: 4px solid #af4573;">
+                            <h1 style="">'. $Registo["Title"] .'</h1>
+                            </div>
+                        </div>';
+                }
+                if($NumReg == 0){
+                    echo '<h1>Nao Existem Noticias</h1>';
+                }
+        ?>
+        </div>
+        
+        <h1 style="color: #bf687f; margin-top:-1vw; text-align: left;">Drama: </h1>
+        <div class="onefourthvertical" style="height:12vw; border-bottom: 4px solid #504d68d6;">
+        <?php
+                include("../scripts/logindb.php");
+                $Query="select * from news where Genre = 'DR'";
+                $List=mysqli_query($sql,$Query);
+                $NumReg=mysqli_num_rows($List);
+
+                For($i=0;$i<$NumReg;$i++)
+                {
+                    $Registo = mysqli_fetch_array($List);
+
+                    echo '<div class="NormalPost">
+                            <img src="../imgs/imgs_saves/'. $Registo["Image"] .'"></img>
+                            <div class="NormalPostBox" style="border-bottom: 4px solid #9845af;">
+                            <h1 style="">'. $Registo["Title"] .'</h1>
+                            </div>
+                        </div>';
+                }
+                if($NumReg == 0){
+                    echo '<h1>Nao Existem Noticias</h1>';
+                }
+        ?>
+        </div>
       <footer>
             <div class="footer-container">
                   <div class="footer-links">

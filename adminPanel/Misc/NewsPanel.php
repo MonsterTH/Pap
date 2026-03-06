@@ -30,10 +30,9 @@
 
         </p>
         <p>Categoria:       
-            <input type="radio" id="Op1" name="Cat" value="MV">Mais Vistas
-            <input type="radio" id="Op2" name="Cat" value="DE">Destaque
+            <input type="radio" id="Op1" name="Cat" value="TR">Trending
+            <input type="radio" id="Op2" name="Cat" value="NO">Novidades
             <input type="radio" id="Op3" name="Cat" value="DR">Drama
-            <input type="radio" id="Op3" name="Cat" value="NC">NoticiasDaCasa
         </p>
 
          <p><span id="erro" style="color: red; font-size: 15px;"></span> </p>

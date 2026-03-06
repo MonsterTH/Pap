@@ -59,6 +59,21 @@
             }
       }
       
+
+      if($Genre == "TR")
+      {
+      $Query="select * from news where Genre = 'TR'";
+      $List=mysqli_query($sql,$Query);
+      $NumReg=mysqli_num_rows($List);
+
+      if($NumReg >= 2)
+            {
+                  $Registo = mysqli_fetch_array($List);
+                  $Query="UPDATE news SET Genre='NO' WHERE Id='". $Registo["Id"] ."'";
+                  mysqli_query($sql,$Query);
+            }
+      }
+
       $comando = "INSERT INTO news (Title, Description, Date, Image, Genre)
             VALUES ('$Title', '$Description', '$DateOfCreation', '$target_path', '$Genre')";
             
