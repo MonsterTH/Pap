@@ -88,9 +88,7 @@
 
       <br>
       <span style="text-align: center; color: red;" id="erro"></span>
-
       <hr>
-
       <a href="players.php" class="actionbutton">
             Ver Participantes
       </a>

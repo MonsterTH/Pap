@@ -257,7 +257,6 @@ function erro_news(event)
 }
 
 // Votação
-
 function vote(playerId)
 {
     const xmlhttp = new XMLHttpRequest();
@@ -276,9 +275,14 @@ function vote(playerId)
                 document.getElementById("erro").style.color = "green";
             }
         }
-
-        
     };
 
     xmlhttp.send("playerId=" + playerId);
+}
+
+//Comentários
+function submitComment(postId)
+{
+    const commentInput = document.getElementById("commentInput");
+    const commentText = commentInput.value.trim();
 }
