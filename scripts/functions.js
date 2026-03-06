@@ -255,3 +255,30 @@ function erro_news(event)
 
     xmlhttp.send(formdata);
 }
+
+// Votação
+
+function vote(playerId)
+{
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "vote.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xmlhttp.onload = function() 
+    {
+        if (this.status == 200) 
+        {
+            document.getElementById("erro").innerText = this.responseText;
+
+            if (this.responseText.trim() === "ok")
+            {
+                document.getElementById("erro").innerText = "Voto registado com sucesso!";
+                document.getElementById("erro").style.color = "green";
+            }
+        }
+
+        
+    };
+
+    xmlhttp.send("playerId=" + playerId);
+}

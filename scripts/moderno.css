@@ -74,7 +74,6 @@ body {
 .bar a {
     text-decoration: none;
     color: #605c7c;
-    transition: 1s;
 }
 
 .bar ul li:hover{
@@ -82,11 +81,13 @@ body {
     box-shadow: 0px 0px 15px #995f6e;
     background-color: #995f6e79;
     color: #ffffff;
+    transition: 1s;
 }
 
 .bar ul li:hover a{
     text-decoration: none;
     color: #d693a5;
+    transition: 1s;
 }
 
 .conteudo {
@@ -706,49 +707,48 @@ hr
 
 .voting-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     gap: 40px;
-    padding: 40px 20px;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
-.playervoting
-{
+.playervoting {
     border-top: 4px solid #995f6e;
-    width: 250px;
-    height: 255px;
+    width: 100%;
+    max-width: 250px;
     background-color: #161616;
-    margin-bottom: 125px;
-    transition: 1s;
+    transition: transform 1s ease, box-shadow 1s ease, border-top 1s ease;
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
-.playervoting button{
-    width: 250px;
-    height: 75px;
+.playervoting img {
+    width: 100%;
+}
+
+.playervoting button {
+    width: 100%;
+    height: 60px;
     background-color: #995f6e;
-    margin-top: 255px;
-    float: left;
-    border: 0px;
-    transition: 1s;
+    border: none;
 }
 
 .playervoting:hover{
     border-top: 4px solid #d696cb;
-    width: 265px;
-    height: 275px;
-    box-shadow: 0px 0px 30px #926c8b;
-    margin-bottom: 105px;
+    transform: scale(1.10);
+    box-shadow: 0px 0px 25px #926c8b;
 }
 
 .playervoting:hover button{
     background-color: #d696cb;
-    margin-top: 275px;
-    width: 265px;
+    width: 100%;
 }
 
 .playervoting:hover p{
-    transform: translateX(30%);
+    transform: translateX(0);
     color: #d696cb;
 }
 
@@ -759,12 +759,13 @@ hr
     margin-top: -1px;
 }
 
-.playervoting p{
-    font-family: "Oxygen", sans-serif;
+.playervoting p {
+    padding: 10px;
+    margin: 0;
+    text-align: center;
     color: white;
-    margin-top: -1px;   
-    margin-left: -15px;
-    transition: transform 3s ease;
+    transition: color 1s ease, transform 1s ease;
+    transform: translateX(-2.2rem);
 }
 
 .userinforow{
@@ -1755,27 +1756,22 @@ input[type="file"] {
     /* voting */
 
     .voting-container {
+        display: flex;
+        justify-content: center;
         gap: 30px;
+        flex-wrap: wrap;
+        padding: 20px;
     }
 
     .playervoting {
-        width: 220px;
-        height: 240px;
-    }
-
-    .playervoting button {
-        width: 220px;
-        margin-top: 240px;
+        width: 250px;
+        max-width: 100%;
     }
 
     .playervoting:hover {
-        width: 235px;
-        height: 260px;
-    }
-
-    .playervoting:hover button {
-        width: 235px;
-        margin-top: 260px;
+        transform: none;
+        box-shadow: none;
+        border-top: 4px solid #995f6e;
     }
 }
 
@@ -1804,7 +1800,8 @@ input[type="file"] {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 500px;
+        height: auto;
+        padding: 20px 0;
         margin: 40px 0px 60px 0px;
     }
 
@@ -1815,12 +1812,19 @@ input[type="file"] {
         background-image: url("../imgs/Texture.png");
         background-size: cover;
         background-blend-mode: multiply;
-        height: 550px;
-        width: 650px;
+        width: 90%;
+        max-width: 500px;
+        height: auto;
+        padding: 1.5rem;
         align-self: center;
         border-bottom: 4px solid #7b6bbb;
         border-top: 4px solid #7b6bbb;
         padding-right: 20px;
+    }
+
+    .about p {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .aboutimg {
@@ -1846,30 +1850,18 @@ input[type="file"] {
 
     /* Voting */
 
-        .voting-container {
+    .voting-container {
         flex-direction: column;
-        align-items: center; /* Garante centro absoluto */
-        gap: 25px;
+        align-items: center;
     }
 
     .playervoting {
-        width: 85%;
-        max-width: 300px;
-        height: 240px;
-        margin-bottom: 40px;
-    }
-
-    .playervoting button {
-        width: 100%;
-        margin-top: 240px;
+        width: 90%;
     }
 
     .playervoting:hover {
-        width: 90%;
-        max-width: 320px;
-    }
-
-    .playervoting:hover button {
-        width: 100%;
+        transform: none;
+        box-shadow: none;
+        border-top: 4px solid #995f6e;
     }
 }

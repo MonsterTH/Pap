@@ -2,6 +2,7 @@
 <head>
       <title>Votaçao - Identity Fraud</title>
       <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" type="text/css" href="../scripts/moderno.css">
       <?php
 
@@ -28,7 +29,7 @@
                 $isadmin = true;
             }
       ?>    
-      <script src="../../scripts/js/functions.js"></script>
+      <script src="../scripts/functions.js"></script>
 </head>
 <body>
     <?php
@@ -54,12 +55,39 @@
 
       <section class="voting-container">
 
-            <div class="playervoting"><button><h1>Votar</h1></button><p>Joao Pedro</p></div>
-            <div class="playervoting"><button><h1>Votar</h1></button><p>Olá! eu sou o Pedro</p></div>
-            <div class="playervoting"><button><h1>Votar</h1></button><p>Quer vender o seu carro?</p></div>
-            <div class="playervoting"><button><h1>Votar</h1></button><p>Em compramososeucarro.pt</p></div>
+            <?php
+                  include("../scripts/logindb.php");
+                  $Query="select * from players";
+                  $List=mysqli_query($sql,$Query);
+                  $NumReg=mysqli_num_rows($List);
+                  $firstPlayerId = null;
+                  For($i = 0; $i < 4; $i++) //Passar registo linha a linha
+                  {
+                        $Registo = mysqli_fetch_array($List);
+
+                        // Guarda o ID do primeiro jogador
+                        if ($i == 0) 
+                        {
+                              $firstPlayerId = $Registo['Id'];
+                        }
+
+                        echo'
+                              <div class="playervoting">
+                                    <img src="../imgs/imgs_saves/'.$Registo['Photo'].'"></img>
+                                    <button onclick="vote('.$Registo['Id'].')">
+                                          <h1>Votar</h1>
+                                    </button>
+                                    <p>'.htmlspecialchars($Registo['Name']).'</p>
+                              </div>
+                              
+                              ';
+                  }
+            ?>
 
       </section>
+
+      <br>
+      <span style="text-align: center; color: red;" id="erro"></span>
 
       <hr>
 
