@@ -31,16 +31,12 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Francisco Yang',
-<<<<<<< HEAD:site_laravel/identityflaud/database/seeders/DatabaseSeeder.php
             'email' => 'Yang@Francisco.com',
         ]);
 
         User::factory()->create([
             'name' => 'Guilherme Madeira',
             'email' => 'Madeira@Guilherme.com',
-=======
-            'email' => 'yang@gmail.com',
->>>>>>> 8bb3858de5ab7fd82c4cfb64d550762a7347691e:site_laravel/identityfraud/database/seeders/DatabaseSeeder.php
         ]);
     }
 }
