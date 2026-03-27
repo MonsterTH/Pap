@@ -46,47 +46,39 @@
             <?php endif; ?>
       </nav>
 
-    <main>
-        <div class="navbar">
-        <?php
-                include("../scripts/logindb.php");
-                $Query="select * from players";
-                $List=mysqli_query($sql,$Query);
-                $NumReg=mysqli_num_rows($List);
-                echo'<br>';
-                $firstPlayerId = null;
-                For($i=0;$i<$NumReg;$i++) //Passar registo linha a linha
-                {
-                    $Registo = mysqli_fetch_array($List);
+        
+            <section class="player-container" id="autoscroll">
 
-                    // Guarda o ID do primeiro jogador
-                    if ($i == 0) {
-                        $firstPlayerId = $Registo['Id'];
-                    }
+            <?php
+                  include("../scripts/logindb.php");
+                  $Query="select * from players";
+                  $List=mysqli_query($sql,$Query);
+                  $NumReg=mysqli_num_rows($List);
+                  $firstPlayerId = null;
+                  For($i = 0; $i < $NumReg; $i++) //Passar registo linha a linha
+                  {
+                        $Registo = mysqli_fetch_array($List);
 
-                    echo '<a href="#" onclick="loadPlayer(' . $Registo['Id'] . '); return false;">'
-                    .htmlspecialchars($Registo['Name']) . '<br><hr></a>';
-                }
-        ?>
-        </div>
-        <div class="playercard">
-            <div class="nameandage">
-                <p>Nome : <span id="playerName"></span>
+                        // Guarda o ID do primeiro jogador
+                        if ($i == 0) 
+                        {
+                              $firstPlayerId = $Registo['Id'];
+                        }
 
-                <P>Data De Nascimento : <span id="playerBirth"></span></p>
-            </div>
+                        echo'
+                              <div class="playervoting">
+                                    <img src="../imgs/imgs_saves/'.$Registo['Photo'].'"></img>
+                                    <button onclick="vote('.$Registo['Id'].')">
+                                          <h1>Ver Mais</h1>
+                                    </button>
+                                    <p>'.htmlspecialchars($Registo['Name']).'</p>
+                              </div>
+                              
+                              ';
+                  }
+            ?>
 
-            <div class="description">
-                <p><span id="playerDesc"></span></p>
-            </div>
-
-            <div class="buttonplace">
-                <button class="actionbutton">Votar No Participante</button>
-            </div>
-        </div>
-        </main>
-    
-
+      </section>
 
 <footer>
             <div class="footer-container">
@@ -122,13 +114,24 @@
             <p class="copyright">Ⓒ Copyright 2026. Todos os direitos reservados.</p>
       </footer>
 
-    <?php if ($firstPlayerId !== null): ?>
-        <script>
-            window.onload = function () {
-                loadPlayer(<?= $firstPlayerId ?>);
-                };
-        </script>
-    <?php endif; ?>
+    <script>
+        const container = document.getElementById("autoscroll");
+
+            let speed = 0.5; // pixels per frame
+
+            function autoScroll() {
+            container.scrollLeft += speed;
+
+            // reset when reaching the end
+            if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+                container.scrollLeft = 0;
+            }
+
+            requestAnimationFrame(autoScroll);
+            }
+
+            autoScroll();
+    </script>
     
 </body>
 </html>
