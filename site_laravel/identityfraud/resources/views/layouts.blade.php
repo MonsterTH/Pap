@@ -190,7 +190,7 @@
                         <li><a href="Players/voting.php" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Votos</a></li>
                         <li><a href="Feed/feed.php" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Feed</a></li>
                         <li><a href="about/about.php" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Sobre</a></li>
-                        <li><a href="user/user.php" class="ml-2 px-4 py-2 bg-brand-accent/10 border border-brand-accent/30 rounded-full text-brand-accent font-semibold tracking-wide hover:bg-brand-accent/20 transition-all">Bem-vindo, Admin1</a></li>
+                        <li><a href="user/user.php" class="ml-2 px-4 py-2 bg-brand-accent/10 border border-brand-accent/30 rounded-full text-brand-accent font-semibold tracking-wide hover:bg-brand-accent/20 transition-all">Bem-vindo, {{ auth()->user()->name ?? 'Guest' }}</a></li>
                 </ul>
             </div>
         </nav>
