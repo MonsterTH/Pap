@@ -32,7 +32,7 @@
       <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'DM Sans', sans-serif; background: #0a0a0f; color: #e8e8f0; }
-        
+
         /* Noise texture overlay */
         body::before {
           content: '';
@@ -277,7 +277,7 @@
             <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-accent/40 to-transparent"></div>
             <div class="max-w-7xl mx-auto px-4 md:px-8 py-14">
                   <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
-                        
+
                         <!-- Links -->
                         <div>
                               <h3 class="font-display font-bold text-lg tracking-wide mb-5 text-brand-light">Links Úteis</h3>
