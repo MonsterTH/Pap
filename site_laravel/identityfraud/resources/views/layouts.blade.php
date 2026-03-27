@@ -176,7 +176,7 @@
 
         <div class="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-deeper to-brand-dark diagonal-cut">
             <div class="hero-glow"></div>
-            <div class="flex items-center justify-center py-12 md:py-16">
+            <div class="flex items-center justify-center py-12 md:py-16n">
                 <img class="h-20 md:h-28 drop-shadow-[0_0_30px_rgba(230,57,70,0.3)] transition-transform duration-500 hover:scale-105" src="imgs/LogoTipo.png" alt="Identity Fraud Logo">
             </div>
         </div>
@@ -184,8 +184,8 @@
         <nav class="sticky top-0 z-50 bg-brand-deeper/90 backdrop-blur-xl border-b border-white/5">
             <div class="max-w-7xl mx-auto px-4">
                 <ul class="flex items-center justify-center gap-1 md:gap-2 py-3 overflow-x-auto text-sm md:text-base font-display">
-                        <li><a href="home.php" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Início</a></li>
-                        <li><a href="Players/players.php" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Jogadores</a></li>
+                        <li><a href="/" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Início</a></li>
+                        <li><a href="{{route('players.index')}}" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Jogadores</a></li>
                         <li><a href="news/newspage.php" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Notícias</a></li>
                         <li><a href="Players/voting.php" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Votos</a></li>
                         <li><a href="Feed/feed.php" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Feed</a></li>
