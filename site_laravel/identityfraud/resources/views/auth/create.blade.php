@@ -1,37 +1,28 @@
 @extends('layouts')
 @section('title', 'Identity Fraud - Login')
 @section('content')
-    <main>
-        <div>
-            <fieldset>
-                <form id="login" onsubmit="erro_login(event)">
-                    @csrf
-                    <h2>Login</h2>
+<main class="max-w-md mx-auto mt-10 p-6 bg-brand-card rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold mb-4">Login</h2>
 
-                    <div>
-                        <input type="text" class="loginInput" id="email" name="email" maxlength="30" placeholder="Email" required>
-                    </div>
-
-                    <div>
-                        <input type="password" class="loginInput" id="pass" name="pass" maxlength="20" placeholder="Palavra-passe" required><br>
-                    </div>
-
-                    <div>
-                        <input type="checkbox">
-                        <label for="">Remember Me</label>
-                    </div>
-
-                    <span id="erro"></span><br>
-
-                    <div>
-                        <button class="loginButton">Login</button>
-                    </div>
-
-                    <p style="text-align:center; margin-top:15px;">
-                        Não tem uma conta? <a href="../register/register.html"><b>Registe-se</b></a>
-                    </p>
-                </form>
-            </fieldset>
+    @if(session('error'))
+        <div class="bg-red-500 text-white px-4 py-2 rounded mb-4">
+            {{ session('error') }}
         </div>
-    </main>
+    @endif
+
+    <form action="{{ route('auth.store') }}" method="POST">
+        @csrf
+        <div class="mb-4">
+            <input type="text" name="email" placeholder="Email" class="w-full px-3 py-2 rounded bg-brand-dark border border-brand-muted text-brand-light" required>
+        </div>
+        <div class="mb-4">
+            <input type="password" name="password" placeholder="Senha" class="w-full px-3 py-2 rounded bg-brand-dark border border-brand-muted text-brand-light" required>
+        </div>
+        <div class="mb-4 flex items-center gap-2">
+            <input type="checkbox" name="remember" id="remember" class="rounded border-gray-300">
+            <label for="remember" class="text-brand-light text-sm">Lembrar-me</label>
+        </div>
+        <button type="submit" class="w-full bg-brand-accent hover:bg-brand-glow text-white font-bold py-2 px-4 rounded transition">Login</button>
+    </form>
+</main>
 @endsection
