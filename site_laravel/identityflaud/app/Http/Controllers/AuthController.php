@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth;
 
 class AuthController extends Controller
 {
@@ -20,6 +21,16 @@ class AuthController extends Controller
 
         $credentials = $request->only('email', 'password');
         $remember = $request->filled('remember');
+
+        if(Auth::attempt($credentials, $remember))
+        {
+            return redirect()->intended('/');
+        }
+        else
+        {
+            return redirect()->back()
+                ->with('error', 'Invalid credentials!');
+        }
     }
 
     public function destroy(string $id)
