@@ -713,6 +713,18 @@ hr
     padding: 20px;
 }
 
+.player-container {
+    display: flex;
+    gap: 60px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.player-container > * {
+    flex: 0 0 auto;  /* impede os itens de encolherem */
+}
+
 .playervoting {
     border-top: 4px solid #995f6e;
     width: 100%;
@@ -1646,7 +1658,7 @@ input[type="file"] {
 .NormalPostBox:hover {
     
     border-bottom: 4px solid #ea849f;
-}
+}q
 
 
 
