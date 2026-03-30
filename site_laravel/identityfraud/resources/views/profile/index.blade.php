@@ -23,7 +23,12 @@
 
                 <div id='dropdownMenu' class="mt-2 hidden bg-brand-card border border-white/10 rounded-lg shadow-lg p-2 space-y-1">
                     <a href="#" class="block px-3 py-2 text-sm hover:bg-white/10 rounded">Editar Perfil</a>
-                    <a href="#" class="block px-3 py-2 text-sm hover:bg-white/10 rounded">Sair</a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="w-full text-left px-3 py-2 text-sm hover:bg-white/10 rounded">
+                                Sair
+                            </button>
+                        </form>
                     <a href="#" class="block px-3 py-2 text-sm hover:bg-white/10 rounded">Admin</a>
                 </div>
             </div>

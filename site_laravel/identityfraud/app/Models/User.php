@@ -11,9 +11,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 use Laravel\Fortify\TwoFactorAuthenticatable;
-use app\Models\Post;
-use app\Models\Comment;
-use app\Models\Like;
+use App\Models\Post;
+use App\Models\Comment;
+use App\Models\Like;
+use App\Models\Eviction;
 
 #[Fillable(['name', 'email', 'password', 'dateofentry'])]
 #[Hidden(['password', 'two_factor_secret', 'two_factor_recovery_codes', 'remember_token'])]
@@ -31,7 +32,6 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
         ];
     }
 

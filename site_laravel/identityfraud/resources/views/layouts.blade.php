@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>@yield('title')</title>
+        <title>{{ $title ?? 'Identity Fraud' }}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
@@ -171,6 +171,7 @@
             background: #e63946;
             }
         </style>
+        @livewireStyles
     </head>
     <body class="antialiased">
 
@@ -179,9 +180,15 @@
         @include('partials.navbar')
 
         <main>
+            {{-- @yield('content') --}}
+            @isset($slot)
+                {{ $slot }}
+            @endisset
+
             @yield('content')
         </main>
 
         @include('partials.footer')
+        @livewireScripts
     </body>
 </html>

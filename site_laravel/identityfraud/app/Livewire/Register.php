@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Livewire\Attributes\Layout;
 
+#[Layout('layouts')]
 class Register extends Component
 {
     #[Validate('required|string|max:255')]
@@ -28,7 +30,7 @@ class Register extends Component
 
         $user = User::create([
             'name' => $this->name,
-            'email' => $this->email,
+            'email' => strtolower($this->email),
             'password' => Hash::make($this->password),
         ]);
 
@@ -36,7 +38,7 @@ class Register extends Component
 
         Auth::login($user);
 
-        $this->redirect(route('dashboard'), navigate: true);
+        $this->redirect(route('home'), navigate: true);
     }
 
     public function render()
