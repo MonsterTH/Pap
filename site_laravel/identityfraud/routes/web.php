@@ -38,7 +38,7 @@ Route::middleware('auth')->group(function () {
         ->only(['index']);
 
     Route::resource('feed', FeedController::class)
-        ->only(['index']);
+        ->only(['index', 'store']);
 });
 
 Route::resource('players', PlayerController::class)
@@ -46,7 +46,5 @@ Route::resource('players', PlayerController::class)
 
 Route::resource('news', NewsController::class)
     ->only(['index']);
-
-Route::middleware('auth')->post('feed', [FeedController::class, 'store'])->name('feed.store');
 
 require __DIR__.'/settings.php';
