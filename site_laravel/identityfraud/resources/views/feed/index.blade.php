@@ -4,7 +4,7 @@
 @section('content')
 
 <!-- SIDE INFO -->
-<div class="bg-brand-card border border-white/5 rounded-2xl p-6 text-center shadow-lg">
+<div class="mt-7 max-w-3xl mx-auto bg-brand-card border border-white/5 rounded-2xl p-6 text-center shadow-lg">
 
     <img class="w-20 h-20 rounded-full mx-auto mb-4 object-cover bg-white/10">
 
@@ -21,7 +21,7 @@
 <div class="space-y-8 mt-8">
 
 @foreach ($posts as $post)
-    <div class="bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg">
+    <div class="max-w-lg mx-auto bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg">
 
         <div class="flex items-center gap-3 mb-3">
             <img class="w-10 h-10 rounded-full bg-white/10">
@@ -61,12 +61,12 @@
 @endforeach
 
     <!-- POST WITH IMAGE -->
-    <div class="bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg">
+    <div class="max-w-lg mx-auto bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg">
 
         <div class="flex items-center gap-3 mb-3">
             <img class="w-10 h-10 rounded-full bg-white/10">
             <div>
-                <p class="text-white font-semibold">{{$user->name}}</p>
+                <p class="text-white font-semibold">{{$post->user->name}}</p>
                 <p class="text-xs text-brand-muted">DATE</p>
             </div>
         </div>
