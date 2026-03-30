@@ -177,7 +177,7 @@
         <div class="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-deeper to-brand-dark diagonal-cut">
             <div class="hero-glow"></div>
             <div class="flex items-center justify-center py-12 md:py-16n">
-                <img class="h-20 md:h-28 drop-shadow-[0_0_30px_rgba(230,57,70,0.3)] transition-transform duration-500 hover:scale-105" src="imgs/LogoTipo.png" alt="Identity Fraud Logo">
+                <img class="h-20 md:h-28 drop-shadow-[0_0_30px_rgba(230,57,70,0.3)] transition-transform duration-500 hover:scale-105" src="{{ asset('images/LogoTipo.png') }}" alt="Identity Fraud Logo">
             </div>
         </div>
 
@@ -188,9 +188,9 @@
                         <li><a href="{{route('players.index')}}" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Jogadores</a></li>
                         <li><a href="{{route('news.index')}}" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Notícias</a></li>
                         <li><a href="{{route('eviction.index')}}" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Votos</a></li>
-                        <li><a href="Feed/feed.php" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Feed</a></li>
-                        <li><a href="about/about.php" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Sobre</a></li>
-                        <li><a href="user/user.php" class="ml-2 px-4 py-2 bg-brand-accent/10 border border-brand-accent/30 rounded-full text-brand-accent font-semibold tracking-wide hover:bg-brand-accent/20 transition-all">Bem-vindo, {{ auth()->user()->name ?? 'Guest' }}</a></li>
+                        <li><a href="{{route('feed.index')}}" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Feed</a></li>
+                        <li><a href="about" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Sobre</a></li>
+                        <li><a href="{{ auth()->check() ? route('profile.index') : route('auth.create') }}"class="ml-2 px-4 py-2 bg-brand-accent/10 border border-brand-accent/30 rounded-full text-brand-accent font-semibold tracking-wide hover:bg-brand-accent/20 transition-all">Bem-vindo, {{ auth()->user()->name ?? 'Guest' }}</a></li>
                 </ul>
             </div>
         </nav>

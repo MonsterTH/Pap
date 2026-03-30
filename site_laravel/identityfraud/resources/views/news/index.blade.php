@@ -5,7 +5,7 @@
 
 <!-- TRENDING -->
 <section class="max-w-7xl mx-auto px-4 md:px-8 py-12">
-    <h1 class="text-2xl md:text-3xl font-bold text-brand-accent mb-6">Trending</h1>
+    <h1 class="text-2xl md:text-3xl font-bold"><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-gold">Trending</span></h1>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
