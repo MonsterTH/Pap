@@ -4,6 +4,7 @@
 use App\Http\Controllers\EvictionController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Login;
@@ -30,6 +31,9 @@ Route::middleware('auth')->group(function () {
         return redirect('/');
     })->name('logout');
 });
+
+Route::resource('profile', ProfileController::class)
+    ->only(['index']);
 
 Route::resource('players', PlayerController::class)
     ->only(['index']);

@@ -11,7 +11,7 @@ class EvictionController extends Controller
      */
     public function index()
     {
-        //
+         return view('eviction.index');
     }
 
     /**

@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Player;
 
-class PlayerController extends Controller
+class FeedController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('players.index');
+        return view('feed.index');
     }
 
     /**
