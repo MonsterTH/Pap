@@ -23,7 +23,6 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-
     Route::post('/logout', function () {
         Auth::logout();
         session()->invalidate();
@@ -31,23 +30,21 @@ Route::middleware('auth')->group(function () {
 
         return redirect('/');
     })->name('logout');
-});
 
-Route::resource('profile', ProfileController::class)
-    ->only(['index']);
+    Route::resource('profile', ProfileController::class)
+        ->only(['index']);
+
+    Route::resource('eviction', EvictionController::class)
+        ->only(['index']);
+
+    Route::resource('feed', FeedController::class)
+        ->only(['index']);
+});
 
 Route::resource('players', PlayerController::class)
     ->only(['index']);
 
 Route::resource('news', NewsController::class)
     ->only(['index']);
-
-Route::resource('eviction', EvictionController::class)
-    ->only(['index']);
-
-Route::resource('feed', FeedController::class)
-    ->only(['index']);
-
-Route::middleware('auth')->post('feed', [FeedController::class, 'store'])->name('feed.store');
 
 require __DIR__.'/settings.php';
