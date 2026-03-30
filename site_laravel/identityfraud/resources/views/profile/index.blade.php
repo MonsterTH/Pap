@@ -17,17 +17,25 @@
 
             <!-- DROPDOWN -->
             <div class="absolute top-4 right-4">
-                <button class="text-xl px-3 py-1 bg-white/10 rounded-lg hover:bg-white/20 transition">
+                <button id='dropdownBtn' class="text-xl px-3 py-1 bg-white/10 rounded-lg hover:bg-white/20 transition">
                     ≡
                 </button>
 
-                <div class="mt-2 hidden bg-brand-card border border-white/10 rounded-lg shadow-lg p-2 space-y-1">
+                <div id='dropdownMenu' class="mt-2 hidden bg-brand-card border border-white/10 rounded-lg shadow-lg p-2 space-y-1">
                     <a href="#" class="block px-3 py-2 text-sm hover:bg-white/10 rounded">Editar Perfil</a>
                     <a href="#" class="block px-3 py-2 text-sm hover:bg-white/10 rounded">Sair</a>
                     <a href="#" class="block px-3 py-2 text-sm hover:bg-white/10 rounded">Admin</a>
                 </div>
             </div>
 
+            <script>
+                const btn = document.getElementById("dropdownBtn");
+                const menu = document.getElementById("dropdownMenu");
+
+                btn.addEventListener("click", () => {
+                    menu.classList.toggle("hidden");
+                });
+            </script>
         </div>
 
     </main>
