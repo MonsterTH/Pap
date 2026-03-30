@@ -1,12 +1,15 @@
 <?php
 
-use App\Http\Controllers\AuthController;
+// use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EvictionController;
-use App\Http\Controllers\FeedController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FeedController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Login;
+use App\Livewire\Register;
 
 Route::view('/', 'index')
     ->name('home');
@@ -14,15 +17,24 @@ Route::view('/', 'index')
 Route::view('about', 'about')
     ->name('about');
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('dashboard', 'dashboard')->name('dashboard');
+Route::middleware('guest')->group(function () {
+    Route::get('/login', Login::class)->name('login');
+    Route::get('/register', Register::class)->name('register');
 });
 
-Route::get('login', fn() => to_route('auth.create'))
-    ->name('login');
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
-Route::resource('auth', AuthController::class)
-    ->only(['create', 'store']);
+    Route::post('/logout', function () {
+        Auth::logout();
+        session()->invalidate();
+        session()->regenerateToken();
+
+        return redirect('/');
+    })->name('logout');
+});
 
 Route::resource('profile', ProfileController::class)
     ->only(['index']);
