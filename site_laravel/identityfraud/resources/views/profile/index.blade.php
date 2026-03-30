@@ -9,9 +9,9 @@
                 <img class="w-16 h-16 rounded-full bg-white/10">
 
                 <div>
-                    <h1 class="text-xl font-bold">USERNAME</h1>
-                    <p class="text-sm text-brand-muted">Join Date | Posts</p>
-                    <p class="text-sm text-brand-light">DATE | POSTS</p>
+                    <h1 class="text-xl font-bold"> {{ auth()->user()->name }}</h1>
+                    <p class="text-sm text-brand-muted">Join Date</p>
+                    <p class="text-sm text-brand-light">{{ auth()->user()->dateofentry }}</p>
                 </div>
             </div>
 
@@ -47,16 +47,17 @@
 
             <div class="flex items-center gap-3 mb-4">
                 <img class="w-10 h-10 rounded-full bg-white/10">
-                <p class="font-semibold">USERNAME</p>
+                <p class="font-semibold">{{ auth()->user()->name }}</p>
             </div>
 
-            <form class="space-y-4">
+            <form method="POST" action="{{ route('feed.store') }}" enctype="multipart/form-data" class="space-y-4">
+                @csrf
 
                 <textarea
+                    name="content"
                     class="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-brand-accent"
                     maxlength="500"
-                    placeholder="What's going on your mind?">
-                </textarea>
+                    placeholder="What's going on your mind?"></textarea>
 
                 <hr class="border-white/10">
 
@@ -65,15 +66,14 @@
                     <label class="cursor-pointer flex items-center gap-2 text-sm hover:text-brand-accent transition">
                         <img src="../imgs/ImageAttach.png" class="w-5">
                         Add Image
-                        <input type="file" class="hidden">
+                        <input type="file" name="image" class="hidden">
                     </label>
 
-                    <button class="px-5 py-2 bg-brand-accent hover:bg-brand-glow text-white font-bold uppercase text-sm rounded-lg transition">
+                    <button type="submit" class="px-5 py-2 bg-brand-accent hover:bg-brand-glow text-white font-bold uppercase text-sm rounded-lg transition">
                         Post
                     </button>
 
                 </div>
-
             </form>
 
         </div>
