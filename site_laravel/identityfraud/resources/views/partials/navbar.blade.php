@@ -5,7 +5,7 @@
             <li><a href="{{route('players.index')}}" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Jogadores</a></li>
             <li><a href="{{route('news.index')}}" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Notícias</a></li>
             <li><a href="{{route('eviction.index')}}" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Votos</a></li>
-            <li><a href="{{ auth()->check() ? route('feed.index') : route('register') }}" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Feed</a></li>
+            <li><a href="{{ auth()->check() ? route('feed.index') : route('login') }}" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Feed</a></li>
             <li><a href="about" class="nav-link px-3 py-2 text-brand-light font-semibold tracking-wide hover:text-brand-accent transition-colors">Sobre</a></li>
             <li><a href="{{ auth()->check() ? route('profile.index') : route('login') }}" wire:navigate class="ml-2 px-4 py-2 bg-brand-accent/10 border border-brand-accent/30 rounded-full text-brand-accent font-semibold tracking-wide hover:bg-brand-accent/20 transition-all">Bem-vindo, {{ auth()->user()->name ?? 'Guest' }}</a></li>
         </ul>
