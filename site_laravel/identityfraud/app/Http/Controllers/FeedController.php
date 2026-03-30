@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Post;
+
 class FeedController extends Controller
 {
     /**
@@ -11,7 +13,7 @@ class FeedController extends Controller
      */
     public function index()
     {
-        return view('feed.index');
+        return view('feed.index', ['posts' => Post::all()]);
     }
 
     /**
@@ -25,9 +27,27 @@ class FeedController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Post $post)
     {
-        //
+        $request->validate([
+        'content' => 'required|max:500',
+        'image' => 'nullable|image|max:2048',
+    ]);
+
+    $imagePath = null;
+
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('posts', 'public');
+    }
+
+    Post::create([
+        'user_id' => auth()->id(),
+        'content' => $request->content,
+        'image' => $imagePath,
+        'date' => now(),
+    ]);
+
+    return back()->with('success', 'Post created!');
     }
 
     /**

@@ -13,7 +13,7 @@ return new class extends Migration
             $table->id();
 
             $table->text('content');
-            $table->string('image', 50);
+            $table->string('image', 50)->nullable();
             $table->date('date');
 
 
