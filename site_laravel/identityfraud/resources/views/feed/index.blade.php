@@ -8,7 +8,7 @@
 
     <img class="w-20 h-20 rounded-full mx-auto mb-4 object-cover bg-white/10">
 
-    <h1 class="text-lg font-bold text-white">USERNAME</h1>
+    <h1 class="text-lg font-bold text-white">{{$user->name}}</h1>
 
     <p class="text-sm text-brand-muted mt-2">
         Posts: X | Likes: 0
@@ -26,7 +26,7 @@
         <div class="flex items-center gap-3 mb-3">
             <img class="w-10 h-10 rounded-full bg-white/10">
             <div>
-                <p class="text-white font-semibold">USERNAME</p>
+                <p class="text-white font-semibold">{{$user->name}}</p>
                 <p class="text-xs text-brand-muted">DATE</p>
             </div>
         </div>
@@ -64,7 +64,7 @@
         <div class="flex items-center gap-3 mb-3">
             <img class="w-10 h-10 rounded-full bg-white/10">
             <div>
-                <p class="text-white font-semibold">USERNAME</p>
+                <p class="text-white font-semibold">{{$user->name}}</p>
                 <p class="text-xs text-brand-muted">DATE</p>
             </div>
         </div>

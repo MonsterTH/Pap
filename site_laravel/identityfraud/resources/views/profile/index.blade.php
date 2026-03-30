@@ -9,7 +9,7 @@
                 <img class="w-16 h-16 rounded-full bg-white/10">
 
                 <div>
-                    <h1 class="text-xl font-bold">USERNAME</h1>
+                    <h1 class="text-xl font-bold">{{ $user->name }}</h1>
                     <p class="text-sm text-brand-muted">Join Date | Posts</p>
                     <p class="text-sm text-brand-light">DATE | POSTS</p>
                 </div>
@@ -21,14 +21,14 @@
                     ≡
                 </button>
 
-                <div id='dropdownMenu' class="mt-2 hidden bg-brand-card border border-white/10 rounded-lg shadow-lg p-2 space-y-1">
+                <div id='dropdownMenu' class="hidden absolute right-0 mt-2 bg-brand-card border border-white/10 rounded-lg shadow-lg p-2 space-y-1 w-40">
                     <a href="#" class="block px-3 py-2 text-sm hover:bg-white/10 rounded">Editar Perfil</a>
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button type="submit" class="w-full text-left px-3 py-2 text-sm hover:bg-white/10 rounded">
-                                Sair
-                            </button>
-                        </form>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="w-full text-left px-3 py-2 text-sm hover:bg-white/10 rounded">
+                            Sair
+                        </button>
+                    </form>
                     <a href="#" class="block px-3 py-2 text-sm hover:bg-white/10 rounded">Admin</a>
                 </div>
             </div>
@@ -52,7 +52,7 @@
 
             <div class="flex items-center gap-3 mb-4">
                 <img class="w-10 h-10 rounded-full bg-white/10">
-                <p class="font-semibold">USERNAME</p>
+                <p class="font-semibold">{{ $user->name }}</p>
             </div>
 
             <form class="space-y-4">

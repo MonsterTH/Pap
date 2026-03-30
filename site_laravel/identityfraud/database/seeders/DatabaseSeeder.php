@@ -31,12 +31,12 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Francisco Yang',
-            'email' => 'Yang@Francisco.com',
+            'email' => 'yang@francisco.com',
         ]);
 
         User::factory()->create([
             'name' => 'Guilherme Madeira',
-            'email' => 'Madeira@Guilherme.com',
+            'email' => 'madeira@guilherme.com',
         ]);
     }
 }
