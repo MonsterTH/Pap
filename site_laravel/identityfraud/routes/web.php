@@ -5,6 +5,7 @@ use App\Http\Controllers\EvictionController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FeedController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Login;
@@ -12,6 +13,9 @@ use App\Livewire\Register;
 
 Route::view('/', 'index')
     ->name('home');
+
+Route::view('about', 'about')
+    ->name('about');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', Login::class)->name('login');
@@ -42,6 +46,9 @@ Route::resource('news', NewsController::class)
     ->only(['index']);
 
 Route::resource('eviction', EvictionController::class)
+    ->only(['index']);
+
+Route::resource('feed', FeedController::class)
     ->only(['index']);
 
 require __DIR__.'/settings.php';

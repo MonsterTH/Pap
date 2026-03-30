@@ -7,31 +7,28 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: itendity_fraud
-      MYSQL_USER: mysql
-      MYSQL_PASSWORD: root
     ports:
       - 3306:3306
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
   adminer:
     image: adminer
     restart: always
     ports:
-      - 8081:8080
-  app:
-    build:
-      context: .
-      dockerfile: docker/php/Dockerfile
-    container_name: laravel-app
-    ports:
-      - "8080:8000"
-      - "5173:5173"
-    volumes:
-      - .:/var/www
-    depends_on:
-      mysql:
-        condition: service_healthy
+      - 8080:8080
+  # app:
+  #   image: php:8.2-fpm
+  #   container_name: laravel_app
+  #   working_dir: /var/www
+  #   volumes:
+  #     - .:/var/www
+  #   depends_on:
+  #     - mysql
+  # nginx:
+  #   image: nginx:latest
+  #   container_name: laravel_nginx
+  #   ports:
+  #     - 8000:80
+  #   volumes:
+  #     - .:/var/www
+  #     - ./docker/nginx:/etc/nginx/conf.d
+  #   depends_on:
+  #     - app
