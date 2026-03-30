@@ -47,4 +47,6 @@ Route::resource('players', PlayerController::class)
 Route::resource('news', NewsController::class)
     ->only(['index']);
 
+Route::middleware('auth')->post('feed', [FeedController::class, 'store'])->name('feed.store');
+
 require __DIR__.'/settings.php';
