@@ -1,5 +1,5 @@
 @extends('layouts')
-    @section('title', 'Identity Fraud')
+    @section('title', 'Identity Fraud - Home')
     @section('content')
         <!-- ═══════ HERO SECTION ═══════ -->
         <section class="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">

@@ -1,5 +1,5 @@
 @extends('layouts')
-    @section('title', 'Identity Fraud')
+    @section('title', 'Identity Fraud - Profile')
     @section('content')
     <main class="max-w-5xl mx-auto px-4 md:px-8 py-10">
 
