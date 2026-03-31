@@ -6,7 +6,7 @@
         <div class="bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg relative">
 
             <div class="flex items-center gap-4">
-                <img src="{{ auth()->user()->profile_picture ? asset('storage/app/public/' . auth()->user()->profile_picture) : asset('storage/app/public/images/default.png') }}"
+                <img src="{{ auth()->user()->profile_picture ? asset('storage/' . auth()->user()->profile_picture) : asset('storage/images/default.png') }}"
                     class="w-16 h-16 rounded-full bg-white/10">
 
                 <div>
