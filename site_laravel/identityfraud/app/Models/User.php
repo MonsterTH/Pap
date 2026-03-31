@@ -57,9 +57,8 @@ class User extends Authenticatable
 
     public function isAdmin(): bool
     {
-        return Administrador::where('email', $this->email)->exists();
+        return $this->is_admin;
     }
-
 
     public function initials(): string
     {

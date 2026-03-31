@@ -30,24 +30,26 @@ class DatabaseSeeder extends Seeder
         Like::factory(16)->create();
         Comment::factory(16)->create();
         News::factory(16)->create();
-        Administrador::factory(5)->create();
 
-        Administrador::factory()->create([
+        User::factory()->create([
             'email' => 'admin@admin.com',
-            'username' => 'Admin',
+            'name' => 'Admin',
             'password' => Hash::make('admin123'),
-            'photo' => null,
-            'creation' => now(),
+            'is_admin' => true,
         ]);
 
         User::factory()->create([
             'name' => 'Francisco Yang',
             'email' => 'yang@francisco.com',
+            'password' => Hash::make('password'),
+            'is_admin' => true,
         ]);
 
         User::factory()->create([
             'name' => 'Guilherme Madeira',
             'email' => 'madeira@guilherme.com',
+            'password' => Hash::make('password'),
+            'is_admin' => true,
         ]);
     }
 }
