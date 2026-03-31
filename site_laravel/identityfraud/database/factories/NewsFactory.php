@@ -18,7 +18,7 @@ class NewsFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(3),
+            'title' => $this->faker->sentence(1),
             'description' => $this->faker->paragraph(),
             'date' => $this->faker->date(),
             'image' => 'Image.png',
