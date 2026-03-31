@@ -5,11 +5,13 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Player;
 use App\Models\Activity;
+use App\Models\Administrador;
 use App\Models\Bounty;
 use App\Models\Post;
 use App\Models\Like;
 use App\Models\Comment;
 use App\Models\News;
+use Illuminate\Support\Facades\Hash;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -30,13 +32,24 @@ class DatabaseSeeder extends Seeder
         News::factory(16)->create();
 
         User::factory()->create([
+            'email' => 'admin@admin.com',
+            'name' => 'Admin',
+            'password' => Hash::make('admin123'),
+            'is_admin' => true,
+        ]);
+
+        User::factory()->create([
             'name' => 'Francisco Yang',
             'email' => 'yang@francisco.com',
+            'password' => Hash::make('password'),
+            'is_admin' => true,
         ]);
 
         User::factory()->create([
             'name' => 'Guilherme Madeira',
             'email' => 'madeira@guilherme.com',
+            'password' => Hash::make('password'),
+            'is_admin' => true,
         ]);
     }
 }

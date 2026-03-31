@@ -1,5 +1,5 @@
 @extends('layouts')
-@section('title', 'News - Identity Fraud')
+@section('title', 'Identity Fraud - News')
 
 @section('content')
 

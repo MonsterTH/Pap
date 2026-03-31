@@ -1,5 +1,5 @@
 @extends('layouts')
-@section('title', 'Identity Fraud')
+@section('title', 'Identity Fraud - Players')
 
 @section('content')
 

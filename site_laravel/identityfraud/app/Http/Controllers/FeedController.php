@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 
 class FeedController extends Controller
@@ -13,7 +13,8 @@ class FeedController extends Controller
      */
     public function index()
     {
-        return view('feed.index', ['posts' => Post::all()]);
+        $posts = Post::paginate(20);
+        return view('feed.index', ['posts' => $posts]);
     }
 
     /**
@@ -32,22 +33,22 @@ class FeedController extends Controller
         $request->validate([
         'content' => 'required|max:500',
         'image' => 'nullable|image|max:2048',
-    ]);
+        ]);
 
-    $imagePath = null;
+        $imagePath = null;
 
-    if ($request->hasFile('image')) {
-        $imagePath = $request->file('image')->store('posts', 'public');
-    }
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('posts', 'public');
+        }
 
-    Post::create([
-        'user_id' => auth()->id(),
-        'content' => $request->content,
-        'image' => $imagePath,
-        'date' => now(),
-    ]);
+        Post::create([
+            'user_id' => Auth::id(),
+            'content' => $request->input('content'),
+            'image' => $imagePath,
+            'date' => now(),
+        ]);
 
-    return back()->with('success', 'Post created!');
+        return back()->with('success', 'Post created!');
     }
 
     /**

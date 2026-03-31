@@ -1,5 +1,5 @@
 @extends('layouts')
-    @section('title', 'Identity Fraud')
+    @section('title', 'Identity Fraud - Home')
     @section('content')
         <!-- ═══════ HERO SECTION ═══════ -->
         <section class="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
@@ -17,7 +17,7 @@
                                 Ajuda o teu investigador favorito a vencer ao votar na competição enquanto te juntas à investigação.
                             </p>
                             <div class="mt-8">
-                                <a href="about/about.php" class="btn-pulse inline-flex items-center gap-2 px-8 py-4 bg-brand-accent text-white font-display font-bold text-sm tracking-wider uppercase rounded-lg hover:bg-brand-glow transition-colors shadow-[0_4px_30px_rgba(230,57,70,0.4)]">
+                                <a href="{{ route('about') }}" class="btn-pulse inline-flex items-center gap-2 px-8 py-4 bg-brand-accent text-white font-display font-bold text-sm tracking-wider uppercase rounded-lg hover:bg-brand-glow transition-colors shadow-[0_4px_30px_rgba(230,57,70,0.4)]">
                                         Descobrir Mais
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                                 </a>

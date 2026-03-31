@@ -13,15 +13,16 @@ return new class extends Migration
     public function up(): void
     {
        Schema::create('players', function (Blueprint $table) {
+
             $table->id();
 
             $table->string('name', 200);
             $table->date('birth_date');
             $table->text('about');
-            $table->string('photo', 60);
+            $table->string('photo', 255);
 
             $table->timestamps();
-});
+        });
     }
 
     /**

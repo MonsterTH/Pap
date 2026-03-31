@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>{{ $title ?? 'Identity Fraud' }}</title>
+        <title>@yield('title')</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
@@ -15,14 +15,14 @@
                 },
                 colors: {
                     brand: {
-                    dark: '#0a0a0f',
-                    deeper: '#0e0e18',
-                    card: '#141422',
-                    accent: '#e63946',
-                    glow: '#ff4d5a',
-                    muted: '#8888aa',
-                    light: '#e8e8f0',
-                    gold: '#f4c542',
+                        dark: '#0a0a0f',
+                        deeper: '#0e0e18',
+                        card: '#141422',
+                        accent: '#e63946',
+                        glow: '#ff4d5a',
+                        muted: '#8888aa',
+                        light: '#e8e8f0',
+                        gold: '#f4c542',
                     }
                 }
                 }

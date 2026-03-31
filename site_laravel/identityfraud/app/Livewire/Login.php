@@ -34,6 +34,16 @@ class Login extends Component
 
         session()->regenerate();
 
+        $user = Auth::user();
+
+        // Verifica se o usuário é administrador
+        if ($user instanceof \App\Models\User && $user->isAdmin())
+        {
+            $this->redirect(route('admin.index'), navigate: true);
+            return;
+        }
+
+        // Caso contrário, redireciona para home normal
         $this->redirect(route('home'), navigate: true);
     }
 
