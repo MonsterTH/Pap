@@ -10,18 +10,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
-use Laravel\Fortify\TwoFactorAuthenticatable;
 use App\Models\Post;
 use App\Models\Comment;
 use App\Models\Like;
 use App\Models\Eviction;
+use App\Models\Administrador;
 
 #[Fillable(['name', 'email', 'password', 'profile_picture'/*, 'dateofentry'*/])]
 #[Hidden(['password'/*, 'two_factor_secret', 'two_factor_recovery_codes'*/, 'remember_token'])]
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable, TwoFactorAuthenticatable;
+    use HasFactory, Notifiable;
 
     /**
      * Get the attributes that should be cast.
@@ -54,6 +54,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Eviction::class, 'user_id', 'id');
     }
+
+    public function isAdmin(): bool
+    {
+        return Administrador::where('email', $this->email)->exists();
+    }
+
 
     public function initials(): string
     {

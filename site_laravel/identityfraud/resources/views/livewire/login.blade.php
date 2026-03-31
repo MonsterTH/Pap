@@ -15,7 +15,6 @@
         @csrf
         <div class="mb-4">
             <input wire:model="email" type="email" placeholder="Email" required class="w-full px-3 py-2 rounded bg-brand-dark border border-brand-muted text-brand-light focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-brand-accent">
-            @error('email') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
         </div>
 
         <div class="mb-4">

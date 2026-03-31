@@ -30,7 +30,11 @@
                             Sair
                         </button>
                     </form>
-                    <a href="#" class="block px-3 py-2 text-sm hover:bg-white/10 rounded">Admin</a>
+                    @if (\App\Models\Administrador::where('email', auth()->user()->email)->exists())
+                        <a href="{{ route('admin.dashboard') }}" class="block px-3 py-2 text-sm hover:bg-white/10 rounded">
+                            Admin
+                        </a>
+                    @endif
                 </div>
             </div>
 

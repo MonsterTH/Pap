@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Login;
 use App\Livewire\Register;
+use App\Http\Controllers\AdministradorController;
 
 Route::view('/', 'index')
     ->name('home');
@@ -39,6 +40,11 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('feed', FeedController::class)
         ->only(['index', 'store']);
+});
+
+Route::middleware(['auth', 'is_admin'])->group(function () {
+    Route::resource('admin', AdministradorController::class)
+        ->only(['index']);
 });
 
 Route::resource('players', PlayerController::class)
