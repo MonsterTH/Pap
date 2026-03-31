@@ -7,12 +7,12 @@
                         <div>
                             <h3 class="font-display font-bold text-lg tracking-wide mb-5 text-brand-light">Links Úteis</h3>
                             <div class="flex flex-col gap-3">
-                                    <a href="index.html" class="footer-link text-brand-muted text-sm font-semibold">Início</a>
-                                    <a href="register/register.html" class="footer-link text-brand-muted text-sm font-semibold">Login / Registar</a>
-                                    <a href="person.html" class="footer-link text-brand-muted text-sm font-semibold">Jogadores</a>
-                                    <a href="noticias.html" class="footer-link text-brand-muted text-sm font-semibold">Notícias</a>
-                                    <a href="votos.html" class="footer-link text-brand-muted text-sm font-semibold">Votos</a>
-                                    <a href="about/about.html" class="footer-link text-brand-muted text-sm font-semibold">Sobre</a>
+                                    <a href="/" class="footer-link text-brand-muted text-sm font-semibold">Início</a>
+                                    <a href="{{ route('login') }}" class="footer-link text-brand-muted text-sm font-semibold">Login / Registar</a>
+                                    <a href="{{ route('players.index') }}" class="footer-link text-brand-muted text-sm font-semibold">Jogadores</a>
+                                    <a href="{{ route('news.index') }}" class="footer-link text-brand-muted text-sm font-semibold">Notícias</a>
+                                    <a href="{{ route('eviction.index') }}" class="footer-link text-brand-muted text-sm font-semibold">Votos</a>
+                                    <a href="{{ route('about') }}" class="footer-link text-brand-muted text-sm font-semibold">Sobre</a>
                             </div>
                         </div>
 

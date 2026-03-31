@@ -53,6 +53,37 @@
             >
         </div>
 
+        <div class="mb-6">
+            <label class="block text-brand-light mb-2 text-sm">Foto de perfil</label>
+
+            <div class="flex items-center justify-center w-full">
+                <label class="w-full flex flex-col items-center justify-center px-4 py-6 rounded-lg cursor-pointer transition
+                    {{ $image ? '' : 'bg-brand-dark border border-brand-muted border-dashed hover:border-brand-accent' }}">
+
+                    @if ($image)
+                        <img
+                            src="{{ $image->temporaryUrl() }}"
+                            class="w-32 h-32 rounded-full object-cover border border-brand-muted"
+                        >
+                    @else
+                        <span class="text-brand-light text-sm">
+                            Clique para enviar uma imagem
+                        </span>
+                    @endif
+
+                    <input
+                        type="file"
+                        wire:model="image"
+                        class="hidden"
+                    >
+                </label>
+            </div>
+
+            @error('image')
+                <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
+            @enderror
+        </div>
+
         <button
             type="submit"
             class="w-full bg-brand-accent hover:bg-brand-glow text-white font-bold py-2 px-4 rounded transition"

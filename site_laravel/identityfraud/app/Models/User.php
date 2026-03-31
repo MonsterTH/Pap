@@ -16,8 +16,8 @@ use App\Models\Comment;
 use App\Models\Like;
 use App\Models\Eviction;
 
-#[Fillable(['name', 'email', 'password', 'dateofentry'])]
-#[Hidden(['password', 'two_factor_secret', 'two_factor_recovery_codes', 'remember_token'])]
+#[Fillable(['name', 'email', 'password', 'profile_picture'/*, 'dateofentry'*/])]
+#[Hidden(['password'/*, 'two_factor_secret', 'two_factor_recovery_codes'*/, 'remember_token'])]
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */

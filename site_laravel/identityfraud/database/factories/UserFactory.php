@@ -29,11 +29,11 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
-            'dateofentry' => fake()->dateTimeBetween('-1 year', 'now'),
-            'remember_token' => Str::random(10),
-            'two_factor_secret' => null,
-            'two_factor_recovery_codes' => null,
-            'two_factor_confirmed_at' => null,
+            // 'dateofentry' => fake()->dateTimeBetween('-1 year', 'now'),
+            // 'remember_token' => Str::random(10),
+            // 'two_factor_secret' => null,
+            // 'two_factor_recovery_codes' => null,
+            // 'two_factor_confirmed_at' => null,
         ];
     }
 
@@ -50,12 +50,12 @@ class UserFactory extends Factory
     /**
      * Indicate that the model has two-factor authentication configured.
      */
-    public function withTwoFactor(): static
-    {
-        return $this->state(fn (array $attributes) => [
-            'two_factor_secret' => encrypt('secret'),
-            'two_factor_recovery_codes' => encrypt(json_encode(['recovery-code-1'])),
-            'two_factor_confirmed_at' => now(),
-        ]);
-    }
+    // public function withTwoFactor(): static
+    // {
+    //     return $this->state(fn (array $attributes) => [
+    //         'two_factor_secret' => encrypt('secret'),
+    //         'two_factor_recovery_codes' => encrypt(json_encode(['recovery-code-1'])),
+    //         'two_factor_confirmed_at' => now(),
+    //     ]);
+    // }
 }

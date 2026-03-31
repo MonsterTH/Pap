@@ -9,10 +9,13 @@ use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
+use Livewire\WithFileUploads;
 
 #[Layout('layouts')]
 class Register extends Component
 {
+    use WithFileUploads;
+
     #[Validate('required|string|max:255')]
     public string $name = '';
 
@@ -24,14 +27,24 @@ class Register extends Component
 
     public string $password_confirmation = '';
 
+    #[Validate('nullable|image|max:2048')]
+    public $image;
+
     public function register(): void
     {
         $this->validate();
+
+        $path = null;
+
+        if ($this->image) {
+            $path = $this->image->store('images', 'public');
+        }
 
         $user = User::create([
             'name' => $this->name,
             'email' => strtolower($this->email),
             'password' => Hash::make($this->password),
+            'profile_picture' => $path,
         ]);
 
         event(new Registered($user));
