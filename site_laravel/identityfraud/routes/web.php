@@ -1,6 +1,8 @@
 <?php
 
 // use App\Http\Controllers\AuthController;
+
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\EvictionController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PlayerController;
@@ -38,7 +40,7 @@ Route::middleware('auth')->group(function () {
         ->only(['index']);
 
     Route::resource('feed', FeedController::class)
-        ->only(['index', 'store']);
+        ->only(['index', 'store', 'show']);
 });
 
 Route::resource('players', PlayerController::class)
@@ -46,5 +48,8 @@ Route::resource('players', PlayerController::class)
 
 Route::resource('news', NewsController::class)
     ->only(['index']);
+
+Route::post('/feed/{post}/comments', [CommentController::class, 'store'])
+    ->name('comments.store');
 
 require __DIR__.'/settings.php';

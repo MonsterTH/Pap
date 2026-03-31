@@ -6,14 +6,16 @@ use Illuminate\Http\Request;
 
 use App\Models\Post;
 
-class FeedController extends Controller
+use App\Models\Comment;
+
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('feed.index', ['posts' => Post::all()]);
+        //
     }
 
     /**
@@ -31,20 +33,12 @@ class FeedController extends Controller
     {
         $request->validate([
         'content' => 'required|max:500',
-        'image' => 'nullable|image|max:2048',
     ]);
 
-    $imagePath = null;
-
-    if ($request->hasFile('image')) {
-        $imagePath = $request->file('image')->store('posts', 'public');
-    }
-
-    Post::create([
+    Comment::create([
+        'post_id' => $post->id,
         'user_id' => auth()->id(),
         'content' => $request->content,
-        'image' => $imagePath,
-        'date' => now(),
     ]);
 
     return back()->with('success', 'Post created!');
@@ -55,10 +49,7 @@ class FeedController extends Controller
      */
     public function show(string $id)
     {
-        $post = Post::with('comments.user')->findOrFail($id);
-
-
-        return view('feed.show', ['post' => $post]);
+        //
     }
 
     /**
