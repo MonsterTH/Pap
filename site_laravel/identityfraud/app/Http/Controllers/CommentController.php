@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
 use App\Models\Post;
 
-class FeedController extends Controller
+use App\Models\Comment;
+
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $posts = Post::paginate(20);
-        return view('feed.index', ['posts' => $posts]);
+        //
     }
 
     /**
@@ -32,23 +33,15 @@ class FeedController extends Controller
     {
         $request->validate([
         'content' => 'required|max:500',
-        'image' => 'nullable|image|max:2048',
-        ]);
+    ]);
 
-        $imagePath = null;
+    Comment::create([
+        'post_id' => $post->id,
+        'user_id' => auth()->id(),
+        'content' => $request->content,
+    ]);
 
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('posts', 'public');
-        }
-
-        Post::create([
-            'user_id' => Auth::id(),
-            'content' => $request->input('content'),
-            'image' => $imagePath,
-            'date' => now(),
-        ]);
-
-        return back()->with('success', 'Post created!');
+    return back()->with('success', 'Post created!');
     }
 
     /**
@@ -56,10 +49,7 @@ class FeedController extends Controller
      */
     public function show(string $id)
     {
-        $post = Post::with('comments.user')->findOrFail($id);
-
-
-        return view('feed.show', ['post' => $post]);
+        //
     }
 
     /**
