@@ -25,8 +25,8 @@
             <div class="max-w-lg mx-auto bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg">
 
                 <div class="flex items-center gap-3 mb-3">
-                    <img src="{{ auth()->user()->profile_picture ? asset('storage/' . auth()->user()->profile_picture) : asset('storage/images/default.png') }}"
-                        class="w-10 h-10 rounded-full bg-white/10">
+                    <img src="{{ $post->user->profile_picture ? asset('storage/' . $post->user->profile_picture) : asset('storage/images/default.png') }}"
+    class="w-10 h-10 rounded-full bg-white/10">
                     <div>
                         <p class="text-white font-semibold">{{ $post->user->name }}</p>
                         <p class="text-xs text-brand-muted">{{ $post->date }}</p>
