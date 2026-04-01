@@ -58,4 +58,7 @@ Route::resource('news', NewsController::class)
 Route::post('/feed/{post}/comments', [CommentController::class, 'store'])
     ->name('comments.store');
 
+Route::post('/posts/{post}/like', [FeedController::class, 'like'])
+    ->name('posts.like');
+
 require __DIR__.'/settings.php';
