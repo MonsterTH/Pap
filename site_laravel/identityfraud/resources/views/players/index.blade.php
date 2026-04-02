@@ -22,8 +22,9 @@
     <!-- GRID PLAYERS -->
     <div id="playersGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         @foreach($players as $player)
-            <a href="{{ route('players.show', $player->id) }}"
-                 class="fade-up fade-up-d2 bg-white/5 border border-white/10 rounded-2xl p-4 text-center hover:scale-105 transition duration-300 block">
+                <a href="{{ route('players.show', $player->id) }}"
+                    class="fade-up fade-up-d2 bg-white/5 border border-white/10 rounded-2xl p-4 text-center
+                        transition transform duration-300 hover:scale-[1.03] hover:shadow-[0_15px_30px_rgba(255,209,0,0.25)]">
 
                 <!-- FOTO -->
                 <img

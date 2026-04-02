@@ -10,7 +10,7 @@ class Eviction extends Model
 
     protected $fillable = [
         'player_id',
-        'id_voter',
+        'user_id',
     ];
 
     public function player()
@@ -20,6 +20,6 @@ class Eviction extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'id_voter', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }
