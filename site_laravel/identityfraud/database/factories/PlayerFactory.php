@@ -21,7 +21,7 @@ class playerFactory extends Factory
             'name' => $this->faker->name(),
             'birth_date' => $this->faker->date(),
             'about' => $this->faker->sentence(10),
-            'photo' => 'Imagem.png',
+            'photo' => 'images/default.png',
         ];
     }
 }

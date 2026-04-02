@@ -3,9 +3,9 @@
     @section('content')
     <main class="max-w-5xl mx-auto px-4 md:px-8 py-10">
 
-        <div class="bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg relative">
+        <div class="fade-up fade-up-d1 bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg relative overflow-visible z-10">
 
-            <div class="flex items-center gap-4">
+            <div class="fade-up fade-up-d2 flex items-center gap-4">
                 <img src="{{ auth()->user()->profile_picture ? asset('storage/' . auth()->user()->profile_picture) : asset('storage/images/default.png') }}"
                     class="w-16 h-16 rounded-full bg-white/10">
 
@@ -17,12 +17,12 @@
             </div>
 
             <!-- DROPDOWN -->
-            <div class="absolute top-4 right-4">
+            <div class="fade-up fade-up-d2 absolute top-4 right-4 z-50">
                 <button id='dropdownBtn' class="text-xl px-3 py-1 bg-white/10 rounded-lg hover:bg-white/20 transition">
                     ≡
                 </button>
 
-                <div id='dropdownMenu' class="hidden absolute right-0 mt-2 bg-brand-card border border-white/10 rounded-lg shadow-lg p-2 space-y-1 w-40">
+                <div id='dropdownMenu' class="fade-up fade-up-d1 hidden absolute right-0 mt-2 bg-brand-card border border-white/10 rounded-lg shadow-lg p-2 space-y-1 w-40 z-50">
                     <a href="#" class="block px-3 py-2 text-sm hover:bg-white/10 rounded">Editar Perfil</a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
@@ -51,7 +51,7 @@
     </main>
 
     <!-- POST INPUT -->
-    <section class="max-w-3xl mx-auto px-4 md:px-8 pb-10">
+    <section class="fade-up fade-up-d3 max-w-3xl mx-auto px-4 md:px-8 pb-10 relative z-0">
 
         <div class="bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg">
 

@@ -4,8 +4,8 @@
 @section('content')
 
 <!-- TRENDING -->
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-12">
-    <h1 class="text-2xl md:text-3xl font-bold"><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-gold">Trending</span></h1>
+<section class="fade-up fade-up-d1 max-w-7xl mx-auto px-4 md:px-8 py-12">
+    <h1 class="mb-5 text-2xl md:text-3xl font-bold"><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-gold">Trending</span></h1>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         @foreach ($trending as $new)
@@ -26,7 +26,7 @@
 <hr class="border-white/10">
 
 <!-- NOVIDADES -->
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+<section class="fade-up fade-up-d2 max-w-7xl mx-auto px-4 md:px-8 py-12">
     <h1 class="text-2xl md:text-3xl font-bold text-brand-accent mb-6">Novidades</h1>
 
     <div class="flex gap-4 overflow-x-auto pb-2">
@@ -47,7 +47,7 @@
 </section>
 
 <!-- DRAMA -->
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+<section class="fade-up fade-up-d3 max-w-7xl mx-auto px-4 md:px-8 py-12">
     <h1 class="text-2xl md:text-3xl font-bold text-brand-accent mb-6">Drama</h1>
 
     <div class="flex gap-4 overflow-x-auto pb-2">

@@ -1,43 +1,14 @@
 @extends('layouts')
-
+@section('title', 'Identity Fraud - Dashboard')
 @section('content')
     <div class="flex min-h-screen bg-brand-dark">
-
-        {{-- Sidebar --}}
-        <aside class="w-64 bg-brand-card p-6 flex flex-col">
-            <div class="mb-6">
-                <img src="/scripts/Pap/imgs/LogoTipo.png" alt="Logo" class="w-32 mx-auto">
-            </div>
-
-            <nav class="flex-1">
-                <h3 class="text-brand-accent font-bold mb-2">Jogadores</h3>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Gerenciar</a>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Adicionar</a>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Remover</a>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Consulta</a>
-
-                <h3 class="text-brand-accent font-bold mt-6 mb-2">Eventos</h3>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Votações</a>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Atividades</a>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Bounty's</a>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Seasons</a>
-
-                <h3 class="text-brand-accent font-bold mt-6 mb-2">Misc</h3>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Histórico de Seasons</a>
-                <a href="{{ route('news.create') }}" class="block px-3 py-2 rounded hover:bg-white/10">Notícias</a>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Criar Admin</a>
-                <a href="/scripts/Pap/home.php" class="block px-3 py-2 rounded hover:bg-white/10">Página Principal</a>
-            </nav>
-
-            <p class="mt-auto text-center text-sm text-white/60">Bem-vindo, {{ auth()->user()->name ?? 'Admin' }}</p>
-        </aside>
-
+        @include('partials.sidebar')
         {{-- Main content --}}
-        <main class="flex-1 p-8 bg-brand-dark overflow-auto">
+        <main class="fade-up fade-up-d1 flex-1 p-8 bg-brand-dark overflow-auto">
             <h1 class="text-3xl font-bold text-white mb-6">Painel de Administração</h1>
 
             {{-- Stats Cards --}}
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="fade-up fade-up-d2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div class="bg-brand-card p-6 rounded-lg card-hover">
                     <h2 class="text-sm text-white/60 mb-2">Total de Jogadores</h2>
                     <p class="text-2xl font-bold">{{ $playersCount }}</p>
@@ -57,7 +28,7 @@
             </div>
 
             {{-- Recent Activities / News --}}
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="fade-up fade-up-d3 grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-brand-card p-6 rounded-lg card-hover">
                     <h2 class="text-xl font-semibold mb-4">Últimos Jogadores</h2>
                     <ul class="space-y-2">
