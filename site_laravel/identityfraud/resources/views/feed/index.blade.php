@@ -100,7 +100,7 @@
 
         </div>
 
-        <div class="mt-6 max-w-lg mx-auto">
+        <div class="mt-8 flex justify-center">
             {{ $posts->links() }}
         </div>
 

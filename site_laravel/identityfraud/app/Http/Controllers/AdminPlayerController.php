@@ -11,7 +11,8 @@ class AdminPlayerController   extends Controller
     public function manage()
     {
         return view('admin.players.gerenciar', [
-            'players' => Player::latest()->get()
+            'players' => Player::latest()->paginate(10)
+
         ]);
     }
 

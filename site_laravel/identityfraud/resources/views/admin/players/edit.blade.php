@@ -64,7 +64,7 @@
                     {{-- Data de Nascimento --}}
                     <div>
                         <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Data de Nascimento</label>
-                        <input type="date" name="birthdate" value="{{ old('birthdate', $player->birthdate ?? '') }}"
+                        <input type="date" name="birth_date" value="{{ old('birth_date', $player->birth_date ?? '') }}"
                             class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-accent [color-scheme:dark]">
                     </div>
 
@@ -77,7 +77,7 @@
                                   placeholder="Breve descrição do jogador...">{{ old('about', $player->about ?? '') }}</textarea>
                     </div>
 
-                    {{-- Remover foto atual --}}
+                    {{-- Remover foto atual
                     @if($player->photo)
                         <div class="flex items-center gap-2">
                             <input type="checkbox" name="remove_photo" id="remove_photo" value="1"
@@ -86,7 +86,7 @@
                                 Remover foto atual e usar a predefinida
                             </label>
                         </div>
-                    @endif
+                    @endif --}}
 
                     <div class="flex gap-3 pt-2">
                         <button type="submit"

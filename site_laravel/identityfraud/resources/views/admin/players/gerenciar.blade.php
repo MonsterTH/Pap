@@ -70,12 +70,50 @@
                     </tbody>
                 </table>
 
-                @if($players->isEmpty())
+                @if($players->total() === 0)
                     <div class="text-center py-16 text-brand-muted">
                         <p>Nenhum jogador encontrado.</p>
                     </div>
                 @endif
             </div>
+
+            @if($players->hasPages())
+                <div class="fade-up fade-up-d3 flex items-center justify-center gap-2 mt-6">
+                    
+                    {{-- Anterior --}}
+                    @if($players->onFirstPage())
+                        <span class="px-4 py-2 text-sm bg-white/5 text-white/20 rounded-lg cursor-not-allowed">← Anterior</span>
+                    @else
+                        <a href="{{ $players->previousPageUrl() }}"
+                        class="px-4 py-2 text-sm bg-white/5 hover:bg-white/10 text-brand-muted hover:text-white rounded-lg transition">
+                            ← Anterior
+                        </a>
+                    @endif
+
+                    {{-- Páginas --}}
+                    @foreach($players->getUrlRange(1, $players->lastPage()) as $page => $url)
+                        @if($page == $players->currentPage())
+                            <span class="px-4 py-2 text-sm bg-brand-accent text-white font-bold rounded-lg">{{ $page }}</span>
+                        @else
+                            <a href="{{ $url }}"
+                            class="px-4 py-2 text-sm bg-white/5 hover:bg-white/10 text-brand-muted hover:text-white rounded-lg transition">
+                                {{ $page }}
+                            </a>
+                        @endif
+                    @endforeach
+
+                    {{-- Próxima --}}
+                    @if($players->hasMorePages())
+                        <a href="{{ $players->nextPageUrl() }}"
+                        class="px-4 py-2 text-sm bg-white/5 hover:bg-white/10 text-brand-muted hover:text-white rounded-lg transition">
+                            Próxima →
+                        </a>
+                    @else
+                        <span class="px-4 py-2 text-sm bg-white/5 text-white/20 rounded-lg cursor-not-allowed">Próxima →</span>
+                    @endif
+
+                </div>
+            @endif
 
         </main>
     </div>
