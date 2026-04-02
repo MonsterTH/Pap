@@ -4,11 +4,11 @@
     <div class="flex min-h-screen bg-brand-dark">
         @include('partials.sidebar')
         {{-- Main content --}}
-        <main class="flex-1 p-8 bg-brand-dark overflow-auto">
+        <main class="fade-up fade-up-d1 flex-1 p-8 bg-brand-dark overflow-auto">
             <h1 class="text-3xl font-bold text-white mb-6">Painel de Administração</h1>
 
             {{-- Stats Cards --}}
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="fade-up fade-up-d2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div class="bg-brand-card p-6 rounded-lg card-hover">
                     <h2 class="text-sm text-white/60 mb-2">Total de Jogadores</h2>
                     <p class="text-2xl font-bold">{{ $playersCount }}</p>
@@ -28,7 +28,7 @@
             </div>
 
             {{-- Recent Activities / News --}}
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="fade-up fade-up-d3 grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-brand-card p-6 rounded-lg card-hover">
                     <h2 class="text-xl font-semibold mb-4">Últimos Jogadores</h2>
                     <ul class="space-y-2">
