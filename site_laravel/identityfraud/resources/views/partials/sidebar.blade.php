@@ -26,7 +26,7 @@
             <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Histórico de Seasons</a>
             <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Notícias</a>
             <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Criar Admin</a>
-            <a href="/scripts/Pap/home.php" class="block px-3 py-2 rounded hover:bg-white/10">Página Principal</a>
+            <a href="/" class="block px-3 py-2 rounded hover:bg-white/10">Página Principal</a>
         </div>
     </nav>
 
