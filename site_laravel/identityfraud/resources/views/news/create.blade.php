@@ -38,8 +38,8 @@
                             Criar Notícia
                         </h1>
 
-                        <form class="grid md:grid-cols-2 gap-6">
-
+                        <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data" class="grid md:grid-cols-2 gap-6">
+                            @csrf
                             <!-- LEFT SIDE -->
                             <div class="space-y-5">
 
@@ -48,7 +48,8 @@
                                     <label class="text-sm text-brand-muted">Título</label>
                                     <input
                                         type="text"
-                                        placeholder="Ex: Novo episódio surpreende fãs"
+                                        placeholder="Titulo"
+                                        name="title"
                                         class="mt-1 w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent">
                                 </div>
 
@@ -57,6 +58,7 @@
                                     <label class="text-sm text-brand-muted">Data</label>
                                     <input
                                         type="date"
+                                        name="date"
                                         class="mt-1 w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent">
                                 </div>
 
@@ -67,17 +69,17 @@
                                     <div class="grid grid-cols-3 gap-3 text-center">
 
                                         <label class="cursor-pointer border border-white/10 rounded-lg py-2 hover:bg-white/10 transition">
-                                            <input type="radio" name="Cat" class="hidden">
+                                            <input type="radio" name="genre" class="hidden" value="Tr">
                                             Trending
                                         </label>
 
                                         <label class="cursor-pointer border border-white/10 rounded-lg py-2 hover:bg-white/10 transition">
-                                            <input type="radio" name="Cat" class="hidden">
+                                            <input type="radio" name="genre" class="hidden" value="No">
                                             Novidades
                                         </label>
 
                                         <label class="cursor-pointer border border-white/10 rounded-lg py-2 hover:bg-white/10 transition">
-                                            <input type="radio" name="Cat" class="hidden">
+                                            <input type="radio" name="genre" class="hidden" value="Dr">
                                             Drama
                                         </label>
 
@@ -95,6 +97,7 @@
                                     <textarea
                                         rows="4"
                                         placeholder="Resumo da notícia..."
+                                        name="description"
                                         class="mt-1 w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-brand-accent"></textarea>
                                 </div>
 
@@ -108,12 +111,12 @@
                                         <img id="preview" class="hidden w-full h-full object-cover">
 
                                         <!-- PLACEHOLDER -->
-                                        <div id="placeholder" class="flex flex-col items-center text-sm text-white/50">
-                                            📤 Upload Image
+                                        <div id="placeholder" name="image" class="flex flex-col items-center text-sm text-white/50">
+                                            Upload Image
                                             <span class="text-xs mt-1">Click para adicionar</span>
                                         </div>
 
-                                        <input id="fileInput" type="file" class="hidden">
+                                        <input id="fileInput" name="image" type="file" class="hidden">
                                     </label>
 
                                 </div>
@@ -124,7 +127,6 @@
                             <button class="col-span-2 py-3 bg-brand-accent hover:bg-brand-glow rounded-lg font-bold uppercase text-sm transition">
                                 Publicar Notícia
                             </button>
-
                         </form>
 
                     </div>
