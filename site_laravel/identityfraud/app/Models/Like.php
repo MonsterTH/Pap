@@ -13,7 +13,7 @@ class Like extends Model
 
     protected $fillable = [
         'post_id',
-        'id_poster',
+        'user_id',
     ];
 
     public function post()
@@ -23,6 +23,6 @@ class Like extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'id_poster', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

@@ -26,8 +26,8 @@ class DatabaseSeeder extends Seeder
         Player::factory(16)->create();
         Activity::factory(6)->create();
         Bounty::factory(3)->create();
-        Post::factory(1)->create();
-        Like::factory(1600)->create();
+        Post::factory(20)->create();
+        Like::factory(20)->create();
         Comment::factory(80)->create();
         News::factory(16)->create();
 

@@ -53,9 +53,12 @@ Route::resource('players', PlayerController::class)
     ->only(['index', 'show']);
 
 Route::resource('news', NewsController::class)
-    ->only(['index']);
+    ->only(['index', 'create']);
 
 Route::post('/feed/{post}/comments', [CommentController::class, 'store'])
     ->name('comments.store');
+
+Route::post('/posts/{post}/like', [FeedController::class, 'like'])
+    ->name('posts.like');
 
 require __DIR__.'/settings.php';

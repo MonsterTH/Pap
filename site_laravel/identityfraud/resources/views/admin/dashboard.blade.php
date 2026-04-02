@@ -11,19 +11,19 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div class="bg-brand-card p-6 rounded-lg card-hover">
                     <h2 class="text-sm text-white/60 mb-2">Total de Jogadores</h2>
-                    <p class="text-2xl font-bold">320</p>
+                    <p class="text-2xl font-bold">{{ $playersCount }}</p>
                 </div>
                 <div class="bg-brand-card p-6 rounded-lg card-hover">
-                    <h2 class="text-sm text-white/60 mb-2">Eventos Ativos</h2>
-                    <p class="text-2xl font-bold">12</p>
+                    <h2 class="text-sm text-white/60 mb-2">Atividades a acontecer</h2>
+                    <p class="text-2xl font-bold">{{ $activityCount }}</p>
                 </div>
                 <div class="bg-brand-card p-6 rounded-lg card-hover">
                     <h2 class="text-sm text-white/60 mb-2">Bountys</h2>
-                    <p class="text-2xl font-bold">8</p>
+                    <p class="text-2xl font-bold">{{ $bountiesCount }}</p>
                 </div>
                 <div class="bg-brand-card p-6 rounded-lg card-hover">
                     <h2 class="text-sm text-white/60 mb-2">Admins</h2>
-                    <p class="text-2xl font-bold">5</p>
+                    <p class="text-2xl font-bold">{{ $adminsCount }}</p>
                 </div>
             </div>
 
