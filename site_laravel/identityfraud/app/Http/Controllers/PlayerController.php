@@ -43,7 +43,12 @@ class PlayerController extends Controller
 
     public function show(string $id)
     {
-        $player = Player::findOrFail($id);
+        $player = Player::withCount([
+            'seasons',
+            'wonSeasons',
+            'bounties',
+        ])->findOrFail($id);
+
         return view('players.show', compact('player'));
     }
 

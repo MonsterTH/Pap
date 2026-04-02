@@ -14,6 +14,8 @@ use App\Livewire\Login;
 use App\Livewire\Register;
 use App\Http\Controllers\AdministradorController;
 use App\Http\Controllers\AdminPlayerController;
+use App\Http\Controllers\BountyController;
+use App\Http\Controllers\SeasonController;
 
 Route::view('/', 'index')
     ->name('home');
@@ -65,5 +67,12 @@ Route::post('/feed/{post}/comments', [CommentController::class, 'store'])
 
 Route::post('/posts/{post}/like', [FeedController::class, 'like'])
     ->name('posts.like');
+
+Route::resource('season', SeasonController::class)
+    ->only(['create', 'store']);
+
+Route::resource('bounty', BountyController::class)
+    ->only(['create', 'store']);
+
 
 require __DIR__.'/settings.php';
