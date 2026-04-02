@@ -50,7 +50,7 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
 });
 
 Route::resource('players', PlayerController::class)
-    ->only(['index']);
+    ->only(['index', 'show']);
 
 Route::resource('news', NewsController::class)
     ->only(['index']);

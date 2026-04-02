@@ -1,0 +1,27 @@
+<aside class="w-64 bg-brand-card p-6 flex flex-col">
+    <div class="mb-6">
+        <img src="{{ asset('images/LogoTipo.png') }}" alt="Identity Fraud Logo" class="w-32 mx-auto">
+    </div>
+
+    <nav class="flex-1">
+        <h3 class="text-brand-accent font-bold mb-2">Jogadores</h3>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Gerenciar</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Adicionar</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Remover</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Consulta</a>
+
+        <h3 class="text-brand-accent font-bold mt-6 mb-2">Eventos</h3>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Votações</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Atividades</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Bounty's</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Seasons</a>
+
+        <h3 class="text-brand-accent font-bold mt-6 mb-2">Misc</h3>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Histórico de Seasons</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Notícias</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Criar Admin</a>
+        <a href="/scripts/Pap/home.php" class="block px-3 py-2 rounded hover:bg-white/10">Página Principal</a>
+    </nav>
+
+    <p class="mt-auto text-center text-sm text-white/60">Bem-vindo, {{ auth()->user()->name ?? 'Admin' }}</p>
+</aside>

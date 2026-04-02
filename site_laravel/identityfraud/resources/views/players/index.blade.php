@@ -22,26 +22,25 @@
     <!-- GRID PLAYERS -->
     <div id="playersGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         @foreach($players as $player)
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center hover:scale-105 transition duration-300">
+            <a href="{{ route('players.show', $player->id) }}"
+                 class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center hover:scale-105 transition duration-300 block">
 
                 <!-- FOTO -->
                 <img
-                    src="{{ $player->photo ?? '/images/default-avatar.png' }}"
-                    alt="{{ $player->name }}"
-                    class="w-24 h-24 mx-auto rounded-full object-cover mb-4"
-                >
+                    src="{{ $player->photo ? asset('storage/' . $player->photo) : asset('storage/images/default.png') }}"
+                    class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
 
                 <!-- NOME -->
                 <h2 class="text-lg font-bold text-white">
                     {{ $player->name }}
                 </h2>
 
-                <!-- USERNAME / INFO EXTRA -->
+                {{-- <!-- USERNAME / INFO EXTRA -->
                 <p class="text-sm text-brand-muted">
                     {{ $player->username ?? '@player' }}
-                </p>
+                </p> --}}
 
-            </div>
+            </a>
         @endforeach
     </div>
 
