@@ -6,33 +6,33 @@
     <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
 
         <!-- TEXTO -->
-        <div class="flex-1">
+        <div class="fade-up fade-up-d1 flex-1">
             <span class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-[0.2em] uppercase text-brand-accent bg-brand-accent/10 border border-brand-accent/20 rounded-full">
                 Sobre o Programa
             </span>
 
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+            <h1 class="fade-up fade-up-d2 text-4xl md:text-6xl font-extrabold leading-tight">
                 O que é o
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-gold">
                     Identity Fraud
                 </span>?
             </h1>
 
-            <p class="mt-6 text-brand-muted leading-relaxed">
+            <p class="fade-up fade-up-d3 mt-6 text-brand-muted leading-relaxed">
                 Identity Fraud é um reality show de competição onde 16 competidores com identidades falsas tentam descobrir as identidades uns dos outros enquanto protegem as suas.
             </p>
 
-            <p class="mt-4 text-brand-muted leading-relaxed">
+            <p class="fade-up fade-up-d3 mt-4 text-brand-muted leading-relaxed">
                 Cada competidor assume o papel de um investigador, tentando desvendar os segredos dos outros participantes para vencer a competição.
             </p>
 
-            <p class="mt-4 text-brand-muted leading-relaxed">
+            <p class="fade-up fade-up-d3 mt-4 text-brand-muted leading-relaxed">
                 O programa combina mistério, estratégia e interação social, criando uma experiência envolvente tanto para competidores como para o público.
             </p>
         </div>
 
         <!-- IMAGEM -->
-        <div class="flex-1">
+        <div class="fade-up fade-up-d3 flex-1">
             <div class="relative">
                 <div class="absolute -inset-4 bg-gradient-to-tr from-brand-accent/20 via-transparent to-brand-gold/10 rounded-2xl blur-2xl"></div>
 

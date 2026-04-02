@@ -4,7 +4,7 @@
     @section('content')
 
     <!-- SIDE INFO -->
-    <div class="mt-7 max-w-3xl mx-auto bg-brand-card border border-white/5 rounded-2xl p-6 text-center shadow-lg">
+    <div class="fade-up fade-up-d1 mt-7 max-w-3xl mx-auto bg-brand-card border border-white/5 rounded-2xl p-6 text-center shadow-lg">
 
         <img src="{{ auth()->user()->profile_picture ? asset('storage/' . auth()->user()->profile_picture) : asset('storage/images/default.png') }}"
             class="w-20 h-20 rounded-full mx-auto mb-4 object-cover bg-white/10">
@@ -19,7 +19,7 @@
     </div>
 
     <!-- POSTS -->
-    <div class="space-y-8 mt-8">
+    <div class="fade-up fade-up-d2 space-y-8 mt-8">
 
         @foreach ($posts as $post)
             <div class="max-w-lg mx-auto bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg">

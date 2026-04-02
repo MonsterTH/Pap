@@ -4,7 +4,7 @@
 @section('content')
 <section class="max-w-7xl mx-auto px-4 md:px-8 py-12">
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="fade-up fade-up-d1 grid grid-cols-2 md:grid-cols-4 gap-6">
 
             <div class="bg-brand-card rounded-2xl border border-white/5 overflow-hidden shadow-lg hover:scale-[1.03] transition duration-300">
 
@@ -47,7 +47,7 @@
     <!-- BOTÃO -->
     <div class="text-center">
         <a href="players.php"
-           class="inline-flex items-center gap-2 px-6 py-3 bg-brand-accent text-white font-bold uppercase tracking-wide rounded-lg hover:bg-brand-glow transition">
+           class="fade-up fade-up-d2 inline-flex items-center gap-2 px-6 py-3 bg-brand-accent text-white font-bold uppercase tracking-wide rounded-lg hover:bg-brand-glow transition">
 
             Ver Participantes
 

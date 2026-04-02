@@ -3,9 +3,9 @@
     @section('content')
     <main class="max-w-5xl mx-auto px-4 md:px-8 py-10">
 
-        <div class="bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg relative">
+        <div class="fade-up fade-up-d1 bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg relative">
 
-            <div class="flex items-center gap-4">
+            <div class="fade-up fade-up-d2 flex items-center gap-4">
                 <img src="{{ auth()->user()->profile_picture ? asset('storage/' . auth()->user()->profile_picture) : asset('storage/images/default.png') }}"
                     class="w-16 h-16 rounded-full bg-white/10">
 
@@ -17,7 +17,7 @@
             </div>
 
             <!-- DROPDOWN -->
-            <div class="absolute top-4 right-4">
+            <div class="fade-up fade-up-d2 absolute top-4 right-4">
                 <button id='dropdownBtn' class="text-xl px-3 py-1 bg-white/10 rounded-lg hover:bg-white/20 transition">
                     ≡
                 </button>
@@ -51,7 +51,7 @@
     </main>
 
     <!-- POST INPUT -->
-    <section class="max-w-3xl mx-auto px-4 md:px-8 pb-10">
+    <section class="fade-up fade-up-d3 max-w-3xl mx-auto px-4 md:px-8 pb-10">
 
         <div class="bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg">
 
