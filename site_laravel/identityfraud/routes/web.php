@@ -38,8 +38,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('profile', ProfileController::class)
         ->only(['index']);
 
-    Route::resource('eviction', EvictionController::class)
-        ->only(['index']);
+    Route::get('/eviction', [EvictionController::class, 'index'])->name('eviction.index');
+    Route::post('/eviction/{player}/vote', [EvictionController::class, 'vote'])->name('eviction.vote');
 
     Route::resource('feed', FeedController::class)
         ->only(['index', 'store', 'show']);
@@ -52,6 +52,11 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/admin/players',          [AdminPlayerController::class, 'manage'])->name('admin.players.manage');
     Route::get('/admin/players/remover',  [AdminPlayerController::class, 'remove'])->name('admin.players.remove');
     Route::get('/admin/players/consulta', [AdminPlayerController::class, 'consulta'])->name('admin.players.consulta');
+
+    Route::get('/admin/eviction', [EvictionController::class, 'adminIndex'])->name('admin.eviction.index');
+    Route::post('/admin/eviction', [EvictionController::class, 'store'])->name('admin.eviction.store');
+    Route::delete('/admin/eviction/{player}', [EvictionController::class, 'removePlayer'])->name('admin.eviction.remove');
+    Route::delete('/admin/eviction', [EvictionController::class, 'reset'])->name('admin.eviction.reset');
 });
 
 Route::resource('players', PlayerController::class)
