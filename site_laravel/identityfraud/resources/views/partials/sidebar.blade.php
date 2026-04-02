@@ -7,10 +7,10 @@
 
         <div class="fade-up fade-up-d1">
             <h3 class="text-brand-accent font-bold mb-2">Jogadores</h3>
-            <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Gerenciar</a>
-            <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Adicionar</a>
-            <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Remover</a>
-            <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Consulta</a>
+            <a href="{{ route('admin.players.manage') }}"  class="block px-3 py-2 rounded hover:bg-white/10">Gerenciar</a>
+            <a href="{{ route('players.create') }}"         class="block px-3 py-2 rounded hover:bg-white/10">Adicionar</a>
+            <a href="{{ route('admin.players.remove') }}"   class="block px-3 py-2 rounded hover:bg-white/10">Remover</a>
+            <a href="{{ route('admin.players.consulta') }}" class="block px-3 py-2 rounded hover:bg-white/10">Consulta</a>
         </div>
 
         <div class="fade-up fade-up-d2">

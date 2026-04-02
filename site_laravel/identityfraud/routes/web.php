@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Login;
 use App\Livewire\Register;
 use App\Http\Controllers\AdministradorController;
+use App\Http\Controllers\AdminPlayerController;
 
 Route::view('/', 'index')
     ->name('home');
@@ -47,10 +48,14 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::resource('admin', AdministradorController::class)
         ->only(['index']);
+
+    Route::get('/admin/players',          [AdminPlayerController::class, 'manage'])->name('admin.players.manage');
+    Route::get('/admin/players/remover',  [AdminPlayerController::class, 'remove'])->name('admin.players.remove');
+    Route::get('/admin/players/consulta', [AdminPlayerController::class, 'consulta'])->name('admin.players.consulta');
 });
 
 Route::resource('players', PlayerController::class)
-    ->only(['index', 'show']);
+    ->only(['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']);
 
 Route::resource('news', NewsController::class)
     ->only(['index', 'create']);
