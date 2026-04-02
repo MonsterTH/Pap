@@ -53,7 +53,7 @@ Route::resource('players', PlayerController::class)
     ->only(['index']);
 
 Route::resource('news', NewsController::class)
-    ->only(['index']);
+    ->only(['index', 'create']);
 
 Route::post('/feed/{post}/comments', [CommentController::class, 'store'])
     ->name('comments.store');
