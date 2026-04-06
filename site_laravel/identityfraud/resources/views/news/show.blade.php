@@ -15,7 +15,7 @@
     <div class="bg-brand-card border border-white/5 rounded-2xl overflow-hidden shadow-lg">
 
         <!-- IMAGE -->
-        <img src="#" class="w-full h-64 md:h-80 object-cover">
+        <img src="{{ asset('storage/' . $news->image) }}" class="w-full h-64 md:h-80 object-cover">
 
         <!-- CONTENT -->
         <div class="p-6 md:p-8">

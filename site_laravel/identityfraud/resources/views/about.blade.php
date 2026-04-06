@@ -11,7 +11,7 @@
                 Sobre o Programa
             </span>
 
-            <h1 class="fade-up fade-up-d2 text-4xl md:text-6xl font-extrabold leading-tight">
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight glitch-text">
                 O que é o
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-gold">
                     Identity Fraud
@@ -36,7 +36,7 @@
             <div class="relative">
                 <div class="absolute -inset-4 bg-gradient-to-tr from-brand-accent/20 via-transparent to-brand-gold/10 rounded-2xl blur-2xl"></div>
 
-                <img src="../imgs/Aboutimg.png"
+                <img src="storage/images/Imagem2.png"
                      class="relative w-full max-w-lg mx-auto rounded-2xl shadow-2xl border border-white/5 object-cover">
             </div>
         </div>

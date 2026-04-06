@@ -26,7 +26,7 @@
                     <div class="flex-1 fade-up fade-up-d2">
                             <div class="relative">
                                 <div class="absolute -inset-4 bg-gradient-to-tr from-brand-accent/20 via-transparent to-brand-gold/10 rounded-2xl blur-2xl"></div>
-                                <img class="relative w-full max-w-lg mx-auto rounded-2xl shadow-2xl shadow-brand-accent/10 border border-white/5 object-cover" src="imgs/ns2.jpg" alt="Identity Fraud">
+                                <img class="relative w-full max-w-lg mx-auto rounded-2xl shadow-2xl shadow-brand-accent/10 border border-white/5 object-cover" src="storage/images/Imagem1.png" alt="Identity Fraud">
                             </div>
                     </div>
                 </div>

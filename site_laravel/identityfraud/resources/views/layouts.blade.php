@@ -1,4 +1,5 @@
 <html>
+    @livewireStyles
     <head>
         <title>@yield('title')</title>
         <meta charset="UTF-8">
@@ -171,7 +172,6 @@
             background: #e63946;
             }
         </style>
-        @livewireStyles
     </head>
     <body class="antialiased">
 
@@ -182,7 +182,7 @@
         <main>
             {{-- @yield('content') --}}
             @isset($slot)
-                {{ $slot }}
+               {{ $slot }}
             @endisset
 
             @yield('content')
