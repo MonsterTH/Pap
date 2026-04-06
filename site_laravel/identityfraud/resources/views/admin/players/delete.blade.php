@@ -12,7 +12,7 @@
             </div>
 
             {{-- Search bar --}}
-            <div class="fade-up fade-up-d2 flex gap-3 mb-6 max-w-xl">
+            <div class="fade-up fade-up-d2 flex gap-3 mb-6 max-w-xl mx-auto">
                 <input
                     type="text"
                     id="searchInput"
@@ -21,7 +21,7 @@
             </div>
 
             {{-- Players list --}}
-            <div class="fade-up fade-up-d3 bg-brand-card border border-white/10 rounded-2xl overflow-hidden max-w-2xl">
+            <div class="fade-up fade-up-d3 bg-brand-card border border-white/10 rounded-2xl overflow-hidden max-w-2xl mx-auto">
                 @forelse($players as $player)
                     <div class="player-row flex items-center justify-between px-6 py-4 border-b border-white/5 hover:bg-white/5 transition">
                         <div class="flex items-center gap-3">

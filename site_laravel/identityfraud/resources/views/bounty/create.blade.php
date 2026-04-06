@@ -23,7 +23,7 @@
         @endif
 
         <!-- FORMULÁRIO -->
-        <div class="fade-up fade-up-d2 bg-brand-card border border-white/10 rounded-2xl p-8 max-w-2xl">
+        <div class="fade-up fade-up-d2 bg-brand-card border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">
             <form method="POST" action="{{ route('bounty.store') }}" class="space-y-6">
                 @csrf
 

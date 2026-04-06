@@ -23,7 +23,7 @@
         @endif
 
         <!-- FORM -->
-        <div class="fade-up fade-up-d2 bg-brand-card border border-white/10 rounded-2xl p-8 max-w-2xl">
+        <div class="fade-up fade-up-d2 bg-brand-card border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">
             <form method="POST" action="{{ route('season.store') }}" class="space-y-6">
                 @csrf
 
@@ -47,17 +47,16 @@
                 <div>
                     <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Vencedor</label>
 
-                    <select name="winner_id"
-                            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-brand-accent">
-                        <option value="">Selecionar jogador</option>
-
-                        @foreach($players as $player)
-                            <option value="{{ $player->id }}" {{ old('winner_id') == $player->id ? 'selected' : '' }}>
-                                {{ $player->name }}
-                            </option>
-                        @endforeach
-
-                    </select>
+                    <x-custom-dropdown
+                        name="winner_id"
+                        label="Selecionar vencedor"
+                        :options="$players->map(fn($p) => [
+                            'value' => $p->id,
+                            'label' => $p->name,
+                            'image' => $p->photo ? asset('storage/' . $p->photo) : asset('storage/images/default.png')
+                        ])->toArray()"
+                        :selected="old('winner_id')"
+                    />
                 </div>
 
                 <!-- BUTTONS -->
