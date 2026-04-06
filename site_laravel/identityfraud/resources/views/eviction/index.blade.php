@@ -41,11 +41,6 @@
                         <img src="{{ $eviction->player->photo ? asset('storage/' . $eviction->player->photo) : asset('storage/images/default.png') }}"
                              class="w-full h-48 object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-
-                        {{-- Contagem de votos --}}
-                        <div class="absolute top-3 right-3 px-2 py-1 bg-black/50 backdrop-blur-sm rounded-full text-xs text-white/80 border border-white/10">
-                            {{ $eviction->votes_count ?? 0 }} voto/s
-                        </div>
                     </div>
 
                     <div class="p-4 text-center">
