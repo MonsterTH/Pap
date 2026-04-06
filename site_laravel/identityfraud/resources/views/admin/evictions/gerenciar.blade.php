@@ -108,72 +108,21 @@
                                     @endforeach
                                 </select>
 
-                                {{-- Dropdown custom --}}
-                                <div class="relative" id="customSelect">
-                                    <button type="button" id="selectBtn"
-                                            class="w-full flex items-center justify-between bg-white/5 border border-white/10 hover:border-white/20 rounded-lg px-4 py-2.5 text-sm text-white/40 focus:outline-none focus:ring-2 focus:ring-brand-accent transition">
-                                        <span id="selectLabel">Escolhe um jogador...</span>
-                                        <svg class="w-4 h-4 text-brand-muted transition-transform" id="selectArrow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-                                        </svg>
-                                    </button>
-
-                                    <div id="selectDropdown"
-                                        class="hidden absolute z-50 w-full mt-2 bg-brand-card border border-white/10 rounded-xl shadow-2xl overflow-hidden">
-                                        @foreach($availablePlayers as $player)
-                                            <div class="select-option flex items-center gap-3 px-4 py-3 hover:bg-white/10 cursor-pointer transition"
-                                                data-value="{{ $player->id }}"
-                                                data-label="{{ $player->name }}">
-                                                <img src="{{ $player->photo ? asset('storage/' . $player->photo) : asset('storage/images/default.png') }}"
-                                                    class="w-8 h-8 rounded-full object-cover border border-white/10">
-                                                <span class="text-sm text-white">{{ $player->name }}</span>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
-
-                            <script>
-                                const selectBtn      = document.getElementById('selectBtn');
-                                const selectDropdown = document.getElementById('selectDropdown');
-                                const selectArrow    = document.getElementById('selectArrow');
-                                const selectLabel    = document.getElementById('selectLabel');
-                                const playerSelect   = document.getElementById('playerSelect');
-
-                                selectBtn.addEventListener('click', () => {
-                                    selectDropdown.classList.toggle('hidden');
-                                    selectArrow.classList.toggle('rotate-180');
-                                });
-
-                                document.querySelectorAll('.select-option').forEach(option => {
-                                    option.addEventListener('click', () => {
-                                        const value = option.dataset.value;
-                                        const label = option.dataset.label;
-
-                                        playerSelect.value = value;
-                                        selectLabel.textContent = label;
-                                        selectLabel.classList.remove('text-white/40');
-                                        selectLabel.classList.add('text-white');
-
-                                        selectDropdown.classList.add('hidden');
-                                        selectArrow.classList.remove('rotate-180');
-                                    });
-                                });
-
-                                // Fecha ao clicar fora
-                                document.addEventListener('click', (e) => {
-                                    if (!document.getElementById('customSelect').contains(e.target)) {
-                                        selectDropdown.classList.add('hidden');
-                                        selectArrow.classList.remove('rotate-180');
-                                    }
-                                });
-                            </script>
+                                <x-custom-dropdown
+                                    name="player_id"
+                                    label="Escolhe um jogador..."
+                                    :options="$availablePlayers->map(fn($p) => [
+                                        'value' => $p->id,
+                                        'label' => $p->name,
+                                        'image' => $p->photo ? asset('storage/' . $p->photo) : asset('storage/images/default.png')
+                                    ])->toArray()"
+                                />
 
                             @if($availablePlayers->isEmpty())
                                 <p class="text-xs text-brand-muted">Todos os jogadores já estão em votação ou não existem jogadores.</p>
                             @else
                                 <button type="submit"
-                                        class="w-full py-2.5 bg-brand-accent hover:bg-brand-glow text-white font-bold text-sm rounded-xl transition btn-pulse">
+                                        class="mt-5 w-full py-2.5 bg-brand-accent hover:bg-brand-glow text-white font-bold text-sm rounded-xl transition btn-pulse">
                                     Adicionar à Votação
                                 </button>
                             @endif

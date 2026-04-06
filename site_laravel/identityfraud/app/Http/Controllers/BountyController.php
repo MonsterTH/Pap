@@ -21,9 +21,18 @@ class BountyController extends Controller
      */
     public function create()
     {
-        $players = Player::orderBy('name')->get();
+        // Pega todos os jogadores e transforma para o formato que o dropdown espera
+        $playerOptions = Player::all()->map(function ($player) {
+            return [
+                'value' => $player->id,
+                'label' => $player->name,
+                'image' => $player->photo ? asset('storage/' . $player->photo) : asset('storage/images/default.png'),
+            ];
+        })->toArray(); // importante: passar como array para o componente
 
-        return view('bounty.create', compact('players'));
+        return view('bounty.create', [
+            'playerOptions' => $playerOptions
+        ]);
     }
 
     /**

@@ -42,12 +42,11 @@
                                placeholder="Nome do jogador" required>
                     </div>
 
-                    {{-- Username --}}
+                    {{-- Data de Nascimento --}}
                     <div>
-                        <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Username</label>
-                        <input type="text" name="username" value="{{ old('username') }}"
-                               class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-accent"
-                               placeholder="@username">
+                        <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Data de Nascimento</label>
+                        <input type="date" name="birth_date" value="{{ old('birth_date', $player->birth_date ?? '') }}"
+                            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-accent [color-scheme:dark]">
                     </div>
 
                     {{-- Sobre --}}
@@ -56,16 +55,6 @@
                         <textarea name="about" rows="3"
                                   class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-accent"
                                   placeholder="Breve descrição do jogador...">{{ old('about') }}</textarea>
-                    </div>
-
-                    {{-- Estado --}}
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Estado</label>
-                        <select name="status"
-                                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-brand-accent">
-                            <option value="active" {{ old('status') === 'active' ? 'selected' : '' }}>Ativo</option>
-                            <option value="inactive" {{ old('status') === 'inactive' ? 'selected' : '' }}>Inativo</option>
-                        </select>
                     </div>
 
                     <div class="flex gap-3 pt-2">
