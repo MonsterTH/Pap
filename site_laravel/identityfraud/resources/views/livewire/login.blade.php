@@ -1,3 +1,4 @@
+@section('title', 'Identity Fraud - Login')
 <section class="max-w-md mx-auto mt-10 p-6 bg-brand-card rounded-lg shadow-lg">
     <h2 class="text-2xl font-bold mb-4 text-brand-light text-center">Login</h2>
 
