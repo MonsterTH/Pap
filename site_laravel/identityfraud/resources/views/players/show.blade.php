@@ -102,7 +102,7 @@
                 $stats = [
                     ['label' => 'Temporadas', 'value' => $player->seasons_count ?? '—', 'icon' => 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'],
                     ['label' => 'Vitórias',   'value' => $player->wonSeason ?? '—',           'icon' => 'M5 3l14 9-14 9V3z'],
-                    ['label' => 'Bountys',    'value' => $player->bounties ?? '—',       'icon' => 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z'],
+                    ['label' => 'Bountys',    'value' => $player->bounties_count ?? '—',       'icon' => 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z'],
                     ['label' => 'Pontos',     'value' => $player->points ?? '—',         'icon' => 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z'],
                 ];
             @endphp
@@ -117,26 +117,6 @@
                 </div>
             @endforeach
         </div>
-
-        {{-- Season history (optional) --}}
-        @if(isset($player->seasons) && $player->seasons->count())
-            <div class="bg-brand-card border border-white/10 rounded-3xl p-8 fade-up fade-up-d3">
-                <h2 class="text-xl font-bold font-display mb-6 flex items-center gap-3">
-                    <span class="w-2 h-6 rounded bg-brand-accent inline-block"></span>
-                    Histórico de Seasons
-                </h2>
-
-                <div class="space-y-3">
-                    @foreach($player->seasons as $season)
-                        <div class="flex items-center justify-between px-5 py-3 bg-white/5 hover:bg-white/10 rounded-xl transition">
-                            <span class="font-semibold text-white">{{ $season->name }}</span>
-                            <span class="text-sm text-brand-muted">{{ $season->pivot->position ?? '—' }}º lugar</span>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        @endif
-
     </div>
 </section>
 
