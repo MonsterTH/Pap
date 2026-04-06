@@ -78,8 +78,8 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-6 h-6 mr-2 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: url(#gradIcon);">
                             <defs>
                                 <linearGradient id="gradIcon" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-                                <stop offset="0%" stop-color="#e63946"/>
-                                <stop offset="100%" stop-color="#f4c542"/>
+                                    <stop offset="0%" stop-color="#e63946"/>
+                                    <stop offset="100%" stop-color="#f4c542"/>
                                 </linearGradient>
                             </defs>
                             <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3l2-3h8l2 3h3a2 2 0 0 1 2 2z"/>
