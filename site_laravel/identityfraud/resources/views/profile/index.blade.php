@@ -23,7 +23,7 @@
                 </button>
 
                 <div id='dropdownMenu' class="fade-up fade-up-d1 hidden absolute right-0 mt-2 bg-brand-card border border-white/10 rounded-lg shadow-lg p-2 space-y-1 w-40 z-50">
-                    <a href="#" class="block px-3 py-2 text-sm hover:bg-white/10 rounded">Editar Perfil</a>
+                    <a href="{{ route('profile.edit') }}" class="block px-3 py-2 text-sm hover:bg-white/10 rounded">Editar Perfil</a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit" class="w-full text-left px-3 py-2 text-sm hover:bg-white/10 rounded">

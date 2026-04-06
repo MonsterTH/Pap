@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -30,15 +32,41 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $user = $request->user();
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        $data = $request->validated();
+
+        // 🗑️ Remover foto e voltar à default
+        if ($request->input('remove_picture') == '1') {
+            if ($user->profile_picture) {
+                Storage::disk('public')->delete($user->profile_picture);
+            }
+            $data['profile_picture'] = null;
+
+        // 📸 Upload de nova foto
+        } elseif ($request->hasFile('profile_picture')) {
+            if ($user->profile_picture) {
+                Storage::disk('public')->delete($user->profile_picture);
+            }
+            $data['profile_picture'] = $request->file('profile_picture')->store('profiles', 'public');
         }
 
-        $request->user()->save();
+        // 🔐 Password (só se vier preenchida)
+        if ($request->filled('password')) {
+            $data['password'] = Hash::make($request->password);
+        } else {
+            unset($data['password']);
+        }
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        // 📧 Reset verificação email
+        if ($user->email !== $data['email']) {
+            $data['email_verified_at'] = null;
+        }
+
+        $user->update($data);
+
+        return Redirect::route('profile.edit')
+            ->with('status', 'Perfil atualizado com sucesso!');
     }
 
     /**

@@ -37,8 +37,11 @@ Route::middleware('auth')->group(function () {
         return redirect('/');
     })->name('logout');
 
-    Route::resource('profile', ProfileController::class)
-        ->only(['index']);
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
     Route::get('/eviction', [EvictionController::class, 'index'])->name('eviction.index');
     Route::post('/eviction/{player}/vote', [EvictionController::class, 'vote'])->name('eviction.vote');
@@ -61,6 +64,8 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::delete('/admin/eviction', [EvictionController::class, 'reset'])->name('admin.eviction.reset');
 });
 
+Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
 Route::resource('players', PlayerController::class)
     ->only(['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']);
 
@@ -78,6 +83,3 @@ Route::resource('season', SeasonController::class)
 
 Route::resource('bounty', BountyController::class)
     ->only(['create', 'store']);
-
-
-require __DIR__.'/settings.php';

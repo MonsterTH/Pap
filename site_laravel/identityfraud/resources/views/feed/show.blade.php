@@ -56,8 +56,7 @@
 
             </div>
 
-    <div class="bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg mb-4">
-
+            <div class="bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg mb-4">
                 <div class="flex items-center gap-3 mb-4">
                     <img class="w-10 h-10 rounded-full bg-white/10" src="{{ auth()->user()->profile_picture ? asset('storage/' . auth()->user()->profile_picture) : asset('storage/images/default.png') }}">
                     <p class="font-semibold">{{ auth()->user()->name }}</p>
@@ -65,22 +64,19 @@
 
                 <form method="POST" action="{{ route('comments.store', $post->id) }}" class="space-y-4">
                     @csrf
-                    <textarea name="content" class="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-brand-accent" placeholder="Give Us Your Opinion" />
+                    <textarea name="content" class="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-brand-accent" placeholder="Give Us Your Opinion"></textarea>
 
                     <div class="flex justify-end">
                         <button class="px-4 py-2 bg-brand-accent hover:bg-brand-glow rounded-lg font-bold text-sm transition">
                             Send
                         </button>
                     </div>
-
                 </form>
-
             </div>
 
             <!-- COMMENTS -->
-                <livewire:post-comments :post="$post" />
+            <livewire:post-comments :post="$post" />
 
         </div>
-
     </main>
     @endsection
