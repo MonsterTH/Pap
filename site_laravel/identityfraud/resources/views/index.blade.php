@@ -48,6 +48,7 @@
                                     @foreach($players->take(4) as $player)
                                         <li>
                                             <img
+                                                class="w-24 h-24 object-cover object-center rounded-full mx-auto border border-white/10"
                                                 src="{{ $player->photo ? asset('storage/' . $player->photo) : asset('imgs/default.jpg') }}"
                                                 alt="{{ $player->name }}"
                                             >
@@ -74,7 +75,9 @@
                                 <ul class="carousel-track">
                                     @foreach($allNews as $news)
                                         <li>
-                                            <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}">
+                                            <img
+                                                class="w-24 h-24 object-cover object-center rounded-full mx-auto border border-white/10"
+                                                src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}">
                                         </li>
                                     @endforeach
                                 </ul>
