@@ -2,6 +2,7 @@
 
 // use App\Http\Controllers\AuthController;
 
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\EvictionController;
 use App\Http\Controllers\NewsController;
@@ -65,6 +66,18 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::post('/admin/eviction', [EvictionController::class, 'store'])->name('admin.eviction.store');
     Route::delete('/admin/eviction/{player}', [EvictionController::class, 'removePlayer'])->name('admin.eviction.remove');
     Route::delete('/admin/eviction', [EvictionController::class, 'reset'])->name('admin.eviction.reset');
+
+    Route::resource('news', NewsController::class)
+    ->only(['create', 'store']);
+
+    Route::resource('season', SeasonController::class)
+        ->only(['create', 'store']);
+
+    Route::resource('bounty', BountyController::class)
+        ->only(['create', 'store']);
+
+    Route::resource('activity', ActivityController::class)
+        ->only(['create', 'store']);
 });
 
 Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -73,16 +86,20 @@ Route::resource('players', PlayerController::class)
     ->only(['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']);
 
 Route::resource('news', NewsController::class)
-    ->only(['index', 'create', 'store', 'show']);
-
-Route::post('/feed/{post}/comments', [CommentController::class, 'store'])
-    ->name('comments.store');
-
-Route::post('/posts/{post}/like', [FeedController::class, 'like'])
-    ->name('posts.like');
+    ->only(['index', 'show']);
 
 Route::resource('season', SeasonController::class)
     ->only(['create', 'store']);
 
 Route::resource('bounty', BountyController::class)
     ->only(['create', 'store']);
+
+Route::resource('activity', ActivityController::class)
+    ->only(['create', 'store']);
+
+
+Route::post('/feed/{post}/comments', [CommentController::class, 'store'])
+    ->name('comments.store');
+
+Route::post('/posts/{post}/like', [FeedController::class, 'like'])
+    ->name('posts.like');
