@@ -45,10 +45,14 @@
                             <p class="text-brand-muted mb-6 font-body">Conhece os competidores da nova temporada de Identity Fraud!</p>
                             <div id="carroselComp">
                                 <ul class="carousel-track">
-                                        <li data-accName="Item 1"><img src="imgs/ns.jpg" alt="Competidor 1"></li>
-                                        <li data-accName="Item 2"><img src="imgs/ns2.jpg" alt="Competidor 2"></li>
-                                        <li data-accName="Item 3"><img src="imgs/ns3.jpg" alt="Competidor 3"></li>
-                                        <li data-accName="Item 4"><img src="imgs/ns4.jpg" alt="Competidor 4"></li>
+                                    @foreach($players->take(4) as $player)
+                                        <li>
+                                            <img
+                                                src="{{ $player->photo ? asset('storage/' . $player->photo) : asset('imgs/default.jpg') }}"
+                                                alt="{{ $player->name }}"
+                                            >
+                                        </li>
+                                    @endforeach
                                 </ul>
                                 <!-- Carousel indicators -->
                                 <div class="flex justify-center gap-2 mt-4" id="indicatorsComp"></div>
@@ -63,11 +67,16 @@
                             </div>
                             <p class="text-brand-muted mb-6 font-body">Mantém-te informado no que acontece em Identity Fraud</p>
                             <div id="carroselNew">
+                                @php
+                                    $allNews = $trending->take(2)->concat($novidades->take(2));
+                                @endphp
+
                                 <ul class="carousel-track">
-                                        <li data-accName="Item 1"><img src="imgs/ns.jpg" alt="Notícia 1"></li>
-                                        <li data-accName="Item 2"><img src="imgs/ns2.jpg" alt="Notícia 2"></li>
-                                        <li data-accName="Item 3"><img src="imgs/ns3.jpg" alt="Notícia 3"></li>
-                                        <li data-accName="Item 4"><img src="imgs/ns4.jpg" alt="Notícia 4"></li>
+                                    @foreach($allNews as $news)
+                                        <li>
+                                            <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}">
+                                        </li>
+                                    @endforeach
                                 </ul>
                                 <div class="flex justify-center gap-2 mt-4" id="indicatorsNew"></div>
                             </div>
