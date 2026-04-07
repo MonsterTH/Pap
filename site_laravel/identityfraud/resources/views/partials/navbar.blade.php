@@ -33,7 +33,9 @@
             <li><x-nav-link href="{{ route('about') }}">Sobre</x-nav-link></li>
             <li>
                 <a href="{{ auth()->check() ? route('profile.index') : route('login') }}"
-                   class="ml-2 px-4 py-2 bg-brand-accent/10 border border-brand-accent/30 rounded-full text-brand-accent font-semibold">
+                   class="ml-2 px-4 py-2 bg-brand-accent/10 border border-brand-accent/30 rounded-full text-brand-accent font-semibold
+                    transition-all duration-300 ease-in-out
+                    hover:bg-brand-accent hover:text-white hover:scale-105">
                     Bem-vindo, {{ auth()->user()->name ?? 'Guest' }}
                 </a>
             </li>
