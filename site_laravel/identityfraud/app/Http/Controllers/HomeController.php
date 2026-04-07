@@ -13,6 +13,6 @@ class HomeController extends Controller
         $trending = News::where('genre', 'Tr')->latest()->get();
         $novidades = News::where('genre', 'No')->latest()->get();
 
-        return view('home', compact('players', 'trending', 'novidades'));
+        return view('index', compact('players', 'trending', 'novidades'));
     }
 }
