@@ -16,12 +16,15 @@ use App\Http\Controllers\AdministradorController;
 use App\Http\Controllers\AdminPlayerController;
 use App\Http\Controllers\BountyController;
 use App\Http\Controllers\SeasonController;
+use App\Http\Controllers\HomeController;
 
 Route::view('/', 'index')
     ->name('home');
 
 Route::view('about', 'about')
     ->name('about');
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', Login::class)->name('login');

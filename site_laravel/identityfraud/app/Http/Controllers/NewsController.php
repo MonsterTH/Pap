@@ -17,14 +17,6 @@ class NewsController extends Controller
         'drama' => News::where('genre', 'Dr')->latest()->get(),]);
     }
 
-    public function home()
-    {
-        return view('home', [
-            'trending' => News::where('genre', 'Tr')->latest()->get(),
-            'novidades' => News::where('genre', 'No')->latest()->get(),
-        ]);
-    }
-
     /**
      * Show the form for creating a new resource.
      */
