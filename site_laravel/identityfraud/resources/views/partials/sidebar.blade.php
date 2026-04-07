@@ -23,7 +23,7 @@
 
         <div class="fade-up fade-up-d3">
             <h3 class="text-brand-accent font-bold mt-6 mb-2">Misc</h3>
-            <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Histórico de Seasons</a>
+            <a href="{{ route('seasons.index') }}" class="block px-3 py-2 rounded hover:bg-white/10">Histórico de Seasons</a>
             <a href="{{ route('news.create') }}" class="block px-3 py-2 rounded hover:bg-white/10">Notícias</a>
             <a href="#" class="block px-3 py-2 rounded hover:bg-white/10">Criar Admin</a>
             <a href="/" class="block px-3 py-2 rounded hover:bg-white/10">Página Principal</a>

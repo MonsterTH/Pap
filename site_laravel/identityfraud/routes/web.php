@@ -71,7 +71,9 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     ->only(['create', 'store']);
 
     Route::resource('season', SeasonController::class)
-        ->only(['create', 'store']);
+        ->only(['create', 'store', 'show']);
+
+    Route::get('/seasons', [SeasonController::class, 'index'])->name('seasons.index');
 
     Route::resource('bounty', BountyController::class)
         ->only(['create', 'store']);
@@ -103,3 +105,12 @@ Route::post('/feed/{post}/comments', [CommentController::class, 'store'])
 
 Route::post('/posts/{post}/like', [FeedController::class, 'like'])
     ->name('posts.like');
+
+Route::get('/players/{id}/activities', [PlayerController::class, 'wonActivities'])
+    ->name('players.activities');
+
+Route::get('/players/{id}/bounties', [PlayerController::class, 'bounties'])
+    ->name('players.bounties');
+
+Route::get('/players/{id}/seasons', [PlayerController::class, 'seasons'])
+    ->name('players.seasons');
