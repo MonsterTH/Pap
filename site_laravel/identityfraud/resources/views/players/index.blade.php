@@ -28,7 +28,7 @@
 
                 <!-- FOTO -->
                 <img
-                    src="{{ $player->photo ? asset('storage/' . $player->photo) : asset('storage/default.png') }}"
+                    src="{{ $player->photo ? asset('storage/' . $player->photo) :   asset('storage/images/default.png')}}"
                     class="fade-up fade-up-d3 w-24 h-24 mx-auto rounded-full object-cover mb-4">
 
                 <!-- NOME -->
