@@ -20,7 +20,7 @@ class PostFactory extends Factory
         return [
             'user_id' => User::factory(),
             'content' => $this->faker->paragraph(),
-            'image' => 'Image.png',
+            'image' => Null,
             'date' => $this->faker->date(),
         ];
     }
