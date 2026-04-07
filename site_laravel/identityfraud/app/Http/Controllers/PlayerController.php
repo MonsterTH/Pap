@@ -14,6 +14,13 @@ class PlayerController extends Controller
         return view('players.index', compact('players'));
     }
 
+    public function home()
+    {
+        return view('home', [
+            'players' => Player::latest()->get(),
+        ]);
+    }
+
     public function create()
     {
         return view('admin.players.create');
