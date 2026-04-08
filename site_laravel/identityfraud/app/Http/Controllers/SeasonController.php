@@ -14,7 +14,9 @@ class SeasonController extends Controller
      */
     public function index()
     {
-        //
+        $seasons = Season::with('winner')->latest()->get();
+
+        return view('seasons.index', compact('seasons'));
     }
 
     /**
@@ -44,7 +46,7 @@ class SeasonController extends Controller
         'winner_id' => $request->winner_id,
     ]);
 
-    return back()->with('success', 'Bounty criada com sucesso!');
+    return back()->with('success', 'Season criada com sucesso!');
 }
 
     /**

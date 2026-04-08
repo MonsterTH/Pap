@@ -15,7 +15,7 @@ return new class extends Migration
 
             $table->string('name', 60);
             $table->string('year', 4);
-            $table->foreignId('winner_id')
+            $table->foreignId('winner_id')->nullable()
                 ->constrained('players')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
