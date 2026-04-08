@@ -19,6 +19,8 @@ use App\Http\Controllers\BountyController;
 use App\Http\Controllers\SeasonController;
 use App\Http\Controllers\HomeController;
 use App\Livewire\SeasonIndex;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
 Route::view('/', 'index')
     ->name('home');
@@ -33,7 +35,25 @@ Route::middleware('guest')->group(function () {
     Route::get('/register', Register::class)->name('register');
 });
 
-Route::middleware('auth')->group(function () {
+// Página a dizer "verifica o teu email"
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+// Confirma o link do email
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect()->route('home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+// Reenviar email
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('status', 'verification-link-sent');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/logout', function () {
         Auth::logout();
         session()->invalidate();

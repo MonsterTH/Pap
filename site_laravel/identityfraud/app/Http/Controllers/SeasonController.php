@@ -14,9 +14,7 @@ class SeasonController extends Controller
      */
     public function index()
     {
-        $seasons = Season::with('winner')->latest()->get();
-
-        return view('seasons.index', compact('seasons'));
+        //
     }
 
     /**
