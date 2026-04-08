@@ -41,6 +41,12 @@
                     {{$post->content}}
                 </p>
 
+                @if(!empty($post->image))
+                    <img
+                        src="{{asset('storage/' . $post->image) }}"
+                        class="w-full max-h-96 object-cover rounded-xl border border-white/5 mb-4">
+                @endif
+
                 <hr class="my-4 border-white/10">
 
                 <div class="flex justify-between text-sm">
