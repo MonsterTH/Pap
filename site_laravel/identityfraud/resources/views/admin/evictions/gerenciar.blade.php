@@ -100,14 +100,6 @@
                             <div>
                                 <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Selecionar Jogador</label>
 
-                                {{-- Select escondido para o form --}}
-                                <select name="player_id" id="playerSelect" class="hidden" required>
-                                    <option value="" disabled selected>Escolhe um jogador...</option>
-                                    @foreach($availablePlayers as $player)
-                                        <option value="{{ $player->id }}">{{ $player->name }}</option>
-                                    @endforeach
-                                </select>
-
                                 <x-custom-dropdown
                                     name="player_id"
                                     label="Escolhe um jogador..."

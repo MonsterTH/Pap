@@ -10,6 +10,7 @@
                 <x-custom-dropdown
                     name="winner_id"
                     label="Escolher jogador"
+                    wire="winner_id"
                     :options="$players->map(fn($p) => [
                         'value' => $p->id,
                         'label' => $p->name,
