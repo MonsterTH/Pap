@@ -18,6 +18,7 @@ use App\Http\Controllers\AdminPlayerController;
 use App\Http\Controllers\BountyController;
 use App\Http\Controllers\SeasonController;
 use App\Http\Controllers\HomeController;
+use App\Livewire\SeasonIndex;
 
 Route::view('/', 'index')
     ->name('home');
@@ -73,13 +74,16 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::resource('season', SeasonController::class)
         ->only(['create', 'store', 'show']);
 
-    Route::get('/seasons', [SeasonController::class, 'index'])->name('seasons.index');
+    Route::get('/seasons', SeasonIndex::class)->name('seasons.index');
 
     Route::resource('bounty', BountyController::class)
         ->only(['create', 'store']);
 
     Route::resource('activity', ActivityController::class)
         ->only(['create', 'store']);
+
+    Route::put('/seasons/{season}/finish', [SeasonController::class, 'finish'])
+    ->name('seasons.finish');
 });
 
 Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
