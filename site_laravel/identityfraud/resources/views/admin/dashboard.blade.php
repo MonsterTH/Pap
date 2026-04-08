@@ -30,21 +30,28 @@
             {{-- Recent Activities / News --}}
             <div class="fade-up fade-up-d3 grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-brand-card p-6 rounded-lg card-hover">
-                    <h2 class="text-xl font-semibold mb-4">Últimos Jogadores</h2>
+                    <h2 class="text-xl font-semibold mb-4">Paticipantes Adicionados</h2>
                     <ul class="space-y-2">
-                        <li class="px-3 py-2 bg-white/5 rounded hover:bg-white/10">Francisco Yang</li>
-                        <li class="px-3 py-2 bg-white/5 rounded hover:bg-white/10">Guilherme Madeira</li>
-                        <li class="px-3 py-2 bg-white/5 rounded hover:bg-white/10">Shanon Example</li>
-                        <li class="px-3 py-2 bg-white/5 rounded hover:bg-white/10">Maria Silva</li>
+                        @forelse($latestPlayers as $player)
+                            <li class="px-3 py-2 bg-white/5 rounded hover:bg-white/10">
+                                {{ $player->name }}
+                            </li>
+                        @empty
+                            <li class="text-sm text-brand-muted">Sem jogadores.</li>
+                        @endforelse
                     </ul>
                 </div>
 
                 <div class="bg-brand-card p-6 rounded-lg card-hover">
                     <h2 class="text-xl font-semibold mb-4">Últimas Notícias</h2>
                     <ul class="space-y-2">
-                        <li class="px-3 py-2 bg-white/5 rounded hover:bg-white/10">Novo evento lançado!</li>
-                        <li class="px-3 py-2 bg-white/5 rounded hover:bg-white/10">Atualização de leaderboard</li>
-                        <li class="px-3 py-2 bg-white/5 rounded hover:bg-white/10">Correção de bugs do sistema</li>
+                        @forelse($latestNews as $news)
+                            <li class="px-3 py-2 bg-white/5 rounded hover:bg-white/10">
+                                {{ $news->title }}
+                            </li>
+                        @empty
+                            <li class="text-sm text-brand-muted">Sem notícias.</li>
+                        @endforelse
                     </ul>
                 </div>
             </div>
