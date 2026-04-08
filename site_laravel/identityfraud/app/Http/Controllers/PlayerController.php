@@ -82,10 +82,6 @@ class PlayerController extends Controller
 
         // Upload nova foto
         if ($request->hasFile('photo')) {
-            if ($player->photo) {
-                Storage::disk('public')->delete($player->photo);
-            }
-
             $data['photo'] = $request->file('photo')->store('players', 'public');
         }
 
