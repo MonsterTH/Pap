@@ -42,6 +42,7 @@
                      @click="
                         selected = option.value;
                         $refs.select.value = option.value;
+                        $wire.set('winner_id', option.value);
                         open = false;
                      ">
                     <template x-if="option.image">
