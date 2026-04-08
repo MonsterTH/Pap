@@ -40,7 +40,7 @@
                         <!-- Brand -->
                         <div>
                             <h3 class="font-display font-bold text-lg tracking-wide mb-5 text-brand-light">Identity Fraud</h3>
-                            <p class="text-brand-muted text-sm leading-relaxed mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia veniam expedita quod odit quaerat maiores.</p>
+                            <p class="text-brand-muted text-sm leading-relaxed mb-5">Reality show de competição com 16 participantes de identidades falsas, onde descobrir e esconder é o jogo.</p>
                             <div class="flex items-center gap-3">
                                 <a href="https://www.facebook.com/profile.php?id=61573251356563" class="social-icon w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/5">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1.04 -1.04 25 25" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" id="Facebook--Streamline-Lucide" height="25" width="25"><path d="M17.19 1.9100000000000001h-2.865a4.775 4.775 0 0 0 -4.775 4.775v2.865H6.6850000000000005v3.8200000000000003h2.865v7.640000000000001h3.8200000000000003v-7.640000000000001h2.865l0.9550000000000001 -3.8200000000000003h-3.8200000000000003V6.6850000000000005a0.9550000000000001 0.9550000000000001 0 0 1 0.9550000000000001 -0.9550000000000001h2.865z" stroke-width="2.08"></path></svg>
