@@ -46,12 +46,13 @@
                             <div id="carroselComp">
                                 <ul class="carousel-track">
                                     @foreach($players->take(4) as $player)
-                                        <li>
+                                        <li class="flex flex-col items-center gap-3">
                                             <img
-                                                class="w-24 h-24 object-cover object-center rounded-full mx-auto border border-white/10"
+                                                class="w-full h-56 object-cover rounded-xl border border-white/10"
                                                 src="{{ $player->photo ? asset('storage/' . $player->photo) : asset('imgs/default.jpg') }}"
                                                 alt="{{ $player->name }}"
                                             >
+                                            <span class="text-sm font-medium text-brand-light">{{ $player->name }}</span>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -74,10 +75,13 @@
 
                                 <ul class="carousel-track">
                                     @foreach($allNews as $news)
-                                        <li>
+                                        <li class="flex flex-col gap-3">
                                             <img
-                                                class="w-24 h-24 object-cover object-center rounded-full mx-auto border border-white/10"
-                                                src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}">
+                                                class="w-full h-56 object-cover object-center rounded-xl border border-white/10"
+                                                src="{{ asset('storage/' . $news->image) }}"
+                                                alt="{{ $news->title }}"
+                                            >
+                                            <span class="text-sm font-medium text-brand-light line-clamp-2">{{ $news->title }}</span>
                                         </li>
                                     @endforeach
                                 </ul>

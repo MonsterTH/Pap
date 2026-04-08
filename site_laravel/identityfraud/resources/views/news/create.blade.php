@@ -26,7 +26,7 @@
                 </div>
             @endif
 
-                <div class="max-w-8xl mt-4 h-full mx-auto bg-brand-card border border-white/5 rounded-2xl p-8 shadow-lg">
+                <div class="fade-up fade-up-d2 max-w-8xl mt-4 h-full mx-auto bg-brand-card border border-white/5 rounded-2xl p-8 shadow-lg">
 
                     <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data" class="grid md:grid-cols-2 gap-6">
                         @csrf
