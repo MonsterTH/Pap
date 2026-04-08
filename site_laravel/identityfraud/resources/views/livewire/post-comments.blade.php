@@ -1,4 +1,4 @@
-<div wire:poll.3s.keep-alive class="space-y-4">
+<div wire:poll.1s.keep-alive class="space-y-4">
 
     {{-- Comment List --}}
     @foreach($comments as $comment)
