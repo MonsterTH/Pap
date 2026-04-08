@@ -12,6 +12,7 @@ use App\Http\Controllers\FeedController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Login;
+use App\Livewire\AdminRegister;
 use App\Livewire\Register;
 use App\Http\Controllers\AdministradorController;
 use App\Http\Controllers\AdminPlayerController;
@@ -87,6 +88,7 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::post('/admin/eviction', [EvictionController::class, 'store'])->name('admin.eviction.store');
     Route::delete('/admin/eviction/{player}', [EvictionController::class, 'removePlayer'])->name('admin.eviction.remove');
     Route::delete('/admin/eviction', [EvictionController::class, 'reset'])->name('admin.eviction.reset');
+    Route::get('/admin/register', AdminRegister::class)->name('adminregister');
 
     Route::resource('news', NewsController::class)
     ->only(['create', 'store']);
