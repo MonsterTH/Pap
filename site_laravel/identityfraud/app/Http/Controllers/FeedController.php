@@ -14,7 +14,7 @@ class FeedController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(20);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(20);
         return view('feed.index', ['posts' => $posts]);
     }
 
