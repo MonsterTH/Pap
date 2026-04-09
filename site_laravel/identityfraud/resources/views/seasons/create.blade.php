@@ -22,6 +22,12 @@
             </div>
         @endif
 
+        @if(session('success'))
+            <div class="fade-up fade-up-d1 mb-6 bg-green-500/10 border border-green-500/30 rounded-xl px-5 py-4 text-green-400 text-sm space-y-1">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <!-- FORM -->
         <div class="fade-up fade-up-d2 bg-brand-card border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">
             <form method="POST" action="{{ route('season.store') }}" class="space-y-6">

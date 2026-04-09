@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Post;
 
 class ProfileController extends Controller
 {
@@ -17,6 +18,7 @@ class ProfileController extends Controller
     {
         return view('profile.index', [
             'user' => $request->user(),
+            'posts' => Post::where('user_id', $request->user()->id)->paginate(20),
         ]);
     }
 

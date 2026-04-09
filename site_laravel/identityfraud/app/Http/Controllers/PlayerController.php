@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Player;
+use App\Models\Bounty;
+use App\Models\Activity;
+use App\Models\Season;
 use Illuminate\Support\Facades\Storage;
 
 class PlayerController extends Controller
@@ -44,9 +47,9 @@ class PlayerController extends Controller
     public function show(string $id)
     {
         $player = Player::withCount([
-            'seasons',
             'wonSeasons',
             'bounties',
+            'activities',
         ])->findOrFail($id);
 
         return view('players.show', compact('player'));
@@ -79,10 +82,6 @@ class PlayerController extends Controller
 
         // Upload nova foto
         if ($request->hasFile('photo')) {
-            if ($player->photo) {
-                Storage::disk('public')->delete($player->photo);
-            }
-
             $data['photo'] = $request->file('photo')->store('players', 'public');
         }
 
@@ -104,5 +103,35 @@ class PlayerController extends Controller
 
         return redirect()->back()
             ->with('success', 'Jogador removido com sucesso!');
+    }
+
+    public function wonActivities(string $id)
+    {
+        $player = Player::findOrFail($id);
+
+        $activities = Activity::where('winner_id', $player->id)->get();
+
+        return view('players.won-activities', compact('player', 'activities'));
+    }
+
+    public function bounties(string $id)
+    {
+        $player = Player::findOrFail($id);
+
+        $bounties = Bounty::with('target')
+            ->where('player_id', $player->id)
+            ->where('completed', true)
+            ->get();
+
+        return view('players.bounties', compact('player', 'bounties'));
+    }
+
+    public function seasons(string $id)
+    {
+        $player = Player::findOrFail($id);
+
+        $seasons = Season::where('winner_id', $player->id)->get();
+
+        return view('players.seasons', compact('player', 'seasons'));
     }
 }

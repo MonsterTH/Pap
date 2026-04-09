@@ -44,7 +44,7 @@ class SeasonController extends Controller
         'winner_id' => $request->winner_id,
     ]);
 
-    return back()->with('success', 'Bounty criada com sucesso!');
+    return back()->with('success', 'Season criada com sucesso!');
 }
 
     /**

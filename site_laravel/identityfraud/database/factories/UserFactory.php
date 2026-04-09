@@ -29,7 +29,7 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
-            'profile_picture' => null,
+            'profile_picture' => 'images/default.png',
             'is_admin' => false,
             // 'dateofentry' => fake()->dateTimeBetween('-1 year', 'now'),
             // 'remember_token' => Str::random(10),
