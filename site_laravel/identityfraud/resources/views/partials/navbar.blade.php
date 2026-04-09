@@ -46,8 +46,8 @@
     <div x-show="open"
          class="md:hidden px-4 pb-4">
         <ul class="flex flex-col gap-3 text-sm font-display">
-            <li><x-nav-link @click="open = false" href="{{ route('home') }}">Hentai Nefer</x-nav-link></li>
-            <li><x-nav-link @click="open = false" href="{{ route('players.index') }}">Hentai Hutao</x-nav-link></li>
+            <li><x-nav-link @click="open = false" href="{{ route('home') }}">Início</x-nav-link></li>
+            <li><x-nav-link @click="open = false" href="{{ route('players.index') }}">Jogadores</x-nav-link></li>
             <li><x-nav-link @click="open = false" href="{{ route('news.index') }}">Notícias</x-nav-link></li>
             <li><x-nav-link @click="open = false" href="{{ route('eviction.index') }}">Votos</x-nav-link></li>
             <li><x-nav-link @click="open = false" href="{{ auth()->check() ? route('feed.index') : route('login') }}">Feed</x-nav-link></li>
