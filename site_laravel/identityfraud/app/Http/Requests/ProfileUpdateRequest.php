@@ -17,11 +17,17 @@ class ProfileUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'             => ['required', 'string', 'max:255'],
-            'email'            => ['required', 'email', 'max:255'],
-            'password'         => ['nullable', 'string', 'min:8', 'confirmed'],
-            'profile_picture'  => ['nullable', 'image', 'max:2048'],
-            'remove_picture'   => ['nullable', 'in:0,1'], // ✅ adiciona esta linha
+            'name' => ['required', 'string', 'max:255'],
+
+            'email' => ['required', 'email', 'max:255'],
+
+            'profile_picture' => ['nullable', 'image', 'max:2048'],
+
+            'remove_picture' => ['nullable', 'in:0,1'],
+
+            'current_password' => ['required_with:password', 'string'],
+
+            'password' => ['nullable', 'string', 'min:8', 'confirmed'],
         ];
     }
 }

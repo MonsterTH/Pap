@@ -102,6 +102,19 @@
 
             {{-- PASSWORDS --}}
             <div class="space-y-1">
+                <label class="text-sm font-medium text-brand-muted">Password Atual</label>
+                <input
+                    type="password"
+                    name="current_password"
+                    placeholder="••••••••"
+                    class="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white placeholder-brand-muted focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition"
+                >
+                @error('current_password')
+                    <p class="text-red-400 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="space-y-1">
                 <p class="text-sm font-medium text-brand-muted mb-4">
                     Alterar Password
                     <span class="text-xs text-brand-muted/50">(deixa em branco para manter a atual)</span>

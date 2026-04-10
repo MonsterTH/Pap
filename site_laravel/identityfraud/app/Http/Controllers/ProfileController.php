@@ -38,14 +38,14 @@ class ProfileController extends Controller
 
         $data = $request->validated();
 
-        // 🗑️ Remover foto e voltar à default
+        //Remover foto e voltar à default
         if ($request->input('remove_picture') == '1') {
             if ($user->profile_picture) {
                 Storage::disk('public')->delete($user->profile_picture);
             }
             $data['profile_picture'] = null;
 
-        // 📸 Upload de nova foto
+        //Upload de nova foto
         } elseif ($request->hasFile('profile_picture')) {
             if ($user->profile_picture) {
                 Storage::disk('public')->delete($user->profile_picture);
@@ -53,14 +53,26 @@ class ProfileController extends Controller
             $data['profile_picture'] = $request->file('profile_picture')->store('profiles', 'public');
         }
 
-        // 🔐 Password (só se vier preenchida)
-        if ($request->filled('password')) {
+        //Password (só se vier preenchida)
+        if ($request->filled('password'))
+        {
+
+            // validar password atual
+            if (!Hash::check($request->current_password, $user->password))
+            {
+                return back()->withErrors([
+                    'current_password' => 'Password atual incorreta.'
+                ]);
+            }
+
             $data['password'] = Hash::make($request->password);
-        } else {
+        }
+        else
+        {
             unset($data['password']);
         }
 
-        // 📧 Reset verificação email
+        //Reset verificação email
         if ($user->email !== $data['email']) {
             $data['email_verified_at'] = null;
         }
