@@ -11,19 +11,23 @@
         Enviámos um link de verificação para o teu email. Clica no link para ativares a tua conta.
     </p>
 
-    @if(session('status') == 'verification-link-sent')
-        <div class="mb-4 px-4 py-3 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400 text-sm">
-            Email reenviado com sucesso!
+    @if(session('status'))
+        <div class="mb-4 px-4 py-3 bg-green-500/10 border border-green-500/30 text-green-400 rounded-lg">
+            {{ session('status') }}
         </div>
     @endif
 
-    <form method="POST" action="{{ route('verification.send') }}">
-        @csrf
-        <button type="submit"
-            class="w-full bg-brand-accent hover:bg-brand-glow text-white font-bold py-2 px-4 rounded transition">
-            Reenviar email de verificação
-        </button>
-    </form>
+    @if($errors->any())
+        <div class="mb-4 px-4 py-3 bg-red-500/10 border border-red-500/30 text-red-400 rounded-lg">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>• {{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <livewire:verify-email-box />
 
     <form method="POST" action="{{ route('logout') }}" class="mt-4">
         @csrf

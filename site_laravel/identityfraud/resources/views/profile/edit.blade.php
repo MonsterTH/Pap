@@ -106,8 +106,9 @@
                 <input
                     type="password"
                     name="current_password"
+                    value="••••••••"
                     placeholder="••••••••"
-                    class="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white placeholder-brand-muted focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition"
+                    class="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white"
                 >
                 @error('current_password')
                     <p class="text-red-400 text-xs mt-1">{{ $message }}</p>
@@ -117,7 +118,7 @@
             <div class="space-y-1">
                 <p class="text-sm font-medium text-brand-muted mb-4">
                     Alterar Password
-                    <span class="text-xs text-brand-muted/50">(deixa em branco para manter a atual)</span>
+                    <span class="text-xs text-brand-muted/50">(opcional)</span>
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -127,11 +128,8 @@
                             type="password"
                             name="password"
                             placeholder="••••••••"
-                            class="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white placeholder-brand-muted focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition @error('password') border-red-500 @enderror"
+                            class="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white"
                         >
-                        @error('password')
-                            <p class="text-red-400 text-xs mt-1">{{ $message }}</p>
-                        @enderror
                     </div>
 
                     <div class="space-y-1">
@@ -140,7 +138,7 @@
                             type="password"
                             name="password_confirmation"
                             placeholder="••••••••"
-                            class="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white placeholder-brand-muted focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition"
+                            class="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white"
                         >
                     </div>
                 </div>
