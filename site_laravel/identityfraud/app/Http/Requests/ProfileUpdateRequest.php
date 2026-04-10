@@ -19,14 +19,10 @@ class ProfileUpdateRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
 
-            'email' => ['required', 'email', 'max:255'],
-
             'profile_picture' => ['nullable', 'image', 'max:2048'],
-
             'remove_picture' => ['nullable', 'in:0,1'],
 
-            'current_password' => ['required_with:password', 'string'],
-
+            'current_password' => ['nullable'],
             'password' => ['nullable', 'string', 'min:8', 'confirmed'],
         ];
     }

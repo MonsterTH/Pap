@@ -29,65 +29,58 @@ class ProfileController extends Controller
         ]);
     }
 
-    /**
-     * Update the user's profile information.
-     */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
         $user = $request->user();
-
         $data = $request->validated();
 
-        //Remover foto e voltar à default
+        // FOTO
         if ($request->input('remove_picture') == '1') {
             if ($user->profile_picture) {
                 Storage::disk('public')->delete($user->profile_picture);
             }
             $data['profile_picture'] = null;
 
-        //Upload de nova foto
         } elseif ($request->hasFile('profile_picture')) {
             if ($user->profile_picture) {
                 Storage::disk('public')->delete($user->profile_picture);
             }
             $data['profile_picture'] = $request->file('profile_picture')->store('profiles', 'public');
+        } else {
+            unset($data['profile_picture']);
         }
 
-        //Password (só se vier preenchida)
-        if ($request->filled('password'))
-        {
+        // PASSWORD SÓ SE EXISTIR
+        if ($request->filled('password')) {
 
-            // validar password atual
-            if (!Hash::check($request->current_password, $user->password))
-            {
+            if (!$request->filled('current_password')) {
+                return back()->withErrors([
+                    'current_password' => 'Introduz a password atual.'
+                ]);
+            }
+
+            if (!Hash::check($request->current_password, $user->password)) {
                 return back()->withErrors([
                     'current_password' => 'Password atual incorreta.'
                 ]);
             }
 
             $data['password'] = Hash::make($request->password);
-        }
-        else
-        {
+
+        } else {
             unset($data['password']);
         }
 
-        //Reset verificação email
-        if ($user->email !== $data['email']) {
-            $data['email_verified_at'] = null;
-        }
+        // limpar campos que não existem
+        unset($data['current_password']);
+        unset($data['remove_picture']);
 
-        $data['has_2fa'] = $request->boolean('has_2fa');
-
+        // update normal (nome funciona sempre)
         $user->update($data);
 
-        return Redirect::route('profile.edit')
-            ->with('status', 'Perfil atualizado com sucesso!');
+        return back()->with('status', 'Perfil atualizado com sucesso!');
     }
 
-    /**
-     * Delete the user's account.
-     */
     public function destroy(Request $request): RedirectResponse
     {
         $request->validateWithBag('userDeletion', [
@@ -95,6 +88,11 @@ class ProfileController extends Controller
         ]);
 
         $user = $request->user();
+
+        // ✅ apaga a foto do storage antes de apagar o utilizador
+        if ($user->profile_picture) {
+            Storage::disk('public')->delete($user->profile_picture);
+        }
 
         Auth::logout();
 
