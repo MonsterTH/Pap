@@ -82,6 +82,8 @@ class ProfileController extends Controller
             $data['email_verified_at'] = null;
         }
 
+        $data['has_2fa'] = $request->boolean('has_2fa');
+
         $user->update($data);
 
         return Redirect::route('profile.edit')

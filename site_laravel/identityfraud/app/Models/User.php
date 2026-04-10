@@ -16,7 +16,7 @@ use App\Models\Like;
 use App\Models\Eviction;
 use App\Models\Administrador;
 
-#[Fillable(['name', 'email', 'password', 'profile_picture', 'is_admin'])]
+#[Fillable(['name', 'email', 'password', 'profile_picture', 'is_admin', 'has_2fa', 'two_factor_code', 'two_factor_expires_at'])]
 #[Hidden(['password'/*, 'two_factor_secret', 'two_factor_recovery_codes'*/, 'remember_token'])]
 class User extends Authenticatable implements MustVerifyEmail
 {
