@@ -43,8 +43,7 @@ class Login extends Component
             return;
         }
 
-        // Caso contrário, redireciona para home normal
-        $this->redirect(route('home'), navigate: true);
+        $this->redirect(route('profile.index'), navigate: true);
     }
 
     public function render()

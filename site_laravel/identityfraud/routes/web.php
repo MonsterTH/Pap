@@ -25,13 +25,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
 
-Route::view('/', 'index')
-    ->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::view('about', 'about')
     ->name('about');
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', Login::class)->name('login');
