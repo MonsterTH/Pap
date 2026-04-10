@@ -62,7 +62,7 @@ class Login extends Component
     }
     else
     {
-        redirect(route('/profile'));
+        redirect(route('profile.index'));
     }
 }
 

@@ -34,31 +34,28 @@ class ProfileController extends Controller
         $user = $request->user();
         $data = $request->validated();
 
-        // 🗑️ Remover foto e voltar à default
+        // FOTO
         if ($request->input('remove_picture') == '1') {
             if ($user->profile_picture) {
                 Storage::disk('public')->delete($user->profile_picture);
             }
             $data['profile_picture'] = null;
 
-        // 📸 Upload de nova foto
         } elseif ($request->hasFile('profile_picture')) {
             if ($user->profile_picture) {
                 Storage::disk('public')->delete($user->profile_picture);
             }
             $data['profile_picture'] = $request->file('profile_picture')->store('profiles', 'public');
         } else {
-            // ✅ mantém a foto atual se não vier nenhuma
             unset($data['profile_picture']);
         }
 
-        // 🔐 Password
+        // PASSWORD SÓ SE EXISTIR
         if ($request->filled('password')) {
 
-            // ✅ só valida a password atual se quiser mudar a password
             if (!$request->filled('current_password')) {
                 return back()->withErrors([
-                    'current_password' => 'Introduz a password atual para a alterar.'
+                    'current_password' => 'Introduz a password atual.'
                 ]);
             }
 
@@ -69,25 +66,19 @@ class ProfileController extends Controller
             }
 
             $data['password'] = Hash::make($request->password);
+
         } else {
             unset($data['password']);
         }
 
-        // ✅ remove campos que não existem na tabela users
+        // limpar campos que não existem
         unset($data['current_password']);
         unset($data['remove_picture']);
 
-        // 📧 Reset verificação email
-        if (isset($data['email']) && $user->email !== $data['email']) {
-            $data['email_verified_at'] = null;
-        }
-
-        $data['has_2fa'] = $request->boolean('has_2fa');
-
+        // update normal (nome funciona sempre)
         $user->update($data);
 
-        return Redirect::route('profile.edit')
-            ->with('status', 'Perfil atualizado com sucesso!');
+        return back()->with('status', 'Perfil atualizado com sucesso!');
     }
 
     public function destroy(Request $request): RedirectResponse
