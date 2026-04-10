@@ -131,6 +131,28 @@
                         >
                     </div>
                 </div>
+                {{-- 2FA SWITCH --}}
+                <div class="border-t border-white/5 my-6"></div>
+
+                <div class="flex items-center justify-between bg-white/5 border border-white/10 rounded-lg p-4">
+
+                    <div>
+                        <p class="text-sm font-medium text-white">Autenticação de 2 Fatores (2FA)</p>
+                        <p class="text-xs text-brand-muted">Aumenta a segurança da tua conta</p>
+                    </div>
+
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" name="has_2fa" value="1" class="sr-only peer"
+                            {{ auth()->user()->has_2fa ? 'checked' : '' }}>
+
+                        <div class="w-11 h-6 bg-white/10 peer-focus:outline-none rounded-full peer
+                                    peer-checked:bg-brand-accent transition-all duration-300"></div>
+
+                        <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-all
+                                    peer-checked:translate-x-5"></div>
+                    </label>
+
+                </div>
             </div>
 
             {{-- BOTÕES --}}

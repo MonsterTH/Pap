@@ -22,6 +22,7 @@ use App\Http\Controllers\HomeController;
 use App\Livewire\SeasonIndex;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
+use App\Livewire\TwoFactorVerify;
 
 Route::view('/', 'index')
     ->name('home');
@@ -40,6 +41,8 @@ Route::middleware('guest')->group(function () {
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
+
+Route::get('/2fa', TwoFactorVerify::class)->name('2fa.verify');
 
 // Confirma o link do email
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {

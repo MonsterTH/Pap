@@ -19,6 +19,11 @@ return new class extends Migration
             $table->string('password');
             $table->string('profile_picture')->nullable();
             $table->boolean('is_admin')->default(false);
+            $table->boolean('has_2fa')->default(false);
+
+
+            $table->string('two_factor_code')->nullable();
+            $table->timestamp('two_factor_expires_at')->nullable();
             // $table->date('dateofentry');
             $table->rememberToken();
             $table->timestamps();
