@@ -38,4 +38,11 @@
         Não tem uma conta?
         <a href="{{ route('register') }}" class="text-brand-accent font-semibold hover:text-brand-glow transition">Registre-se</a>
     </div>
+
+    <div class="mb-2 text-center text-brand-light text-sm mt-2">
+        <a href="{{ route('password.request') }}"
+        class="text-sm text-brand-accent hover:text-brand-glow transition">
+            Esqueceu a senha?
+        </a>
+    </div>
 </section>

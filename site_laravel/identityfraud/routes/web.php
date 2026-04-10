@@ -22,6 +22,8 @@ use App\Http\Controllers\HomeController;
 use App\Livewire\SeasonIndex;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth\PasswordResetLinkController;
+use App\Http\Controllers\Auth\NewPasswordController;
 
 Route::view('/', 'index')
     ->name('home');
@@ -53,8 +55,7 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back()->with('status', 'verification-link-sent');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
-
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware('auth')->group(function () {
     Route::post('/logout', function () {
         Auth::logout();
         session()->invalidate();
@@ -62,6 +63,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         return redirect('/');
     })->name('logout');
+});
+
+Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 
@@ -140,3 +144,15 @@ Route::get('/players/{id}/bounties', [PlayerController::class, 'bounties'])
 
 Route::get('/players/{id}/seasons', [PlayerController::class, 'seasons'])
     ->name('players.seasons');
+
+Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
+    ->name('password.request');
+
+Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])
+    ->name('password.email');
+
+Route::get('/reset-password/{token}', [NewPasswordController::class, 'create'])
+    ->name('password.reset');
+
+Route::post('/reset-password', [NewPasswordController::class, 'store'])
+    ->name('password.update');
