@@ -22,7 +22,7 @@ class AdministradorController extends Controller
         'playersCount' => Player::count(),
         'activityCount' => Activity::count(),
         'bountiesCount' => Bounty::count(),
-        'adminsCount' => User::where('is_admin', 1)->count(), // adjust if needed
+        'adminsCount' => User::where('is_admin', 1)->count(),
     ], compact('latestPlayers', 'latestNews', 'latestSeason', 'latestEviction'));
     }
 }
