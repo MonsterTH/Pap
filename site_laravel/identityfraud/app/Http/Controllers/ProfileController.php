@@ -11,6 +11,12 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Post;
+use PragmaRX\Google2FA\Google2FA;
+use BaconQrCode\Writer;
+use BaconQrCode\Renderer\ImageRenderer;
+use BaconQrCode\Renderer\RendererStyle\RendererStyle;
+use BaconQrCode\Renderer\Image\SvgImageBackEnd;
+
 
 class ProfileController extends Controller
 {
@@ -24,9 +30,36 @@ class ProfileController extends Controller
 
     public function edit(Request $request): View
     {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        $user = $request->user();
+
+    $qrCode = null;
+
+    if (!$user->two_factor_enabled) {
+        $google2fa = new Google2FA();
+
+        $secret = $google2fa->generateSecretKey();
+        $user->two_factor_secret = $secret;
+        $user->save();
+
+        $qrCodeUrl = $google2fa->getQRCodeUrl(
+            'IdentityFraud',
+            $user->email,
+            $secret
+        );
+
+        $renderer = new ImageRenderer(
+            new RendererStyle(200),
+            new SvgImageBackEnd()
+        );
+
+        $writer = new Writer($renderer);
+        $qrCode = base64_encode($writer->writeString($qrCodeUrl));
+    }
+
+    return view('profile.edit', [
+        'user' => $user,
+        'qrCode' => $qrCode
+    ]);
     }
 
     public function update(ProfileUpdateRequest $request): RedirectResponse

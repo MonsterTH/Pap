@@ -11,6 +11,7 @@ use App\Mail\TwoFactorCodeMail;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use PragmaRX\Google2FA\Google2FA;
 
 #[Layout('layouts')]
 class Login extends Component
@@ -32,38 +33,34 @@ class Login extends Component
         'password' => $this->password,
     ];
 
-    if (! Auth::attempt($credentials, $this->remember)) {
+    if (!Auth::attempt($credentials, $this->remember)) {
         $this->addError('email', __('Verifique os seus dados.'));
         return;
     }
 
     $user = Auth::user();
 
-    if ($user->has_2fa == 1)
-    {
-        session()->regenerate();
+    // 🔐 SE TEM 2FA ATIVO
+    if ($user->two_factor_enabled) {
 
-        $code = rand(100000, 999999);
+        // guardar user temporário
+        session(['2fa_user' => $user->id]);
 
-        $user = User::find($user->id);
-
-        $user->update([
-            'two_factor_code' => $code,
-            'two_factor_expires_at' => now()->addMinutes(10),
-        ]);
-
-        Mail::to($user->email)->send(new TwoFactorCodeMail($code));
-
+        // LOGOUT imediato (CRÍTICO)
         Auth::logout();
 
-        session(['2fa:user:id' => $user->id]);
+        session()->regenerate();
 
-        $this->redirect(route('2fa.verify'), navigate: true);
+        // redirecionar para 2FA
+        $this->redirect('/2fa', navigate: true);
+
+        return;
     }
-    else
-    {
-        redirect(route('profile.index'));
-    }
+
+    // ❌ sem 2FA → login normal
+    session()->regenerate();
+
+    $this->redirect(route('profile.index'), navigate: true);
 }
 
     public function render()

@@ -25,6 +25,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Livewire\TwoFactorVerify;
+use App\Http\Controllers\TwoFactorController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -156,3 +157,11 @@ Route::get('/reset-password/{token}', [NewPasswordController::class, 'create'])
 
 Route::post('/reset-password', [NewPasswordController::class, 'store'])
     ->name('password.update');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/2fa/setup', [TwoFactorController::class, 'setup'])->name('2fa.setup');
+    Route::post('/2fa/confirm', [TwoFactorController::class, 'confirm']);
+});
+
+Route::get('/2fa', [TwoFactorController::class, 'verifyForm']);
+Route::post('/2fa/verify', [TwoFactorController::class, 'verify']);
