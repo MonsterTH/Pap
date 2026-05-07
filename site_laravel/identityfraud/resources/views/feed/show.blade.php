@@ -7,7 +7,7 @@
 
         <!-- SIDE INFO -->
         <div class="bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg h-fit">
-            <img class="w-16 h-16 rounded-full bg-white/10 mb-4" src="{{ $post->user->profile_picture ? asset('storage/' . $post->user->profile_picture) : asset('storage/images/default.png') }}">
+            <img src="{{ auth()->user()->profile_picture ? (Str::startsWith(auth()->user()->profile_picture, 'http') ? auth()->user()->profile_picture : asset('storage/' . auth()->user()->profile_picture)) : asset('storage/images/default.png') }}" class="w-16 h-16 rounded-full bg-white/10 mb-4">
             <h1 class="text-lg font-bold">{{ $post->user->name }}</h1>
             <p class="text-sm text-brand-muted mt-2">Posts: X | {{ $post->user->dateofentry }}</p>
             <hr class="my-4 border-white/10">
@@ -24,7 +24,7 @@
                 </a>
 
                 <div class="flex items-center gap-3">
-                    <img class="w-10 h-10 rounded-full bg-white/10" src="{{ $post->user->profile_picture ? asset('storage/' . $post->user->profile_picture) : asset('storage/images/default.png') }}">
+                    <img src="{{ auth()->user()->profile_picture ? (Str::startsWith(auth()->user()->profile_picture, 'http') ? auth()->user()->profile_picture : asset('storage/' . auth()->user()->profile_picture)) : asset('storage/images/default.png') }}" class="w-10 h-10 rounded-full bg-white/10">
                     <div>
                         <p class="font-semibold">{{ $post->user->name }}</p>
                         <p class="text-xs text-brand-muted">{{ $post->date }}</p>
