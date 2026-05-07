@@ -27,8 +27,6 @@
         </div>
     @endif
 
-    <livewire:verify-email-box />
-
     <form method="POST" action="{{ route('logout') }}" class="mt-4">
         @csrf
         <button type="submit" class="text-sm text-brand-muted hover:text-brand-light transition">

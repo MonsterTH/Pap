@@ -26,6 +26,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Livewire\TwoFactorVerify;
 use App\Http\Controllers\TwoFactorController;
+use App\Http\Controllers\GoogleAuthController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -165,3 +166,6 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/2fa', [TwoFactorController::class, 'verifyForm']);
 Route::post('/2fa/verify', [TwoFactorController::class, 'verify']);
+
+Route::get('/auth/google', [GoogleAuthController::class, 'redirect']);
+Route::get('/auth/google/callback', [GoogleAuthController::class, 'callback']);

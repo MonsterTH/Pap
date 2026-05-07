@@ -6,8 +6,7 @@
         <div class="fade-up fade-up-d1 bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg relative overflow-visible z-10">
 
             <div class="fade-up fade-up-d2 flex items-center gap-4">
-                <img src="{{ auth()->user()->profile_picture ? asset('storage/' . auth()->user()->profile_picture) : asset('storage/images/default.png') }}"
-                    class="w-16 h-16 rounded-full bg-white/10">
+                <img src="{{ auth()->user()->profile_picture ? (Str::startsWith(auth()->user()->profile_picture, 'http') ? auth()->user()->profile_picture : asset('storage/' . auth()->user()->profile_picture)) : asset('storage/images/default.png') }}" class="w-16 h-16 rounded-full bg-white/10">
 
                 <div>
                     <h1 class="text-xl font-bold"> {{ auth()->user()->name }}</h1>
@@ -56,7 +55,7 @@
         <div class="bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg">
 
             <div class="flex items-center gap-3 mb-4">
-                <img src="{{ auth()->user()->profile_picture ? asset('storage/' . auth()->user()->profile_picture) : asset('storage/images/default.png') }}"
+                <img src="{{ auth()->user()->profile_picture ? (Str::startsWith(auth()->user()->profile_picture, 'http') ? auth()->user()->profile_picture : asset('storage/' . auth()->user()->profile_picture)) : asset('storage/images/default.png') }}"
                     class="w-10 h-10 rounded-full bg-white/10">
                 <p class="font-semibold">{{ auth()->user()->name }}</p>
             </div>
