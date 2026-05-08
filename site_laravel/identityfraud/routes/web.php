@@ -24,9 +24,9 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\GoogleAuthController;
 use App\Livewire\TwoFactorVerify;
 use App\Http\Controllers\TwoFactorController;
-use App\Http\Controllers\GoogleAuthController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -70,6 +70,9 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+
+    Route::get('/profile/{id}', [ProfileController::class, 'show'])
+        ->name('profile.show');
 
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 
