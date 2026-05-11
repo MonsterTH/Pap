@@ -6,18 +6,49 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use App\Models\Like;
+use App\Models\user_follower;
 
 class FeedController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(20);
-        return view('feed.index', ['posts' => $posts]);
-    }
+        $filter = $request->filter;
+        $search = $request->search;
 
+        $noFollowing = false;
+
+        // base query
+        $postsQuery = Post::query();
+
+        // SEARCH
+        if ($search) {
+            $postsQuery->where('content', 'like', "%{$search}%");
+        }
+
+        // FOLLOWING FILTER
+        if ($filter === 'following') {
+
+            $followingIds = user_follower::where('follower_id', Auth::id())
+                ->pluck('user_id');
+
+            if ($followingIds->isEmpty()) {
+                $postsQuery->whereRaw('0 = 1');
+                $noFollowing = true;
+            } else {
+                $postsQuery->whereIn('user_id', $followingIds);
+            }
+        }
+
+        $posts = $postsQuery
+            ->orderBy('created_at', 'desc')
+            ->paginate(20)
+            ->withQueryString(); // keeps search/filter in pagination links
+
+        return view('feed.index', compact('posts', 'noFollowing'));
+    }
     /**
      * Show the form for creating a new resource.
      */
