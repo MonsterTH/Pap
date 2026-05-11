@@ -132,10 +132,33 @@
                             </button>
                         </a>
 
-                         <button class="flex items-center gap-2 hover:text-brand-accent transition">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" /></svg>
-                            <span>Share</span>
-                        </button>
+                            <button
+                                x-data
+                                @click="
+                                    window.dispatchEvent(
+                                        new CustomEvent('open-share', {
+                                            detail: {
+                                                url: '{{ route('feed.show', $post->id) }}'
+                                            }
+                                        })
+                                    )
+                                "
+                                class="flex items-center gap-2 hover:text-brand-accent transition"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="size-6">
+
+                                    <path stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
+                                </svg>
+
+                                <span>Share</span>
+                            </button>
 
                     </div>
 
@@ -174,8 +197,31 @@
                         </button>
                         </a>
 
-                            <button class="flex items-center gap-2 hover:text-brand-accent transition">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" /></svg>
+                            <button
+                                x-data
+                                @click="
+                                    window.dispatchEvent(
+                                        new CustomEvent('open-share', {
+                                            detail: {
+                                                url: '{{ route('feed.show', $post->id) }}'
+                                            }
+                                        })
+                                    )
+                                "
+                                class="flex items-center gap-2 hover:text-brand-accent transition"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="size-6">
+
+                                    <path stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
+                                </svg>
+
                                 <span>Share</span>
                             </button>
 
@@ -192,5 +238,156 @@
         </div>
 
     </div>
+    {{-- SHARE MODAL --}}
+    <div
+        x-data="{
+            open: false,
+            shareUrl: '',
+            copied: false,
 
+            copy() {
+                navigator.clipboard.writeText(this.shareUrl)
+
+                this.copied = true
+
+                setTimeout(() => {
+                    this.copied = false
+                }, 2000)
+            }
+        }"
+
+        x-on:open-share.window="
+            shareUrl = $event.detail.url
+            open = true
+        "
+    >
+
+        <!-- BACKDROP -->
+        <div
+            x-show="open"
+            x-transition.opacity
+            class="fixed inset-0 bg-black/70 z-40"
+            @click="open = false"
+            style="display:none;"
+        ></div>
+
+        <!-- MODAL -->
+        <div
+            x-show="open"
+            x-transition
+            class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+                w-[95%] max-w-md bg-brand-card border border-white/10
+                rounded-2xl p-6 z-50 shadow-2xl"
+            style="display:none;"
+        >
+
+            <!-- TITLE -->
+            <div class="flex items-center justify-between mb-5">
+
+                <h2 class="text-xl font-bold text-white">
+                    Share
+                </h2>
+
+                <button
+                    @click="open = false"
+                    class="text-white/60 hover:text-white"
+                >
+                    ✕
+                </button>
+
+            </div>
+
+            <!-- APPS -->
+            <div class="grid grid-cols-4 gap-4 mb-6">
+
+                <!-- WHATSAPP -->
+                <a
+                    :href="`https://wa.me/?text=${encodeURIComponent(shareUrl)}`"
+                    target="_blank"
+                    class="flex flex-col items-center gap-2"
+                >
+                    <div class="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center text-white text-xl">
+                        W
+                    </div>
+
+                    <span class="text-xs text-white">
+                        WhatsApp
+                    </span>
+                </a>
+
+                <!-- DISCORD -->
+                <a
+                    :href="`https://discord.com/channels/@me`"
+                    target="_blank"
+                    class="flex flex-col items-center gap-2"
+                >
+                    <div class="w-14 h-14 rounded-full bg-indigo-500 flex items-center justify-center text-white text-xl">
+                        D
+                    </div>
+
+                    <span class="text-xs text-white">
+                        Discord
+                    </span>
+                </a>
+
+                <!-- TWITTER -->
+                <a
+                    :href="`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}`"
+                    target="_blank"
+                    class="flex flex-col items-center gap-2"
+                >
+                    <div class="w-14 h-14 rounded-full bg-sky-500 flex items-center justify-center text-white text-xl">
+                        X
+                    </div>
+
+                    <span class="text-xs text-white">
+                        Twitter
+                    </span>
+                </a>
+
+                <!-- TELEGRAM -->
+                <a
+                    :href="`https://t.me/share/url?url=${encodeURIComponent(shareUrl)}`"
+                    target="_blank"
+                    class="flex flex-col items-center gap-2"
+                >
+                    <div class="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center text-white text-xl">
+                        T
+                    </div>
+
+                    <span class="text-xs text-white">
+                        Telegram
+                    </span>
+                </a>
+
+            </div>
+
+            <!-- LINK BOX -->
+            <div class="bg-white/5 border border-white/10 rounded-xl p-3 flex items-center gap-3">
+
+                <input
+                    type="text"
+                    x-model="shareUrl"
+                    readonly
+                    class="bg-transparent flex-1 text-sm text-white outline-none"
+                >
+
+                <button
+                    @click="copy()"
+                    class="bg-brand-accent hover:opacity-90 text-white px-4 py-2 rounded-lg text-sm font-semibold transition"
+                >
+                    <span x-show="!copied">
+                        Copy
+                    </span>
+
+                    <span x-show="copied">
+                        Copied!
+                    </span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
     @endsection

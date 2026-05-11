@@ -1,7 +1,7 @@
-    @extends('layouts')
-    @section('title', 'News - Identity Fraud')
+@extends('layouts')
+@section('title', 'News - Identity Fraud')
 
-    @section('content')
+@section('content')
 
 <main class="max-w-7xl mx-auto px-4 md:px-8 py-10 grid md:grid-cols-3 gap-8">
 
@@ -53,8 +53,31 @@
 
                     <livewire:like-button :post="$post" :key="$post->id" />
 
-                    <button class="flex items-center gap-2 hover:text-brand-accent transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" /></svg>
+                    <button
+                        x-data
+                        @click="
+                            navigator.clipboard.writeText('{{ route('feed.show', $post->id) }}');
+
+                            window.dispatchEvent(
+                                new CustomEvent('notify', {
+                                    detail: 'Link copied!'
+                                })
+                            );
+                        "
+                        class="flex items-center gap-2 hover:text-brand-accent transition"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6">
+
+                            <path stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
+                        </svg>
+
                         <span>Share</span>
                     </button>
 
@@ -85,4 +108,21 @@
 
         </div>
     </main>
+    <div
+        x-data="{ show: false, message: '' }"
+        x-on:notify.window="
+            message = $event.detail;
+            show = true;
+
+            setTimeout(() => {
+                show = false
+            }, 2000)
+        "
+        x-show="show"
+        x-transition
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-brand-accent text-white px-6 py-3 rounded-xl shadow-xl z-50"
+        style="display: none;"
+    >
+        <span x-text="message"></span>
+    </div>
     @endsection
