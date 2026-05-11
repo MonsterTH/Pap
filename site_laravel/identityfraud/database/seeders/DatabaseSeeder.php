@@ -11,6 +11,7 @@ use App\Models\Post;
 use App\Models\Like;
 use App\Models\Comment;
 use App\Models\News;
+use App\Models\user_follower;
 use Illuminate\Support\Facades\Hash;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -30,6 +31,7 @@ class DatabaseSeeder extends Seeder
         Like::factory(20)->create();
         Comment::factory(80)->create();
         News::factory(16)->create();
+        user_follower::factory(250)->create();
 
         User::factory()->create([
             'email' => 'admin@admin.com',

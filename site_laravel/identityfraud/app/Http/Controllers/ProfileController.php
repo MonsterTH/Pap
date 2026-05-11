@@ -11,6 +11,8 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Post;
+use App\Models\User;
+use App\Models\user_follower;
 use PragmaRX\Google2FA\Google2FA;
 use BaconQrCode\Writer;
 use BaconQrCode\Renderer\ImageRenderer;
@@ -24,9 +26,22 @@ class ProfileController extends Controller
     {
         return view('profile.index', [
             'user' => $request->user(),
+            "follows" => user_follower::where('user_id', $request->user()->id)->count(),
             'posts' => Post::where('user_id', $request->user()->id)->paginate(20),
         ]);
     }
+
+public function show(string $id)
+{
+    $profileuser = User::findOrFail($id);
+    $follows = user_follower::where('user_id', $profileuser->id)->count();
+    return view('profile.show', [
+        'profileuser' => $profileuser,
+        'posts' => Post::where('user_id', $profileuser->id)->paginate(20),
+        'follows' => $follows,
+    ]);
+}
+
 
     public function edit(Request $request): View
     {
