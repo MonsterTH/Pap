@@ -345,18 +345,18 @@
                     </span>
                 </a>
 
-                <!-- TELEGRAM -->
+                <!-- FACEBOOK -->
                 <a
-                    :href="`https://t.me/share/url?url=${encodeURIComponent(shareUrl)}`"
+                    :href="`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`"
                     target="_blank"
                     class="flex flex-col items-center gap-2"
                 >
-                    <div class="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center text-white text-xl">
-                        T
+                    <div class="w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center text-white text-xl">
+                        F
                     </div>
 
                     <span class="text-xs text-white">
-                        Telegram
+                        Facebook
                     </span>
                 </a>
 
