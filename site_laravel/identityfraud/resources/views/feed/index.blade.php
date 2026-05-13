@@ -306,8 +306,16 @@
                     target="_blank"
                     class="flex flex-col items-center gap-2"
                 >
-                    <div class="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center text-white text-xl">
-                        W
+                    <div class="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center text-white">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                            fill="currentColor"
+                            class="w-7 h-7"
+                        >
+                            <path d="M19.11 17.2c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17c-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.8.37-.27.3-1.05 1.02-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.23 5.13 4.53.72.3 1.28.48 1.72.62.72.23 1.37.2 1.88.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/>
+                            <path d="M16.02 3C8.84 3 3 8.73 3 15.8c0 2.26.6 4.47 1.74 6.42L3 29l7-1.82a13.2 13.2 0 0 0 6.02 1.44c7.18 0 13.02-5.73 13.02-12.8C29.04 8.73 23.2 3 16.02 3zm0 23.3c-1.9 0-3.76-.5-5.38-1.45l-.38-.22-4.15 1.08 1.1-4.03-.25-.4a10.2 10.2 0 0 1-1.57-5.48c0-5.67 4.76-10.3 10.63-10.3 5.86 0 10.63 4.63 10.63 10.3 0 5.68-4.77 10.3-10.63 10.3z"/>
+                        </svg>
                     </div>
 
                     <span class="text-xs text-white">
@@ -321,8 +329,15 @@
                     target="_blank"
                     class="flex flex-col items-center gap-2"
                 >
-                    <div class="w-14 h-14 rounded-full bg-indigo-500 flex items-center justify-center text-white text-xl">
-                        D
+                    <div class="w-14 h-14 rounded-full bg-indigo-500 flex items-center justify-center text-white">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-7 h-7"
+                        >
+                            <path d="M20.3 4.37A19.8 19.8 0 0 0 15.4 3l-.24.48a18.3 18.3 0 0 1 4.4 1.34 13.7 13.7 0 0 0-4.14-1.26 17.5 17.5 0 0 0-6.84 0A13.7 13.7 0 0 0 4.44 4.8a18.3 18.3 0 0 1 4.4-1.34L8.6 3a19.8 19.8 0 0 0-4.9 1.37C.58 9.03-.25 13.57.16 18.06A19.9 19.9 0 0 0 6.13 21l1.3-1.7c-.72-.27-1.4-.6-2.04-.98.17.13.34.25.52.36 3.94 1.8 8.2 1.8 12.1 0 .18-.11.35-.23.52-.36-.64.38-1.32.71-2.04.98l1.3 1.7a19.9 19.9 0 0 0 5.97-2.94c.48-5.2-.82-9.7-3.46-13.7zM8.68 15.36c-1.18 0-2.14-1.08-2.14-2.4 0-1.33.95-2.4 2.14-2.4 1.18 0 2.14 1.08 2.14 2.4 0 1.32-.96 2.4-2.14 2.4zm6.64 0c-1.18 0-2.14-1.08-2.14-2.4 0-1.33.95-2.4 2.14-2.4 1.18 0 2.14 1.08 2.14 2.4 0 1.32-.96 2.4-2.14 2.4z"/>
+                        </svg>
                     </div>
 
                     <span class="text-xs text-white">
@@ -336,8 +351,15 @@
                     target="_blank"
                     class="flex flex-col items-center gap-2"
                 >
-                    <div class="w-14 h-14 rounded-full bg-sky-500 flex items-center justify-center text-white text-xl">
-                        X
+                    <div class="w-14 h-14 rounded-full bg-sky-500 flex items-center justify-center text-white">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-6 h-6"
+                        >
+                            <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.4L6.5 22H3.4l7.24-8.28L1 2h6.4l4.42 5.82L18.9 2zm-1.1 18h1.72L6.46 3.9H4.62L17.8 20z"/>
+                        </svg>
                     </div>
 
                     <span class="text-xs text-white">
@@ -351,16 +373,21 @@
                     target="_blank"
                     class="flex flex-col items-center gap-2"
                 >
-                    <div class="w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center text-white text-xl">
-                        F
+                    <div class="w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-6 h-6"
+                        >
+                            <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.88 3.77-3.88 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/>
+                        </svg>
                     </div>
 
                     <span class="text-xs text-white">
                         Facebook
                     </span>
                 </a>
-
-            </div>
 
             <!-- LINK BOX -->
             <div class="bg-white/5 border border-white/10 rounded-xl p-3 flex items-center gap-3">
