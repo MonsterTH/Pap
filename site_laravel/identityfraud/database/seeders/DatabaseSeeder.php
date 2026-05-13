@@ -74,4 +74,5 @@ class DatabaseSeeder extends Seeder
 
         NewsTags::factory(16)->create();
     }
+
 }
