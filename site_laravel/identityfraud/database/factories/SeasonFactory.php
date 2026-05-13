@@ -21,7 +21,7 @@ class SeasonFactory extends Factory
         return [
             'name' => 'Season ' . $this->faker->word(),
             'year' => $this->faker->year(),
-            'winner_id' => Player::factory(),
+            'winner_id' => Player::inRandomOrder()->value('id'),
         ];
     }
 }

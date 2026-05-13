@@ -11,6 +11,8 @@ use App\Models\Post;
 use App\Models\Like;
 use App\Models\Comment;
 use App\Models\News;
+use App\Models\NewsTags;
+use App\Models\Tags;
 use App\Models\user_follower;
 use Illuminate\Support\Facades\Hash;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -53,5 +55,23 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
             'is_admin' => true,
         ]);
+
+        Tags::factory()->create([
+            'name' => 'Trending',
+        ]);
+
+        Tags::factory()->create([
+            'name' => 'Drama',
+        ]);
+
+        Tags::factory()->create([
+            'name' => 'Novidades',
+        ]);
+
+        Tags::factory()->create([
+            'name' => 'Anucios',
+        ]);
+
+        NewsTags::factory(16)->create();
     }
 }

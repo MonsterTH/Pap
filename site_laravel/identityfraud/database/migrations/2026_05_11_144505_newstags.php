@@ -22,6 +22,7 @@ return new class extends Migration
                 ->constrained('news')
                 ->cascadeOnDelete();
 
+            $table->timestamps();
     });
     }
 

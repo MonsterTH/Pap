@@ -15,4 +15,9 @@ class News extends Model
         'image',
         'genre',
     ];
+
+    public function tags()
+    {
+        return $this->hasMany(Tags::class);
+    }
 };

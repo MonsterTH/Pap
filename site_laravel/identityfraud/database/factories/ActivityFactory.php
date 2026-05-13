@@ -23,7 +23,7 @@ class ActivityFactory extends Factory
             'type' => $this->faker->word(),
             'description' => $this->faker->sentence(),
             'start_date' => $this->faker->date(),
-            'winner_id' => Player::factory(),
+            'winner_id' => Player::inRandomOrder()->value('id'),
         ];
     }
 }

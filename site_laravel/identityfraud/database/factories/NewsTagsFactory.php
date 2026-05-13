@@ -2,14 +2,15 @@
 
 namespace Database\Factories;
 
-use App\Models\Like;
+use App\Models\News;
+use App\Models\NewsTags;
+use App\Models\Tags;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\User;
-use App\Models\Post;
+
 /**
- * @extends Factory<Like>
+ * @extends Factory<NewsTags>
  */
-class LikeFactory extends Factory
+class NewsTagsFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,8 +20,8 @@ class LikeFactory extends Factory
     public function definition(): array
     {
         return [
-            'post_id' => Post::inRandomOrder()->value('id'),
-            'user_id' => User::inRandomOrder()->value('id'),
+            'tag_id' => Tags::inRandomOrder()->value('id'),
+            'news_id' => News::inRandomOrder()->value('id'),
         ];
     }
 }

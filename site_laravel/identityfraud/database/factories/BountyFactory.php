@@ -18,8 +18,8 @@ class BountyFactory extends Factory
     public function definition(): array
     {
         return [
-            'player_id' => Player::factory(),
-            'target_id' => Player::factory(),
+            'player_id' => Player::inRandomOrder()->value('id'),
+            'target_id' => Player::inRandomOrder()->value('id'),
             'completed' => $this->faker->boolean(),
         ];
     }
