@@ -22,7 +22,6 @@ class NewsFactory extends Factory
             'description' => $this->faker->paragraph(),
             'date' => $this->faker->date(),
             'image' => 'Image.png',
-            'genre' => $this->faker->randomElement(['Tr', 'Dr', 'No']),
         ];
     }
 }

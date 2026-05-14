@@ -7,6 +7,7 @@ use App\Models\Player;
 use App\Models\Bounty;
 use App\Models\Activity;
 use App\Models\Season;
+use App\Models\Tags;
 use Illuminate\Support\Facades\Storage;
 
 class PlayerController extends Controller
@@ -22,27 +23,28 @@ class PlayerController extends Controller
         return view('admin.players.create');
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name'        => 'required|string|max:255',
-            'birth_date'  => 'nullable|date',
-            'about'       => 'nullable|string',
-            'photo'       => 'nullable|image|max:2048',
-        ]);
+public function store(Request $request)
+{
+    $request->validate([
+        'name'        => 'required|string|max:255',
+        'birth_date'  => 'nullable|date',
+        'about'       => 'nullable|string',
+        'photo'       => 'nullable|image|max:2048',
+    ]);
 
-        $data = $request->only(['name', 'birth_date', 'about']);
+    $data = $request->only(['name', 'birth_date', 'about']);
 
-        // Upload da imagem
-        if ($request->hasFile('photo')) {
-            $data['photo'] = $request->file('photo')->store('players', 'public');
-        }
-
-        Player::create($data);
-
-        return redirect()->route('admin.players.manage')
-            ->with('success', 'Jogador criado com sucesso!');
+    if ($request->hasFile('photo')) {
+        $data['photo'] = $request->file('photo')->store('players', 'public');
     }
+
+    $player = Player::create($data);
+
+    Tags::create(['name' => $player->name]);
+
+    return redirect()->route('admin.players.manage')
+        ->with('success', 'Jogador criado com sucesso!');
+}
 
     public function show(string $id)
     {
@@ -91,20 +93,20 @@ class PlayerController extends Controller
             ->with('success', 'Jogador atualizado com sucesso!');
     }
 
-    public function destroy(string $id)
-    {
-        $player = Player::findOrFail($id);
+public function destroy(string $id)
+{
+    $player = Player::findOrFail($id);
 
-        if ($player->photo) {
-            Storage::disk('public')->delete($player->photo);
-        }
-
-        $player->delete();
-
-        return redirect()->back()
-            ->with('success', 'Jogador removido com sucesso!');
+    if ($player->photo) {
+        Storage::disk('public')->delete($player->photo);
     }
 
+    Tags::where('name', $player->name)->delete();
+    $player->delete();
+
+    return redirect()->back()
+        ->with('success', 'Jogador removido com sucesso!');
+}
     public function wonActivities(string $id)
     {
         $player = Player::findOrFail($id);

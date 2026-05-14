@@ -16,7 +16,6 @@ return new class extends Migration
             $table->text('description');
             $table->date('date');
             $table->string('image', 60);
-            $table->string('genre', 12);
 
             $table->timestamps();
 });

@@ -24,14 +24,19 @@ class NewsController extends Controller
             $query->where('name', 'Drama');
         })->get();
 
-        return view('news.index', compact('trending', 'novidades', 'drama'));
+        $anucios = News::whereHas('tags', function ($query) {
+            $query->where('name', 'Anucios');
+        })->get();
+
+        return view('news.index', compact('trending', 'novidades', 'drama', 'anucios'));
     }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('news.create');
+        $tags = Tags::all();
+        return view('news.create', compact('tags'));
     }
 
     /**
@@ -46,6 +51,8 @@ public function store(Request $request)
         'genre' => 'required',
         'description' => 'required',
         'image' => 'nullable|image|max:2048',
+        'tags' => 'nullable|array',
+        'tags.*' => 'exists:tags,id',
     ]);
 
     $imagePath = null;
@@ -54,13 +61,17 @@ public function store(Request $request)
         $imagePath = $request->file('image')->store('news', 'public');
     }
 
-    News::create([
+    $news = News::create([
         'title' => $request->title,
         'date' => $request->date,
         'genre' => $request->genre,
         'description' => $request->description,
         'image' => $imagePath,
     ]);
+
+    if ($request->has('tags')) {
+        $news->tags()->attach($request->tags);
+    }
 
     return back()->with('success', 'Notícia criada!');
 }
@@ -70,7 +81,7 @@ public function store(Request $request)
      */
     public function show(string $id)
     {
-        $new = News::findOrFail($id);
+        $new = News::with('tags')->findOrFail($id);
         return view('news.show', ['news' => $new]);
     }
 

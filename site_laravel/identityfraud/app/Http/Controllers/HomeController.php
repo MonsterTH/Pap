@@ -10,8 +10,14 @@ class HomeController extends Controller
     public function index()
     {
         $players = Player::latest()->get();
-        $trending = News::where('genre', 'Tr')->latest()->get();
-        $novidades = News::where('genre', 'No')->latest()->get();
+
+        $trending = News::whereHas('tags', function ($query) {
+            $query->where('name', 'Trending');
+        })->latest()->get();
+
+        $novidades = News::whereHas('tags', function ($query) {
+            $query->where('name', 'Novidades');
+        })->latest()->get();
 
         return view('index', compact('players', 'trending', 'novidades'));
     }
