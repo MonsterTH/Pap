@@ -16,8 +16,8 @@ class News extends Model
         'genre',
     ];
 
-    public function tags()
-    {
-        return $this->hasMany(Tags::class);
-    }
+public function tags()
+{
+    return $this->belongsToMany(Tags::class, 'news_tags', 'news_id', 'tag_id');
+}
 };

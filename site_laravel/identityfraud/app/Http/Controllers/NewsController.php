@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\News;
+use App\Models\Tags;
 
 class NewsController extends Controller
 {
@@ -11,12 +12,20 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('news.index', [
-        'trending' => News::where('genre', 'Tr')->latest()->get(),
-        'novidades' => News::where('genre', 'No')->latest()->get(),
-        'drama' => News::where('genre', 'Dr')->latest()->get(),]);
-    }
+        $trending = News::whereHas('tags', function ($query) {
+            $query->where('name', 'Trending');
+        })->get();
 
+        $novidades = News::whereHas('tags', function ($query) {
+            $query->where('name', 'Novidades');
+        })->get();
+
+        $drama = News::whereHas('tags', function ($query) {
+            $query->where('name', 'Drama');
+        })->get();
+
+        return view('news.index', compact('trending', 'novidades', 'drama'));
+    }
     /**
      * Show the form for creating a new resource.
      */
