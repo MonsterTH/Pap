@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Player;
 use App\Models\Bounty;
 use App\Models\Activity;
+use App\Models\News;
 use App\Models\Season;
 use App\Models\Tags;
 use Illuminate\Support\Facades\Storage;
@@ -53,6 +54,10 @@ public function store(Request $request)
             'bounties',
             'activities',
         ])->findOrFail($id);
+
+        $player->news_count = $player->tag
+            ? $player->tag->news()->count()
+            : 0;
 
         return view('players.show', compact('player'));
     }
@@ -135,5 +140,19 @@ public function destroy(string $id)
         $seasons = Season::where('winner_id', $player->id)->get();
 
         return view('players.seasons', compact('player', 'seasons'));
+    }
+
+    public function news(string $id)
+    {
+        $player = Player::findOrFail($id);
+
+        $news = News::with('tags')
+            ->whereHas('tags', function ($query) use ($player) {
+                $query->where('name', $player->name);
+            })
+            ->latest()
+            ->get();
+
+        return view('players.news', compact('player', 'news'));
     }
 }

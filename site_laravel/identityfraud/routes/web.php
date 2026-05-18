@@ -150,6 +150,9 @@ Route::get('/players/{id}/bounties', [PlayerController::class, 'bounties'])
 Route::get('/players/{id}/seasons', [PlayerController::class, 'seasons'])
     ->name('players.seasons');
 
+Route::get('/players/{id}/news', [PlayerController::class, 'news'])
+    ->name('players.news');
+
 Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
     ->name('password.request');
 

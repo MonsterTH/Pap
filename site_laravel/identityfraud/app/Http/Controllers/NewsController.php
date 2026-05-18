@@ -48,7 +48,6 @@ public function store(Request $request)
     $request->validate([
         'title' => 'required|max:255',
         'date' => 'required|date',
-        'genre' => 'required',
         'description' => 'required',
         'image' => 'nullable|image|max:2048',
         'tags' => 'nullable|array',
@@ -64,7 +63,6 @@ public function store(Request $request)
     $news = News::create([
         'title' => $request->title,
         'date' => $request->date,
-        'genre' => $request->genre,
         'description' => $request->description,
         'image' => $imagePath,
     ]);

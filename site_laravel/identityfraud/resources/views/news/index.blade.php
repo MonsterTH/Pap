@@ -5,21 +5,67 @@
 
 <!-- TRENDING -->
 <section class="fade-up fade-up-d1 max-w-7xl mx-auto px-4 md:px-8 py-12">
+
     <h1 class="mb-5 text-2xl md:text-3xl font-bold">
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-gold">Trending</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-gold">
+            Trending
+        </span>
     </h1>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        @foreach ($trending as $new)
-            <a href="{{ route('news.show', $new->id) }}">
-                <div class="bg-brand-card rounded-2xl overflow-hidden border border-white/5 shadow-lg hover:scale-[1.03] transition">
-                    <img src="{{ asset('storage/' . $new->image) }}" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h2 class="font-bold text-white text-lg">{{ $new->title }}</h2>
+    <div class="relative overflow-hidden rounded-3xl">
+
+        <!-- Slides -->
+        <div id="trendingSlider" class="flex transition-transform duration-700 ease-in-out">
+
+            @foreach ($trending as $index => $new)
+                <a href="{{ route('news.show', $new->id) }}"
+                   class="min-w-full relative">
+
+                    <div class="relative h-[300px] w-full overflow-hidden rounded-3xl">
+
+                        <!-- Image -->
+                        <img src="{{ asset('storage/' . $new->image) }}"
+                             class="w-full h-full object-cover">
+
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                        <!-- Content -->
+                        <div class="absolute bottom-0 left-0 p-8 md:p-12 max-w-3xl">
+
+                            <h2 class="mt-2 text-3xl md:text-5xl font-bold text-white leading-tight">
+                                {{ $new->title }}
+                            </h2>
+
+                            @if ($new->tags->isNotEmpty())
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    @foreach ($new->tags as $tag)
+                                        <span class="px-3 py-1 text-xs font-semibold rounded-full
+                                                    bg-red-500/10 border border-red-500/40 text-red-400
+                                                    backdrop-blur-sm">
+                                            {{ $tag->name }}
+                                        </span>
+                                    @endforeach
+                                </div>
+                            @endif
+                        </div>
+
                     </div>
-                </div>
-            </a>
-        @endforeach
+                </a>
+            @endforeach
+
+        </div>
+
+        <!-- Dots -->
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+            @foreach ($trending as $index => $new)
+                <button
+                    class="slider-dot w-3 h-1.5 rounded-full bg-white/40 hover:bg-white transition"
+                    data-slide="{{ $index }}">
+                </button>
+            @endforeach
+        </div>
+
     </div>
 </section>
 
@@ -64,3 +110,47 @@
 </section>
 
 @endsection
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const slider = document.getElementById('trendingSlider');
+    const dots = document.querySelectorAll('.slider-dot');
+
+    if (!slider || dots.length === 0) return;
+
+    let currentSlide = 0;
+    const totalSlides = dots.length;
+
+    function updateSlider() {
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+        dots.forEach((dot, index) => {
+            if (index === currentSlide) {
+                dot.classList.remove('bg-white/40');
+                dot.classList.add('bg-white');
+            } else {
+                dot.classList.remove('bg-white');
+                dot.classList.add('bg-white/40');
+            }
+        });
+    }
+
+    // Dot navigation
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            currentSlide = Number(dot.dataset.slide);
+            updateSlider();
+        });
+    });
+
+    // Auto-slide
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+    }, 5000);
+
+    updateSlider();
+
+});
+</script>

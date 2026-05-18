@@ -45,4 +45,9 @@ class Player extends Model
     {
         return $this->hasMany(Eviction::class);
     }
+
+    public function tag()
+    {
+        return $this->hasOne(Tags::class, 'name', 'name');
+    }
 }
