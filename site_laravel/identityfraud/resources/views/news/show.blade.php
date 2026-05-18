@@ -40,6 +40,17 @@
 
             </div>
 
+            <hr class="my-6 border-white/10">
+
+            @if ($news->tags->isNotEmpty())
+                <div class="flex flex-wrap gap-2 mt-6">
+                    @foreach ($news->tags as $tag)
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-red-500/10 border border-red-500/40 text-red-400">
+                            {{ $tag->name }}
+                        </span>
+                    @endforeach
+                </div>
+            @endif
         </div>
 
     </div>

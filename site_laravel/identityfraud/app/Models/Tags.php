@@ -13,8 +13,9 @@ class Tags extends Model
         'name',
     ];
 
+    // Tags model
     public function news()
     {
-        return $this->hasMany(News::class);
+        return $this->belongsToMany(News::class, 'news_tags', 'tag_id', 'news_id');
     }
 }
