@@ -19,21 +19,26 @@
 
             @foreach ($trending as $index => $new)
                 <a href="{{ route('news.show', $new->id) }}"
-                   class="min-w-full relative">
+                   class="group min-w-full relative">
 
                     <div class="relative h-[300px] w-full overflow-hidden rounded-3xl">
 
                         <!-- Image -->
                         <img src="{{ asset('storage/' . $new->image) }}"
-                             class="w-full h-full object-cover">
+                             class="w-full h-full object-cover
+                                    group-hover:scale-105 transition duration-700">
 
                         <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t
+                                    from-black/80 via-black/20 to-transparent
+                                    group-hover:from-black/90 transition duration-500">
+                        </div>
 
                         <!-- Content -->
                         <div class="absolute bottom-0 left-0 p-8 md:p-12 max-w-3xl">
 
-                            <h2 class="mt-2 text-3xl md:text-5xl font-bold text-white leading-tight">
+                            <h2 class="mt-2 text-3xl md:text-5xl font-bold text-white leading-tight
+                                       group-hover:text-red-300 transition">
                                 {{ $new->title }}
                             </h2>
 
@@ -69,41 +74,137 @@
     </div>
 </section>
 
-<hr class="border-white/10">
 
 <!-- NOVIDADES -->
-<section class="fade-up fade-up-d2 max-w-7xl mx-auto px-4 md:px-8 py-12">
-    <h1 class="text-2xl md:text-3xl font-bold text-brand-accent mb-6">Novidades</h1>
+<section class="fade-up fade-up-d2 max-w-7xl mx-auto px-4 md:px-8 py-14">
 
-    <div class="flex gap-4 overflow-x-auto pb-2">
-        @foreach ($novidades as $new)
-            <a href="{{ route('news.show', $new->id) }}">
-                <div class="min-w-[300px] bg-brand-card rounded-xl overflow-hidden border border-white/5 hover:scale-[1.03] transition">
-                    <img src="{{ asset('storage/' . $new->image) }}" class="w-full h-32 object-cover">
-                    <div class="p-3 border-t border-pink-500/40">
-                        <h2 class="text-sm font-semibold text-white">{{ $new->title }}</h2>
-                    </div>
-                </div>
-            </a>
-        @endforeach
+    <div class="flex items-center justify-between mb-7">
+        <h1 class="text-2xl md:text-3xl font-bold text-brand-accent">
+            Novidades
+        </h1>
+
+        <div class="h-[1px] flex-1 ml-6 bg-gradient-to-r from-red-500/40 to-transparent"></div>
     </div>
-</section>
 
-<hr class="border-white/10">
+    <div class="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
+
+        @foreach ($novidades as $new)
+
+            <a href="{{ route('news.show', $new->id) }}"
+               class="group min-w-[340px] md:min-w-[380px]">
+
+                <article class="relative h-[200px] overflow-hidden rounded-3xl border border-white/10 bg-brand-card">
+
+                    <!-- IMAGE -->
+                    <img src="{{ asset('storage/' . $new->image) }}"
+                         class="absolute inset-0 w-full h-full object-cover
+                                group-hover:scale-110 transition duration-700">
+
+                    <!-- OVERLAY -->
+                    <div class="absolute inset-0 bg-gradient-to-t
+                                from-black via-black/40 to-black/10">
+                    </div>
+
+                    <!-- CONTENT -->
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+
+                        <!-- TAGS -->
+                        @if ($new->tags->isNotEmpty())
+                            <div class="flex flex-wrap gap-2 mb-4">
+
+                                @foreach ($new->tags as $tag)
+                                    <span class="px-3 py-1 text-xs font-semibold rounded-full
+                                                    bg-red-500/10 border border-red-500/40 text-red-400
+                                                    backdrop-blur-sm">
+
+                                        {{ $tag->name }}
+
+                                    </span>
+                                @endforeach
+
+                            </div>
+                        @endif
+
+                        <!-- TITLE -->
+                        <h2 class="text-2xl font-bold text-white leading-tight
+                                   group-hover:text-red-300 transition">
+
+                            {{ $new->title }}
+
+                        </h2>
+
+                    </div>
+
+                </article>
+
+            </a>
+
+        @endforeach
+
+    </div>
+
+</section>
 
 <!-- DRAMA -->
 <section class="fade-up fade-up-d3 max-w-7xl mx-auto px-4 md:px-8 py-12">
-    <h1 class="text-2xl md:text-3xl font-bold text-brand-accent mb-6">Drama</h1>
+
+    <div class="flex items-center justify-between mb-7">
+        <h1 class="text-2xl md:text-3xl font-bold text-brand-accent">
+            Drama
+        </h1>
+
+        <div class="h-[1px] flex-1 ml-6 bg-gradient-to-r from-red-500/40 to-transparent"></div>
+    </div>
 
     <div class="flex gap-4 overflow-x-auto pb-2">
         @foreach ($drama as $new)
-            <a href="{{ route('news.show', $new->id) }}">
-                <div class="min-w-[300px] bg-brand-card rounded-xl overflow-hidden border border-white/5 hover:scale-[1.03] transition">
-                    <img src="{{ asset('storage/' . $new->image) }}" class="w-full h-32 object-cover">
-                    <div class="p-3 border-t border-pink-500/40">
-                        <h2 class="text-sm font-semibold text-white">{{ $new->title }}</h2>
+            <a href="{{ route('news.show', $new->id) }}"
+               class="group min-w-[340px] md:min-w-[380px]">
+
+                <article class="relative h-[200px] overflow-hidden rounded-3xl border border-white/10 bg-brand-card">
+
+                    <!-- IMAGE -->
+                    <img src="{{ asset('storage/' . $new->image) }}"
+                         class="absolute inset-0 w-full h-full object-cover
+                                group-hover:scale-110 transition duration-700">
+
+                    <!-- OVERLAY -->
+                    <div class="absolute inset-0 bg-gradient-to-t
+                                from-black via-black/40 to-black/10">
                     </div>
-                </div>
+
+                    <!-- CONTENT -->
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+
+                        <!-- TAGS -->
+                        @if ($new->tags->isNotEmpty())
+                            <div class="flex flex-wrap gap-2 mb-4">
+
+                                @foreach ($new->tags as $tag)
+                                    <span class="px-3 py-1 text-xs font-semibold rounded-full
+                                                    bg-red-500/10 border border-red-500/40 text-red-400
+                                                    backdrop-blur-sm">
+
+                                        {{ $tag->name }}
+
+                                    </span>
+                                @endforeach
+
+                            </div>
+                        @endif
+
+                        <!-- TITLE -->
+                        <h2 class="text-2xl font-bold text-white leading-tight
+                                   group-hover:text-red-300 transition">
+
+                            {{ $new->title }}
+
+                        </h2>
+
+                    </div>
+
+                </article>
+
             </a>
         @endforeach
     </div>
