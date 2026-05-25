@@ -1,5 +1,5 @@
 @extends('layouts')
-@section('title', 'Identity Fraud - Gerenciar Jogadores')
+@section('title', 'Identity Fraud - Gerenciar Participantes')
 @section('content')
     <div class="flex min-h-screen bg-brand-dark">
         @include('partials.sidebar')
@@ -7,8 +7,8 @@
         <main class="flex-1 p-8 bg-brand-dark overflow-auto">
 
             <div class="fade-up fade-up-d1 mb-8">
-                <h1 class="text-3xl font-bold text-white">Gerenciar Jogadores</h1>
-                <p class="text-brand-muted mt-1">Visualiza e gere todos os jogadores registados.</p>
+                <h1 class="text-3xl font-bold text-white">Gerenciar Participantes</h1>
+                <p class="text-brand-muted mt-1">Visualiza e gere todos os Participantes registados.</p>
             </div>
 
             {{-- Search / Filter bar --}}
@@ -16,7 +16,7 @@
                 <input
                     type="text"
                     id="searchInput"
-                    placeholder="Pesquisar jogador..."
+                    placeholder="Pesquisar participante..."
                     class="flex-1 bg-brand-card border border-white/10 rounded-lg px-4 py-2 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-accent">
             </div>
 
@@ -25,7 +25,7 @@
                 <table class="w-full text-sm">
                     <thead>
                         <tr class="border-b border-white/10 text-brand-muted uppercase tracking-widest text-xs">
-                            <th class="text-left px-6 py-4">Jogador</th>
+                            <th class="text-left px-6 py-4">Participante</th>
                             <th class="text-left px-6 py-4">Data de Entrada</th>
                             <th class="text-right px-6 py-4">Ações</th>
                         </tr>
@@ -72,14 +72,14 @@
 
                 @if($players->total() === 0)
                     <div class="text-center py-16 text-brand-muted">
-                        <p>Nenhum jogador encontrado.</p>
+                        <p>Nenhum participante encontrado.</p>
                     </div>
                 @endif
             </div>
 
             @if($players->hasPages())
                 <div class="fade-up fade-up-d3 flex items-center justify-center gap-2 mt-6">
-                    
+
                     {{-- Anterior --}}
                     @if($players->onFirstPage())
                         <span class="px-4 py-2 text-sm bg-white/5 text-white/20 rounded-lg cursor-not-allowed">← Anterior</span>

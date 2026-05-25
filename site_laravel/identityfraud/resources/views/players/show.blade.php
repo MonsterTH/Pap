@@ -19,7 +19,7 @@
             <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
             </svg>
-            Voltar aos Jogadores
+            Voltar aos Participantes
         </a>
 
         {{-- Hero card --}}
@@ -51,7 +51,7 @@
 
                 {{-- Info --}}
                 <div class="flex-1 flex flex-col justify-center">
-                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-brand-accent mb-2">Jogador</span>
+                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-brand-accent mb-2">Participante</span>
 
                     <h1 class="text-4xl md:text-5xl font-extrabold font-display text-white glitch-text mb-1">
                         {{ $player->name }}

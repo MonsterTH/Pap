@@ -8,7 +8,7 @@
     <nav class="flex-1">
 
         <div class="fade-up fade-up-d1">
-            <h3 class="text-brand-accent font-bold mb-2">Jogadores</h3>
+            <h3 class="text-brand-accent font-bold mb-2">Participantes</h3>
             <a href="{{ route('admin.players.manage') }}"  class="block px-3 py-2 rounded hover:bg-white/10">Gerenciar</a>
             <a href="{{ route('players.create') }}"         class="block px-3 py-2 rounded hover:bg-white/10">Adicionar</a>
             <a href="{{ route('admin.players.remove') }}"   class="block px-3 py-2 rounded hover:bg-white/10">Remover</a>

@@ -40,9 +40,9 @@
                     <div class="card-hover bg-brand-card rounded-2xl border border-white/5 p-8 fade-up fade-up-d1">
                             <div class="flex items-center gap-3 mb-2">
                                 <div class="w-1.5 h-8 bg-brand-accent rounded-full"></div>
-                                <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight">Competidores</h2>
+                                <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight">Participantes</h2>
                             </div>
-                            <p class="text-brand-muted mb-6 font-body">Conhece os competidores da nova temporada de Identity Fraud!</p>
+                            <p class="text-brand-muted mb-6 font-body">Conhece os participantes da nova temporada de Identity Fraud!</p>
                             <div id="carroselComp">
                                 <ul class="carousel-track">
                                     @foreach($players->take(4) as $player)
