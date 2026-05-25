@@ -73,6 +73,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         NewsTags::factory(16)->create();
+
+        $players = Player::factory(16)->create();
+
+        foreach ($players as $player) {
+            Tags::create([
+                'name' => $player->name,
+            ]);
+        }
     }
 
 }
