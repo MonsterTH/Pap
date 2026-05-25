@@ -24,7 +24,7 @@
                     <div class="relative h-[300px] w-full overflow-hidden rounded-3xl">
 
                         <!-- Image -->
-                        <img src="{{ asset('storage/' . $new->image) }}"
+                        <img src="{{ $new->photo ? asset('storage/' . $new->photo) : asset('images/defaultimg.png') }}"
                              class="w-full h-full object-cover
                                     group-hover:scale-105 transition duration-700">
 
@@ -96,7 +96,7 @@
                 <article class="relative h-[200px] overflow-hidden rounded-3xl border border-white/10 bg-brand-card">
 
                     <!-- IMAGE -->
-                    <img src="{{ asset('storage/' . $new->image) }}"
+                    <img src="{{ $new->photo ? asset('storage/' . $new->photo) : asset('images/defaultimg.png') }}"
                          class="absolute inset-0 w-full h-full object-cover
                                 group-hover:scale-110 transition duration-700">
 
@@ -164,7 +164,7 @@
                 <article class="relative h-[200px] overflow-hidden rounded-3xl border border-white/10 bg-brand-card">
 
                     <!-- IMAGE -->
-                    <img src="{{ asset('storage/' . $new->image) }}"
+                    <img src="{{ $new->photo ? asset('storage/' . $new->photo) : asset('images/defaultimg.png') }}"
                          class="absolute inset-0 w-full h-full object-cover
                                 group-hover:scale-110 transition duration-700">
 

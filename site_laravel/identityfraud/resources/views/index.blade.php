@@ -26,7 +26,8 @@
                     <div class="flex-1 fade-up fade-up-d2">
                             <div class="relative">
                                 <div class="absolute -inset-4 bg-gradient-to-tr from-brand-accent/20 via-transparent to-brand-gold/10 rounded-2xl blur-2xl"></div>
-                                <img class="relative w-full max-w-lg mx-auto rounded-2xl shadow-2xl shadow-brand-accent/10 border border-white/5 object-cover" src="storage/images/Imagem1.png" alt="Identity Fraud">
+                                <img class="relative w-full max-w-lg mx-auto rounded-2xl shadow-2xl shadow-brand-accent/10 border border-white/5 object-cover"
+                                src="storage/images/Imagem1.png" alt="Identity Fraud">
                             </div>
                     </div>
                 </div>
@@ -78,7 +79,7 @@
                                         <li class="flex flex-col gap-3">
                                             <img
                                                 class="w-full h-56 object-cover object-center rounded-xl border border-white/10"
-                                                src="{{ asset('storage/' . $news->image) }}"
+                                                src="{{ $news->photo ? asset('storage/' . $news->photo) : asset('images/defaultimg.png') }}"
                                                 alt="{{ $news->title }}"
                                             >
                                             <span class="text-sm font-medium text-brand-light line-clamp-2">{{ $news->title }}</span>
@@ -104,10 +105,11 @@
                             for (let i = 0; i < slides.length; i++) {
                                 const dot = document.createElement("button");
                                 dot.className = "w-2 h-2 rounded-full transition-all duration-300 " + (i === 0 ? "bg-red-500 w-6" : "bg-white/20");
+                                dot.setAttribute("aria-label", `Slide ${i + 1} of ${slides.length}`);
                                 dot.addEventListener("click", () => {
-                                        index = i;
-                                        scrollTo();
-                                        updateDots();
+                                    index = i;
+                                    scrollTo();
+                                    updateDots();
                                 });
                                 indicatorContainer.appendChild(dot);
                             }

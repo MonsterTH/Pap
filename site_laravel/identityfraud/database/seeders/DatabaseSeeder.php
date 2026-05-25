@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory(20)->create();
-        Player::factory(16)->create();
+        $players = Player::factory(16)->create();
         Activity::factory(6)->create();
         Bounty::factory(3)->create();
         Post::factory(20)->create();
@@ -73,8 +73,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         NewsTags::factory(16)->create();
-
-        $players = Player::factory(16)->create();
 
         foreach ($players as $player) {
             Tags::create([

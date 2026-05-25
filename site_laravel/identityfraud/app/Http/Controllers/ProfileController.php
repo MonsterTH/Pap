@@ -45,36 +45,37 @@ public function show(string $id)
 
     public function edit(Request $request): View
     {
+
         $user = $request->user();
 
-    $qrCode = null;
+        $qrCode = null;
 
-    if (!$user->two_factor_enabled) {
-        $google2fa = new Google2FA();
+        if (!$user->two_factor_enabled) {
+            $google2fa = new Google2FA();
 
-        $secret = $google2fa->generateSecretKey();
-        $user->two_factor_secret = $secret;
-        $user->save();
+            $secret = $google2fa->generateSecretKey();
+            $user->two_factor_secret = $secret;
+            $user->save();
 
-        $qrCodeUrl = $google2fa->getQRCodeUrl(
-            'IdentityFraud',
-            $user->email,
-            $secret
-        );
+            $qrCodeUrl = $google2fa->getQRCodeUrl(
+                'IdentityFraud',
+                $user->email,
+                $secret
+            );
 
-        $renderer = new ImageRenderer(
-            new RendererStyle(200),
-            new SvgImageBackEnd()
-        );
+            $renderer = new ImageRenderer(
+                new RendererStyle(200),
+                new SvgImageBackEnd()
+            );
 
-        $writer = new Writer($renderer);
-        $qrCode = base64_encode($writer->writeString($qrCodeUrl));
-    }
+            $writer = new Writer($renderer);
+            $qrCode = base64_encode($writer->writeString($qrCodeUrl));
+        }
 
-    return view('profile.edit', [
-        'user' => $user,
-        'qrCode' => $qrCode
-    ]);
+        return view('profile.edit', [
+            'user' => $user,
+            'qrCode' => $qrCode
+        ]);
     }
 
     public function update(ProfileUpdateRequest $request): RedirectResponse

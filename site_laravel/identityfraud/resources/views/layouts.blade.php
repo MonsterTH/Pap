@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt">
     <head>
         @livewireStyles
         <title>@yield('title')</title>
