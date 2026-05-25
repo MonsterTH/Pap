@@ -13,7 +13,7 @@
 </nav> --}}
 
 <nav x-data="{ open: false }"
-     class="sticky top-0 z-50 bg-brand-deeper/90 backdrop-blur-xl border-b border-white/5">
+     class="-mt-8 sticky top-0 z-50 bg-brand-deeper/90 backdrop-blur-xl border-b border-white/5">
 
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3">
 
@@ -26,7 +26,7 @@
         <!-- Desktop Menu -->
         <ul class="hidden md:flex items-center justify-center gap-2 text-sm md:text-base font-display mx-auto">
             <li><x-nav-link href="{{ route('home') }}">Início</x-nav-link></li>
-            <li><x-nav-link href="{{ route('players.index') }}">Jogadores</x-nav-link></li>
+            <li><x-nav-link href="{{ route('players.index') }}">Participantes</x-nav-link></li>
             <li><x-nav-link href="{{ route('news.index') }}">Notícias</x-nav-link></li>
             <li><x-nav-link href="{{ route('eviction.index') }}">Votos</x-nav-link></li>
             <li><x-nav-link href="{{ auth()->check() ? route('feed.index') : route('login') }}">Feed</x-nav-link></li>

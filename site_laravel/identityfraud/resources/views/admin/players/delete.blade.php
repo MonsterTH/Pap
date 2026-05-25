@@ -1,5 +1,5 @@
 @extends('layouts')
-@section('title', 'Identity Fraud - Remover Jogador')
+@section('title', 'Identity Fraud - Remover Participante')
 @section('content')
     <div class="flex min-h-screen bg-brand-dark">
         @include('partials.sidebar')
@@ -7,8 +7,8 @@
         <main class="flex-1 p-8 bg-brand-dark overflow-auto">
 
             <div class="fade-up fade-up-d1 mb-8">
-                <h1 class="text-3xl font-bold text-white">Remover Jogador</h1>
-                <p class="text-brand-muted mt-1">Pesquisa e remove jogadores da plataforma.</p>
+                <h1 class="text-3xl font-bold text-white">Remover Participante</h1>
+                <p class="text-brand-muted mt-1">Pesquisa e remove Participantes da plataforma.</p>
             </div>
 
             {{-- Search bar --}}
@@ -16,7 +16,7 @@
                 <input
                     type="text"
                     id="searchInput"
-                    placeholder="Pesquisar jogador pelo nome..."
+                    placeholder="Pesquisar Participante pelo nome..."
                     class="flex-1 bg-brand-card border border-white/10 rounded-lg px-4 py-2 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-accent">
             </div>
 
@@ -42,7 +42,7 @@
                     </div>
                 @empty
                     <div class="text-center py-16 text-brand-muted">
-                        <p>Nenhum jogador encontrado.</p>
+                        <p>Nenhum Participante encontrado.</p>
                     </div>
                 @endforelse
             </div>

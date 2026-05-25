@@ -6,6 +6,7 @@ use App\Models\Like;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 /**
  * @extends Factory<Like>
  */
@@ -18,9 +19,23 @@ class LikeFactory extends Factory
      */
     public function definition(): array
     {
+        $postId = Post::inRandomOrder()->first()->id;
+        $userId = User::inRandomOrder()->first()->id;
+
+        // retry until unique combo found
+        while (
+            DB::table('post_likes')
+                ->where('post_id', $postId)
+                ->where('user_id', $userId)
+                ->exists()
+        ) {
+            $postId = Post::inRandomOrder()->first()->id;
+            $userId = User::inRandomOrder()->first()->id;
+        }
+
         return [
-            'post_id' => Post::inRandomOrder()->value('id'),
-            'user_id' => User::inRandomOrder()->value('id'),
+            'post_id' => $postId,
+            'user_id' => $userId,
         ];
     }
 }

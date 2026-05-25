@@ -10,13 +10,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('post_likes', function (Blueprint $table) {
-            $table->id(); // ✅ primary key
+            $table->id();
 
             $table->foreignId('post_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
 
-            $table->unique(['post_id', 'user_id']); // ✅ prevent duplicate likes
+            $table->unique(['post_id', 'user_id']);
 });
     }
 

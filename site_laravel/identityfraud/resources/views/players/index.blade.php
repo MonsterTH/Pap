@@ -11,7 +11,7 @@
         </span>
 
         <h1 class="mt-4 text-4xl md:text-6xl font-extrabold font-display">
-            Conhece os <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-gold">Jogadores</span>
+            Conheça os <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-gold">Participantes</span>
         </h1>
 
         <p class="mt-4 text-brand-muted max-w-2xl mx-auto">

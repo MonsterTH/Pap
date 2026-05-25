@@ -1,5 +1,5 @@
 @extends('layouts')
-@section('title', 'Identity Fraud - Editar Jogador')
+@section('title', 'Identity Fraud - Editar Participante')
 @section('content')
     <div class="flex min-h-screen bg-brand-dark">
         @include('partials.sidebar')
@@ -14,7 +14,7 @@
                     </svg>
                     Voltar
                 </a>
-                <h1 class="text-3xl font-bold text-white">Editar Jogador</h1>
+                <h1 class="text-3xl font-bold text-white">Editar Participante</h1>
                 <p class="text-brand-muted mt-1">A editar: <span class="text-white font-semibold">{{ $player->name }}</span></p>
             </div>
 
@@ -58,7 +58,7 @@
                         <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Nome</label>
                         <input type="text" name="name" value="{{ old('name', $player->name) }}"
                                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-accent"
-                               placeholder="Nome do jogador" required>
+                               placeholder="Nome do Participante" required>
                     </div>
 
                     {{-- Data de Nascimento --}}
@@ -74,7 +74,7 @@
                         <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Sobre</label>
                         <textarea name="about" rows="3"
                                   class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-accent"
-                                  placeholder="Breve descrição do jogador...">{{ old('about', $player->about ?? '') }}</textarea>
+                                  placeholder="Breve descrição do Participante...">{{ old('about', $player->about ?? '') }}</textarea>
                     </div>
 
                     {{-- Remover foto atual

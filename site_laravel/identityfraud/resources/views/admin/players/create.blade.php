@@ -1,5 +1,5 @@
 @extends('layouts')
-@section('title', 'Identity Fraud - Adicionar Jogador')
+@section('title', 'Identity Fraud - Adicionar Participante')
 @section('content')
     <div class="flex min-h-screen bg-brand-dark">
         @include('partials.sidebar')
@@ -7,8 +7,8 @@
         <main class="flex-1 p-8 bg-brand-dark overflow-auto">
 
             <div class="fade-up fade-up-d1 mb-8">
-                <h1 class="text-3xl font-bold text-white">Adicionar Jogador</h1>
-                <p class="text-brand-muted mt-1">Regista um novo jogador na plataforma.</p>
+                <h1 class="text-3xl font-bold text-white">Adicionar Participante</h1>
+                <p class="text-brand-muted mt-1">Regista um novo Participante na plataforma.</p>
             </div>
 
             @if($errors->any())
@@ -39,7 +39,7 @@
                         <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Nome</label>
                         <input type="text" name="name" value="{{ old('name') }}"
                                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-accent"
-                               placeholder="Nome do jogador" required>
+                               placeholder="Nome do Participante" required>
                     </div>
 
                     {{-- Data de Nascimento --}}
@@ -54,13 +54,13 @@
                         <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Sobre</label>
                         <textarea name="about" rows="3"
                                   class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-accent"
-                                  placeholder="Breve descrição do jogador...">{{ old('about') }}</textarea>
+                                  placeholder="Breve descrição do Participante...">{{ old('about') }}</textarea>
                     </div>
 
                     <div class="flex gap-3 pt-2">
                         <button type="submit"
                                 class="px-6 py-2.5 bg-brand-accent hover:bg-brand-glow text-white font-bold text-sm rounded-lg transition btn-pulse">
-                            Adicionar Jogador
+                            Adicionar Participante
                         </button>
                         <a href="{{ route('admin.players.manage') }}"
                            class="px-6 py-2.5 bg-white/5 hover:bg-white/10 text-brand-muted text-sm rounded-lg transition">

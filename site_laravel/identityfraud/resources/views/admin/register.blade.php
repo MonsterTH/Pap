@@ -2,7 +2,7 @@
     @include('partials.sidebar')
 
     {{-- Main content --}}
-    <main class="fade-up fade-up-d1 flex-1 p-8 bg-brand-dark overflow-auto">
+    <main class="mb-10 fade-up fade-up-d1 flex-1 p-8 bg-brand-dark overflow-auto">
         <section class="max-w-md mx-auto mt-10 p-6 bg-brand-card rounded-lg shadow-lg">
 
 

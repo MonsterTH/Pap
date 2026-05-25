@@ -8,7 +8,7 @@
 
             <div class="fade-up fade-up-d1 mb-8">
                 <h1 class="text-3xl font-bold text-white">Gerir Eviction</h1>
-                <p class="text-brand-muted mt-1">Define os jogadores em votação. Máximo de 4 jogadores.</p>
+                <p class="text-brand-muted mt-1">Define os participantes em votação. Máximo de 4 participantes.</p>
             </div>
 
             @if(session('success'))
@@ -90,7 +90,7 @@
 
                     @if($evictions->count() >= 4)
                         <div class="text-center py-12">
-                            <p class="text-brand-muted text-sm">Já atingiste o máximo de 4 jogadores em votação.</p>
+                            <p class="text-brand-muted text-sm">Já atingiste o máximo de 4 participantes em votação.</p>
                             <p class="text-brand-muted text-xs mt-2">Remove um jogador para adicionar outro.</p>
                         </div>
                     @else
@@ -111,7 +111,7 @@
                                 />
 
                             @if($availablePlayers->isEmpty())
-                                <p class="text-xs text-brand-muted">Todos os jogadores já estão em votação ou não existem jogadores.</p>
+                                <p class="text-xs text-brand-muted">Todos os participantes já estão em votação ou não existem participantes.</p>
                             @else
                                 <button type="submit"
                                         class="mt-5 w-full py-2.5 bg-brand-accent hover:bg-brand-glow text-white font-bold text-sm rounded-xl transition btn-pulse">

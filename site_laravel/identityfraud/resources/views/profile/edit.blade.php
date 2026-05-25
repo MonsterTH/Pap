@@ -42,7 +42,7 @@
                 <div class="relative group cursor-pointer" onclick="document.getElementById('profileInput').click()">
                     <img
                         id="profilePreview"
-                        src="{{ auth()->user()->profile_picture ? asset('storage/' . auth()->user()->profile_picture) : asset('storage/images/default.png') }}"
+                        src="{{ auth()->user()->profile_picture ? (Str::startsWith(auth()->user()->profile_picture, 'http') ? auth()->user()->profile_picture : asset('storage/' . auth()->user()->profile_picture)) : asset('storage/images/default.png') }}"
                         class="w-24 h-24 rounded-full object-cover border-2 border-white/10 group-hover:border-brand-accent transition-all duration-300"
                     >
                     <div class="absolute inset-0 rounded-full bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
@@ -157,11 +157,13 @@
             </div>
         </form>
     </div>
-    <a href="{{ route('2fa.setup') }}">
-    <div class="fade-up fade-up-d2 w-full text-center h-10 mt-4 px-6 py-2.5 bg-brand-accent hover:bg-brand-glow text-white font-bold rounded-lg transition btn-pulse">
-    <p>Ativar Verificaçao de 2 Fatores</p>
-    </div>
-    </a>
+    @if(auth()->user()->google_id === null)
+        <a href="{{ route('2fa.setup') }}">
+            <div class="fade-up fade-up-d2 w-full text-center h-10 mt-6 px-6 py-2.5 bg-brand-accent hover:bg-brand-glow text-white font-bold rounded-lg transition btn-pulse">
+                <p>Ativar Verificação de 2 Fatores</p>
+            </div>
+        </a>
+    @endif
 </section>
 
 <script>

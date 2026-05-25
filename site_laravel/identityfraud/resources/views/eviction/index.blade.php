@@ -12,7 +12,7 @@
             Quem vai ser <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-gold">eliminado?</span>
         </h1>
         <p class="mt-4 text-brand-muted max-w-xl mx-auto">
-            Vota no jogador que queres ver eliminado. Cada jogador só pode votar uma vez.
+            Vota no participante que queres ver eliminado. Cada espectador só pode votar uma vez.
         </p>
     </div>
 

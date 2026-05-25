@@ -6,13 +6,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
         <script>
             tailwind.config = {
             theme: {
                 extend: {
                 fontFamily: {
-                    display: ['Syne', 'sans-serif'],
+                    display: ['Inter', 'sans-serif'],
+                    //body: ['Inter', 'sans-serif'],
+                    //display: ['Poppins', 'sans-serif'],
                     body: ['DM Sans', 'sans-serif'],
                 },
                 colors: {

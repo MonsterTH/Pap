@@ -1,36 +1,205 @@
-<p align="center"><img width="337" height="66" src="/art/logo.svg" alt="Logo Laravel Socialite"></p>
+# Identity Fraud
 
-<p align="center">
-<a href="https://github.com/laravel/socialite/actions"><img src="https://github.com/laravel/socialite/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/socialite"><img src="https://img.shields.io/packagist/dt/laravel/socialite" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/socialite"><img src="https://img.shields.io/packagist/v/laravel/socialite" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/socialite"><img src="https://img.shields.io/packagist/l/laravel/socialite" alt="License"></a>
-</p>
+> Plataforma social desenvolvida com Laravel 13, Docker, MariaDB e Nginx.
 
-## Introduction
+---
 
-Laravel Socialite provides an expressive, fluent interface to OAuth authentication with Bitbucket, Facebook, GitHub, GitLab, Google, LinkedIn, Slack, Twitch, and X. It handles almost all of the boilerplate social authentication code you are dreading writing.
+## 📋 Índice
 
-**We are not accepting new adapters.**
+- [Requisitos](#-requisitos)
+- [Stack](#-stack)
+- [Início Rápido](#-início-rápido)
+- [Configuração](#-configuração)
+- [Base de Dados](#-base-de-dados)
+- [Comandos Úteis](#-comandos-úteis)
+- [Utilizadores Windows (WSL2)](#-utilizadores-windows-wsl2)
 
-Adapters for other platforms are listed at the community driven [Socialite Providers](https://socialiteproviders.com/) website.
+---
 
-## Official Documentation
+## ✅ Requisitos
 
-Documentation for Socialite can be found on the [Laravel website](https://laravel.com/docs/socialite).
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- Git
 
-## Contributing
+---
 
-Thank you for considering contributing to Socialite! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🧱 Stack
 
-## Code of Conduct
+| Serviço | Tecnologia        | Porta |
+|---------|-------------------|-------|
+| App     | PHP 8.4 (FPM)     | -     |
+| Web     | Nginx             | 8000  |
+| BD      | MariaDB 10.8      | 3306  |
+| Admin   | Adminer           | 8081  |
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🚀 Início Rápido
 
-Please review [our security policy](https://github.com/laravel/socialite/security/policy) on how to report security vulnerabilities.
+### 1. Clonar o repositório
 
-## License
+```bash
+git clone <repo-url>
+cd identityfraud
+```
 
-Laravel Socialite is open-sourced software licensed under the [MIT license](LICENSE.md).
+### 2. Copiar o ficheiro de ambiente
+
+```bash
+cp .env.example .env
+```
+
+### 3. Iniciar os containers
+
+```bash
+docker compose up -d --build
+```
+
+### 4. Instalar dependências
+
+```bash
+docker compose exec app composer install
+```
+
+### 5. Gerar a chave da aplicação
+
+```bash
+docker compose exec app php artisan key:generate
+```
+
+### 6. Executar migrações e popular a base de dados
+
+```bash
+docker compose exec app php artisan migrate:fresh --seed
+```
+
+### 7. Abrir a aplicação
+
+```
+http://localhost:8000
+```
+
+---
+
+## ⚙️ Configuração
+
+Edita o ficheiro `.env` com as seguintes definições de base de dados:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=identity_fraud
+DB_USERNAME=admin
+DB_PASSWORD=secret
+```
+
+---
+
+## 🗄️ Base de Dados
+
+| Ferramenta | URL                   |
+|------------|-----------------------|
+| Adminer    | http://localhost:8081 |
+
+**Credenciais do Adminer:**
+
+| Campo      | Valor          |
+|------------|----------------|
+| Sistema    | MySQL          |
+| Servidor   | mysql          |
+| Utilizador | admin          |
+| Palavra-passe | secret      |
+| Base de dados | identity_fraud |
+
+> ⚠️ `migrate:fresh` **apaga todos os dados**. Utilizar com cuidado.
+> Os dados persistem até executares `docker compose down -v`.
+
+---
+
+## 🛠️ Comandos Úteis
+
+```bash
+# Parar os containers
+docker compose down
+
+# Reconstruir os containers
+docker compose up -d --build
+
+# Entrar no container da aplicação
+docker compose exec app bash
+
+# Limpar a cache do Laravel
+docker compose exec app php artisan optimize:clear
+
+# Executar migrações
+docker compose exec app php artisan migrate
+
+# Executar seeders
+docker compose exec app php artisan db:seed
+
+# Ver logs
+docker compose logs -f app
+```
+
+---
+
+## 🪟 Utilizadores Windows (WSL2)
+
+> Se estiveres no Windows, segue estes passos para evitar **problemas graves de desempenho**.
+
+### Porquê é importante?
+
+O Docker no Windows utiliza virtualização do sistema de ficheiros entre o Windows e o Linux.
+O Laravel faz muitas chamadas ao sistema de ficheiros (vistas, cache, logs) — isto torna a aplicação **muito lenta** quando o projeto está no sistema de ficheiros do Windows (`C:\Users\...`).
+
+Correr dentro do WSL2 oferece um desempenho **quase igual ao Linux nativo**.
+
+### Configurar o WSL2
+
+1. Instalar o WSL2 + Ubuntu:
+```
+https://learn.microsoft.com/windows/wsl/install
+```
+
+2. Abrir o terminal do Ubuntu (WSL2)
+
+3. Clonar o projeto **dentro** do sistema de ficheiros Linux:
+```bash
+cd ~
+git clone <repo-url>
+cd identityfraud
+```
+
+### ❌ Nunca fazer isto
+
+```bash
+# NÃO clonar aqui
+cd /mnt/c/Users/nomeutilizador/projetos  # ← lento, evitar
+```
+
+### ✅ Fazer sempre isto
+
+```bash
+# Clonar dentro do sistema de ficheiros do WSL2
+cd ~  # /home/nomeutilizador/
+git clone <repo-url>
+```
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+identityfraud/
+├── app/                  # Aplicação Laravel
+├── docker/               # Ficheiros de configuração Docker
+│   └── entrypoint.sh     # Script de arranque do container
+├── public/               # Recursos públicos
+├── resources/            # Vistas, JS, CSS
+├── routes/               # Rotas da aplicação
+├── docker-compose.yml    # Serviços Docker
+├── Dockerfile            # Build do container da aplicação
+└── .env.example          # Modelo de ambiente
+```
