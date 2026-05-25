@@ -1,4 +1,4 @@
-<footer class="relative mt-16 bg-brand-deeper border-t border-white/5">
+<footer class="relative bg-brand-deeper border-t border-white/5">
             <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-accent/40 to-transparent"></div>
             <div class="max-w-7xl mx-auto px-4 md:px-8 py-14">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">

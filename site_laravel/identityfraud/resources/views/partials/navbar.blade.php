@@ -13,7 +13,7 @@
 </nav> --}}
 
 <nav x-data="{ open: false }"
-     class="sticky top-0 z-50 bg-brand-deeper/90 backdrop-blur-xl border-b border-white/5">
+     class="-mt-8 sticky top-0 z-50 bg-brand-deeper/90 backdrop-blur-xl border-b border-white/5">
 
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3">
 

@@ -2,7 +2,7 @@
     @section('title', 'Identity Fraud - Home')
     @section('content')
         <!-- ═══════ HERO SECTION ═══════ -->
-        <section class="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
+        <section class="-mt-10 relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
                 <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
                     <div class="flex-1 fade-up">
                             <span class="inline-block px-3 py-1 mb-4 text-xs font-display font-bold tracking-[0.2em] uppercase text-brand-accent bg-brand-accent/10 border border-brand-accent/20 rounded-full">Nova Temporada</span>
@@ -33,7 +33,7 @@
         </section>
 
         <!-- ═══════ COMPETIDORES ═══════ -->
-        <section class="max-w-7xl mx-auto px-4 md:px-8 py-16">
+        <section class="-mt-20 max-w-7xl mx-auto px-4 md:px-8 py-16">
                 <div class="grid md:grid-cols-2 gap-10 md:gap-14">
 
                     <!-- Competidores Card -->

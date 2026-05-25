@@ -74,7 +74,7 @@
     </div>
 
     <!-- POSTS -->
-    <div class="fade-up fade-up-d2 space-y-8 mt-8">
+    <div class="mb-8 fade-up fade-up-d2 space-y-8 mt-8">
 
         @if($noFollowing)
             <div class="max-w-lg mx-auto bg-brand-card border border-white/5 rounded-2xl p-6 text-center text-brand-muted">
