@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         Activity::factory(6)->create();
         Bounty::factory(3)->create();
         Post::factory(20)->create();
-        Like::factory(20)->create();
+        Like::factory(80)->create();
         Comment::factory(80)->create();
         News::factory(16)->create();
         user_follower::factory(250)->create();

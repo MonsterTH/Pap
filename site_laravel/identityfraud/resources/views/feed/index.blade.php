@@ -42,6 +42,7 @@
                             ? auth()->user()->profile_picture
                             : asset('storage/' . auth()->user()->profile_picture))
                         : asset('storage/images/default.png') }}"
+                        alt="Your Profile"
                         class="w-12 h-12 rounded-full object-cover border border-white/10 hover:scale-105 transition">
                 </a>
 
@@ -89,8 +90,9 @@
                 <div class="max-w-lg mx-auto bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg">
 
                     <div class="flex items-center gap-3 mb-3">
-                        <img src="{{ auth()->user()->profile_picture ? (Str::startsWith($post->user->profile_picture, 'http') ? auth()->user()->profile_picture : asset('storage/' . auth()->user()->profile_picture)) : asset('storage/images/default.png') }}"
-                            class="w-10 h-10 rounded-full bg-white/10">
+                        <img src="{{ $post->user->profile_picture && Str::startsWith($post->user->profile_picture, 'http') ? $post->user->profile_picture : ($post->user->profile_picture ? asset('storage/' . $post->user->profile_picture): asset('storage/profiles/default.png')) }}"
+                            class="w-10 h-10 rounded-full bg-white/10"
+                            alt="{{ $post->user->name }}">
 
                         <div>
                             <a href="{{ route('profile.show', $post->user->id ) }}"
@@ -169,8 +171,9 @@
                 <div class="max-w-lg mx-auto bg-brand-card border border-white/5 rounded-2xl p-6 shadow-lg">
 
                     <div class="flex items-center gap-3 mb-3">
-                        <img src="{{ auth()->user()->profile_picture ? (Str::startsWith($post->user->profile_picture, 'http') ? $post->user->profile_picture : asset('storage/' . $post->user->profile_picture )) : asset('storage/images/default.png') }}"
-                        class="w-10 h-10 rounded-full bg-white/10">
+                            <img src="{{ $post->user->profile_picture && Str::startsWith($post->user->profile_picture, 'http') ? $post->user->profile_picture : ($post->user->profile_picture ? asset('storage/' . $post->user->profile_picture): asset('storage/profiles/default.png')) }}"
+                            class="w-10 h-10 rounded-full bg-white/10"
+                            alt="{{ $post->user->name }}">
                         <div>
                             <a href="{{ route('profile.show', $post->user->id ) }}" class="text-white font-semibold">{{ $post->user->name }}</a>
                             <p class="text-xs text-brand-muted">{{ $post->date }}</p>
@@ -182,7 +185,8 @@
                     </p>
 
                     <img src="{{'storage/' . $post->image }}"
-                        class="w-full max-h-96 object-cover rounded-xl border border-white/5 mb-4">
+                        class="w-full max-h-96 object-cover rounded-xl border border-white/5 mb-4"
+                        alt="{{ $post->image }}">
 
                     <hr class="my-4 border-white/10">
 

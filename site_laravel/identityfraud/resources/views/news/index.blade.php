@@ -24,9 +24,10 @@
                     <div class="relative h-[300px] w-full overflow-hidden rounded-3xl">
 
                         <!-- Image -->
-                        <img src="{{ $new->photo ? asset('storage/' . $new->photo) : asset('images/defaultimg.png') }}"
-                             class="w-full h-full object-cover
-                                    group-hover:scale-105 transition duration-700">
+                        <img src="{{ $new->image ? asset('storage/news/' . $new->image) : asset('news/Image.png') }}"
+                            class="w-full h-full object-cover
+                                    group-hover:scale-105 transition duration-700"
+                            alt="{{ $new->title }}">
 
                         <!-- Overlay -->
                         <div class="absolute inset-0 bg-gradient-to-t
@@ -96,9 +97,10 @@
                 <article class="relative h-[200px] overflow-hidden rounded-3xl border border-white/10 bg-brand-card">
 
                     <!-- IMAGE -->
-                    <img src="{{ $new->photo ? asset('storage/' . $new->photo) : asset('images/defaultimg.png') }}"
+                    <img src="{{ $new->image ? asset('storage/news/' . $new->image) : asset('news/Image.png') }}"
                          class="absolute inset-0 w-full h-full object-cover
-                                group-hover:scale-110 transition duration-700">
+                                group-hover:scale-110 transition duration-700"
+                                alt="{{ $new->title }}">
 
                     <!-- OVERLAY -->
                     <div class="absolute inset-0 bg-gradient-to-t
@@ -164,9 +166,10 @@
                 <article class="relative h-[200px] overflow-hidden rounded-3xl border border-white/10 bg-brand-card">
 
                     <!-- IMAGE -->
-                    <img src="{{ $new->photo ? asset('storage/' . $new->photo) : asset('images/defaultimg.png') }}"
+                    <img src="{{ $new->image ? asset('storage/news/' . $new->image) : asset('news/Image.png') }}"
                          class="absolute inset-0 w-full h-full object-cover
-                                group-hover:scale-110 transition duration-700">
+                                group-hover:scale-110 transition duration-700"
+                                alt="{{ $new->title }}">
 
                     <!-- OVERLAY -->
                     <div class="absolute inset-0 bg-gradient-to-t

@@ -18,24 +18,20 @@ class LikeFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-    {
+{
+    static $used = [];
+
+    do {
         $postId = Post::inRandomOrder()->first()->id;
         $userId = User::inRandomOrder()->first()->id;
+        $key = "{$postId}-{$userId}";
+    } while (in_array($key, $used));
 
-        // retry until unique combo found
-        while (
-            DB::table('post_likes')
-                ->where('post_id', $postId)
-                ->where('user_id', $userId)
-                ->exists()
-        ) {
-            $postId = Post::inRandomOrder()->first()->id;
-            $userId = User::inRandomOrder()->first()->id;
-        }
+    $used[] = $key;
 
-        return [
-            'post_id' => $postId,
-            'user_id' => $userId,
-        ];
-    }
+    return [
+        'post_id' => $postId,
+        'user_id' => $userId,
+    ];
+}
 }

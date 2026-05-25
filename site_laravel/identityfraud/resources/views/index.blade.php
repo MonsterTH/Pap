@@ -79,7 +79,7 @@
                                         <li class="flex flex-col gap-3">
                                             <img
                                                 class="w-full h-56 object-cover object-center rounded-xl border border-white/10"
-                                                src="{{ $news->photo ? asset('storage/' . $news->photo) : asset('images/defaultimg.png') }}"
+                                                src="{{ $news->image ? asset('storage/news/' . $news->image) : asset('news/Image.png') }}"
                                                 alt="{{ $news->title }}"
                                             >
                                             <span class="text-sm font-medium text-brand-light line-clamp-2">{{ $news->title }}</span>

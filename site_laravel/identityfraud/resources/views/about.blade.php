@@ -37,7 +37,8 @@
                 <div class="absolute -inset-4 bg-gradient-to-tr from-brand-accent/20 via-transparent to-brand-gold/10 rounded-2xl blur-2xl"></div>
 
                 <img src="storage/images/Imagem2.png"
-                     class="relative w-full max-w-lg mx-auto rounded-2xl shadow-2xl border border-white/5 object-cover">
+                     class="relative w-full max-w-lg mx-auto rounded-2xl shadow-2xl border border-white/5 object-cover"
+                     alt="Imagem2">
             </div>
         </div>
 
