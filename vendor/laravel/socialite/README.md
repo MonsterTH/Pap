@@ -1,36 +1,101 @@
-<p align="center"><img width="337" height="66" src="/art/logo.svg" alt="Logo Laravel Socialite"></p>
+# 🚀 Identity Fraud - Laravel + Docker
 
-<p align="center">
-<a href="https://github.com/laravel/socialite/actions"><img src="https://github.com/laravel/socialite/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/socialite"><img src="https://img.shields.io/packagist/dt/laravel/socialite" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/socialite"><img src="https://img.shields.io/packagist/v/laravel/socialite" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/socialite"><img src="https://img.shields.io/packagist/l/laravel/socialite" alt="License"></a>
-</p>
+Este projeto é uma aplicação Laravel containerizada com Docker, incluindo:
 
-## Introduction
+- PHP 8.4 (FPM)
+- MariaDB 10.8
+- Nginx
+- Adminer
 
-Laravel Socialite provides an expressive, fluent interface to OAuth authentication with Bitbucket, Facebook, GitHub, GitLab, Google, LinkedIn, Slack, Twitch, and X. It handles almost all of the boilerplate social authentication code you are dreading writing.
+---
 
-**We are not accepting new adapters.**
+## 📦 Pré-requisitos
 
-Adapters for other platforms are listed at the community driven [Socialite Providers](https://socialiteproviders.com/) website.
+- Docker
+- Docker Compose
 
-## Official Documentation
+---
 
-Documentation for Socialite can be found on the [Laravel website](https://laravel.com/docs/socialite).
+## 🛠️ Como iniciar o projeto
 
-## Contributing
 
-Thank you for considering contributing to Socialite! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 1. Subir os containers
+docker compose up -d --build
 
-## Code of Conduct
+### 2. Instalar dependências Laravel
+docker compose exec app composer install
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 3. Criar ficheiro .env
+cp .env.example .env
 
-## Security Vulnerabilities
+Configuração da base de dados:
 
-Please review [our security policy](https://github.com/laravel/socialite/security/policy) on how to report security vulnerabilities.
+DB_CONNECTION=mysql\
+DB_HOST=mysql\
+DB_PORT=3306\
+DB_DATABASE=identity_fraud\
+DB_USERNAME=admin\
+DB_PASSWORD=secret
 
-## License
+### 4. Gerar chave da aplicação
+docker compose exec app php artisan key:generate
 
-Laravel Socialite is open-sourced software licensed under the [MIT license](LICENSE.md).
+### 5. Migrar e popular base de dados (apaga tudo)
+docker compose exec app php artisan migrate:fresh --seed
+
+---
+
+## 🌐 Acessos
+
+Aplicação:
+http://localhost:8000
+
+Adminer:
+http://localhost:8081
+
+Configuração Adminer:
+- System: MySQL
+- Server: mysql
+- Username: admin
+- Password: secret
+- Database: identity_fraud
+
+---
+
+## 🐳 Docker services
+
+- app (Laravel PHP-FPM)
+- nginx
+- mysql (MariaDB)
+- adminer
+
+---
+
+## ⚙️ Comandos úteis
+
+Parar containers:
+docker compose down
+
+Rebuild:
+docker compose up -d --build
+
+Entrar no container:
+docker compose exec app bash
+
+Limpar cache Laravel:
+docker compose exec app php artisan optimize:clear
+
+---
+
+## 🧪 Notas importantes
+
+- migrate:fresh apaga toda a base de dados
+- MySQL mantém dados até docker compose down -v
+- entrypoint.sh é necessário para iniciar PHP-FPM
+
+---
+
+## 🏁 Final
+
+Projeto disponível em:
+http://localhost:8000
