@@ -24,14 +24,27 @@
                     @csrf
 
                     {{-- Avatar --}}
-                    <div class="flex flex-col items-center gap-4 mb-2">
-                        <img id="avatarPreview"
-                             src="{{ asset('storage/images/default.png') }}"
-                             class="w-24 h-24 rounded-full object-cover border-2 border-white/10">
-                        <label class="cursor-pointer px-4 py-2 text-sm bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition text-brand-muted">
-                            Escolher Foto
-                            <input type="file" name="photo" accept="image/*" class="hidden" id="photoInput">
-                        </label>
+                    <div class="flex flex-col items-center gap-4 mb-8">
+                        <div class="relative group cursor-pointer" onclick="document.getElementById('profileInput').click()">
+                            <img
+                                id="profilePreview"
+                                src="{{ asset('storage/images/default.png') }}"
+                                class="w-24 h-24 rounded-full object-cover border-2 border-white/10 group-hover:border-brand-accent transition-all duration-300"
+                            >
+                            <div class="absolute inset-0 rounded-full bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3l2-3h3a2 2 0 0 1 2 2z"/>
+                                    <circle cx="12" cy="13" r="4"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <input type="file" name="profile_picture" id="profileInput" class="hidden" accept="image/*">
+                        <input type="hidden" name="remove_picture" id="removePicture" value="0">
+
+                        <div class="flex items-center gap-3">
+                            <p class="text-brand-muted text-xs">Clica na imagem para alterar</p>
+                        </div>
                     </div>
 
                     {{-- Nome --}}
