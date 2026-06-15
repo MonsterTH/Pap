@@ -4,32 +4,62 @@
         <!-- ═══════ HERO SECTION ═══════ -->
         <section class="-mt-10 relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
                 <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+                    <!-- Texto -->
                     <div class="flex-1 fade-up">
-                            <span class="inline-block px-3 py-1 mb-4 text-xs font-display font-bold tracking-[0.2em] uppercase text-brand-accent bg-brand-accent/10 border border-brand-accent/20 rounded-full">Nova Temporada</span>
-                            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight glitch-text">
-                                O que é o<br>
-                                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-gold">Identity Fraud</span>?
-                            </h1>
-                            <p class="mt-6 text-base md:text-lg text-brand-muted leading-relaxed max-w-xl font-body">
-                                Identity Fraud torna todos os competidores em investigadores. <strong class="text-brand-light">16 Pessoas</strong>, todas com identidades falsas, competem para descobrir a identidade dos outros enquanto protegem a sua.
-                            </p>
-                            <p class="mt-3 text-base md:text-lg text-brand-muted leading-relaxed max-w-xl font-body">
-                                Ajuda o teu investigador favorito a vencer ao votar na competição enquanto te juntas à investigação.
-                            </p>
-                            <div class="mt-8">
-                                <a href="{{ route('about') }}" class="btn-pulse inline-flex items-center gap-2 px-8 py-4 bg-brand-accent text-white font-display font-bold text-sm tracking-wider uppercase rounded-lg hover:bg-brand-glow transition-colors shadow-[0_4px_30px_rgba(230,57,70,0.4)]">
-                                        Descobrir Mais
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                                </a>
-                            </div>
+                        <span class="inline-block px-3 py-1 mb-3 text-[10px] md:text-xs font-display font-bold tracking-[0.2em] uppercase text-brand-accent bg-brand-accent/10 border border-brand-accent/20 rounded-full">
+                            Nova Temporada
+                        </span>
+
+                        <h1 class="font-display text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight glitch-text">
+                            O que é o<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-gold">
+                                Identity Fraud
+                            </span>?
+                        </h1>
+
+                        <p class="mt-5 text-sm md:text-base text-brand-muted leading-relaxed max-w-lg font-body">
+                            Identity Fraud torna todos os competidores em investigadores.
+                            <strong class="text-brand-light">16 Pessoas</strong>, todas com identidades falsas,
+                            competem para descobrir a identidade dos outros enquanto protegem a sua.
+                        </p>
+
+                        <p class="mt-3 text-sm md:text-base text-brand-muted leading-relaxed max-w-lg font-body">
+                            Ajuda o teu investigador favorito a vencer ao votar na competição enquanto te juntas à investigação.
+                        </p>
+
+                        <div class="mt-7">
+                            <a href="{{ route('about') }}"
+                            class="btn-pulse inline-flex items-center gap-2 px-6 py-3 bg-brand-accent text-white font-display font-bold text-xs tracking-wider uppercase rounded-lg hover:bg-brand-glow transition-colors shadow-[0_4px_30px_rgba(230,57,70,0.4)]">
+                                Descobrir Mais
+
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m9 18 6-6-6-6"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
+
+                    <!-- Imagem -->
                     <div class="flex-1 fade-up fade-up-d2">
-                            <div class="relative">
-                                <div class="absolute -inset-4 bg-gradient-to-tr from-brand-accent/20 via-transparent to-brand-gold/10 rounded-2xl blur-2xl"></div>
-                                <img class="relative w-full max-w-lg mx-auto rounded-2xl shadow-2xl shadow-brand-accent/10 border border-white/5 object-cover"
-                                src="storage/images/Imagem1.png" alt="Identity Fraud">
-                            </div>
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-gradient-to-tr from-brand-accent/20 via-transparent to-brand-gold/10 rounded-2xl blur-2xl"></div>
+
+                            <img
+                                class="relative w-full max-w-md mx-auto rounded-2xl shadow-2xl shadow-brand-accent/10 border border-white/5 object-cover"
+                                src="storage/images/Imagem1.png"
+                                alt="Identity Fraud"
+                            >
+                        </div>
                     </div>
+
                 </div>
         </section>
 
