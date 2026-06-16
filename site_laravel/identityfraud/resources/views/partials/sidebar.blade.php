@@ -11,7 +11,7 @@
             <h3 class="text-brand-accent font-bold mb-2">Participantes</h3>
             <a href="{{ route('admin.players.manage') }}"  class="block px-3 py-2 rounded hover:bg-white/10">Gerenciar</a>
             <a href="{{ route('players.create') }}"         class="block px-3 py-2 rounded hover:bg-white/10">Adicionar</a>
-            <a href="{{ route('admin.players.remove') }}"   class="block px-3 py-2 rounded hover:bg-white/10">Remover</a>
+            {{-- <a href="{{ route('admin.players.remove') }}"   class="block px-3 py-2 rounded hover:bg-white/10">Remover</a> --}}
             <a href="{{ route('admin.players.consulta') }}" class="block px-3 py-2 rounded hover:bg-white/10">Consulta</a>
         </div>
 
@@ -19,7 +19,7 @@
             <h3 class="text-brand-accent font-bold mt-6 mb-2">Eventos</h3>
             <a href="{{ route('admin.eviction.index') }}" class="block px-3 py-2 rounded hover:bg-white/10">Votações</a>
             <a href="{{ route('activity.create') }}" class="block px-3 py-2 rounded hover:bg-white/10">Atividades</a>
-            <a href="{{ route('bounty.create') }}" class="block px-3 py-2 rounded hover:bg-white/10">Bounty's</a>
+            <a href="{{ route('bounty.create') }}" class="block px-3 py-2 rounded hover:bg-white/10">Bounties</a>
             <a href="{{ route('season.create') }}" class="block px-3 py-2 rounded hover:bg-white/10">Seasons</a>
         </div>
 
