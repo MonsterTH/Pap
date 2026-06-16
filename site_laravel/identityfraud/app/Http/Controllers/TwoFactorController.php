@@ -24,7 +24,14 @@ class TwoFactorController extends Controller
         $user->two_factor_secret = encrypt($secret);
         $user->save();
     } else {
-        $secret = decrypt($user->two_factor_secret);
+        try {
+            $secret = decrypt($user->two_factor_secret);
+        } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+            // Stale or invalid encrypted value — regenerate
+            $secret = $google2fa->generateSecretKey();
+            $user->two_factor_secret = encrypt($secret);
+            $user->save();
+        }
     }
 
     $qrUrl = $google2fa->getQRCodeUrl(
