@@ -2,7 +2,7 @@
     @section('title', 'Identity Fraud - Home')
     @section('content')
         <!-- ═══════ HERO SECTION ═══════ -->
-        <section class="-mt-10 relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
+        <section class="-mt-5 relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-14">
                 <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
                     <!-- Texto -->
                     <div class="flex-1 fade-up">
@@ -27,24 +27,43 @@
                             Ajuda o teu investigador favorito a vencer ao votar na competição enquanto te juntas à investigação.
                         </p>
 
-                        <div class="mt-7">
-                            <a href="{{ route('about') }}"
-                            class="btn-pulse inline-flex items-center gap-2 px-6 py-3 bg-brand-accent text-white font-display font-bold text-xs tracking-wider uppercase rounded-lg hover:bg-brand-glow transition-colors shadow-[0_4px_30px_rgba(230,57,70,0.4)]">
-                                Descobrir Mais
+                        <div class="mt-7 flex flex-wrap gap-4">
+                        <!-- Descobrir Mais -->
+                        <a href="{{ route('about') }}"
+                        class="btn-pulse inline-flex items-center gap-2 px-6 py-3 bg-brand-accent text-white font-display font-bold text-xs tracking-wider uppercase rounded-lg hover:bg-brand-glow transition-colors shadow-[0_4px_30px_rgba(230,57,70,0.4)]">
+                            Descobrir Mais
 
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="m9 18 6-6-6-6"/>
-                                </svg>
-                            </a>
-                        </div>
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m9 18 6-6-6-6"/>
+                            </svg>
+                        </a>
+
+                        <!-- Novo botão -->
+                        <a href="{{ route('watch') }}"
+                        class="btn-pulse inline-flex items-center gap-2 px-6 py-3 bg-brand-accent text-white font-display font-bold text-xs tracking-wider uppercase rounded-lg hover:bg-brand-glow transition-colors shadow-[0_4px_30px_rgba(230,57,70,0.4)]">
+                            Ver Ao Vivo
+
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m9 18 6-6-6-6"/>
+                            </svg>
+                        </a>
+                    </div>
                     </div>
 
                     <!-- Imagem -->
