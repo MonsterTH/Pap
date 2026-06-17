@@ -15,6 +15,9 @@ use App\Models\Comment;
 use App\Models\Like;
 use App\Models\Eviction;
 use App\Models\Administrador;
+use Illuminate\Auth\Notifications\VerifyEmail;
+use Illuminate\Notifications\Messages\MailMessage;
+
 
 #[Fillable(['name', 'email', 'password', 'email_verified_at', 'profile_picture', 'is_admin', 'has_2fa', 'two_factor_code', 'two_factor_expires_at', 'google_id'])]
 #[Hidden(['password'/*, 'two_factor_secret', 'two_factor_recovery_codes'*/, 'remember_token'])]
@@ -33,6 +36,22 @@ class User extends Authenticatable implements MustVerifyEmail
         return [
             'email_verified_at' => 'datetime',
         ];
+    }
+
+    public function sendEmailVerificationNotification(): void
+    {
+        $this->notify(new class extends VerifyEmail {
+            protected function buildMailMessage($url)
+            {
+                return (new MailMessage)
+                    ->subject('Verificação de email - IdentityFraud')
+                    ->greeting('Ola!')
+                    ->line('Porfavor clique no butão abaixo para confirmar o seu email!')
+                    ->action('Confirmar Email', $url)
+                    ->line('Se nao criaste uma conta, ignora este email')
+                    ->salutation('Comprimentos, IdentityFraud');
+            }
+        });
     }
 
     public function posts()
