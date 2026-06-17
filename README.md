@@ -184,7 +184,7 @@ cd /mnt/c/Users/nomeutilizador/projetos  # ← lento, evitar
 ```bash
 # Clonar dentro do sistema de ficheiros do WSL2
 cd ~  # /home/nomeutilizador/
-git clone <repo-url>
+git clone <repo-url> 
 ```
 
 ---
