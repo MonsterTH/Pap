@@ -33,6 +33,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::view('about', 'about')
     ->name('about');
 
+Route::get('/watch/{camera}', [HomeController::class, 'watch'])
+    ->name('watch');
+
 Route::middleware('guest')->group(function () {
     Route::get('/login', Login::class)->name('login');
     Route::get('/register', Register::class)->name('register');

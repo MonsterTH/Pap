@@ -24,7 +24,7 @@
                     <div class="relative h-[300px] w-full overflow-hidden rounded-3xl">
 
                         <!-- Image -->
-                        <img src="{{ $new->image ? asset('storage/news/' . $new->image) : asset('news/Image.png') }}"
+                        <img src="{{ $new->image ? asset('storage/' . $new->image) : asset('news/Image.png') }}"
                             class="w-full h-full object-cover
                                     group-hover:scale-105 transition duration-700"
                             alt="{{ $new->title }}">

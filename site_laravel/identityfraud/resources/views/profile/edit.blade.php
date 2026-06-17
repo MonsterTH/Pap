@@ -159,7 +159,7 @@
     </div>
     @if(auth()->user()->google_id === null)
         <a href="{{ route('2fa.setup') }}">
-            <div class="fade-up fade-up-d2 w-full text-center h-10 mt-6 px-6 py-2.5 bg-brand-accent hover:bg-brand-glow text-white font-bold rounded-lg transition btn-pulse">
+            <div class="fade-up fade-up-d2 w-full text-center h-11 mt-6 px-6 py-2.5 bg-brand-accent hover:bg-brand-glow text-white font-bold rounded-lg transition btn-pulse">
                 <p>Ativar Verificação de 2 Fatores</p>
             </div>
         </a>

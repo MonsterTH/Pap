@@ -46,10 +46,10 @@
 
                                 <td class="px-6 py-4 text-right">
                                     <div class="flex items-center justify-end gap-2">
-                                        <a href="{{ route('players.show', $player->id) }}"
+                                        {{-- <a href="{{ route('players.show', $player->id) }}"
                                            class="px-3 py-1.5 text-xs bg-white/5 hover:bg-white/10 rounded-lg transition">
                                             Ver
-                                        </a>
+                                        </a> --}}
                                         <a href="{{ route('players.edit', $player->id) }}"
                                            class="px-3 py-1.5 text-xs bg-brand-accent/10 hover:bg-brand-accent/20 text-brand-accent rounded-lg transition">
                                             Editar
