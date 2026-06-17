@@ -20,9 +20,9 @@
 
             <div class="space-y-3">
                 @foreach($cameras as $id => $camera)
-                    <a href="{{ route('cameras', $id) }}"
+                    <a href="{{ route('watch', $id) }}"
                     class="block w-full text-left p-4 rounded-xl transition
-                    {{ request()->route('camera') == $id
+                    {{ request()->route('watch') == $id
                             ? 'border border-brand-accent/30 bg-brand-accent/10'
                             : 'border border-white/10 hover:border-brand-gold/40 hover:bg-white/[0.02]' }}">
 
@@ -73,11 +73,14 @@
                             <!-- STREAM / VIDEO -->
                             <video
                                 class="w-full h-full object-cover"
-                                controls
                                 autoplay
-                                muted>
+                                muted
+                                loop
+                                playsinline
+                                disablepictureinpicture
+                                controlslist="nodownload noplaybackrate nofullscreen"
+                                oncontextmenu="return false;">
                                 <source src="{{ $selectedCamera['video'] }}" type="video/mp4">
-                                O seu navegador não suporta vídeo.
                             </video>
 
                         </div>
