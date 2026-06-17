@@ -47,7 +47,7 @@
                         </a>
 
                         <!-- Novo botão -->
-                        <a href="{{ route('watch') }}"
+                        <a href="{{ route('watch', 1) }}"
                         class="btn-pulse inline-flex items-center gap-2 px-6 py-3 bg-brand-accent text-white font-display font-bold text-xs tracking-wider uppercase rounded-lg hover:bg-brand-glow transition-colors shadow-[0_4px_30px_rgba(230,57,70,0.4)]">
                             Ver Ao Vivo
 
