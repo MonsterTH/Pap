@@ -3,7 +3,7 @@
 @section('title', 'Identity Fraud - Recuperar senha')
 
 @section('content')
-<section class="max-w-md mx-auto mt-10 p-6 bg-brand-card rounded-lg shadow-lg fade-up">
+<section class="max-w-md mx-auto mt-10 mb-10 p-6 bg-brand-card rounded-lg shadow-lg fade-up">
 
     <h2 class="text-2xl font-bold mb-4 text-brand-light text-center">
         Recuperar senha
