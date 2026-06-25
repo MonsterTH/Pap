@@ -1,5 +1,5 @@
 # Remove a pasta errada
-rm -rf ~/identityfraud
+sudo rm -rf ~/identityfraud
 
 # Copia o projeto completo do Windows
 sudo cp -r "/mnt/c/Program Files/Ampps/www/scripts/Pap/site_laravel/identityfraud" ~/identityfraud
