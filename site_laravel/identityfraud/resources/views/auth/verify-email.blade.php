@@ -3,7 +3,7 @@
 @section('title', 'Verificar Email')
 
 @section('content')
-<section class="max-w-md mx-auto mt-10 mb-10 p-6 bg-brand-card rounded-lg shadow-lg text-center">
+<section class="max-w-md mx-auto mt-24 mb-24 p-6 bg-brand-card rounded-lg shadow-lg text-center">
 
     <h2 class="text-2xl font-bold mb-4 text-brand-light">Verifica o teu email</h2>
 
@@ -35,4 +35,5 @@
     </form>
 
 </section>
+<section class="max-w-md mx-auto mt-24 p-6 rounded-lg shadow-lg text-center"></section>
 @endsection
