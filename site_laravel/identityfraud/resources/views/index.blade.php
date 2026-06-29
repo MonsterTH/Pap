@@ -2,7 +2,7 @@
     @section('title', 'Identity Fraud - Home')
     @section('content')
         <!-- ═══════ HERO SECTION ═══════ -->
-        <section class="-mt-5 relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-14">
+        <section class="-mt-10 relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-14">
                 <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
                     <!-- Texto -->
                     <div class="flex-1 fade-up">
