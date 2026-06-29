@@ -28,7 +28,14 @@ class Player extends Model
 
     public function bounties()
     {
-        return $this->hasMany(Bounty::class, 'player_id');
+        return $this->hasMany(Bounty::class, 'player_id')
+                    ->where('completed', true);
+    }
+
+    public function completedBounties()
+    {
+        return $this->hasMany(Bounty::class, 'player_id')
+                    ->where('completed', true);
     }
 
     public function targets()

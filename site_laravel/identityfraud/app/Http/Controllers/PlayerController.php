@@ -51,7 +51,7 @@ public function store(Request $request)
     {
         $player = Player::withCount([
             'wonSeasons',
-            'bounties',
+            'completedBounties',
             'activities',
         ])->findOrFail($id);
 
