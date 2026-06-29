@@ -7,7 +7,7 @@
         <main class="flex-1 p-8 bg-brand-dark overflow-auto">
 
             <div class="fade-up fade-up-d1 mb-8">
-                <h1 class="text-3xl font-bold text-white">Gerenciar Participantes</h1>
+                <h1 class="text-3xl font-bold text-white">Gerir Participantes</h1>
                 <p class="text-brand-muted mt-1">Visualiza e gere todos os Participantes registados.</p>
             </div>
 

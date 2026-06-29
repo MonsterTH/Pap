@@ -7,8 +7,8 @@
         <main class="flex-1 p-8 bg-brand-dark overflow-auto">
 
             <div class="fade-up fade-up-d1 mb-8">
-                <h1 class="text-3xl font-bold text-white">Consulta de Jogadores</h1>
-                <p class="text-brand-muted mt-1">Pesquisa e consulta informações de qualquer jogador.</p>
+                <h1 class="text-3xl font-bold text-white">Consulta de Participantes</h1>
+                <p class="text-brand-muted mt-1">Pesquisa e consulta informações de qualquer Participantes.</p>
             </div>
 
             {{-- Search --}}

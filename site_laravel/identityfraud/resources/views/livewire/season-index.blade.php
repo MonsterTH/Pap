@@ -10,7 +10,7 @@
         @endif
 
         <div class="fade-up fade-up-d1 mb-8">
-            <h1 class="text-3xl font-bold text-white">Histórico de Seasons</h1>
+            <h1 class="text-3xl font-bold text-white">Histórico de Temporadas</h1>
             <p class="text-brand-muted mt-1">Consulta todas as temporadas do reality.</p>
         </div>
 
@@ -58,7 +58,7 @@
 
         @if($seasons->isEmpty())
             <div class="mt-10 text-center text-brand-muted">
-                Nenhuma season encontrada.
+                Nenhuma Temporadas encontrada.
             </div>
         @endif
     </main>

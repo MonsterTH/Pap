@@ -9,7 +9,7 @@
 
         <!-- HEADER -->
         <div class="fade-up fade-up-d1 mb-8">
-            <h1 class="text-3xl font-bold text-white">Criar Season</h1>
+            <h1 class="text-3xl font-bold text-white">Criar Temporada</h1>
             <p class="text-brand-muted mt-1">Adiciona uma nova temporada ao reality show.</p>
         </div>
 
@@ -35,7 +35,7 @@
 
                 <!-- NAME -->
                 <div>
-                    <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Nome da Season</label>
+                    <label class="block text-xs uppercase tracking-widest text-brand-muted mb-2">Nome da Temporada</label>
                     <input type="text" name="name" value="{{ old('name') }}"
                            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-accent"
                            placeholder="Nome da temporada" required>
@@ -69,7 +69,7 @@
                 <div class="flex gap-3 pt-2">
                     <button type="submit"
                             class="px-6 py-2.5 bg-brand-accent hover:bg-brand-glow text-white font-bold text-sm rounded-lg transition btn-pulse">
-                        Criar Season
+                        Criar Temporada
                     </button>
                 </div>
 

@@ -55,7 +55,7 @@
                     </ul>
                 </div>
                 <div class="bg-brand-card p-6 rounded-lg card-hover">
-                    <h2 class="text-xl font-semibold mb-4">Participantes em votaçao</h2>
+                    <h2 class="text-xl font-semibold mb-4">Participantes em votação</h2>
                     <ul class="space-y-2">
                         @forelse($latestEviction as $eviction)
                             <li class="px-3 py-2 bg-white/5 rounded hover:bg-white/10">

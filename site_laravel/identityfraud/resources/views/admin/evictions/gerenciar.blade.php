@@ -7,7 +7,7 @@
         <main class="flex-1 p-8 bg-brand-dark overflow-auto">
 
             <div class="fade-up fade-up-d1 mb-8">
-                <h1 class="text-3xl font-bold text-white">Gerir Eviction</h1>
+                <h1 class="text-3xl font-bold text-white">Gerir Votaçoes</h1>
                 <p class="text-brand-muted mt-1">Define os participantes em votação. Máximo de 4 participantes.</p>
             </div>
 
@@ -78,7 +78,7 @@
                             @method('DELETE')
                             <button type="submit"
                                     class="w-full py-2.5 text-sm bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 rounded-xl transition font-semibold">
-                                Resetar Votação
+                                Finalizar Votação
                             </button>
                         </form>
                     @endif
