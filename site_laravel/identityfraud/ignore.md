@@ -18,3 +18,6 @@ docker compose exec app
 
 # Entrar no container
 docker compose exec app bash
+
+# Abrir inspector
+npx @modelcontextprotocol/inspector --transport http --server-url http://localhost:8000/mcp/PlayerServer
