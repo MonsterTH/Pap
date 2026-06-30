@@ -86,7 +86,7 @@
     </div>
 
     <script>
-        document.getElementById('photoInput').addEventListener('change', function () {
+        document.getElementById('profileInput').addEventListener('change', function () {
             const file = this.files[0];
             if (file) {
                 const reader = new FileReader();

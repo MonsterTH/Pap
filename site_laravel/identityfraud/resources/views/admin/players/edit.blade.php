@@ -126,11 +126,11 @@
     </div>
 
     <script>
-        document.getElementById('photoInput').addEventListener('change', function () {
+        document.getElementById('profileInput').addEventListener('change', function () {
             const file = this.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = e => document.getElementById('avatarPreview').src = e.target.result;
+                reader.onload = e => document.getElementById('profilePreview').src = e.target.result;
                 reader.readAsDataURL(file);
             }
         });
