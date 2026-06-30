@@ -89,7 +89,7 @@
             type="submit"
             class="w-full bg-brand-accent hover:bg-brand-glow text-white font-bold py-2 px-4 rounded transition mb-3"
         >
-            <span wire:loading.remove wire:target="register">Registrar</span>
+            <span wire:loading.remove wire:target="register">Registar</span>
             <span wire:loading wire:target="register">Criando conta...</span>
         </button>
 

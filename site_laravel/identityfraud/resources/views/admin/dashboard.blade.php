@@ -18,7 +18,7 @@
                     <p class="text-2xl font-bold">{{ $activityCount }}</p>
                 </div>
                 <div class="bg-brand-card p-6 rounded-lg card-hover">
-                    <h2 class="text-sm text-white/60 mb-2">Bountys</h2>
+                    <h2 class="text-sm text-white/60 mb-2">Bounties</h2>
                     <p class="text-2xl font-bold">{{ $bountiesCount }}</p>
                 </div>
                 <div class="bg-brand-card p-6 rounded-lg card-hover">

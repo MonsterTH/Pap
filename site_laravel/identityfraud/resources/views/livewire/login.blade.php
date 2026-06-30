@@ -51,7 +51,7 @@
 
     <div class="mt-4 text-center text-brand-light text-sm">
         Não tem uma conta?
-        <a href="{{ route('register') }}" class="text-brand-accent font-semibold hover:text-brand-glow transition">Registre-se</a>
+        <a href="{{ route('register') }}" class="text-brand-accent font-semibold hover:text-brand-glow transition">Registe-se</a>
     </div>
 
     <div class="mb-2 text-center text-brand-light text-sm mt-2">
