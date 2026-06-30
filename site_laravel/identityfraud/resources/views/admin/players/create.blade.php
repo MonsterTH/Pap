@@ -39,8 +39,8 @@
                             </div>
                         </div>
 
-                        <input type="file" name="profile_picture" id="profileInput" class="hidden" accept="image/*">
-                        <input type="hidden" name="remove_picture" id="removePicture" value="0">
+                        <input type="file" name="photo" id="profileInput" class="hidden" accept="image/*">
+                        <input type="hidden" name="remove_photo" id="removePicture" value="0">
 
                         <div class="flex items-center gap-3">
                             <p class="text-brand-muted text-xs">Clica na imagem para alterar</p>
@@ -90,7 +90,7 @@
             const file = this.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = e => document.getElementById('avatarPreview').src = e.target.result;
+                reader.onload = e => document.getElementById('profilePreview').src = e.target.result;
                 reader.readAsDataURL(file);
             }
         });

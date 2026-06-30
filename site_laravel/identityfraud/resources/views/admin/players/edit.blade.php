@@ -38,19 +38,40 @@
                     @method('PUT')
 
                     {{-- Avatar --}}
-                    <div class="flex flex-col items-center gap-4 mb-2">
-                        <div class="relative">
-                            <img id="avatarPreview"
-                                 src="{{ $player->photo ? asset('storage/' . $player->photo) : asset('storage/images/default.png') }}"
-                                 class="w-28 h-28 rounded-full object-cover border-2 border-white/10">
-                            <label class="absolute bottom-0 right-0 w-8 h-8 bg-brand-accent hover:bg-brand-glow rounded-full flex items-center justify-center cursor-pointer transition">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 13l6.586-6.586a2 2 0 112.828 2.828L11.828 15.828A2 2 0 019 16H7v-2a2 2 0 01.586-1.414z"/>
+                    <div class="flex flex-col items-center gap-4 mb-8">
+                        <div class="relative group cursor-pointer" onclick="document.getElementById('profileInput').click()">
+                            <img
+                                id="profilePreview"
+                                src="{{ $player->photo ? asset('storage/' . $player->photo) : asset('storage/images/default.png') }}"
+                                class="w-28 h-28 rounded-full object-cover border-2 border-white/10 group-hover:border-brand-accent transition-all duration-300"
+                            >
+
+                            <div class="absolute inset-0 rounded-full bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="w-6 h-6 text-white"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3l2-3h3a2 2 0 0 1 2 2z"/>
+                                    <circle cx="12" cy="13" r="4"/>
                                 </svg>
-                                <input type="file" name="photo" accept="image/*" class="hidden" id="photoInput">
-                            </label>
+                            </div>
                         </div>
-                        <p class="text-xs text-brand-muted">Clica no ícone para alterar a foto</p>
+
+                        <input
+                            type="file"
+                            name="photo"
+                            id="profileInput"
+                            class="hidden"
+                            accept="image/*"
+                        >
+
+                        <p class="text-brand-muted text-xs">
+                            Clica na imagem para alterar
+                        </p>
                     </div>
 
                     {{-- Nome --}}
